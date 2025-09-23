@@ -1,0 +1,14 @@
+technology,parameter,value,unit,source,further description,currency_year
+CCGT,FOM,1,%/year,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","05 Gas turb. CC, steam extract.:  Fixed O&M",2015
+CCGT,VOM,1,EUR/MWh,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","05 Gas turb. CC, steam extract.:  Variable O&M",2015
+CCGT,c_b,1,50oC/100oC,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","05 Gas turb. CC, steam extract.:  Cb coefficient",2015
+CCGT,c_v,0.1,50oC/100oC,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","05 Gas turb. CC, steam extract.:  Cv coefficient",2015
+CCGT,efficiency,0.5,per unit,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","05 Gas turb. CC, steam extract.:  Electricity efficiency, annual average",2015
+CCGT,investment,1000,EUR/kW,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","05 Gas turb. CC, steam extract.:  Nominal investment",2015
+OCGT,FOM,1,%/year,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",52 OCGT - Natural gas:  Fixed O&M,2015
+OCGT,VOM,1,EUR/MWh,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",52 OCGT - Natural gas:  Variable O&M,2015
+OCGT,lifetime,10,years,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",52 OCGT - Natural gas:  Technical lifetime,2015
+central gas boiler,VOM,1,EUR/MWh_th,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",44 Natural Gas DH Only:  Variable O&M,2015
+central gas boiler,efficiency,1,per unit,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx","44 Natural Gas DH Only:  Total efficiency , net, annual average",2015
+central gas boiler,investment,100,EUR/kW_th,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",44 Natural Gas DH Only:  Nominal investment,2015
+central gas boiler,lifetime,10,years,"Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",44 Natural Gas DH Only:  Technical lifetime,2015
