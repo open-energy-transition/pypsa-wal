@@ -192,6 +192,13 @@ if config["enable"]["retrieve"] and config["enable"].get("retrieve_cost_data", T
     rule retrieve_cost_data:
         params:
             version=config_provider("costs", "version"),
+            custom_costs=config_provider("costs", "custom_costs"),
+        input:
+            custom_costs_fn=lambda w: (
+                "data/custom_costs_{year}.csv"
+                if config_provider("costs", "custom_costs")(w)
+                else None
+            ),
         output:
             resources("costs_{year}.csv"),
         log:

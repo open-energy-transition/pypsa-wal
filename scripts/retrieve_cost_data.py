@@ -7,6 +7,9 @@ Retrieve cost data from ``technology-data``.
 
 import logging
 from pathlib import Path
+import pandas as pd
+
+from walloon_scripts.update_costs import overwrite_costs
 
 from scripts._helpers import configure_logging, progress_retrieve, set_scenario_config
 
@@ -42,3 +45,9 @@ if __name__ == "__main__":
     progress_retrieve(url, to_fn, disable=disable_progress)
 
     logger.info(f"Technology data available at at {to_fn}")
+
+    costs = pd.read_csv(to_fn, index_col=[0,1])
+    custom_costs_fn = snakemake.input.custom_costs_fn
+    costs = overwrite_costs(costs, custom_costs_fn)
+
+    costs.to_csv(to_fn)

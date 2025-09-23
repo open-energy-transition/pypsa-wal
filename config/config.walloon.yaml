@@ -32,6 +32,9 @@ countries:
 - DE
 - LU
 
+costs:
+  year: 2050
+  custom_costs: True
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
