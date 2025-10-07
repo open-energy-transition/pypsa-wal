@@ -159,7 +159,7 @@ electricity:
 atlite:
   cutout_directory: cutouts
   default_cutout: europe-2013-sarah3-era5
-  nprocesses: 4
+  nprocesses: 16
   show_progress: false
   cutouts:
     # use 'base' to determine geographical bounds and time span from config
