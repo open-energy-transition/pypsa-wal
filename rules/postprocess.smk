@@ -226,6 +226,34 @@ rule make_summary:
         "../scripts/make_summary.py"
 
 
+rule export_cross_border_flows:
+    input:
+        network=RESULTS
+        + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",
+    output:
+        timeseries=RESULTS
+        + "csvs/individual/cross_border_flows_timeseries_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        summary=RESULTS
+        + "csvs/individual/cross_border_flows_summary_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        bilateral=RESULTS
+        + "csvs/individual/cross_border_flows_bilateral_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+    threads: 1
+    resources:
+        mem_mb=4000,
+    log:
+        RESULTS
+        + "logs/export_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
+    benchmark:
+        (
+            RESULTS
+            + "benchmarks/export_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
+        )
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/export_cross_border_flows.py"
+
+
 rule make_global_summary:
     params:
         scenario=config_provider("scenario"),
