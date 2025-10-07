@@ -77,10 +77,6 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     # Sort for readability
     df = df.sort_values(["timestamp", "from_bus", "to_bus", "carrier"])
 
-    logger.info(
-        f"Extracted {len(df)} flow records across {len(df.timestamp.unique())} timesteps"
-    )
-
     return df
 
 
@@ -101,10 +97,8 @@ if __name__ == "__main__":
     set_scenario_config(snakemake)
 
     # Load network and extract flows
-    logger.info(f"Loading network from {snakemake.input.network}")
     n = pypsa.Network(snakemake.input.network)
     flows = extract_flows_timeseries(n)
 
     # Export results
-    logger.info(f"Exporting flows to {snakemake.output.flows}")
     flows.to_csv(snakemake.output.flows, index=False)
