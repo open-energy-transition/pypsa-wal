@@ -3,13 +3,6 @@
 # SPDX-License-Identifier: MIT
 """
 Export energy flows across all network connections at each timestep.
-
-Extracts time series data for energy flows through transmission lines and links
-from optimized PyPSA network results.
-
-Outputs
--------
-- cross_border_flows.csv: timestamp, from_bus, to_bus, carrier, flow_MW
 """
 
 import logging
@@ -25,6 +18,11 @@ logger = logging.getLogger(__name__)
 def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     """
     Extract all connection flows at each timestep.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        Solved PyPSA network.
 
     Returns
     -------
