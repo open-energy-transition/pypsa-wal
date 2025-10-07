@@ -148,7 +148,6 @@ rule all:
     default_target: True
 
 
-
 rule create_scenarios:
     output:
         config["run"]["scenarios"]["file"],
