@@ -20,7 +20,6 @@ Outputs
 
 import logging
 
-import numpy as np
 import pandas as pd
 import pypsa
 
@@ -55,12 +54,12 @@ def extract_region_from_bus(bus_name: str, country: str) -> str:
     bus_str = str(bus_name).strip()
 
     # Handle Belgian NUTS-1 regions
-    if bus_str.startswith('BEWAL'):
-        return 'BEWAL'
-    elif bus_str.startswith('BEBRU'):
-        return 'BEBRU'
-    elif bus_str.startswith('BEVLG'):
-        return 'BEVLG'
+    if bus_str.startswith("BEWAL"):
+        return "BEWAL"
+    elif bus_str.startswith("BEBRU"):
+        return "BEBRU"
+    elif bus_str.startswith("BEVLG"):
+        return "BEVLG"
 
     # For other buses, try to extract country code
     if pd.notna(country) and country != "":
@@ -112,8 +111,6 @@ def identify_cross_border_connections(n: pypsa.Network) -> dict:
 
     all_connections["lines"] = lines
 
-    logger.info(f"Found {len(lines)} AC transmission lines")
-
     # Process links (DC, H2, heat, etc.)
     links = n.links.copy()
     links["node0"] = links.bus0
@@ -130,11 +127,6 @@ def identify_cross_border_connections(n: pypsa.Network) -> dict:
     )
 
     all_connections["links"] = links
-
-    logger.info(
-        f"Found {len(links)} links "
-        f"({links.carrier.value_counts().to_dict()})"
-    )
 
     return all_connections
 
@@ -168,8 +160,6 @@ def calculate_cross_border_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
 
     # Process AC transmission lines
     if not all_connections["lines"].empty:
-        logger.info("Processing AC transmission line flows...")
-
         for line_id, line in all_connections["lines"].iterrows():
             # p0 is power flow at bus0 (positive = flowing away from bus0)
             # p1 is power flow at bus1 (should be -p0 for lossless lines)
@@ -247,8 +237,6 @@ def calculate_cross_border_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
 
     # Process links (DC, H2, etc.)
     if not all_connections["links"].empty:
-        logger.info("Processing link flows...")
-
         for link_id, link in all_connections["links"].iterrows():
             # p0 is power/energy flow at bus0
             # For links, positive p0 means power is consumed from bus0
@@ -300,10 +288,6 @@ def calculate_cross_border_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         logger.warning("No cross-border flows found!")
         return df
 
-    logger.info(
-        f"Extracted {len(df)} individual flow records across {len(df.timestamp.unique())} timesteps"
-    )
-
     return df
 
 
@@ -335,8 +319,6 @@ def aggregate_timeseries_by_country_carrier(df: pd.DataFrame) -> pd.DataFrame:
 
     # Sort for readability
     grouped = grouped.sort_values(["timestamp", "country", "carrier"])
-
-    logger.info(f"Aggregated to {len(grouped)} country-carrier-timestamp combinations")
 
     return grouped
 
@@ -370,8 +352,6 @@ def aggregate_timeseries_by_region_carrier(df: pd.DataFrame) -> pd.DataFrame:
 
     # Sort for readability
     grouped = grouped.sort_values(["timestamp", "region", "carrier"])
-
-    logger.info(f"Aggregated to {len(grouped)} region-carrier-timestamp combinations")
 
     return grouped
 
@@ -444,8 +424,6 @@ def calculate_summary(df: pd.DataFrame, n: pypsa.Network) -> pd.DataFrame:
 
     summary = summary.sort_values(["country", "carrier"])
 
-    logger.info(f"Created summary for {len(summary)} country-carrier combinations")
-
     return summary
 
 
@@ -517,8 +495,6 @@ def calculate_regional_summary(df: pd.DataFrame, n: pypsa.Network) -> pd.DataFra
     )
 
     summary = summary.sort_values(["region", "carrier"])
-
-    logger.info(f"Created summary for {len(summary)} region-carrier combinations")
 
     return summary
 
@@ -621,12 +597,12 @@ def calculate_bilateral_flows(df: pd.DataFrame, n: pypsa.Network) -> pd.DataFram
             ["from_country", "to_country", "carrier"]
         )
 
-    logger.info(f"Created {len(bilateral_df)} bilateral flow entries")
-
     return bilateral_df
 
 
-def calculate_regional_bilateral_flows(df: pd.DataFrame, n: pypsa.Network) -> pd.DataFrame:
+def calculate_regional_bilateral_flows(
+    df: pd.DataFrame, n: pypsa.Network
+) -> pd.DataFrame:
     """
     Calculate bilateral region-to-region flows by carrier.
 
@@ -721,11 +697,7 @@ def calculate_regional_bilateral_flows(df: pd.DataFrame, n: pypsa.Network) -> pd
             .agg({"total_MWh": "sum"})
             .reset_index()
         )
-        bilateral_df = bilateral_df.sort_values(
-            ["from_region", "to_region", "carrier"]
-        )
-
-    logger.info(f"Created {len(bilateral_df)} regional bilateral flow entries")
+        bilateral_df = bilateral_df.sort_values(["from_region", "to_region", "carrier"])
 
     return bilateral_df
 
@@ -747,33 +719,23 @@ if __name__ == "__main__":
     set_scenario_config(snakemake)
 
     # Load optimized network
-    logger.info(f"Loading network from {snakemake.input.network}")
     n = pypsa.Network(snakemake.input.network)
 
     # Calculate cross-border flows
-    logger.info("Calculating cross-border flows...")
     detailed_flows = calculate_cross_border_flows_timeseries(n)
 
     # Aggregate by country, carrier, timestamp
-    logger.info("Aggregating time series...")
     timeseries = aggregate_timeseries_by_country_carrier(detailed_flows)
 
     # Calculate summary
-    logger.info("Calculating time-aggregated summary...")
     summary = calculate_summary(timeseries, n)
 
     # Calculate bilateral flows
-    logger.info("Calculating bilateral flows...")
     bilateral = calculate_bilateral_flows(detailed_flows, n)
 
     # Calculate regional aggregations
-    logger.info("Aggregating by region...")
     regional_timeseries = aggregate_timeseries_by_region_carrier(detailed_flows)
-
-    logger.info("Calculating regional summary...")
     regional_summary = calculate_regional_summary(regional_timeseries, n)
-
-    logger.info("Calculating regional bilateral flows...")
     regional_bilateral = calculate_regional_bilateral_flows(detailed_flows, n)
 
     # Export country-level results
@@ -787,13 +749,15 @@ if __name__ == "__main__":
     bilateral.to_csv(snakemake.output.bilateral, index=False)
 
     # Export regional results
-    logger.info(f"Exporting regional time series to {snakemake.output.regional_timeseries}")
+    logger.info(
+        f"Exporting regional time series to {snakemake.output.regional_timeseries}"
+    )
     regional_timeseries.to_csv(snakemake.output.regional_timeseries, index=False)
 
     logger.info(f"Exporting regional summary to {snakemake.output.regional_summary}")
     regional_summary.to_csv(snakemake.output.regional_summary, index=False)
 
-    logger.info(f"Exporting regional bilateral flows to {snakemake.output.regional_bilateral}")
+    logger.info(
+        f"Exporting regional bilateral flows to {snakemake.output.regional_bilateral}"
+    )
     regional_bilateral.to_csv(snakemake.output.regional_bilateral, index=False)
-
-    logger.info("Cross-border flows export completed successfully!")
