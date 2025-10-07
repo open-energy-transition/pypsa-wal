@@ -226,7 +226,7 @@ rule make_summary:
         "../scripts/make_summary.py"
 
 
-rule export_cross_border_flows:
+rule generate_cross_border_flows:
     input:
         network=RESULTS
         + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",
@@ -238,16 +238,16 @@ rule export_cross_border_flows:
         mem_mb=4000,
     log:
         RESULTS
-        + "logs/export_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
+        + "logs/generate_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
     benchmark:
         (
             RESULTS
-            + "benchmarks/export_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
+            + "benchmarks/generate_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
         )
     conda:
         "../envs/environment.yaml"
     script:
-        "../scripts/export_cross_border_flows.py"
+        "../scripts/make_cross_border_flows.py"
 
 
 rule make_global_summary:
