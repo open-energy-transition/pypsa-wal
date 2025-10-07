@@ -148,7 +148,7 @@ rule all:
     default_target: True
 
 
-rule export_cross_border_flows:
+rule export_all_cross_border_flows:
     input:
         expand(
             RESULTS
@@ -165,6 +165,24 @@ rule export_cross_border_flows:
         expand(
             RESULTS
             + "csvs/individual/cross_border_flows_bilateral_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            run=config["run"]["name"],
+            **config["scenario"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/cross_border_flows_regional_timeseries_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            run=config["run"]["name"],
+            **config["scenario"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/cross_border_flows_regional_summary_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            run=config["run"]["name"],
+            **config["scenario"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/cross_border_flows_regional_bilateral_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
             run=config["run"]["name"],
             **config["scenario"],
         ),
