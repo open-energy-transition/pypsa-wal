@@ -233,14 +233,10 @@ rule export_cross_border_flows:
     output:
         timeseries=RESULTS
         + "csvs/individual/cross_border_flows_timeseries_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
-        summary=RESULTS
-        + "csvs/individual/cross_border_flows_summary_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
         bilateral=RESULTS
         + "csvs/individual/cross_border_flows_bilateral_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
         regional_timeseries=RESULTS
         + "csvs/individual/cross_border_flows_regional_timeseries_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
-        regional_summary=RESULTS
-        + "csvs/individual/cross_border_flows_regional_summary_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
         regional_bilateral=RESULTS
         + "csvs/individual/cross_border_flows_regional_bilateral_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
     threads: 1

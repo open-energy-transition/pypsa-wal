@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
 #
 # SPDX-License-Identifier: MIT
@@ -727,23 +726,16 @@ if __name__ == "__main__":
     # Aggregate by country, carrier, timestamp
     timeseries = aggregate_timeseries_by_country_carrier(detailed_flows)
 
-    # Calculate summary
-    summary = calculate_summary(timeseries, n)
-
     # Calculate bilateral flows
     bilateral = calculate_bilateral_flows(detailed_flows, n)
 
     # Calculate regional aggregations
     regional_timeseries = aggregate_timeseries_by_region_carrier(detailed_flows)
-    regional_summary = calculate_regional_summary(regional_timeseries, n)
     regional_bilateral = calculate_regional_bilateral_flows(detailed_flows, n)
 
     # Export country-level results
     logger.info(f"Exporting country time series to {snakemake.output.timeseries}")
     timeseries.to_csv(snakemake.output.timeseries, index=False)
-
-    logger.info(f"Exporting country summary to {snakemake.output.summary}")
-    summary.to_csv(snakemake.output.summary, index=False)
 
     logger.info(f"Exporting country bilateral flows to {snakemake.output.bilateral}")
     bilateral.to_csv(snakemake.output.bilateral, index=False)
@@ -753,9 +745,6 @@ if __name__ == "__main__":
         f"Exporting regional time series to {snakemake.output.regional_timeseries}"
     )
     regional_timeseries.to_csv(snakemake.output.regional_timeseries, index=False)
-
-    logger.info(f"Exporting regional summary to {snakemake.output.regional_summary}")
-    regional_summary.to_csv(snakemake.output.regional_summary, index=False)
 
     logger.info(
         f"Exporting regional bilateral flows to {snakemake.output.regional_bilateral}"
