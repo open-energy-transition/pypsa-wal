@@ -20,6 +20,14 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     """
     Extract all connection flows at each timestep.
 
+    For AC lines (bidirectional by nature):
+    - Positive flow: energy flows bus0 → bus1
+    - Negative flow: energy flows bus1 → bus0
+
+    For links:
+    - Unidirectional (p_min_pu >= 0): always flow bus0 → bus1
+    - Bidirectional (p_min_pu < 0): positive flows bus0 → bus1, negative flows bus1 → bus0
+
     Parameters
     ----------
     n : pypsa.Network
@@ -54,14 +62,22 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         .reset_index()
         .rename(columns={0: "flow_MW"})
         .merge(
-            n.links[["bus0", "bus1", "carrier", "efficiency"]],
+            n.links[["bus0", "bus1", "carrier", "efficiency", "p_min_pu"]],
             left_on="Link",
             right_index=True,
         )
         .assign(
-            flow_MW=lambda df: df["flow_MW"] * df["efficiency"],
-            from_bus=lambda df: df["bus0"],
-            to_bus=lambda df: df["bus1"],
+            # Handle bidirectional links (p_min_pu < 0)
+            is_bidirectional=lambda df: df["p_min_pu"] < 0,
+            positive_flow=lambda df: df["flow_MW"] >= 0,
+            # For bidirectional: swap buses if negative flow; for unidirectional: keep as is
+            from_bus=lambda df: np.where(
+                df["is_bidirectional"] & ~df["positive_flow"], df["bus1"], df["bus0"]
+            ),
+            to_bus=lambda df: np.where(
+                df["is_bidirectional"] & ~df["positive_flow"], df["bus0"], df["bus1"]
+            ),
+            flow_MW=lambda df: (df["flow_MW"].abs() * df["efficiency"]),
         )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MW"]]
     )
 
