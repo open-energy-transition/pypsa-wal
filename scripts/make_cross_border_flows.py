@@ -67,10 +67,8 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
             right_index=True,
         )
         .assign(
-            # Handle bidirectional links (p_min_pu < 0)
             is_bidirectional=lambda df: df["p_min_pu"] < 0,
             positive_flow=lambda df: df["flow_MW"] >= 0,
-            # For bidirectional: swap buses if negative flow; for unidirectional: keep as is
             from_bus=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus1"], df["bus0"]
             ),
