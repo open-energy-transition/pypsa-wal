@@ -65,6 +65,7 @@ renewable:
 
 
 clustering:
+  mode: custom_busmap_BE
   exclude_carriers: ["OCGT", "offwind-ac", "coal"]
   temporal:
     resolution_elec: 24h
