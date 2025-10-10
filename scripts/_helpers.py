@@ -411,15 +411,16 @@ def progress_retrieve(url, file, disable=False):
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     # Hotfix - Bug, tqdm not working with disable=False
     disable = True
+    chunk_size = 1024
 
     if disable:
         response = requests.get(url, headers=headers, stream=True)
         with open(file, "wb") as f:
-            f.write(response.content)
+            for data in response.iter_content(chunk_size=chunk_size):
+                    f.write(data)
     else:
         response = requests.get(url, headers=headers, stream=True)
         total_size = int(response.headers.get("content-length", 0))
-        chunk_size = 1024
 
         with tqdm(
             total=total_size,
