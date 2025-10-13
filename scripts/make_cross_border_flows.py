@@ -62,7 +62,7 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         .reset_index()
         .rename(columns={0: "flow_MW"})
         .merge(
-            n.links[["bus0", "bus1", "carrier", "efficiency", "p_min_pu"]],
+            n.links[["bus0", "bus1", "carrier", "p_min_pu"]],
             left_on="Link",
             right_index=True,
         )
@@ -75,7 +75,6 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
             to_bus=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus0"], df["bus1"]
             ),
-            flow_MW=lambda df: (df["flow_MW"].abs() * df["efficiency"]),
         )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MW"]]
     )
 
