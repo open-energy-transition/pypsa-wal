@@ -547,7 +547,7 @@ def apply_commodity_grouping(df, commodity_to_group, groups_info, commodities_df
     return dfg
 
 
-def extract_pypsa_demands(annual_values_df, processes_df, commodities_mapping_df, start_year=2021, end_year=2050, apply_netting=True):
+def extract_pypsa_demands(annual_values_df,mapping, raw_flows_df, processes_df, commodities_mapping_df, start_year=2021, end_year=2050, apply_netting=True):
     """
     Extract aggregated PyPSA demands from TIMES data based on Aggregation Level 1 mapping
     and PyPSA Energy Carrier mapping.
@@ -687,9 +687,29 @@ def extract_pypsa_demands(annual_values_df, processes_df, commodities_mapping_df
     years = [y for y in available_years if start_year <= y <= end_year]
     
     print(f"Available years in data: {years}")
-    
+    #Extracting heating capacities
+    capacity_value = raw_flows_df.copy()
     for year in years:
         print(f"Processing year {year}...")
+        filtered_capacities = capacity_value.loc[
+            (capacity_value['year'] == year) &
+            (capacity_value['variable'].isin(['VAR_Cap', 'VAR_Ncap']))
+        ]
+        filtered_capacities = filtered_capacities.copy()
+        map_dict = mapping.set_index("Technology (Process)")["Aggregation Level 2"].to_dict()
+        filtered_capacities["mapped_process"] = filtered_capacities["process_code"].map(map_dict)
+        aggregated_capacities = filtered_capacities.groupby("mapped_process", dropna=False).sum(numeric_only=True).drop(columns=['year'])
+        #convert into MW
+        aggregated_capacities = (aggregated_capacities * 1000).round(2)
+        #Droping all other technologies
+        aggregated_capacities = aggregated_capacities[aggregated_capacities.index.str.contains('boiler|heat pump|stove|thermal|heater', case=False, na=False)]
+        aggregated_capacities["year"] = year
+        output_files = list(snakemake.output.heating_capacities)
+        matching_files = [f for f in output_files if str(year) in Path(f).stem]
+        if matching_files:
+           output_file = matching_files[0]
+           aggregated_capacities.to_csv(output_file, index=True)
+           print(f"  Saved {output_file}")
         
         # Filter data for this year and VAR_FIN/VAR_FOUT only
         year_df = annual_values_df[
@@ -762,17 +782,10 @@ def extract_pypsa_demands(annual_values_df, processes_df, commodities_mapping_df
             # Sum the values and convert PJ to TWh (1 PJ = 0.277778 TWh)
             total_pj = filtered_df['value'].sum()
             total_twh = total_pj * 0.277778
-            heating_keywords = ['boiler', 'heater', 'heat pump', 'geothermal', 'solar thermal', 'district heating']
-            if any(keyword in category.lower() for keyword in heating_keywords):
-               # 1 PJ/year = 31.7 MW
-               total_mw = total_pj * 31.7
-            else:
-               total_mw = 0.0
             results.append({
                 'category': category,
                 'TWh': total_twh,
-                'PJ': total_pj,
-                'MW': total_mw
+                'PJ': total_pj
             })
         
         # Save to CSV
@@ -935,7 +948,7 @@ def main():
     # Load process mapping and construct processes_df from mapping
     process_mapping_file = snakemake.input.process_mapping_file
     processes_df = pd.read_csv(process_mapping_file)
-
+    mapping = processes_df.copy()
     if 'Process' not in processes_df.columns and 'Technology (Process)' in processes_df.columns:
         processes_df = processes_df.rename(columns={'Technology (Process)': 'Process'})
     if 'Description' not in processes_df.columns:
@@ -980,7 +993,7 @@ def main():
     if raw_flows_df.empty:
         print("No valid energy flow data was processed. Exiting.")
         return
-
+    
     # --- Aggregate to annual ---
     annual_values_df = aggregate_to_annual(raw_flows_df)
 
@@ -1010,6 +1023,8 @@ def main():
     # --- Extract PyPSA demands ---
     extract_pypsa_demands(
         annual_values_df,
+        mapping,
+        raw_flows_df,
         processes_df,
         mapping_df,
         start_year=2021,

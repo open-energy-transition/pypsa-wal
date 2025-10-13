@@ -34,6 +34,7 @@ rule build_wallon_demands:
         process_mapping_file="data/mapping_processes.csv",
         mapping_file="data/mapping_commodities.csv",
     output:
+        heating_capacities =expand(resources("heating_capacities_{year}.csv"), year=years), 
         pypsa_demands=expand(resources("pypsa_demands_{year}.csv"), year=years), 
     log:
         logs("build_wallon_demands.log"),
