@@ -5267,7 +5267,7 @@ def add_shipping(
     all_navigation = domestic_navigation + international_navigation
     p_set = all_navigation * 1e6 / nhours
 
-    if shipping_hydrogen_share:
+    if options["shipping"]:
         oil_efficiency = options.get(
             "shipping_oil_efficiency", options.get("shipping_average_efficiency", 0.4)
         )
@@ -5305,8 +5305,13 @@ def add_shipping(
         efficiency = (
             options["shipping_oil_efficiency"] / costs.at["fuel cell", "efficiency"]
         )
-        p_set_hydrogen = shipping_hydrogen_share * p_set * efficiency
-
+        #Changes to consider the TIMES values for shipping for wallon region as all domestic shipping
+        #is oil based
+        other_nodes = p_set.index.drop("BEWAL", errors='ignore')
+        p_set_hydrogen = pd.Series()
+        p_set_hydrogen = shipping_hydrogen_share * p_set.loc[other_nodes] * efficiency
+        p_set_hydrogen["BEWAL"] = 0.0
+        p_set_hydrogen = p_set_hydrogen.reindex(p_set.index)
         n.add(
             "Load",
             nodes,
@@ -5316,17 +5321,20 @@ def add_shipping(
             p_set=p_set_hydrogen,
         )
 
-    if shipping_methanol_share:
+    if options["shipping"]:
         efficiency = (
             options["shipping_oil_efficiency"] / options["shipping_methanol_efficiency"]
         )
-
+        p_set_tot = p_set.rename(lambda x: x + " shipping methanol")
+        other_nodes = p_set_tot.index.drop("BEWAL shipping methanol", errors='ignore')
+        p_set_methanol_shipping = pd.Series()
         p_set_methanol_shipping = (
             shipping_methanol_share
-            * p_set.rename(lambda x: x + " shipping methanol")
+            * p_set_tot.loc[other_nodes]
             * efficiency
         )
-
+        p_set_methanol_shipping["BEWAL shipping methanol"] = 0.0
+        p_set_methanol_shipping = p_set_methanol_shipping.reindex(p_set_tot.index)
         if not options["methanol"]["regional_methanol_demand"]:
             p_set_methanol_shipping = p_set_methanol_shipping.sum()
 
@@ -5360,8 +5368,16 @@ def add_shipping(
             ],  # CO2 intensity methanol based on stoichiometric calculation with 22.7 GJ/t methanol (32 g/mol), CO2 (44 g/mol), 277.78 MWh/TJ = 0.218 t/MWh
         )
 
-    if shipping_oil_share:
-        p_set_oil = shipping_oil_share * p_set.rename(lambda x: x + " shipping oil")
+    if options["shipping"]:
+        p_set_total = p_set.rename(lambda x: x + " shipping oil")
+        other_nodes = p_set_total.index.drop("BEWAL shipping oil", errors='ignore')
+        p_set_oil = pd.Series()
+        p_set_oil = (
+            shipping_oil_share
+            * p_set_total.loc[other_nodes]
+        )
+        p_set_oil["BEWAL shipping oil"] = p_set_total.loc["BEWAL shipping oil"]
+        p_set_oil = p_set_oil.reindex(p_set_total.index)
 
         if not options["regional_oil_demand"]:
             p_set_oil = p_set_oil.sum()

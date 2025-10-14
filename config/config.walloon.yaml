@@ -18,7 +18,7 @@ scenario:
   clusters:
   - adm
   sector_opts:
-  - '3H'
+  - ''
   planning_horizons:
   - 2050
 
@@ -37,8 +37,8 @@ countries:
 clustering:
   mode: custom_busmap_BE
   temporal:
-    resolution_elec: 1h
-    resolution_sector: 1h
+    resolution_elec: 3h
+    resolution_sector: 3h
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#solving
 solving:
