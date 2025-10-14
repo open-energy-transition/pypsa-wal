@@ -2803,7 +2803,6 @@ def build_heat_demand(
 
     heat_demand = pd.concat(heat_demand, axis=1)
     electric_heat_supply = pd.concat(electric_heat_supply, axis=1)
-
     # subtract from electricity load since heat demand already in heat_demand
     electric_nodes = n.loads.index[n.loads.carrier == "electricity"].drop("BEWAL")
     n.loads_t.p_set[electric_nodes] = (
@@ -5009,7 +5008,6 @@ def add_industry(
         )
         n.loads_t.p_set[loads_i] *= factor
         #Changing wallon electricity and residential demands with TIMES value
-        #subtracting electric demand for space heating and hot water as its already in heating demands
         wallon_elec = pd.read_csv(snakemake.input.wallon_demands,index_col=0)[["TWh"]]
         sum_result = wallon_elec.loc[
                    ['total electricity residential', 'total electricity services', 'total rail'], 'TWh'

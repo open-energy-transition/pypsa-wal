@@ -824,13 +824,13 @@ SUPDST00,Fuel Tech - Mazout,SUP,.PRE.,Fuel Tech - Mazout (SUP),PJ,PJA,PRE,SUPDST
 SUPELC00,Fuel Tech - Electricity,SUP,.PRE.,Fuel Tech - Electricity (SUP),PJ,PJA,PRE,SUPELC,ANNUAL,"0,00",Fuel Tech - Electricity,Fuel Tech - Electricity
 SUPGAS00,Fuel Tech - Natural Gas,SUP,.PRE.,Fuel Tech - Natural Gas (SUP),PJ,PJA,PRE,SUPGAS,ANNUAL,"0,00",Fuel Tech - Natural Gas,Fuel Tech - Natural Gas
 SUPGMX00,Fuel Tech - Natural Gas biogas mixed,SUP,.PRE.,Fuel Tech - Natural Gas biogas mixed (SUP),PJ,PJA,PRE,SUPGMX,ANNUAL,"0,00",Fuel Tech - Natural Gas biogas mixed,Fuel Tech - Natural Gas biogas mixed
-TADFKER00,Aviation,TRA,.DMD.,Aviation Domestic Freight Kerosene Tech Existing,PJ,PJA,DMD,TADF,ANNUAL,"0,00",international aviation,Aviation
-TADPKER00,Aviation,TRA,.DMD.,Aviation Domestic Passengers Kerosene Tech Existing,PJ,PJA,DMD,TADP,ANNUAL,"0,00",international aviation,Aviation
-TAIFKER00,Aviation,TRA,.DMD.,Aviation International Freight Kerosene Tech Existing,PJ,PJA,DMD,TAIF,ANNUAL,"0,00",international aviation,Aviation
-TAIPKER00,Aviation,TRA,.DMD.,Aviation International Passengers Kerosene Tech Existing,PJ,PJA,DMD,TAIP,ANNUAL,"0,00",international aviation,Aviation
-TAVDOMBDLFN01,Aviation,TRA,.DMD.TADF.,Transport marchandise - Aviation - Domestic - Biokerosene (New),PJ,000VEH,DMD,TADF,ANNUAL,"1,00",domestic aviation,Aviation
-TAVDOMBDLPN01,Aviation,TRA,.DMD.TADP.,Transport personne - Aviation - Domestic - Biokerosene (New),PJ,000VEH,DMD,TADP,ANNUAL,"1,00",domestic aviation,Aviation
-TAVINTHH2PN01,Aviation,TRA,.DMD.TAIP.,Transport personne- Aviation - International - Hydrogen (New),PJ,000VEH,DMD,TAIP,ANNUAL,"1,00",international aviation,Aviation
+TADFKER00,Aviation,TRA,.DMD.,Aviation Domestic Freight Kerosene Tech Existing,PJ,PJA,DMD,TADF,ANNUAL,"0,00",international aviation,international aviation
+TADPKER00,Aviation,TRA,.DMD.,Aviation Domestic Passengers Kerosene Tech Existing,PJ,PJA,DMD,TADP,ANNUAL,"0,00",international aviation,international aviation
+TAIFKER00,Aviation,TRA,.DMD.,Aviation International Freight Kerosene Tech Existing,PJ,PJA,DMD,TAIF,ANNUAL,"0,00",international aviation,international aviation
+TAIPKER00,Aviation,TRA,.DMD.,Aviation International Passengers Kerosene Tech Existing,PJ,PJA,DMD,TAIP,ANNUAL,"0,00",international aviation,international aviation
+TAVDOMBDLFN01,Aviation,TRA,.DMD.TADF.,Transport marchandise - Aviation - Domestic - Biokerosene (New),PJ,000VEH,DMD,TADF,ANNUAL,"1,00",domestic aviation,domestic aviation
+TAVDOMBDLPN01,Aviation,TRA,.DMD.TADP.,Transport personne - Aviation - Domestic - Biokerosene (New),PJ,000VEH,DMD,TADP,ANNUAL,"1,00",domestic aviation,domestic aviation
+TAVINTHH2PN01,Aviation,TRA,.DMD.TAIP.,Transport personne- Aviation - International - Hydrogen (New),PJ,000VEH,DMD,TAIP,ANNUAL,"1,00",international aviation,international aviation
 TBUSBDLU00,Road transport (public),TRA,.DMD.,Buses Biodiesel Urban Existing,BVKM,000VEH,DMD,TBU,ANNUAL,"0,00",Road transport (public),Road transport (public)
 TBUSDSTC00,Road transport (public),TRA,.DMD.,Buses Diesel Coaches Existing,BVKM,000VEH,DMD,TBC,ANNUAL,"0,00",Road transport (public),Road transport (public)
 TBUSDSTU00,Road transport (public),TRA,.DMD.,Buses Diesel Urban Existing,BVKM,000VEH,DMD,TBU,ANNUAL,"0,00",Road transport (public),Road transport (public)
@@ -902,7 +902,7 @@ TMOPGSLN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Mopeds Gasoline New,BVKM,000VEH,DMD
 TMOTELCN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Motorcycles Electric New,BVKM,000VEH,DMD,TMOT,ANNUAL,"1,00",2 and 3 wheelers,2 and 3 wheelers
 TMOTGSL00,2 and 3 wheelers,TRA,.DMD.,Motorcycles Gasoline  Existing,BVKM,000VEH,DMD,TMOT,ANNUAL,"0,00",2 and 3 wheelers,2 and 3 wheelers
 TMOTGSLN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Motorcycles Gasoline New,BVKM,000VEH,DMD,TMOT,ANNUAL,"1,00",2 and 3 wheelers,2 and 3 wheelers
-TNDFDST00,Navigation Domestic Freight Tech Existing,TRA,.DMD.,Navigation Domestic Freight Tech Existing,BTKM,BTKMA,DMD,TNDF,ANNUAL,"0,00",domestic navigation,Navigation Domestic Freight Tech Existing
+TNDFDST00,Navigation Domestic Freight Tech Existing,TRA,.DMD.,Navigation Domestic Freight Tech Existing,BTKM,BTKMA,DMD,TNDF,ANNUAL,"0,00",domestic navigation,domestic navigation
 TRABDL00,Fuel Tech - Biodiesel,TRA,.PRE.,Fuel Tech - Biodiesel (TRA),PJ,PJA,PRE,TRABDL,ANNUAL,"0,00",Fuel Tech - Biodiesel,Fuel Tech - Biodiesel
 TRABGS00,Fuel Tech – Biogas,TRA,.PRE.,Fuel tech - biogas (TRA),PJ,PJA,PRE,TRABGS,ANNUAL,"0,00",Fuel Tech – Biogas,Fuel Tech – Biogas
 TRADST00,Fuel Tech – Diesel,TRA,.PRE.,Fuel Tech - Diesel (TRA),PJ,PJA,PRE,TRADST,ANNUAL,"0,00",Fuel Tech – Diesel,Fuel Tech – Diesel
