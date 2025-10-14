@@ -20,7 +20,7 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     """
     Extract all connection flows at each snapshot.
 
-    For AC lines (bidirectional by nature):
+    For lines (bidirectional):
     - Positive flow: energy flows bus0 → bus1
     - Negative flow: energy flows bus1 → bus0
 
@@ -38,7 +38,6 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     pd.DataFrame
         Columns: snapshot, from_bus, to_bus, carrier, flow_MW
     """
-    # Process AC transmission lines for electricity flows
     lines_flows = (
         n.lines_t.p0.stack()
         .reset_index()
@@ -56,7 +55,6 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MW"]]
     )
 
-    # Process links (DC, H2, sector coupling, etc.) for other energy carriers
     links_flows = (
         n.links_t.p0.stack()
         .reset_index()
@@ -75,10 +73,10 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
             to_bus=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus0"], df["bus1"]
             ),
+            flow_MW=lambda df: df["flow_MW"].abs(),
         )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MW"]]
     )
 
-    # Combine all flows and sort
     df = pd.concat([lines_flows, links_flows], ignore_index=True).sort_values(
         ["snapshot", "from_bus", "to_bus", "carrier"]
     )
