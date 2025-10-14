@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 """
-Export energy flows across all at each snapshot.
+Export energy flows (imports and exports) at each snapshot.
 """
 
 import logging
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     """
-    Extract all connection flows at each snapshot.
+    Extract all lines and links flows at each snapshot.
 
     For lines (bidirectional):
     - Positive flow: energy flows bus0 → bus1
@@ -26,7 +26,9 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
 
     For links (can be unidirectional or bidirectional):
     - Unidirectional (p_min_pu >= 0): always flow bus0 → bus1
-    - Bidirectional (p_min_pu < 0): positive flows bus0 → bus1, negative flows bus1 → bus0
+    - Bidirectional (p_min_pu < 0):
+        - positive flows bus0 → bus1
+        - negative flows bus1 → bus0
 
     Parameters
     ----------
