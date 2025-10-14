@@ -650,66 +650,66 @@ RDW_R_N2F,Buildings: built area,RSD,.DMD.,New Residential Building 2Fac,MM2,MM2-
 RDW_R_N3F,Buildings: built area,RSD,.DMD.,New Residential Building 3Fac,MM2,MM2-A,DMD,R_N3Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
 RDW_R_N4F,Buildings: built area,RSD,.DMD.,New Residential Building 4Fac,MM2,MM2-A,DMD,R_N4Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
 RDW_R_NAP,Buildings: built area,RSD,.DMD.,New Residential Building App,MM2,MM2-A,DMD,R_NAppa,ANNUAL,"1,00",Buildings: built area,Buildings: built area
-RH2FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.COA.00.Furnace.,PJ,GW,PRE,RH2FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential Coal heater
-RH2FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.ELC.00.Resistance.,PJ,GW,PRE,RH2FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential electric heater
-RH2FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.ELC.00.Heat Pump.,PJ,GW,PRE,RH2FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential  Heat pump
-RH2FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH2F-New2,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RH2FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential electric heater
-RH2FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.GEO.00.Furnace.,PJ,GW,PRE,RH2FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential geothermal heating
-RH2FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.GMX.00.Furnace.,PJ,GW,PRE,RH2FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RH2FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential gas heater
+RH2FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.COA.00.Furnace.,PJ,GW,PRE,RH2FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Coal heater
+RH2FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.ELC.00.Resistance.,PJ,GW,PRE,RH2FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral electric heater
+RH2FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.ELC.00.Heat Pump.,PJ,GW,PRE,RH2FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Heat pump
+RH2FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH2F-New2,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RH2FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral electric heater
+RH2FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.GEO.00.Furnace.,PJ,GW,PRE,RH2FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral geothermal heating
+RH2FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.GMX.00.Furnace.,PJ,GW,PRE,RH2FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RH2FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral gas heater
 RH2FHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RH2F-New1,PJ,GW,PRE,RH2FHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
-RH2FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.LOG.00.Stove.,PJ,GW,PRE,RH2FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RH2FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.LPG.00.Furnace.,PJ,GW,PRE,RH2FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RH2FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.OIL.00.Furnace.,PJ,GW,PRE,RH2FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential oil heater
-RH2FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential oil heater
-RH2FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.PEL.00.Stove.,PJ,GW,PRE,RH2FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RH3FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.COA.00.Furnace.,PJ,GW,PRE,RH3FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential Coal heater
-RH3FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.ELC.00.Resistance.,PJ,GW,PRE,RH3FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential electric heater
-RH3FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.ELC.00.Heat Pump.,PJ,GW,PRE,RH3FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential  Heat pump
-RH3FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH3F-New2,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RH3FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential electric heater
-RH3FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.GEO.00.Furnace.,PJ,GW,PRE,RH3FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential geothermal heating
-RH3FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.GMX.00.Furnace.,PJ,GW,PRE,RH3FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RH3FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential gas heater
+RH2FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.LOG.00.Stove.,PJ,GW,PRE,RH2FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RH2FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.LPG.00.Furnace.,PJ,GW,PRE,RH2FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RH2FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.OIL.00.Furnace.,PJ,GW,PRE,RH2FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral oil heater
+RH2FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral oil heater
+RH2FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.PEL.00.Stove.,PJ,GW,PRE,RH2FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RH3FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.COA.00.Furnace.,PJ,GW,PRE,RH3FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Coal heater
+RH3FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.ELC.00.Resistance.,PJ,GW,PRE,RH3FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral electric heater
+RH3FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.ELC.00.Heat Pump.,PJ,GW,PRE,RH3FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Heat pump
+RH3FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH3F-New2,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RH3FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential urban decentral electric heater
+RH3FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.GEO.00.Furnace.,PJ,GW,PRE,RH3FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral geothermal heating
+RH3FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.GMX.00.Furnace.,PJ,GW,PRE,RH3FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RH3FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential urban decentral gas heater
 RH3FHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RH3F-New1,PJ,GW,PRE,RH3FHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
-RH3FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.LOG.00.Stove.,PJ,GW,PRE,RH3FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RH3FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.LPG.00.Furnace.,PJ,GW,PRE,RH3FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RH3FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.OIL.00.Furnace.,PJ,GW,PRE,RH3FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential oil heater
-RH3FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential oil heater
-RH3FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.PEL.00.Stove.,PJ,GW,PRE,RH3FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RH4FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.COA.00.Furnace.,PJ,GW,PRE,RH4FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential Coal heater
-RH4FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.ELC.00.Resistance.,PJ,GW,PRE,RH4FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential electric heater
-RH4FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.ELC.00.Heat Pump.,PJ,GW,PRE,RH4FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential  Heat pump
-RH4FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH4F-New2,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RH4FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential electric heater
-RH4FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.GEO.00.Furnace.,PJ,GW,PRE,RH4FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential geothermal heating
-RH4FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.GMX.00.Furnace.,PJ,GW,PRE,RH4FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RH4FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential gas heater
+RH3FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.LOG.00.Stove.,PJ,GW,PRE,RH3FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RH3FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.LPG.00.Furnace.,PJ,GW,PRE,RH3FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RH3FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.OIL.00.Furnace.,PJ,GW,PRE,RH3FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral oil heater
+RH3FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential urban decentral oil heater
+RH3FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.PEL.00.Stove.,PJ,GW,PRE,RH3FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RH4FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.COA.00.Furnace.,PJ,GW,PRE,RH4FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural Coal heater
+RH4FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.ELC.00.Resistance.,PJ,GW,PRE,RH4FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural electric heater
+RH4FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.ELC.00.Heat Pump.,PJ,GW,PRE,RH4FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential rural Heat pump
+RH4FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH4F-New2,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural Heat pump
+RH4FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural electric heater
+RH4FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.GEO.00.Furnace.,PJ,GW,PRE,RH4FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural geothermal heating
+RH4FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.GMX.00.Furnace.,PJ,GW,PRE,RH4FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural gas heater
+RH4FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural gas heater
 RH4FHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RH4F-New1,PJ,GW,PRE,RH4FHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
-RH4FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.LOG.00.Stove.,PJ,GW,PRE,RH4FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RH4FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.LPG.00.Furnace.,PJ,GW,PRE,RH4FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RH4FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.OIL.00.Furnace.,PJ,GW,PRE,RH4FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential oil heater
-RH4FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential oil heater
-RH4FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.PEL.00.Stove.,PJ,GW,PRE,RH4FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RHAPCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.COA.00.Furnace.,PJ,GW,PRE,RHAPCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential Coal heater
-RHAPELC100,space heating residential,RSD,.PRE.,/,PJ,GW,PRE,RHAPELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential electric heater
-RHAPELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.ELC.00.Heat Pump.,PJ,GW,PRE,RHAPELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential  Heat pump
-RHAPELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHAP-New2,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RHAPELCN1,space heating residential,RSD,.PRE.,Electric radiators-RHAP-New1,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential electric heater
-RHAPGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.GEO.00.Furnace.,PJ,GW,PRE,RHAPGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential geothermal heating
-RHAPGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.GMX.00.Furnace.,PJ,GW,PRE,RHAPGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RHAPGMXN2,space heating residential,RSD,.PRE.,Natural gas boiler condensing-RHAP-New2,PJ,GW,PRE,RHAPGMXN2_NRGO,ANNUAL,"1,00",residential space heating,Residential gas heater
+RH4FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.LOG.00.Stove.,PJ,GW,PRE,RH4FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural biomass heater
+RH4FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.LPG.00.Furnace.,PJ,GW,PRE,RH4FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural gas heater
+RH4FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.OIL.00.Furnace.,PJ,GW,PRE,RH4FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural oil heater
+RH4FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural oil heater
+RH4FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.PEL.00.Stove.,PJ,GW,PRE,RH4FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural biomass heater
+RHAPCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.COA.00.Furnace.,PJ,GW,PRE,RHAPCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Coal heater
+RHAPELC100,space heating residential,RSD,.PRE.,/,PJ,GW,PRE,RHAPELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral electric heater
+RHAPELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.ELC.00.Heat Pump.,PJ,GW,PRE,RHAPELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Heat pump
+RHAPELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHAP-New2,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RHAPELCN1,space heating residential,RSD,.PRE.,Electric radiators-RHAP-New1,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential urban decentral electric heater
+RHAPGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.GEO.00.Furnace.,PJ,GW,PRE,RHAPGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral geothermal heating
+RHAPGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.GMX.00.Furnace.,PJ,GW,PRE,RHAPGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RHAPGMXN2,space heating residential,RSD,.PRE.,Natural gas boiler condensing-RHAP-New2,PJ,GW,PRE,RHAPGMXN2_NRGO,ANNUAL,"1,00",residential space heating,Residential urban decentral gas heater
 RHAPHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RHAP-New1,PJ,GW,PRE,RHAPHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
-RHAPLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.LOG.00.Stove.,PJ,GW,PRE,RHAPLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RHAPLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.LPG.00.Furnace.,PJ,GW,PRE,RHAPLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential gas heater
-RHAPOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.OIL.00.Furnace.,PJ,GW,PRE,RHAPOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential oil heater
-RHAPOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RHAP-New1,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential oil heater
-RHAPPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.PEL.00.Stove.,PJ,GW,PRE,RHAPPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential biomass heater
-RHN2FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN2F-New2,PJ,GW,PRE,RHN2F,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RHN3FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN3F-New2,PJ,GW,PRE,RHN3F,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RHN4FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN4F-New2,PJ,GW,PRE,RHN4F,ANNUAL,"1,00",residential space heating,Residential  Heat pump
-RHNAPELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHNAP-New2,PJ,GW,PRE,RHNAP,ANNUAL,"1,00",residential space heating,Residential  Heat pump
+RHAPLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.LOG.00.Stove.,PJ,GW,PRE,RHAPLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RHAPLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.LPG.00.Furnace.,PJ,GW,PRE,RHAPLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RHAPOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.OIL.00.Furnace.,PJ,GW,PRE,RHAPOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral oil heater
+RHAPOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RHAP-New1,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential urban decentral oil heater
+RHAPPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.PEL.00.Stove.,PJ,GW,PRE,RHAPPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RHN2FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN2F-New2,PJ,GW,PRE,RHN2F,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RHN3FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN3F-New2,PJ,GW,PRE,RHN3F,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RHN4FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN4F-New2,PJ,GW,PRE,RHN4F,ANNUAL,"1,00",residential space heating,Residential rural Heat pump
+RHNAPELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHNAP-New2,PJ,GW,PRE,RHNAP,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
 RLIGELC200,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
 RLIGELC300,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.Halogen.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
 RLIGELC400,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.Fluorescent.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
@@ -737,59 +737,59 @@ RSDOIL00,Fuel Tech - Diesel,RSD,.PRE.,Fuel Tech - Diesel (RSD),PJ,PJA,PRE,RSDOIL
 RSDPEL00,Fuel Tech - pellets,RSD,.PRE.,Fuel Tech - pellets (RSD),PJ,PJA,PRE,RSDPEL,ANNUAL,"0,00",Fuel Tech - pellets,Fuel Tech - pellets
 RSDPVELC,PV residential,RSD,.ELE.,PV residential,PJ,GW,ELE,RSDPVELC_NRGO,DAYNITE,"0,00",PV residential,PV residential
 RSDSOL00,Fuel Tech - Solar,RSD,.PRE.,Fuel Tech - Solar (RSD),PJ,PJA,PRE,RSDSOL,ANNUAL,"0,00",Fuel Tech - Solar,Fuel Tech - Solar
-RW2FCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.COA.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential Coal heater
-RW2FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.ELC.00.Water Heater.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential electric heater
-RW2FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.ELC.00.Heat Pump.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential  Heat pump
-RW2FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.GMX.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential gas heater
-RW2FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential gas heater
-RW2FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.LOG.00.Stove.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RW2FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.LPG.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential gas heater
-RW2FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.OIL.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential oil heater
-RW2FOILN1,residential hot water,RSD,.PRE.,Oil boiler-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential oil heater
-RW2FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.PEL.00.Stove.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RW2FPELN1,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential biomass heater
-RW2FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.SOL.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential solar thermal
-RW3FCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.COA.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential Coal heater
-RW3FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.ELC.00.Water Heater.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential electric heater
-RW3FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.ELC.00.Heat Pump.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential  Heat pump
-RW3FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.GMX.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential gas heater
-RW3FGMXN3,residential hot water,RSD,.PRE.,Natural gas boiler-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential gas heater
-RW3FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.LOG.00.Stove.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RW3FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.LPG.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential gas heater
-RW3FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.OIL.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential oil heater
-RW3FOILN3,residential hot water,RSD,.PRE.,Oil boiler-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential oil heater
-RW3FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.PEL.00.Stove.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RW3FPELN3,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential biomass heater
-RW3FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.SOL.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential solar thermal
-RW4FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.ELC.00.Water Heater.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential electric heater
-RW4FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.ELC.00.Heat Pump.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential  Heat pump
-RW4FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.GMX.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential gas heater
-RW4FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential gas heater
-RW4FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.LOG.00.Stove.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RW4FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.LPG.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential gas heater
-RW4FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.OIL.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential oil heater
-RW4FOILN1,residential hot water,RSD,.PRE.,Oil boiler-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential oil heater
-RW4FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.PEL.00.Stove.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RW4FPELN1,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential biomass heater
-RW4FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.SOL.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential solar thermal
-RWAPCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.COA.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential Coal heater
-RWAPELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.ELC.00.Water Heater.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential electric heater
-RWAPELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.ELC.00.Heat Pump.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential  Heat pump
-RWAPGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.GMX.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential gas heater
-RWAPGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWAP-New1,PJ,GW,PRE,RWAP,ANNUAL,"1,00",residential hot water,Residential gas heater
-RWAPLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.LOG.00.Stove.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RWAPLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.LPG.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential gas heater
-RWAPOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.OIL.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential oil heater
-RWAPPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.PEL.00.Stove.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential biomass heater
-RWAPSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.SOL.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential solar thermal
-RWN2FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN2F-New1,PJ,GW,PRE,RWN2F,ANNUAL,"1,00",residential hot water,Residential  Heat pump
-RWN2FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWN2F-New1,PJ,GW,PRE,RWN2F,ANNUAL,"1,00",residential hot water,Residential gas heater
-RWN3FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN3F-New1,PJ,GW,PRE,RWN3F,ANNUAL,"1,00",residential hot water,Residential  Heat pump
-RWN3FGMXN3,residential hot water,RSD,.PRE.,Natural gas boiler-RWN3F-New3,PJ,GW,PRE,RWN3F,ANNUAL,"1,00",residential hot water,Residential gas heater
-RWN4FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN4F-New1,PJ,GW,PRE,RWN4F,ANNUAL,"1,00",residential hot water,Residential  Heat pump
-RWN4FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWN4F-New1,PJ,GW,PRE,RWN4F,ANNUAL,"1,00",residential hot water,Residential gas heater
-RWNAPELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWNAP-New1,PJ,GW,PRE,RWNAP,ANNUAL,"1,00",residential hot water,Residential  Heat pump
-RWNAPGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWNAP-New1,PJ,GW,PRE,RWNAP,ANNUAL,"1,00",residential hot water,Residential gas heater
+RW2FCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.COA.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral Coal heater
+RW2FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.ELC.00.Water Heater.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral electric heater
+RW2FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.ELC.00.Heat Pump.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral Heat pump
+RW2FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.GMX.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RW2FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RW2FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.LOG.00.Stove.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RW2FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.LPG.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RW2FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.OIL.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral oil heater
+RW2FOILN1,residential hot water,RSD,.PRE.,Oil boiler-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential urban decentral oil heater
+RW2FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.PEL.00.Stove.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RW2FPELN1,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential urban decentral biomass heater
+RW2FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.SOL.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral solar thermal
+RW3FCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.COA.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral Coal heater
+RW3FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.ELC.00.Water Heater.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral electric heater
+RW3FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.ELC.00.Heat Pump.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral Heat pump
+RW3FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.GMX.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RW3FGMXN3,residential hot water,RSD,.PRE.,Natural gas boiler-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RW3FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.LOG.00.Stove.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RW3FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.LPG.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RW3FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.OIL.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral oil heater
+RW3FOILN3,residential hot water,RSD,.PRE.,Oil boiler-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential urban decentral oil heater
+RW3FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.PEL.00.Stove.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RW3FPELN3,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential urban decentral biomass heater
+RW3FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.SOL.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential urban decentral solar thermal
+RW4FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.ELC.00.Water Heater.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural electric heater
+RW4FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.ELC.00.Heat Pump.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural Heat pump
+RW4FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.GMX.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural gas heater
+RW4FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential rural gas heater
+RW4FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.LOG.00.Stove.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural biomass heater
+RW4FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.LPG.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural gas heater
+RW4FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.OIL.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural oil heater
+RW4FOILN1,residential hot water,RSD,.PRE.,Oil boiler-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential rural oil heater
+RW4FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.PEL.00.Stove.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural biomass heater
+RW4FPELN1,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential rural biomass heater
+RW4FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.SOL.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural solar thermal
+RWAPCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.COA.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral Coal heater
+RWAPELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.ELC.00.Water Heater.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral electric heater
+RWAPELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.ELC.00.Heat Pump.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral Heat pump
+RWAPGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.GMX.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RWAPGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWAP-New1,PJ,GW,PRE,RWAP,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RWAPLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.LOG.00.Stove.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RWAPLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.LPG.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RWAPOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.OIL.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral oil heater
+RWAPPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.PEL.00.Stove.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RWAPSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.SOL.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral solar thermal
+RWN2FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN2F-New1,PJ,GW,PRE,RWN2F,ANNUAL,"1,00",residential hot water,Residential urban decentral Heat pump
+RWN2FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWN2F-New1,PJ,GW,PRE,RWN2F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RWN3FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN3F-New1,PJ,GW,PRE,RWN3F,ANNUAL,"1,00",residential hot water,Residential urban decentral Heat pump
+RWN3FGMXN3,residential hot water,RSD,.PRE.,Natural gas boiler-RWN3F-New3,PJ,GW,PRE,RWN3F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RWN4FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN4F-New1,PJ,GW,PRE,RWN4F,ANNUAL,"1,00",residential hot water,Residential rural Heat pump
+RWN4FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWN4F-New1,PJ,GW,PRE,RWN4F,ANNUAL,"1,00",residential hot water,Residential rural gas heater
+RWNAPELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWNAP-New1,PJ,GW,PRE,RWNAP,ANNUAL,"1,00",residential hot water,Residential urban decentral Heat pump
+RWNAPGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWNAP-New1,PJ,GW,PRE,RWNAP,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
 Retrofit-M_C_SA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-M_C_SA,PJ,MM2,PRE,Retrofit-M_C_SA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,COM_PRE_PJ_MM2
 Retrofit-S_C_BA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_BA,PJ,MM2,PRE,Retrofit-S_C_BA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,COM_PRE_PJ_MM2
 Retrofit-S_C_BP,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_BP,PJ,MM2,PRE,Retrofit-S_C_BP_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,COM_PRE_PJ_MM2

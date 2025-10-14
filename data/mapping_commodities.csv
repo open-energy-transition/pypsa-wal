@@ -63,7 +63,7 @@ RSDGSL,Gasoline for Residential sector,PJ,RSD,,Gasoline for Residential sector,G
 BIOCRP1,Starch crops,PJ,SUP,,Starch crops,Starch crops,nan,nan,nan
 RENHYD,Hydro,PJ,SUP,,Hydro,Hydro,nan,nan,nan
 BIORPOIL,Rape seed oil,PJ,SUP,,Rape seed oil,Rape seed oil,nan,nan,nan
-RH4F,space heating for 4f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RH4F,space heating for 4f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
 BIODST,Diesel from Biomass,PJ,SUP,,Diesel from Biomass,Diesel from Biomass,nan,nan,nan
 BIORPS,Biomass: Rapeseed,PJ,SUP,,Biomass: Rapeseed,Biomass: Rapeseed,nan,nan,nan
 ELCWIN,Electricity: Wind,PJ,ELC,,Electricity: Wind,Electricity: Wind,nan,nan,nan
@@ -73,7 +73,7 @@ COMGSL,Gasoline for Commercial sector,PJ,COM,,Gasoline for Commercial sector,Gas
 GASBFT,GAS from Blast Furnace TGR,PJ,IND,,GAS from Blast Furnace TGR,GAS from Blast Furnace TGR,nan,nan,nan
 OILGSL,Fuel: Gasoline,PJ,SUP,,Fuel: Gasoline,Fuel: Gasoline,nan,nan,nan
 OILLPG,Liquified Petroleum Gas,PJ,SUP,,Liquified Petroleum Gas,Liquified Petroleum Gas,nan,nan,nan
-RW4F,hot water for 4f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RW4F,hot water for 4f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
 COMBDL,Biodiesel for Commercial sector,PJ,COM,,Biodiesel for Commercial sector,Biodiesel for Commercial sector,nan,nan,nan
 COMSOL,Commercial: Solar,PJ,COM,,Commercial: Solar,Commercial: Solar,nan,nan,nan
 BIOLOG,Wood Logs,PJ,SUP,,Wood Logs,Wood Logs,nan,nan,nan
@@ -112,15 +112,15 @@ ELCHYD,Hydro for Electricity sector,PJ,ELC,,Hydro for Electricity sector,Hydro f
 ELCOIL,Oil for Electricity sector,PJ,ELC,,Oil for Electricity sector,Oil for Electricity sector,nan,nan,nan
 SUPBGS,Biogas for Supply sector,PJ,SUP,,Biogas for Supply sector,Biogas for Supply sector,nan,nan,nan
 RHDJAP_2021,space heating for apartments (2021),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
-RHDJ4F_2021,space heating for 4f houses (2021),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
-RHN4F,space heating for 4f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RHDJ4F_2021,space heating for 4f houses (2021),PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RHN4F,space heating for 4f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
 RWN3F,hot water for 3F houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
 RHNAP,space heating for apartments,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
 RHDJ2F_2021,space heating for 2f houses (2021),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
 RHN2F,space heating for 2f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
 SUPGMX,Network gas (mixed) for Supply sector,PJ,SUP,,Network gas,Network gas,nan,nan,nan
 RWNAP,hot water for apartments (new),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
-RWN4F,hot water for 4F houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RWN4F,hot water for 4F houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
 RHDJ3F_2021,space heating for 3F houses (2021),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
 RHN3F,space heating for 3f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
 RWN2F,hot water for 2F houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan

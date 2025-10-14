@@ -3647,7 +3647,7 @@ def write_wallon_heat_demands(
     n: pypsa.Network,
 ):
     #Cleaning all components assigned to wallon region rural categories
-    patterns = ["BEWAL residential rural", "BEWAL services rural"]
+    patterns = ["BEWAL services rural"]
     components = ["carriers", "buses", "loads", "links", "generators", "stores"]
     for comp in components:
         df = getattr(n, comp)
@@ -3666,6 +3666,7 @@ def write_wallon_heat_demands(
     # Assigning wallon heat demands to a single category for residential and tertiary sectors 
     heat_categories = [
     "BEWAL residential urban decentral heat",
+    "BEWAL residential rural heat",
     "BEWAL services urban decentral heat"]
     for heat_demand in heat_categories:
        target_heat = wallon_heat.loc[[heat_demand], "TWh"].sum()
