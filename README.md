@@ -13,10 +13,10 @@ SPDX-License-Identifier: CC-BY-4.0
 [![Discord](https://img.shields.io/discord/911692131440148490?logo=discord)](https://discord.gg/AnuJBk23FU)
 [![REUSE status](https://api.reuse.software/badge/github.com/pypsa/pypsa-eur)](https://api.reuse.software/info/github.com/pypsa/pypsa-eur)
 
-# {{project_name}}
+# PyPSA-Wal
 <img src="https://raw.githubusercontent.com/open-energy-transition/oet-website/main/assets/img/oet-logo-red-n-subtitle.png" alt="Open Energy Transition Logo" width="260" height="100" align="right">
 
-This repository is a soft-fork of [PyPSA-Eur](https://github.com/pypsa/pypsa-eur) and contains the entire project `{{project_name}}` supported by [Open Energy Transition (OET)](https://openenergytransition.org/)<sup>*</sup>, including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code. The structure is also inspired by [cookiecutter-project](https://github.com/PyPSA/cookiecutter-project).
+This repository is a soft-fork of [PyPSA-Eur](https://github.com/pypsa/pypsa-eur) and contains the entire project `pypsa-wal` supported by [Open Energy Transition (OET)](https://openenergytransition.org/)<sup>*</sup>, including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code. The structure is also inspired by [cookiecutter-project](https://github.com/PyPSA/cookiecutter-project).
 
 This repository is maintained using [OET's soft-fork strategy](https://open-energy-transition.github.io/handbook/docs/Engineering/SoftForkStrategy). OET's primary aim is to contribute as much as possible to the open source (OS) upstream repositories. For long-term changes that cannot be directly merged upstream, the strategy organizes and maintains OET forks, ensuring they remain up-to-date and compatible with upstream, while also supporting future contributions back to the OS repositories.
 
@@ -38,6 +38,12 @@ This repository is maintained using [OET's soft-fork strategy](https://open-ener
 * `scripts`: includes all the Python scripts executed by the `snakemake` rules to build the model
 
 # Installation and Usage
+
+:warning: Current run time as of 18/09/2025 (PR #3) :warning:
+
+| Elapsed (wall clock) time | 18:37.24 |
+|---|---|
+| Max RSS (KB) | 8631624 (8.24 GB RAM) |
 
 ## 1. Installation
 
@@ -66,6 +72,9 @@ To generate a PDF of the dependency graph of all steps `resources/dag.pdf` run:
 <sup>*</sup> Open Energy Transition (g)GmbH, Königsallee 52, 95448 Bayreuth, Germany
 
 ----
+# PyPSA-Wal: A Sector-Coupled Open Optimisation Model of the Belgian Energy System with Emphasis on the Wallonia Region
+
+The bus-mapping of the Belgian Energy System is comprised of a representative nodes from (or nearby) the three administrative regions: Flanders, Brussels, and Wallonia with borders as described in publically available shapefiles [here](https://simplemaps.com/gis/country/be).
 
 ----
 
