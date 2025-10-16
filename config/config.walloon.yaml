@@ -40,8 +40,13 @@ clustering:
     resolution_elec: 3h
     resolution_sector: 3h
 
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
+sector:
+  oil_boilers: true
+
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#solving
 solving:
   solver:
     name: gurobi
     options: gurobi-default
+
