@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: Open Energy Transition gGmbH and contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: MIT
 
@@ -68,6 +69,9 @@ from scripts._helpers import (
     set_scenario_config,
     update_p_nom_max,
 )
+
+if PYPSA_V1:
+    pypsa.options.params.add.return_names = True
 
 idx = pd.IndexSlice
 
