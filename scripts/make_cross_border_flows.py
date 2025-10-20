@@ -39,31 +39,31 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     Returns
     -------
     pd.DataFrame
-        Columns: snapshot, from_bus, to_bus, carrier, flow_MW
+        Columns: snapshot, from_bus, to_bus, carrier, flow_MWh
     """
     lines_flows = (
         n.lines_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
         .stack()
         .reset_index()
-        .rename(columns={0: "flow_MW"})
+        .rename(columns={0: "flow_MWh"})
         .merge(
             n.lines[["bus0", "bus1", "carrier"]],
             left_on="Line",
             right_index=True,
         )
         .assign(
-            positive_flow=lambda df: df["flow_MW"] >= 0,
+            positive_flow=lambda df: df["flow_MWh"] >= 0,
             from_bus=lambda df: np.where(df["positive_flow"], df["bus0"], df["bus1"]),
             to_bus=lambda df: np.where(df["positive_flow"], df["bus1"], df["bus0"]),
-            flow_MW=lambda df: df["flow_MW"].abs(),
-        )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MW"]]
+            flow_MWh=lambda df: df["flow_MWh"].abs(),
+        )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MWh"]]
     )
 
     links_flows = (
         n.links_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
         .stack()
         .reset_index()
-        .rename(columns={0: "flow_MW"})
+        .rename(columns={0: "flow_MWh"})
         .merge(
             n.links[["bus0", "bus1", "carrier", "p_min_pu"]],
             left_on="Link",
@@ -71,15 +71,15 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         )
         .assign(
             is_bidirectional=lambda df: df["p_min_pu"] < 0,
-            positive_flow=lambda df: df["flow_MW"] >= 0,
+            positive_flow=lambda df: df["flow_MWh"] >= 0,
             from_bus=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus1"], df["bus0"]
             ),
             to_bus=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus0"], df["bus1"]
             ),
-            flow_MW=lambda df: df["flow_MW"].abs(),
-        )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MW"]]
+            flow_MWh=lambda df: df["flow_MWh"].abs(),
+        )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MWh"]]
     )
 
     df = pd.concat([lines_flows, links_flows], ignore_index=True).sort_values(
