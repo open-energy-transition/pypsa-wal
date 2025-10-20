@@ -82,8 +82,13 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MWh"]]
     )
 
-    df = pd.concat([lines_flows, links_flows], ignore_index=True).sort_values(
-        ["snapshot", "from_bus", "to_bus", "carrier"]
+    df = (
+        pd.concat([lines_flows, links_flows], ignore_index=True)
+        .sort_values(["snapshot", "from_bus", "to_bus", "carrier"])
+        .assign(
+            from_node=lambda x: x["from_bus"].str.split().str[0],
+            to_node=lambda x: x["to_bus"].str.split().str[0],
+        )
     )
 
     return df
