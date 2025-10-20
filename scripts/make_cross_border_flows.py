@@ -42,7 +42,8 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         Columns: snapshot, from_bus, to_bus, carrier, flow_MW
     """
     lines_flows = (
-        n.lines_t.p0.stack()
+        n.lines_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
+        .stack()
         .reset_index()
         .rename(columns={0: "flow_MW"})
         .merge(
@@ -59,7 +60,8 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     )
 
     links_flows = (
-        n.links_t.p0.stack()
+        n.links_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
+        .stack()
         .reset_index()
         .rename(columns={0: "flow_MW"})
         .merge(
