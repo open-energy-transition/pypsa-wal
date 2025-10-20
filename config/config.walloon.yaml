@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
   name: "walloon-model"
@@ -32,13 +31,16 @@ countries:
 - DE
 - LU
 
-
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
   mode: custom_busmap_BE
   temporal:
     resolution_elec: 3h
     resolution_sector: 3h
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
+sector:
+  oil_boilers: true
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#solving
 solving:
