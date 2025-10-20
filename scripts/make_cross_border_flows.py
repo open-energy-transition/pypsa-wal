@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     """
-    Extract all lines and links flows at each snapshot.
+    Extract all lines and links flows at each snapshot between different buses.
 
     For lines (bidirectional):
     - Positive flow: energy flows bus0 → bus1
@@ -39,7 +39,8 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     Returns
     -------
     pd.DataFrame
-        Columns: snapshot, from_bus, to_bus, carrier, flow_MWh
+        Columns: snapshot, from_node, to_node, carrier, flow_MWh
+        Only includes flows between different nodes (intra-node flows filtered out).
     """
     lines_flows = (
         n.lines_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
@@ -84,11 +85,14 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
 
     df = (
         pd.concat([lines_flows, links_flows], ignore_index=True)
-        .sort_values(["snapshot", "from_bus", "to_bus", "carrier"])
         .assign(
             from_node=lambda x: x["from_bus"].str.split().str[0],
             to_node=lambda x: x["to_bus"].str.split().str[0],
         )
+        .query("from_node != to_node")[
+            ["snapshot", "from_node", "to_node", "carrier", "flow_MWh"]
+        ]
+        .sort_values(["snapshot", "from_node", "to_node", "carrier"])
     )
 
     return df
