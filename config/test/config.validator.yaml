@@ -10,6 +10,12 @@ run:
   prefix: validation
 
 clustering:
+  mode: custom_busmap_BE
   temporal:
     resolution_elec: 365H
     resolution_sector: 365H
+
+solving:
+  solver:
+    name: highs
+    options: highs-simplex
