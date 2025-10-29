@@ -41,10 +41,10 @@ import pandas as pd
 import xarray as xr
 
 from scripts._helpers import set_scenario_config
-from scripts.build_cop_profiles.central_heating_cop_approximator import (
+from scripts.build_cop_profiles.CentralHeatingCopApproximator import (
     CentralHeatingCopApproximator,
 )
-from scripts.build_cop_profiles.decentral_heating_cop_approximator import (
+from scripts.build_cop_profiles.DecentralHeatingCopApproximator import (
     DecentralHeatingCopApproximator,
 )
 from scripts.definitions.heat_system_type import HeatSystemType
@@ -96,14 +96,14 @@ def get_cop(
             min_delta_t_lift=snakemake.params.heat_pump_cop_approximation_central_heating[
                 "min_delta_t_lift"
             ],
-        ).cop
+        ).approximate_cop()
 
     else:
         return DecentralHeatingCopApproximator(
             sink_outlet_temperature_celsius=snakemake.params.heat_pump_sink_T_decentral_heating,
             source_inlet_temperature_celsius=source_inlet_temperature_celsius,
             source_type=heat_source,
-        ).cop
+        ).approximate_cop()
 
 
 if __name__ == "__main__":
@@ -128,25 +128,21 @@ if __name__ == "__main__":
     for heat_system_type, heat_sources in snakemake.params.heat_pump_sources.items():
         cop_this_system_type = []
         for heat_source in heat_sources:
-            if (
-                heat_source in snakemake.params.limited_heat_sources
-                and snakemake.params.limited_heat_sources[heat_source][
-                    "constant_temperature_celsius"
-                ]
-                is not False
-            ):
+            if heat_source in ["ground", "air", "ptes"]:
+                source_inlet_temperature_celsius = xr.open_dataarray(
+                    snakemake.input[
+                        f"temp_{heat_source.replace('ground', 'soil')}_total"
+                    ]
+                )
+            elif heat_source in snakemake.params.limited_heat_sources.keys():
                 source_inlet_temperature_celsius = (
                     snakemake.params.limited_heat_sources[heat_source][
                         "constant_temperature_celsius"
                     ]
                 )
             else:
-                if f"temp_{heat_source}" not in snakemake.input.keys():
-                    raise ValueError(
-                        f"Missing input temperature for heat source {heat_source}."
-                    )
-                source_inlet_temperature_celsius = xr.open_dataarray(
-                    snakemake.input[f"temp_{heat_source}"]
+                raise ValueError(
+                    f"Unknown heat source {heat_source}. Must be one of [ground, air] or {snakemake.params.heat_sources.keys()}."
                 )
 
             cop_da = get_cop(
