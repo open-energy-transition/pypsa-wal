@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: MIT
 
@@ -62,6 +63,8 @@ include: "rules/build_sector.smk"
 include: "rules/solve_electricity.smk"
 include: "rules/postprocess.smk"
 include: "rules/development.smk"
+include: "rules/report.smk"
+include: "rules/walloon.smk"
 
 
 if config["foresight"] == "overnight":

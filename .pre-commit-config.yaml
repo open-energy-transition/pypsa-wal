@@ -60,4 +60,10 @@ repos:
 - repo: https://github.com/fsfe/reuse-tool
   rev: v6.0.0
   hooks:
-  - id: reuse-lint-file
+  - id: reuse
+
+# Use gitleaks to prevent committing secrets
+- repo: https://github.com/gitleaks/gitleaks
+  rev: v8.28.0
+  hooks:
+  - id: gitleaks

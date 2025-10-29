@@ -221,3 +221,10 @@ Data in this section is included in the PyPSA-Eur repository in the ``data`` fol
 - **Link:** https://publications.jrc.ec.europa.eu/repository/handle/JRC98626
 - **License:** CC-BY 4.0 (`reference <https://commission.europa.eu/legal-notice_en#copyright-notice>`__)
 - **Description:** Contains transport costs for different types of biomass.
+
+``data/walloon/be.json``
+
+- **Source:** simplemaps.com
+- **Link:** https://simplemaps.com/gis/country/be#admin1
+- **License:** CC-BY 4.0 (`https://creativecommons.org/licenses/by/4.0/`__)
+- **Description:** Contains 3-region administrative boundaries for Belgium: Wallonia, Flanders, Brussels.

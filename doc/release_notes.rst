@@ -1,4 +1,5 @@
 .. SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+.. SPDX-FileCopyrightText: Open Energy Transition gGmbH
 ..
 .. SPDX-License-Identifier: CC-BY-4.0
 
@@ -47,6 +48,9 @@ Upcoming Release
 * Allow expandable CCGTs by default
 
 * Updated `build_osm_network` and `clean_osm_data` to handle voltage levels below 220 kV (down to 63 kV). When `base_network` is set to `osm_raw`, an electricity grid from voltage levels AC 63 kV to 750 kV can be created (experimental feature). For an example, see the example configuration in `config/examples/config-distribution-grid-experimental.yaml`.
+
+
+* Added integration with the OETC platform
 
 * Fix `retrieve_eurostat_data` and `retrieve_eurostat_household_data` on Windows by avoiding a double access to a temporary file.
   (https://github.com/PyPSA/pypsa-eur/pull/1825)
@@ -1117,6 +1121,11 @@ PyPSA-Eur 0.12.0 (30th August 2024)
 
 * Address various deprecations.
 
+
+* Allow running the sector model for isolated non-EU28 countries, by filling missing sectoral
+  data with defaults, average EU values or zeros, if not available.
+
+* Enable retaining existing conventional capacities added in the power only model for sector coupeled applications.
 
 PyPSA-Eur 0.11.0 (25th May 2024)
 =====================================

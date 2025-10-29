@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>>
+# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: MIT
 """
@@ -64,7 +65,15 @@ def build_nodal_industrial_energy_demand():
         buses = keys.index[keys.country == country]
         mapping = sector_mapping.get(sector, "population")
 
-        key = keys.loc[buses, mapping]
+        try:
+            key = keys.loc[buses, mapping].fillna(0)
+        except KeyError:
+            logger.info(
+                f"No industrial demand available for {mapping}. Filling with zeros."
+            )
+            keys[mapping] = 0
+            key = keys.loc[buses, mapping].fillna(0)
+
         demand = industrial_demand[country, sector]
 
         outer = pd.DataFrame(

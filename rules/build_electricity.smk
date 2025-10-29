@@ -675,6 +675,11 @@ rule cluster_network:
         copperplate_regions=config_provider("clustering", "copperplate_regions"),
     input:
         unpack(input_custom_busmap),
+        custom_busmap_BE=lambda w: (
+            resources("resources/base_s_adm.csv")
+            if config_provider("clustering", "mode")(w) == "custom_busmap_BE"
+            else []
+        ),
         network=resources("networks/base_s.nc"),
         admin_shapes=resources("admin_shapes.geojson"),
         bidding_zones=lambda w: (

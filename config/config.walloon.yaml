@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH and contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
+run:
+  name: "walloon-model"
+  scenarios:
+    file: config/scenarios.yaml
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#foresight
+foresight: myopic
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#scenario
+# Wildcard docs in https://pypsa-eur.readthedocs.io/en/latest/wildcards.html
+scenario:
+  clusters:
+  - adm
+  sector_opts:
+  - ''
+  planning_horizons:
+  - 2050
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#countries
+# Walloon model: Belgium and electrical neighbors
+countries:
+- BE
+- FR
+- GB
+- NL
+- DE
+- LU
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
+clustering:
+  mode: custom_busmap_BE
+  temporal:
+    resolution_elec: 3h
+    resolution_sector: 3h
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
+sector:
+  oil_boilers: true
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#solving
+solving:
+  solver:
+    name: gurobi
+    options: gurobi-default

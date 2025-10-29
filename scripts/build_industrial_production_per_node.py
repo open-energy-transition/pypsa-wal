@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: MIT
 """
@@ -66,6 +67,15 @@ def build_nodal_industrial_production():
     for country, sector in product(countries, sectors):
         buses = keys.index[keys.country == country]
         mapping = sector_mapping.get(sector, "population")
+
+        try:
+            key = keys.loc[buses, mapping].fillna(0)
+        except KeyError:
+            logger.info(
+                f"No industrial production available for {mapping}. Filling with zeros."
+            )
+            keys[mapping] = 0
+            key = keys.loc[buses, mapping].fillna(0)
 
         key = keys.loc[buses, mapping]
         nodal_production.loc[buses, sector] = (

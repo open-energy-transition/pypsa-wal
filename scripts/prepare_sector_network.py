@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: MIT
 """
@@ -1304,6 +1305,9 @@ def add_generation(
     spatial: SimpleNamespace,
     options: dict,
     cf_industry: dict,
+    ext_carriers,
+    existing_capacities=None,
+    existing_efficiencies=None,
 ) -> None:
     """
     Add conventional electricity generation to the network.
@@ -1367,9 +1371,24 @@ def add_generation(
             * costs.at[generator, "VOM"],  # NB: VOM is per MWel
             capital_cost=costs.at[generator, "efficiency"]
             * costs.at[generator, "capital_cost"],  # NB: fixed cost is per MWel
-            p_nom_extendable=True,
+            p_nom_extendable=bool(generator in ext_carriers.get("Generator", [])),
+            p_nom=(
+                existing_capacities[generator] / existing_efficiencies[generator]
+                if existing_capacities is not None
+                else 0
+            ),  # NB: existing capacities are MWel
+            p_max_pu=0.7
+            if carrier == "uranium"
+            else 1,  # be conservative for nuclear (maintenance or unplanned shut downs)
+            p_nom_min=(
+                existing_capacities[generator] if existing_capacities is not None else 0
+            ),
             carrier=generator,
-            efficiency=costs.at[generator, "efficiency"],
+            efficiency=(
+                existing_efficiencies[generator]
+                if existing_efficiencies is not None
+                else costs.at[generator, "efficiency"]
+            ),
             efficiency2=costs.at[carrier, "CO2 intensity"],
             lifetime=costs.at[generator, "lifetime"],
         )
@@ -6052,6 +6071,30 @@ def add_enhanced_geothermal(
             )
 
 
+def get_capacities_from_elec(n, carriers, component):
+    """
+    Gets capacities and efficiencies for {carrier} in n.{component} that were
+    previously assigned in add_electricity.
+    """
+    component_list = ["generators", "storage_units", "links", "stores"]
+    component_dict = {name: getattr(n, name) for name in component_list}
+    e_nom_carriers = ["stores"]
+    nom_col = {x: "e_nom" if x in e_nom_carriers else "p_nom" for x in component_list}
+    eff_col = "efficiency"
+
+    capacity_dict = {}
+    efficiency_dict = {}
+    for carrier in carriers:
+        capacity_dict[carrier] = component_dict[component].query("carrier in @carrier")[
+            nom_col[component]
+        ]
+        efficiency_dict[carrier] = component_dict[component].query(
+            "carrier in @carrier"
+        )[eff_col]
+
+    return capacity_dict, efficiency_dict
+
+
 def add_import_options(
     n: pypsa.Network,
     costs: pd.DataFrame,
@@ -6200,6 +6243,15 @@ if __name__ == "__main__":
     fn = snakemake.input.gas_input_nodes_simplified
     gas_input_nodes = pd.read_csv(fn, index_col=0)
 
+    if options.get("keep_existing_capacities", False):
+        existing_capacities, existing_efficiencies = get_capacities_from_elec(
+            n,
+            carriers=options.get("conventional_generation").keys(),
+            component="generators",
+        )
+    else:
+        existing_capacities = existing_efficiencies = None
+
     carriers_to_keep = snakemake.params.pypsa_eur
     profiles = {
         key: snakemake.input[key]
@@ -6219,7 +6271,7 @@ if __name__ == "__main__":
 
     spatial = define_spatial(pop_layout.index, options)
 
-    if snakemake.params.foresight in ["myopic", "perfect"]:
+    if snakemake.params.foresight in ["overnight", "myopic", "perfect"]:
         add_lifetime_wind_solar(n, costs)
 
         conventional = snakemake.params.conventional_carriers
@@ -6250,6 +6302,9 @@ if __name__ == "__main__":
         spatial=spatial,
         options=options,
         cf_industry=cf_industry,
+        ext_carriers=snakemake.params.electricity.get("extendable_carriers", dict()),
+        existing_capacities=existing_capacities,
+        existing_efficiencies=existing_efficiencies,
     )
 
     add_storage_and_grids(

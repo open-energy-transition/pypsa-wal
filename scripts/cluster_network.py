@@ -653,9 +653,9 @@ if __name__ == "__main__":
             )
 
             busmap = custom_busmap
-        elif mode == "custom_busmap":
+        elif mode == "custom_busmap" or "custom_busmap_BE":
             custom_busmap = pd.read_csv(
-                snakemake.input.custom_busmap, index_col=0
+                snakemake.input[mode], index_col=0
             ).squeeze()
             custom_busmap.index = custom_busmap.index.astype(str)
             logger.info(f"Imported custom busmap from {snakemake.input.custom_busmap}")

@@ -57,6 +57,7 @@ dependencies:
   - bleach=6.2.0=pyh29332c3_4
   - bleach-with-css=6.2.0=h82add2a_4
   - blinker=1.9.0=pyhff2d567_0
+  - blis=0.9.0=h4ab18f5_2
   - blosc=1.21.6=he440d0b_1
   - bokeh=3.8.0=pyhd8ed1ab_0
   - boto3=1.40.58=pyhd8ed1ab_0
@@ -295,7 +296,6 @@ dependencies:
   - libllvm20=20.1.8=hecd9e04_0
   - libllvm21=21.1.0=hecd9e04_0
   - liblzma=5.8.1=hb9d3cd8_2
-  - liblzma-devel=5.8.1=hb9d3cd8_2
   - libnetcdf=4.9.2=nompi_h21f7587_118
   - libnghttp2=1.67.0=had1ee68_0
   - libnsl=2.0.1=hb9d3cd8_1
@@ -312,7 +312,7 @@ dependencies:
   - libre2-11=2025.08.12=h7b12aa8_1
   - librsvg=2.58.4=he92a37e_3
   - librttopo=1.1.0=hd718a1a_18
-  - libscotch=7.0.4=h2fe6a88_5
+  - libscotch=7.0.8=int64_h1cd4a87_1
   - libsodium=1.0.20=h4ab18f5_0
   - libspatialite=5.1.0=he17ca71_14
   - libspral=2025.05.20=hfabd9d1_1
@@ -352,8 +352,8 @@ dependencies:
   - msgpack-python=1.1.2=py312hd9148b4_0
   - multidict=6.6.3=py312h178313f_0
   - multiurl=0.3.7=pyhd8ed1ab_0
-  - mumps-include=5.7.3=h82cca05_10
-  - mumps-seq=5.7.3=h27a6a8b_0
+  - mumps-include=5.8.1=h5a610fb_3
+  - mumps-seq=5.8.1=hb34f79d_3
   - munkres=1.1.4=pyhd8ed1ab_1
   - narwhals=2.9.0=pyhcf101f3_0
   - nbclient=0.10.2=pyhd8ed1ab_0
@@ -566,9 +566,6 @@ dependencies:
   - xorg-libxxf86vm=1.1.6=hb9d3cd8_0
   - xorg-xorgproto=2024.1=hb9d3cd8_1
   - xyzservices=2025.4.0=pyhd8ed1ab_0
-  - xz=5.8.1=hbcc6ac9_2
-  - xz-gpl-tools=5.8.1=hbcc6ac9_2
-  - xz-tools=5.8.1=hb9d3cd8_2
   - yaml=0.2.5=h280c20c_3
   - yarl=1.20.1=py312h178313f_0
   - yte=1.8.1=pyha770c72_0

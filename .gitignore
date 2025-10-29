@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: CC0-1.0
 
@@ -10,6 +11,7 @@ __pycache__
 *dconf
 gurobi.log
 .vscode
+.idea
 *.orig
 .idea
 
@@ -25,6 +27,7 @@ gurobi.log
 /cutouts
 /tmp
 doc/_build
+
 
 /scripts/old
 /scripts/create_scenarios.py
@@ -54,6 +57,14 @@ data/costs_*.csv
 dask-worker-space/
 publications.jrc.ec.europa.eu/
 d1gam3xoknrgr2.cloudfront.net/
+
+#latex files in report/
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.toc
 
 *.org
 
