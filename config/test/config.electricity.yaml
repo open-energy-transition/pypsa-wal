@@ -63,7 +63,6 @@ renewable:
     max_depth: false
     min_depth: false
 
-
 clustering:
   mode: custom_busmap_BE
   exclude_carriers: ["OCGT", "offwind-ac", "coal"]
