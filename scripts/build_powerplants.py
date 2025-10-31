@@ -71,6 +71,7 @@ import pandas as pd
 import powerplantmatching as pm
 import pypsa
 from powerplantmatching.export import map_country_bus
+from walloon_scripts.custom_clustering import ppl_by_subregion
 
 from scripts._helpers import configure_logging, set_scenario_config
 
@@ -142,7 +143,6 @@ def replace_natural_gas_fueltype(df):
         (df.Technology == "OCGT") | (df.Technology == "CCGT"), "Natural Gas"
     )
 
-
 if __name__ == "__main__":
     if "snakemake" not in globals():
         from scripts._helpers import mock_snakemake
@@ -193,6 +193,10 @@ if __name__ == "__main__":
     )
 
     ppl = ppl.dropna(subset=["lat", "lon"])
+    
+    if snakemake.params.walloon_reassignment:
+        n, ppl = ppl_by_subregion(n, ppl)
+
     ppl = map_country_bus(ppl, n.buses)
 
     bus_null_b = ppl["bus"].isnull()
