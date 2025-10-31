@@ -42,6 +42,7 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         Columns: snapshot, from_node, to_node, carrier, flow_MWh
         Only includes flows between different nodes (intra-node flows filtered out).
     """
+
     lines_flows = (
         n.lines_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
         .stack()
@@ -49,7 +50,7 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         .rename(columns={0: "flow_MWh"})
         .merge(
             n.lines[["bus0", "bus1", "carrier"]],
-            left_on="Line",
+            left_on="name",
             right_index=True,
         )
         .assign(
@@ -67,7 +68,7 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         .rename(columns={0: "flow_MWh"})
         .merge(
             n.links[["bus0", "bus1", "carrier", "p_min_pu"]],
-            left_on="Link",
+            left_on="name",
             right_index=True,
         )
         .assign(
