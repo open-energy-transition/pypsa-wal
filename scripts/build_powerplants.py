@@ -143,6 +143,7 @@ def replace_natural_gas_fueltype(df):
         (df.Technology == "OCGT") | (df.Technology == "CCGT"), "Natural Gas"
     )
 
+
 if __name__ == "__main__":
     if "snakemake" not in globals():
         from scripts._helpers import mock_snakemake
