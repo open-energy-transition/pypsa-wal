@@ -71,6 +71,7 @@ import pandas as pd
 import powerplantmatching as pm
 import pypsa
 from powerplantmatching.export import map_country_bus
+from walloon_scripts.custom_clustering import ppl_by_subregion
 
 from scripts._helpers import configure_logging, set_scenario_config
 
@@ -193,6 +194,10 @@ if __name__ == "__main__":
     )
 
     ppl = ppl.dropna(subset=["lat", "lon"])
+    
+    if snakemake.params.walloon_reassignment:
+        n, ppl = ppl_by_subregion(n, ppl)
+
     ppl = map_country_bus(ppl, n.buses)
 
     bus_null_b = ppl["bus"].isnull()

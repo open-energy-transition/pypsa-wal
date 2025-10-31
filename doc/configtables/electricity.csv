@@ -23,6 +23,8 @@ extendable_carriers,,,
 -- Link,--,"Any subset of {'H2 pipeline'}",Adds extendable links (H2 pipelines only) at every connection where there are lines or HVDC links without capacity limits and with zero initial capacity. Hydrogen pipelines require hydrogen storage to be modelled as ``Store``.
 powerplants_filter,--,"use `pandas.query <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html>`_ strings here, e.g. ``Country not in ['Germany']``",Filter query for the default powerplant database.
 ,,, 
+walloon_reassignment,--,"{True, False}",maps powerplants to specific subregions rather than to the country > improves accuracy where ppls are assigned to.
+,,,
 custom_powerplants,--,"use `pandas.query <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html>`_ strings here, e.g. ``Country in ['Germany']``",Filter query for the custom powerplant database.
 ,,, 
 everywhere_powerplants,--,"Any subset of {nuclear, oil, OCGT, CCGT, coal, lignite, geothermal, biomass}","List of conventional power plants to add to every node in the model with zero initial capacity. To be used in combination with ``extendable_carriers`` to allow for building conventional powerplants irrespective of existing locations."

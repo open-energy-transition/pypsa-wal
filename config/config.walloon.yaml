@@ -31,6 +31,9 @@ countries:
 - DE
 - LU
 
+electricity:
+  walloon_reassignment: True
+
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
   mode: custom_busmap_BE
