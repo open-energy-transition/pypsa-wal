@@ -33,6 +33,8 @@ rule build_electricity_demand:
 rule build_powerplants:
     params:
         powerplants_filter=config_provider("electricity", "powerplants_filter"),
+        walloon_reassignment=config_provider("electricity", "walloon_reassignment", defaul
+t=False),
         custom_powerplants=config_provider("electricity", "custom_powerplants"),
         everywhere_powerplants=config_provider("electricity", "everywhere_powerplants"),
         countries=config_provider("countries"),

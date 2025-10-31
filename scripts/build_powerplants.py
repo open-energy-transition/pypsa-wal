@@ -68,11 +68,10 @@ import logging
 
 import numpy as np
 import pandas as pd
-import geopandas as gpd
-from shapely.geometry import Point
 import powerplantmatching as pm
 import pypsa
 from powerplantmatching.export import map_country_bus
+from walloon_scripts.custom_clustering import ppl_by_subregion
 
 from scripts._helpers import configure_logging, set_scenario_config
 
@@ -144,20 +143,6 @@ def replace_natural_gas_fueltype(df):
         (df.Technology == "OCGT") | (df.Technology == "CCGT"), "Natural Gas"
     )
 
-def ppl_by_subregion(ppl, country='BE', gdf_path="data/walloon/be.json"):
-    gdf = gpd.read_file(gdf_path)
-    filtered_ppl = ppl[ppl.Country == country]
-    # print("identified BE generators: ", len(filtered_ppl))
-    for i in ppl[ppl.Country == country].index:
-        try:
-            country_subregion_id = gdf[gdf.geometry.contains(Point(ppl.iloc[i].lon, ppl.iloc[i].lat))]['id'].values[0]
-            ppl.at[i, 'Country'] = country_subregion_id
-            # print("assigning: ", country_subregion_id)
-        except:
-            # print("!!! no subregion containing this point was found: ", Point(ppl.iloc[i].lon, ppl.iloc[i].lat))
-            pass
-    return ppl
-
 if __name__ == "__main__":
     if "snakemake" not in globals():
         from scripts._helpers import mock_snakemake
@@ -209,12 +194,10 @@ if __name__ == "__main__":
 
     ppl = ppl.dropna(subset=["lat", "lon"])
     
-    # for a country subregion
-    n.buses.country = n.buses.index # only works if there is one node per subregion
-    ppl = ppl_by_subregion(ppl)
+    if snakemake.params.walloon_reassignment:
+        n, ppl = ppl_by_subregion(n, ppl)
 
     ppl = map_country_bus(ppl, n.buses)
-
 
     bus_null_b = ppl["bus"].isnull()
     if bus_null_b.any():
