@@ -39,7 +39,7 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
     Returns
     -------
     pd.DataFrame
-        Columns: snapshot, from_node, to_node, carrier, flow_MWh
+        Columns: snapshot, node_from, node_to, carrier, flow, unit_from, unit_to
         Only includes flows between different nodes (intra-node flows filtered out).
     """
 
@@ -47,25 +47,33 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         n.lines_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
         .stack()
         .reset_index()
-        .rename(columns={0: "flow_MWh"})
+        .rename(columns={0: "flow"})
         .merge(
             n.lines[["bus0", "bus1", "carrier"]],
             left_on="name",
             right_index=True,
         )
         .assign(
-            positive_flow=lambda df: df["flow_MWh"] >= 0,
-            from_bus=lambda df: np.where(df["positive_flow"], df["bus0"], df["bus1"]),
-            to_bus=lambda df: np.where(df["positive_flow"], df["bus1"], df["bus0"]),
-            flow_MWh=lambda df: df["flow_MWh"].abs(),
-        )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MWh"]]
+            positive_flow=lambda df: df["flow"] >= 0,
+            bus_from=lambda df: np.where(df["positive_flow"], df["bus0"], df["bus1"]),
+            bus_to=lambda df: np.where(df["positive_flow"], df["bus1"], df["bus0"]),
+            flow=lambda df: df["flow"].abs(),
+        )[
+            [
+                "snapshot",
+                "bus_from",
+                "bus_to",
+                "carrier",
+                "flow",
+            ]
+        ]
     )
 
     links_flows = (
         n.links_t.p0.multiply(n.snapshot_weightings.generators, axis=0)
         .stack()
         .reset_index()
-        .rename(columns={0: "flow_MWh"})
+        .rename(columns={0: "flow"})
         .merge(
             n.links[["bus0", "bus1", "carrier", "p_min_pu"]],
             left_on="name",
@@ -73,28 +81,69 @@ def extract_flows_timeseries(n: pypsa.Network) -> pd.DataFrame:
         )
         .assign(
             is_bidirectional=lambda df: df["p_min_pu"] < 0,
-            positive_flow=lambda df: df["flow_MWh"] >= 0,
-            from_bus=lambda df: np.where(
+            positive_flow=lambda df: df["flow"] >= 0,
+            bus_from=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus1"], df["bus0"]
             ),
-            to_bus=lambda df: np.where(
+            bus_to=lambda df: np.where(
                 df["is_bidirectional"] & ~df["positive_flow"], df["bus0"], df["bus1"]
             ),
-            flow_MWh=lambda df: df["flow_MWh"].abs(),
-        )[["snapshot", "from_bus", "to_bus", "carrier", "flow_MWh"]]
+            flow=lambda df: df["flow"].abs(),
+        )
+        .merge(
+            n.buses[["unit"]].rename(columns={"unit": "unit_from"}),
+            left_on="bus_from",
+            right_index=True,
+        )
+        .merge(
+            n.buses[["unit"]].rename(columns={"unit": "unit_to"}),
+            left_on="bus_to",
+            right_index=True,
+        )[
+            [
+                "snapshot",
+                "bus_from",
+                "bus_to",
+                "carrier",
+                "flow",
+            ]
+        ]
     )
 
     df = (
         pd.concat([lines_flows, links_flows], ignore_index=True)
-        .assign(
-            from_node=lambda x: x["from_bus"].str.split().str[0],
-            to_node=lambda x: x["to_bus"].str.split().str[0],
-        )
-        .query("from_node != to_node")[
-            ["snapshot", "from_node", "to_node", "carrier", "flow_MWh"]
+        .query("bus_from != bus_to")[
+            [
+                "snapshot",
+                "bus_from",
+                "bus_to",
+                "carrier",
+                "flow",
+            ]
         ]
-        .sort_values(["snapshot", "from_node", "to_node", "carrier"])
-    )
+        .sort_values(["snapshot", "bus_from", "bus_to", "carrier"])
+    ).reset_index(drop=True)
+
+    # Merge with units
+    df = df.merge(
+        n.buses[["unit"]].rename(columns={"unit": "unit_from"}),
+        left_on="bus_from",
+        right_index=True,
+    ).merge(
+        n.buses[["unit"]].rename(columns={"unit": "unit_to"}),
+        left_on="bus_to",
+        right_index=True,
+    )[
+        [
+            "snapshot",
+            "bus_from",
+            "bus_to",
+            "carrier",
+            "unit_from",
+            "unit_to",
+            "flow",
+        ]
+    ]
 
     return df
 
