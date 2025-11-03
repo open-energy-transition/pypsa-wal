@@ -290,7 +290,7 @@ rule generate_cross_border_flows:
     conda:
         "../envs/environment.yaml"
     script:
-        "../scripts/make_cross_border_flows.py"
+        "../scripts/walloon_scripts/make_cross_border_flows.py"
 
 
 rule make_global_summary:
