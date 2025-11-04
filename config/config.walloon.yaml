@@ -41,7 +41,7 @@ electricity:
 clustering:
   mode: custom_busmap_BE
   temporal:
-    resolution_elec: 3h
+    resolution_elec: False
     resolution_sector: 3h
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
