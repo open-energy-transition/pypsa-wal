@@ -40,6 +40,7 @@ rule build_powerplants:
     input:
         network=resources("networks/base_s_{clusters}.nc"),
         custom_powerplants="data/custom_powerplants.csv",
+        custom_partitioning="data/custom_decomissioning.csv"
     output:
         resources("powerplants_s_{clusters}.csv"),
     log:

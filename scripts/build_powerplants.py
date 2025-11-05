@@ -72,6 +72,7 @@ import powerplantmatching as pm
 import pypsa
 from powerplantmatching.export import map_country_bus
 from walloon_scripts.custom_clustering import ppl_by_subregion
+from walloon_scripts.custom_decomissioning import custom_pp_partitioning
 
 from scripts._helpers import configure_logging, set_scenario_config
 
@@ -197,9 +198,9 @@ if __name__ == "__main__":
     
     if snakemake.params.walloon_reassignment:
         n, ppl = ppl_by_subregion(n, ppl)
+        ppl = custom_pp_partitioning(ppl, snakemake.input.custom_partitioning)
 
     ppl = map_country_bus(ppl, n.buses)
-
     bus_null_b = ppl["bus"].isnull()
     if bus_null_b.any():
         logger.warning(
