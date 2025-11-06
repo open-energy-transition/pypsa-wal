@@ -45,6 +45,9 @@ clustering:
 sector:
   oil_boilers: true
 
+costs:
+  custom_cost_fn: data/custom_costs_rc.csv
+
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#solving
 solving:
   solver:
