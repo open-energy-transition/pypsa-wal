@@ -19,6 +19,9 @@ scenario:
   sector_opts:
   - ''
   planning_horizons:
+  - 2025
+  - 2030
+  - 2040
   - 2050
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#countries
@@ -38,7 +41,7 @@ electricity:
 clustering:
   mode: custom_busmap_BE
   temporal:
-    resolution_elec: 3h
+    resolution_elec: False
     resolution_sector: 3h
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
