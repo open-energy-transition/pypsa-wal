@@ -1,47 +1,31 @@
-technology,parameter,value,unit,planning_horizon,source,further_description,year_currency,
-hydrogen import price from outside Europe,price,97,EUR/MWH_H2_PCI,2030,EnergyVille (2023) PATHS 2050 Central and Electrification Scenarios,,2023,
-hydrogen import price from outside Europe,price,88,EUR/MWH_H2_PCI,2040,EnergyVille (2023) PATHS 2050 Central and Electrification Scenarios,2040 est une interpolation entre 2030 et 2050,2023,
-hydrogen import price from outside Europe,price,79,EUR/MWH_H2_PCI,2050,EnergyVille (2023) PATHS 2050 Central and Electrification Scenarios,,2023,
-Oil price,price,50.04,EUR/MWh_th,2030,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-Oil price,price,56.88,EUR/MWh_th,2040,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-Oil price,price,70.92,EUR/MWh_th,2050,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-coal price,price,14.4,EUR/MWh_th,2030,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-coal price,price,13.68,EUR/MWh_th,2040,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-coal price,price,14.4,EUR/MWh_th,2050,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-natural gas price,price,32.4,EUR/MWh_th,2030,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-natural gas price,price,36.36,EUR/MWh_th,2040,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-natural gas price,price,34.56,EUR/MWh_th,2050,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),,2023,
-Import solid biomass (pellets) potential (oustide europe),potential,4000,GWh/an,2030,Bioenergy europe 2025 stat report extrait par Valbiom,Projections avec centrale COGEN aux pellets,,
-Import solid biomass (pellets) potential (oustide europe),potential,4500,GWh/an,2040,Bioenergy europe 2025 stat report extrait par Valbiom,Projections avec centrale COGEN aux pellets,,
-Import solid biomass (pellets) potential (oustide europe),potential,6000,GWh/an,2050,Bioenergy europe 2025 stat report extrait par Valbiom,Projections avec centrale COGEN aux pellets,,
-Max onwind capacity allowed (Wallonia),potential_wal,6500,MW,,PNEC Wallon et EDORA,"• Potentiel technique calcule comme la somme de ce qui est plausible d'atteindre en 2030 comme capacite et des projets à l'etude
-• Les statistiques d'installation (fin 2024) indique que la Wallonie est sur la bonne trajectoire pour atteindre son objectif de production de 6200 GWh etoliens onshore annuels (PNEC wallon - scenario WAM)
-• Ces 6200 GWh sont traduits en 2700 MW de puissance installee.
-• Potentiel eolien additionnel estime à 38 GW à l’horizon 2050 sur base des projets en etude d’incidences (source : EDORA). Valeur integrant les contraintes actuelles les effets de repowering et l’evolution vers des turbines plus puissantes.",,
-Max solar PV (Wallonia) - Agri,potential_wal,13000,MW,,Cluster TWEED Livre blanc de l'agrivoltaïsme (2025) Energie Commune Renouvelle (2025),Somme du potentiel des friches industrielles et de l'agrivoltaïsme,,
-Max solar PV capacity allowed (Wallonia),potential_wal,46000,MW,,Energie Commune Cartographie solaire de la Region Wallonne (2024),Somme du potentiel des installations en toiture de bâtiments et d'ombrières de parking,,
-Solid biomass (pellets chips) potential (Wallonia),potential_wal,6000,GWh/an,,Valbiom,,,
-Local biogas potential (Wallonia),potential_wal,8300,GWh/an,,Valbiom,,,
-deep geothermal energy potential,potential_wal,228,GWh/an,,Resolia,,,
-waste heat,potential_wal,4523,GWh/an,,(1) ICEDD - Evaluation du potentiel de chaleur fatale en Wallonie et (2) PNEC 2023,,,
-biogas upgrading,investment,244,EUR/kW_biogas,2030,Valbiom,,2020,
-biogas upgrading,investment,244,EUR/kW_biogas,2040,Valbiom,,2020,
-biogas upgrading,investment,244,EUR/kW_biogas,2050,Valbiom,,2020,
-Reacteur nucleaire de generation avancee,investment,9500,EUR/kW_e,2030,Mecatech Forum du nucleaire IEA,,2023,La fourchette est entre 4000 et 15000€/kWe. La valeur indiquee correspond au point milieu de cet intervalle. Une valeur finale sera validee avec les parties prenantes consultees
-Reacteur nucleaire de generation avancee,investment,9500,EUR/kW_e,2040,Mecatech Forum du nucleaire IEA,,2023,
-Reacteur nucleaire de generation avancee,investment,9500,EUR/kW_e,2050,Mecatech Forum du nucleaire IEA,,2023,
-Petit reacteur nucleaire modulaire (SMR),investment,11400,EUR/kW_e,2030,Mecatech,,2023,Base sur une presentation du prof Thomas Pardoen. Un surcoût de 20% est attendu par rapport au nucleaire classique
-Petit reacteur nucleaire modulaire (SMR),investment,11400,EUR/kW_e,2040,Mecatech,,2023,Base sur une presentation du prof Thomas Pardoen. Un surcoût de 20% est attendu par rapport au nucleaire classique
-Petit reacteur nucleaire modulaire (SMR),investment,11400,EUR/kW_e,2050,Mecatech,,2023,Base sur une presentation du prof Thomas Pardoen. Un surcoût de 20% est attendu par rapport au nucleaire classique
-solar rooftop,investment,875,EUR/kW_e,2030,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire),2024,
-solar rooftop,investment,875,EUR/kW_e,2040,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire),2024,
-solar rooftop,investment,875,EUR/kW_e,2050,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire),2024,
-solar utility,investment,500,EUR/kW_e,2030,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW),2024,
-solar utility,investment,500,EUR/kW_e,2040,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW),2024,
-solar utility,investment,500,EUR/kW_e,2050,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW),2024,
-onwind,investment,1450,EUR/kW_e,2030,Edora,,,
-onwind,investment,1450,EUR/kW_e,2040,Edora,,,
-onwind,investment,1450,EUR/kW_e,2050,Edora,,,
-biogas,investment,1231,EUR/kW_biogas,2030,Valbiom,,2020,
-biogas,investment,1231,EUR/kW_biogas,2040,Valbiom,,2020,
-biogas,investment,1231,EUR/kW_biogas,2050,Valbiom,,2020,
+planning_horizon,technology,parameter,value,unit,source,further_description
+2030.0,oil,fuel,50.04,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2040.0,oil,fuel,56.88,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2050.0,oil,fuel,70.92,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2030.0,coal,fuel,14.4,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2040.0,coal,fuel,13.68,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2050.0,coal,fuel,14.4,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2030.0,gas,fuel,32.4,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2040.0,gas,fuel,36.36,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2050.0,gas,fuel,34.56,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
+2030.0,biogas upgrading,investment,244.0,EUR/kW_biogas,Valbiom,
+2040.0,biogas upgrading,investment,244.0,EUR/kW_biogas,Valbiom,
+2050.0,biogas upgrading,investment,244.0,EUR/kW_biogas,Valbiom,
+2030.0,nuclear,investment,9500.0,EUR/kW_e,Mecatech Forum du nucleaire IEA,
+2040.0,nuclear,investment,9500.0,EUR/kW_e,Mecatech Forum du nucleaire IEA,
+2050.0,nuclear,investment,9500.0,EUR/kW_e,Mecatech Forum du nucleaire IEA,
+2030.0,SMR,investment,11400.0,EUR/kW_e,Mecatech,
+2040.0,SMR,investment,11400.0,EUR/kW_e,Mecatech,
+2050.0,SMR,investment,11400.0,EUR/kW_e,Mecatech,
+2030.0,solar-rooftop,investment,875.0,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire)
+2040.0,solar-rooftop,investment,875.0,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire)
+2050.0,solar-rooftop,investment,875.0,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire)
+2030.0,solar-utility,investment,500.0,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
+2040.0,solar-utility,investment,500.0,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
+2050.0,solar-utility,investment,500.0,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
+2030.0,onwind,investment,1450.0,EUR/kW_e,Edora,
+2040.0,onwind,investment,1450.0,EUR/kW_e,Edora,
+2050.0,onwind,investment,1450.0,EUR/kW_e,Edora,
+2030.0,biogas,investment,1231.0,EUR/kW_biogas,Valbiom,
+2040.0,biogas,investment,1231.0,EUR/kW_biogas,Valbiom,
+2050.0,biogas,investment,1231.0,EUR/kW_biogas,Valbiom,
