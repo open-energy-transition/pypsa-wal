@@ -269,6 +269,30 @@ rule make_summary:
         "../scripts/make_summary.py"
 
 
+rule generate_cross_border_flows:
+    input:
+        network=RESULTS
+        + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",
+    output:
+        flows=RESULTS
+        + "csvs/individual/cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+    threads: 1
+    resources:
+        mem_mb=4000,
+    log:
+        RESULTS
+        + "logs/generate_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
+    benchmark:
+        (
+            RESULTS
+            + "benchmarks/generate_cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
+        )
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/walloon_scripts/make_cross_border_flows.py"
+
+
 rule make_global_summary:
     params:
         scenario=config_provider("scenario"),

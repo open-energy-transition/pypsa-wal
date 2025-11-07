@@ -103,3 +103,12 @@ rule plot_power_networks_clustered:
             **config["scenario"],
             run=config["run"]["name"],
         ),
+
+rule generate_all_cross_border_flows:
+    input:
+        expand(
+            RESULTS
+            + "csvs/individual/cross_border_flows_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
