@@ -221,6 +221,7 @@ def load_and_aggregate_powerplants(
     consider_efficiency_classes: bool = False,
     aggregation_strategies: dict = None,
     exclude_carriers: list = None,
+    planning_horizon: int = None,
 ) -> pd.DataFrame:
     if not aggregation_strategies:
         aggregation_strategies = {}
@@ -271,6 +272,9 @@ def load_and_aggregate_powerplants(
         ppl.carrier.map(costs.VOM) + ppl.carrier.map(costs.fuel) / ppl.efficiency
     )
 
+    aged_out = ppl[ppl['dateout'] <= planning_horizon].index
+    ppl.drop(aged_out, inplace=True)
+
     strategies = {
         **DEFAULT_ONE_PORT_STRATEGIES,
         **{"country": "first"},
@@ -293,7 +297,7 @@ def load_and_aggregate_powerplants(
                 ).astype(str)
                 df.update({"carrier": df_c.carrier + " " + suffix + " efficiency"})
 
-    grouper = ["bus", "carrier"]
+    grouper = ["bus", "carrier"] #, "dateout"]
     weights = df.groupby(grouper).p_nom.transform(normed_or_uniform)
 
     for k, v in strategies.items():
@@ -302,7 +306,8 @@ def load_and_aggregate_powerplants(
             strategies[k] = pd.Series.sum
 
     aggregated = df.groupby(grouper, as_index=False).agg(strategies)
-    aggregated.index = aggregated.bus + " " + aggregated.carrier
+    # breakpoint()
+    aggregated.index = aggregated.bus + " " + aggregated.carrier # + " " + str(aggregated.dateout)
     aggregated.build_year = aggregated.build_year.astype(int)
 
     disaggregated = ppl[~to_aggregate][aggregated.columns].copy()
@@ -1085,6 +1090,7 @@ if __name__ == "__main__":
         params.consider_efficiency_classes,
         params.aggregation_strategies,
         params.exclude_carriers,
+        params.planning_horizon
     )
 
     attach_load(
