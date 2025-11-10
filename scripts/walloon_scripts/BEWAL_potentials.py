@@ -16,10 +16,8 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
             walloon_potentials, index_col=0,
             dtype={'year': int, 'value': float}
         ).query("year == @planning_horizons")
-        print(potentials)
         
         for carrier in potentials.index:
-            print(carrier)
             if carrier in n.generators.carrier.unique():
                 BEWAL_carrier_idx = (
                     # bus can also be BEWAL low voltage or alike
@@ -39,7 +37,6 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
                 for col in ["e_nom_min", "e_nom", "e_nom_max", "e_initial"]:
                     n.stores.loc[biomass_imports.index, col] = e_nom
 
-                print(n.stores.loc[biomass_imports.index].iloc[0])
                 biomass_imports = biomass_imports.bus.values
                 biomass_imports = n.links.query("bus0 in @biomass_imports").index
                 drop_non_BEWAL_imports = [link for link in biomass_imports if "BEWAL" not in link]
