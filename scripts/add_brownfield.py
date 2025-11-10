@@ -22,6 +22,8 @@ from scripts._helpers import (
 from scripts.add_electricity import flatten, sanitize_carriers
 from scripts.add_existing_baseyear import add_build_year_to_new_assets
 
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
+
 logger = logging.getLogger(__name__)
 idx = pd.IndexSlice
 
@@ -68,7 +70,6 @@ def add_brownfield(
 
         # remove assets whose build_year + lifetime <= year
         n_p.remove(c.name, c.df.index[c.df.build_year + c.df.lifetime <= year])
-
         # remove assets if their optimized nominal capacity is lower than a threshold
         # since CHP heat Link is proportional to CHP electric Link, make sure threshold is compatible
         chp_heat = c.df.index[
@@ -376,4 +377,11 @@ if __name__ == "__main__":
 
     sanitize_custom_columns(n)
     sanitize_carriers(n, snakemake.config)
+
+    add_BEWAL_nuclear(
+        n=n,
+        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
+        planning_horizon=int(snakemake.wildcards.planning_horizons),
+    )
+
     n.export_to_netcdf(snakemake.output[0])

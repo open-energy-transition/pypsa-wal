@@ -17,6 +17,8 @@ import powerplantmatching as pm
 import pypsa
 import xarray as xr
 
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
+
 from scripts._helpers import (
     configure_logging,
     load_costs,
@@ -380,6 +382,7 @@ def add_power_capacities_installed_before_baseyear(
                         * costs.at[
                             generator, "capital_cost"
                         ],  # NB: fixed cost is per MWel
+                        p_nom_min=new_capacity / costs.at[generator, "efficiency"],
                         p_nom=new_capacity / costs.at[generator, "efficiency"],
                         efficiency=costs.at[generator, "efficiency"],
                         efficiency2=costs.at[carrier[generator], "CO2 intensity"],
@@ -802,4 +805,11 @@ if __name__ == "__main__":
 
     sanitize_custom_columns(n)
     sanitize_carriers(n, snakemake.config)
+
+    add_BEWAL_nuclear(
+        n=n,
+        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
+        planning_horizon=int(snakemake.wildcards.planning_horizons),
+    )
+
     n.export_to_netcdf(snakemake.output[0])
