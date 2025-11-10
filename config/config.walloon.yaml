@@ -36,6 +36,7 @@ countries:
 
 electricity:
   walloon_reassignment: True
+  walloon_potentials: data/walloon/custom_potentials.csv
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
