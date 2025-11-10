@@ -220,11 +220,12 @@ def add_power_capacities_installed_before_baseyear(
     # Intermediate fix for DateIn & DateOut
     # Fill missing DateIn
     biomass_i = df_agg.loc[df_agg.Fueltype == "urban central solid biomass CHP"].index
-    mean = df_agg.loc[biomass_i, "DateIn"].mean()
-    df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(int(mean))
-    # Fill missing DateOut
-    dateout = df_agg.loc[biomass_i, "DateIn"] + lifetime_values["lifetime"]
-    df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(dateout)
+    if len(biomass_i) > 0:
+        mean = df_agg.loc[biomass_i, "DateIn"].mean()
+        df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(int(mean))
+        # Fill missing DateOut
+        dateout = df_agg.loc[biomass_i, "DateIn"] + lifetime_values["lifetime"]
+        df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(dateout)
 
     # include renewables in df_agg
     add_existing_renewables(
