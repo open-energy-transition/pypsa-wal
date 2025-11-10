@@ -70,6 +70,7 @@ def add_brownfield(
 
         # remove assets whose build_year + lifetime <= year
         n_p.remove(c.name, c.df.index[c.df.build_year + c.df.lifetime <= year])
+
         # remove assets if their optimized nominal capacity is lower than a threshold
         # since CHP heat Link is proportional to CHP electric Link, make sure threshold is compatible
         chp_heat = c.df.index[
