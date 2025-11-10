@@ -48,6 +48,8 @@ clustering:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
 sector:
   oil_boilers: true
+  solid_biomass_import:
+    enable: true
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#solving
 solving:
