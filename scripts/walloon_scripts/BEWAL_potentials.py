@@ -24,7 +24,7 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
 
             logger_msg_success = f"Overwriting exogenously given potentials for {carrier} in BEWAL."
             logger_msg_failure =  f"{carrier} is currently not a supported or valid technology."
-            if carrier in n.generators.carrier.unique() and carrier != "solid biomass":
+            if carrier in n.generators.carrier.unique() and carrier not in ["solid biomass", "biogas"]:
                 logger.info(logger_msg_success)
 
                 BEWAL_carrier_idx = (
@@ -34,19 +34,20 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
                 )
                 n.generators.loc[BEWAL_carrier_idx, "p_nom_max"] = potential
 
-            elif carrier == "solid biomass":
+            elif carrier in ["solid biomass", "biogas"]:
                 logger.info(logger_msg_success)
-
-                pypsa_eur_potential = n.generators.loc["BEWAL solid biomass", "p_nom"]
-                if pypsa_eur_potential <= potential:
-                    for col in ["p_nom", "e_sum_max"]:
-                        n.generators.loc["BEWAL unsustainable solid biomass", col] = potential - pypsa_eur_potential
+                if carrier == "biogas":
+                    unsustainable_idx = f"BEWAL {carrier} unsustainable"
                 else:
-                    for col in ["p_nom", "e_sum_max"]:
-                        n.generators.loc["BEWAL solid biomass", col] = potential
-                        n.generators.loc["BEWAL unsustainable solid biomass", col] = 0
+                    unsustainable_idx = f"BEWAL unsustainable {carrier}"
 
-                BEWAL_carrier_idx = ["BEWAL solid biomass", "BEWAL unsustainable solid biomass"]
+                pypsa_eur_potential = n.generators.loc[f"BEWAL {carrier}", "p_nom"]
+                if pypsa_eur_potential <= potential:
+                    n.generators.loc[unsustainable_idx, ["p_nom", "e_sum_max"]] = potential - pypsa_eur_potential
+                else:
+                    n.generators.loc[f"BEWAL {carrier}", ["p_nom", "e_sum_max"]] = potential
+                    n.generators.loc[unsustainable_idx, ["p_nom", "e_sum_max"]] = 0
+                # what about ["BEWAL solid biomass transported", "BEWAL unsustainable solid biomass transported"] ?
                 # what about ["BEWAL solid biomass transported", "BEWAL unsustainable solid biomass transported"] ?
             elif carrier == 'solid biomass import':
                 # remove all solid biomass imports except the one for BEWAL
@@ -54,8 +55,7 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
                 logger.info(logger_msg_success)
                 biomass_imports = n.stores.query("carrier == @carrier")
 
-                for col in ["e_nom_min", "e_nom", "e_nom_max", "e_initial"]:
-                    n.stores.loc[biomass_imports.index, col] = potential
+                n.stores.loc[biomass_imports.index, ["e_nom_min", "e_nom", "e_nom_max", "e_initial"]] = potential
 
                 biomass_imports = biomass_imports.bus.values
                 biomass_imports = n.links.query("bus0 in @biomass_imports").index
