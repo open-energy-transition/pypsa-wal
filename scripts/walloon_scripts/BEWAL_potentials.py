@@ -15,48 +15,51 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
             walloon_potentials, index_col=0,
             dtype={'year': int, 'value': float}
         ).query("year == @planning_horizons")
-        
+
         for carrier in potentials.index:
-            if carrier in n.generators.carrier.unique():
+            if "GW" in potentials.loc[carrier].unit:
+                potential = potentials.loc[carrier].value * 1000
+            else:
+                potential = potentials.loc[carrier].value
+
+            logger_msg_success = f"Overwriting exogenously given potentials for {carrier} in BEWAL."
+            logger_msg_failure =  f"{carrier} is currently not a supported or valid technology."
+            if carrier in n.generators.carrier.unique() and carrier != "solid biomass":
+                logger.info(logger_msg_success)
+
                 BEWAL_carrier_idx = (
                     # bus can also be BEWAL low voltage or alike
                     n.generators[n.generators.bus.str.contains("BEWAL")]
                     .query("carrier == @carrier").index
                 )
-                n.generators.loc[BEWAL_carrier_idx, "p_nom_max"] = potentials.loc[carrier].value
-            elif 'solid biomass import (oustide europe)' in carrier:
+                n.generators.loc[BEWAL_carrier_idx, "p_nom_max"] = potential
+
+            elif carrier == "solid biomass":
+                logger.info(logger_msg_success)
+
+                pypsa_eur_potential = n.generators.loc["BEWAL solid biomass", "p_nom"]
+                if pypsa_eur_potential <= potential:
+                    for col in ["p_nom", "e_sum_max"]:
+                        n.generators.loc["BEWAL unsustainable solid biomass", col] = potential - pypsa_eur_potential
+                else:
+                    for col in ["p_nom", "e_sum_max"]:
+                        n.generators.loc["BEWAL solid biomass", col] = potential
+                        n.generators.loc["BEWAL unsustainable solid biomass", col] = 0
+
+                BEWAL_carrier_idx = ["BEWAL solid biomass", "BEWAL unsustainable solid biomass"]
+                # what about ["BEWAL solid biomass transported", "BEWAL unsustainable solid biomass transported"] ?
+            elif carrier == 'solid biomass import':
                 # remove all solid biomass imports except the one for BEWAL
                 # and set the import potential to the one given for BEWAL
+                logger.info(logger_msg_success)
                 biomass_imports = n.stores.query("carrier == @carrier")
 
-                if "GW" in potentials.loc[carrier].unit:
-                    e_nom = potentials.loc[carrier].value * 1000
-                else:
-                    e_nom = potentials.loc[carrier].value
                 for col in ["e_nom_min", "e_nom", "e_nom_max", "e_initial"]:
-                    n.stores.loc[biomass_imports.index, col] = e_nom
-
-                biomass_imports = biomass_imports.bus.values
-                biomass_imports = n.links.query("bus0 in @biomass_imports").index
-                drop_non_BEWAL_imports = [link for link in biomass_imports if "BEWAL" not in link]
-                n.remove("Link", drop_non_BEWAL_imports)
-            elif 'biogas' in carrier:
-                # remove all solid biomass imports except the one for BEWAL
-                # and set the import potential to the one given for BEWAL
-                biomass_imports = n.stores.query("carrier == @carrier")
-
-                if "GW" in potentials.loc[carrier].unit:
-                    e_nom = potentials.loc[carrier].value * 1000
-                else:
-                    e_nom = potentials.loc[carrier].value
-                for col in ["e_nom_min", "e_nom", "e_nom_max", "e_initial"]:
-                    n.stores.loc[biomass_imports.index, col] = e_nom
+                    n.stores.loc[biomass_imports.index, col] = potential
 
                 biomass_imports = biomass_imports.bus.values
                 biomass_imports = n.links.query("bus0 in @biomass_imports").index
                 drop_non_BEWAL_imports = [link for link in biomass_imports if "BEWAL" not in link]
                 n.remove("Link", drop_non_BEWAL_imports)
             else:
-                logger.warning(
-                    f"{carrier} is currently not a supported or valid technology."
-                )
+                logger.warning(logger_msg_failure)
