@@ -6,7 +6,7 @@ expected phase-out and build logic:
 
 * **Custom power plants retirements.** The Walloon (BEWAL) nuclear power plant, Tihange, 
   is now defined in ``data/custom_powerplants.csv`` with as 3 separate units
-  (Tihange 1/2/3) including ``DateOut``s for each to allow the plant to retire incrementally. 
+  (Tihange 1/2/3) to allow the plant to retire its capacity incrementally. 
   The workflow filters out those rows by the current planning horizon so a unit 
   automatically disappears once its retirement year is passed. 
 * **Single nuclear representation.** Removed duplication of nuclear representation in 
