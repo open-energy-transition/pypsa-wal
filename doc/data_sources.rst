@@ -17,3 +17,4 @@ data sources.
    ../data-bundle
    ../data-retrieval
    ../data-repos
+   ../data-walloon

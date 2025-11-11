@@ -7,6 +7,13 @@
 Release Notes
 ##########################################
 
+PyPSA-WAL Upcoming Release
+==========================
+
+* Added Walloon-specific nuclear decommissioning logic: custom staging data now
+  retires the Tihange blocks per planning horizon and prevents new BEWAL nuclear 
+  capacity until 2040 (https://github.com/open-energy-transition/pypsa-wal/pull/28).
+
 Upcoming Release
 ================
 
