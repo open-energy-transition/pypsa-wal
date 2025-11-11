@@ -10,6 +10,8 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* Overrode costs for specified fuels and technologies provided by ``data/walloon/custom_costs_rc.csv`` 
+  (https://github.com/open-energy-transition/pypsa-wal/pull/31).
 * Added Walloon-specific nuclear decommissioning logic: custom staging data now
   retires the Tihange blocks per planning horizon and prevents new BEWAL nuclear 
   capacity until 2040 (https://github.com/open-energy-transition/pypsa-wal/pull/28).
