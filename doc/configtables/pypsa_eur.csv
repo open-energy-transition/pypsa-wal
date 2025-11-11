@@ -1,0 +1,6 @@
+,Unit,Values,Description
+Bus,--,"['AC']","Regulates which PyPSA-Eur bus carriers are kept when importing the electricity snapshot into the sector model. Defaults to keeping only the AC transmission bus."
+Link,--,"['DC']","Regulates which PyPSA-Eur link carriers (such as HVDC interconnectors) are kept when importing the snapshot."
+Generator,--,"['onwind','offwind-ac','offwind-dc','offwind-float','solar-hsat','solar','ror']","Controls which generator carriers from the PyPSA-Eur snapshot are retained (others are removed) before sector coupling. Nuclear not included in this list for the Walloon workflow."
+StorageUnit,--,"['PHS','hydro']","Controls which StorageUnit carriers are retained; other PyPSA-Eur storage units are dropped because they are modelled differently in the sector workflow."
+Store,--,"[]","Controls which store carriers are retained; most store components are removed because the sector workflow implements them separately."
