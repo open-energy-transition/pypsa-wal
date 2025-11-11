@@ -44,7 +44,21 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
                 pypsa_eur_potential = n.generators.loc[f"BEWAL {carrier}", "p_nom"]
                 if pypsa_eur_potential <= potential:
                     n.generators.loc[unsustainable_idx, ["p_nom", "e_sum_max"]] = potential - pypsa_eur_potential
+                    if carrier == "solid biomass":
+                        limit = n.global_constraints.loc["unsustainable biomass limit", "constant"]
+                        n.global_constraints.loc["unsustainable biomass limit", "constant"] = (
+                            limit - pypsa_eur_potential + potential
+                        )
                 else:
+                    if carrier == "solid biomass":
+                        limit = n.global_constraints.loc["unsustainable biomass limit", "constant"]
+                        n.global_constraints.loc["unsustainable biomass limit", "constant"] = (
+                            limit - n.generators.loc[unsustainable_idx, "p_nom"]
+                        )
+                        limit = n.global_constraints.loc["biomass limit", "constant"]
+                        n.global_constraints.loc["biomass limit", "constant"] = (
+                            limit - pypsa_eur_potential + potential
+                        )
                     n.generators.loc[f"BEWAL {carrier}", ["p_nom", "e_sum_max"]] = potential
                     n.generators.loc[unsustainable_idx, ["p_nom", "e_sum_max"]] = 0
                 # what about ["BEWAL solid biomass transported", "BEWAL unsustainable solid biomass transported"] ?
