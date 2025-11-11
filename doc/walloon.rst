@@ -11,9 +11,10 @@ expected phase-out and build logic:
   automatically disappears once its retirement year is passed. 
 * **Single nuclear representation.** Removed duplication of nuclear representation in 
   model -- before they were represented as both generators and links, now only as links.
-* **Configurable new builds.** ``config/config.walloon.yaml`` contains a Walloon
-  override under ``electricity.extendable_carriers`` that allows nuclear to be
-  extendable only for specific planning horizons (e.g. 2040 and 2050). 
+* **No new BEWAL nuclear before 2040 and configurable new builds.** ``config/config.walloon.yaml`` 
+  contains a Walloon override under ``electricity.extendable_carriers`` that allows nuclear to be
+  extendable only for specific planning horizons (e.g. 2040 and 2050). The planning horizon and 
+  the carrier list can be configured as needed.
 
 With these adjustments the Walloon run retires the Tihange power plant incrementally 
 at their scheduled dates, removes duplicate representation of nuclear, and only allows
