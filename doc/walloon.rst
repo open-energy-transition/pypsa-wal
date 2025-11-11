@@ -1,23 +1,20 @@
 Walloon Specific Changes
 ========================
 
-BEWAL nuclear retirements and additions
-----------------------------------------
+This branch adapts the Walloon configuration so Belgian nuclear units follow the
+expected phase-out and build logic:
 
-Walloon-specific adjustments to nuclear representation are made. Mainly, they are:
+* **Custom power plants retirements.** The Belgian nuclear reactors are now defined
+  exclusively in ``data/walloon/custom_powerplants.csv`` with one row per block
+  (Tihange 1/2/3) including ``DateOut``. The workflow filters out
+  those rows by the current planning horizon so a unit automatically disappears
+  once its retirement year is passed. 
+* **Single nuclear representation.** Removed duplication of nuclear representation in 
+  model -- before they were represented as both generators and links, now only as links.
+* **Configurable new builds.** ``config/config.walloon.yaml`` contains a Walloon
+  override under ``electricity.extendable_carriers`` that allows nuclear to be
+  extendable only for specific planning horizons (e.g. 2040 and 2050). 
 
-* **Tihange power plant retirement staging.** Entries in ``data/walloon/custom_decommissioning.csv`` are
-  divided into separate units (e.g. Tihange 1/2/3) so ``DateOut`` can reflect the
-  staged shutdowns. ``build_powerplants`` now filters those rows per planning
-  horizon, so once a unit’s retirement year is reached it is dropped from later runs.
-* **Nuclear as links.** "nuclear" is removed from `pypsa_eur.Generator` so it won't be represented twice 
-  (as generators and as links). This changes the representation of nuclear in the model 
-  from generators to links.
-* **No new BEWAL nuclear before 2040.** ``config/config.walloon.yaml`` keeps nuclear
-  out of ``electricity.extendable_carriers`` and explicitly lists BE under
-  ``electricity.powerplants_filter`` so no new Belgian reactors can be added until
-  the desired horizon.
-
-With these changes the Walloon run retires the Tihange blocks at their scheduled
-dates, uses the correct link-based representation, and prevents nuclear additions 
-until the 2040 horizon.
+With these adjustments the Walloon run retires the Tihange power plant incrementally 
+at their scheduled dates, removes duplicate representation of nuclear, and only allows
+new Belgian nuclear capacity when the config explicitly enables it.
