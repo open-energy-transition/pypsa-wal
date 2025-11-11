@@ -5,7 +5,7 @@ This branch adapts the Walloon configuration so Belgian nuclear units follow the
 expected phase-out and build logic:
 
 * **Custom power plants retirements.** The Belgian nuclear reactors are now defined
-  exclusively in ``data/walloon/custom_powerplants.csv`` with one row per block
+  exclusively in ``data/custom_powerplants.csv`` with one row per block
   (Tihange 1/2/3) including ``DateOut``. The workflow filters out
   those rows by the current planning horizon so a unit automatically disappears
   once its retirement year is passed. 
