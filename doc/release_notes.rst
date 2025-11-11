@@ -10,6 +10,10 @@ Release Notes
 Upcoming Release
 ================
 
+* Added Walloon-specific nuclear decommissioning logic: custom staging data now
+  retires the Tihange blocks per planning horizon and prevents new BEWAL nuclear 
+  capacity until 2040 (https://github.com/open-energy-transition/pypsa-wal/pull/28).
+
 * Feature: Introduce a new method to overwrite costs (https://github.com/PyPSA/pypsa-eur/pull/1752). Modifications to the default technico-economic assumptions can now be configured via `costs:custom_cost_fn`, which applies changes to the `resources/costs_{planning_horizons}.csv` files. The default configuration includes minor adjustments to stabilize optimization results. The existing implementation via `costs:overwrites` and `costs:capital_cost`/`costs:marginal_cost` parameters remains available but will be deprecated in a future release.
 
 * Added river-water and sea-water sourced heat pumps as well as interactive bus-balance plots and heat-source maps. Also introduced district heating areas in which heat sources must be located.
