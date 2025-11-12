@@ -11,6 +11,28 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 
+def _apply_nuclear_costs_to_links(n, costs: pd.DataFrame) -> None:
+    if "nuclear" not in costs.index:
+        logger.warning(
+            "Cost table does not contain a 'nuclear' entry; nuclear link costs left unchanged."
+        )
+        return
+
+    mask = n.links.carrier.str.contains("nuclear", case=False)
+    if not mask.any():
+        logger.debug("No nuclear links found in the network.")
+        return
+
+    efficiency = n.links.loc[mask, "efficiency"]
+    if "capital_cost" in costs.columns:
+        n.links.loc[mask, "capital_cost"] = efficiency * costs.at[
+            "nuclear", "capital_cost"
+        ]
+    if "VOM" in costs.columns:
+        n.links.loc[mask, "marginal_cost"] = efficiency * costs.at["nuclear", "VOM"]
+    logger.info("Updated %s nuclear link cost entries.", mask.sum())
+
+
 def add_BEWAL_nuclear(
     n,
     walloon_nuclear_config,
@@ -19,8 +41,8 @@ def add_BEWAL_nuclear(
     link_name: str = "BEWAL nuclear-2025",
 ):
     """
-    Update the BEWAL nuclear link in the network to be extendable if 'nuclear' is
-    listed for the given planning horizon.
+    Refresh nuclear link costs from the processed cost table and, if requested,
+    allow the BEWAL link to become extendable for the selected planning horizon.
 
     Parameters
     ----------
@@ -34,8 +56,8 @@ def add_BEWAL_nuclear(
         The year to check and update.
     costs : pandas.DataFrame, optional
         Prepared cost table for the active planning horizon. When provided,
-        the BEWAL nuclear link capital and marginal costs are refreshed using
-        the table values so extendable builds reflect the desired overrides.
+        capital and marginal costs for **all** nuclear links are refreshed using
+        the table values so every nuclear asset reflects the desired overrides.
     link_name : str, optional
         Name of the Walloon nuclear link to adjust (default
         ``'BEWAL nuclear-2025'``).
@@ -44,23 +66,8 @@ def add_BEWAL_nuclear(
     horizon_config = walloon_nuclear_config.get(planning_horizon, [])
     link_missing = link_name not in n.links.index
 
-    if costs is not None and not link_missing:
-        if "nuclear" in costs.index:
-            efficiency = n.links.at[link_name, "efficiency"]
-            if "capital_cost" in costs.columns:
-                n.links.at[link_name, "capital_cost"] = (
-                    efficiency * costs.at["nuclear", "capital_cost"]
-                )
-            if "VOM" in costs.columns:
-                n.links.at[link_name, "marginal_cost"] = (
-                    efficiency * costs.at["nuclear", "VOM"]
-                )
-        else:
-            logger.warning(
-                "Cost table does not contain a 'nuclear' entry; BEWAL nuclear costs left unchanged."
-            )
-    elif costs is None:
-        logger.debug("No cost table supplied; keeping existing BEWAL nuclear costs.")
+    if costs is not None:
+        _apply_nuclear_costs_to_links(n, costs)
     elif link_missing:
         logger.warning(
             "Requested nuclear link '%s' not found; unable to update costs.", link_name
