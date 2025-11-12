@@ -2,6 +2,9 @@
 solid biomass import,potential_wal,4000,GWh/an,2030,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
 solid biomass import,potential_wal,4500,GWh/an,2040,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
 solid biomass import,potential_wal,6000,GWh/an,2050,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
+solid biomass transported,potential_wal,2000,GWh/an,2030,Valbiom,"Potentiel annuel de pellets importés destinés à la Wallonie",,
+solid biomass transported,potential_wal,2250,GWh/an,2040,Valbiom,"Potentiel annuel de pellets importés destinés à la Wallonie",,
+solid biomass transported,potential_wal,3000,GWh/an,2050,Valbiom,"Potentiel annuel de pellets importés destinés à la Wallonie",,
 onwind,potential_wal,6500,MW,2030,PNEC Wallon et EDORA,"• Potentiel technique, calculé comme la somme de ce qui est plausible d'atteindre en 2030 comme capacité et des projets à l'étude
 • Les statistiques d'installation (fin 2024) indique que la Wallonie est sur la bonne trajectoire pour atteindre son objectif de production de 6200 GWh étoliens onshore annuels (PNEC wallon - scénario WAM)
 • Ces 6200 GWh sont traduits en 2700 MW de puissance installée.
