@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: MIT
 
 import logging
-from typing import Optional
 
 import pandas as pd
 
@@ -25,9 +24,9 @@ def _apply_nuclear_costs_to_links(n, costs: pd.DataFrame) -> None:
 
     efficiency = n.links.loc[mask, "efficiency"]
     if "capital_cost" in costs.columns:
-        n.links.loc[mask, "capital_cost"] = efficiency * costs.at[
-            "nuclear", "capital_cost"
-        ]
+        n.links.loc[mask, "capital_cost"] = (
+            efficiency * costs.at["nuclear", "capital_cost"]
+        )
     if "VOM" in costs.columns:
         n.links.loc[mask, "marginal_cost"] = efficiency * costs.at["nuclear", "VOM"]
     logger.info("Updated %s nuclear link cost entries.", mask.sum())
@@ -37,12 +36,13 @@ def add_BEWAL_nuclear(
     n,
     walloon_nuclear_config,
     planning_horizon,
-    costs: Optional[pd.DataFrame] = None,
+    costs: pd.DataFrame | None = None,
     link_name: str = "BEWAL nuclear-2025",
 ):
     """
-    Refresh nuclear link costs from the processed cost table and, if requested,
-    allow the BEWAL link to become extendable for the selected planning horizon.
+    Update the BEWAL nuclear link in the network to be extendable if 'nuclear' is
+    listed for the given planning horizon and also update nuclear link costs from
+    the processed cost table.
 
     Parameters
     ----------
