@@ -344,9 +344,6 @@ def attach_load(
     # apply clustering busmap
     busmap = pd.read_csv(busmap_fn, dtype=str)
     index_col = "name" if PYPSA_V1 else "Bus"
-    # if "name" does not exist in busmap.columns but "Bus" does, rename "Bus" to "name"
-    if "name" not in busmap.columns and "Bus" in busmap.columns:
-        busmap = busmap.rename(columns={"Bus": "name"})
     busmap = busmap.set_index(index_col).squeeze()
     load = load.groupby(busmap).sum().T
 
