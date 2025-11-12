@@ -17,10 +17,14 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
         ).query("year == @planning_horizons")
 
         for carrier in potentials.index:
-            if "GW" in potentials.loc[carrier].unit:
-                potential = potentials.loc[carrier].value * 1000
+            unit = str(potentials.loc[carrier].unit)
+            value = potentials.loc[carrier].value
+            if "GW" in unit and "GWh" not in unit:
+                potential = value * 1000
+            elif "GWh" in unit:
+                potential = value * 1000  # convert GWh to MWh
             else:
-                potential = potentials.loc[carrier].value
+                potential = value
 
             logger_msg_success = f"Overwriting exogenously given potentials for {carrier} in BEWAL."
             logger_msg_failure =  f"{carrier} is currently not a supported or valid technology."
@@ -75,5 +79,34 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
                 biomass_imports = n.links.query("bus0 in @biomass_imports").index
                 drop_non_BEWAL_imports = [link for link in biomass_imports if "BEWAL" not in link]
                 n.remove("Link", drop_non_BEWAL_imports)
+            elif carrier == "solid biomass transported":
+                logger.info(logger_msg_success)
+                transported_generators = [
+                    "BEWAL solid biomass transported",
+                    "BEWAL unsustainable solid biomass transported",
+                ]
+                present_generators = [idx for idx in transported_generators if idx in n.generators.index]
+
+                if not present_generators:
+                    logger.warning(
+                        "No BEWAL solid biomass transported generators found; "
+                        "skipping transported biomass potential overwrite.",
+                    )
+                    continue
+
+                energy_caps = (
+                    n.generators.loc[present_generators, "e_sum_max"]
+                    .fillna(0)
+                )
+
+                total_existing = energy_caps.sum()
+                if total_existing <= 0:
+                    # default to allocating all energy to the sustainable generator
+                    allocation = pd.Series(0, index=present_generators, dtype=float)
+                    allocation.iloc[0] = potential
+                else:
+                    allocation = energy_caps / total_existing * potential
+
+                n.generators.loc[present_generators, "e_sum_max"] = allocation.values
             else:
                 logger.warning(logger_msg_failure)
