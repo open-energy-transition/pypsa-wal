@@ -15,6 +15,7 @@ import xarray as xr
 from scripts._helpers import (
     configure_logging,
     get_snapshots,
+    load_costs,
     sanitize_custom_columns,
     set_scenario_config,
     update_config_from_wildcards,
@@ -352,6 +353,8 @@ if __name__ == "__main__":
 
     n = pypsa.Network(snakemake.input.network)
 
+    costs = load_costs(snakemake.input.costs)
+
     adjust_renewable_profiles(n, snakemake.input, snakemake.params, year)
 
     add_build_year_to_new_assets(n, year)
@@ -383,6 +386,7 @@ if __name__ == "__main__":
         n=n,
         walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
         planning_horizon=int(snakemake.wildcards.planning_horizons),
+        costs=costs,
     )
 
     n.export_to_netcdf(snakemake.output[0])
