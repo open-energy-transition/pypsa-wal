@@ -17,8 +17,6 @@ import powerplantmatching as pm
 import pypsa
 import xarray as xr
 
-from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
-
 from scripts._helpers import (
     configure_logging,
     load_costs,
@@ -30,6 +28,7 @@ from scripts.add_electricity import sanitize_carriers
 from scripts.build_energy_totals import cartesian
 from scripts.definitions.heat_system import HeatSystem
 from scripts.prepare_sector_network import cluster_heat_buses, define_spatial
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
 
 logger = logging.getLogger(__name__)
 cc = coco.CountryConverter()
@@ -224,10 +223,14 @@ def add_power_capacities_installed_before_baseyear(
     biomass_i = df_agg.loc[df_agg.Fueltype == "urban central solid biomass CHP"].index
     if len(biomass_i) > 0:
         mean = df_agg.loc[biomass_i, "DateIn"].mean()
-        df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(int(mean))
+        df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(
+            int(mean)
+        )
         # Fill missing DateOut
         dateout = df_agg.loc[biomass_i, "DateIn"] + lifetime_values["lifetime"]
-        df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(dateout)
+        df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(
+            dateout
+        )
 
     # include renewables in df_agg
     add_existing_renewables(
@@ -808,8 +811,11 @@ if __name__ == "__main__":
 
     add_BEWAL_nuclear(
         n=n,
-        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
+        walloon_nuclear_config=snakemake.config["electricity"][
+            "extendable_carriers"
+        ].get("Walloon", {}),
         planning_horizon=int(snakemake.wildcards.planning_horizons),
+        costs=costs,
     )
 
     n.export_to_netcdf(snakemake.output[0])
