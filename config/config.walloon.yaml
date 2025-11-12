@@ -46,7 +46,7 @@ electricity:
     2040: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
     2050: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
-  powerplants_filter: (DateOut >= 2024 and DateOut != DateOut) and not (Country in ['BE'] and Fueltype == 'Nuclear')
+  powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and not (Country in ['BE'] and Fueltype == 'Nuclear')
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
