@@ -5,12 +5,44 @@
 
 import logging
 
+import pandas as pd
+
 logger = logging.getLogger(__name__)
 
-def add_BEWAL_nuclear(n, walloon_nuclear_config, planning_horizon):
+
+def _apply_nuclear_costs_to_links(n, costs: pd.DataFrame) -> None:
+    if "nuclear" not in costs.index:
+        logger.warning(
+            "Cost table does not contain a 'nuclear' entry; nuclear link costs left unchanged."
+        )
+        return
+
+    mask = n.links.carrier.str.contains("nuclear", case=False)
+    if not mask.any():
+        logger.debug("No nuclear links found in the network.")
+        return
+
+    efficiency = n.links.loc[mask, "efficiency"]
+    if "capital_cost" in costs.columns:
+        n.links.loc[mask, "capital_cost"] = (
+            efficiency * costs.at["nuclear", "capital_cost"]
+        )
+    if "VOM" in costs.columns:
+        n.links.loc[mask, "marginal_cost"] = efficiency * costs.at["nuclear", "VOM"]
+    logger.info("Updated %s nuclear link cost entries.", mask.sum())
+
+
+def add_BEWAL_nuclear(
+    n,
+    walloon_nuclear_config,
+    planning_horizon,
+    costs: pd.DataFrame | None = None,
+    link_name: str = "BEWAL nuclear-2025",
+):
     """
     Update the BEWAL nuclear link in the network to be extendable if 'nuclear' is
-    listed for the given planning horizon.
+    listed for the given planning horizon and also update nuclear link costs from
+    the processed cost table.
 
     Parameters
     ----------
@@ -22,11 +54,35 @@ def add_BEWAL_nuclear(n, walloon_nuclear_config, planning_horizon):
             {2030: ['nuclear'], 2040: ['OCGT', 'nuclear']}
     planning_horizon : int
         The year to check and update.
+    costs : pandas.DataFrame, optional
+        Prepared cost table for the active planning horizon. When provided,
+        capital and marginal costs for **all** nuclear links are refreshed using
+        the table values so every nuclear asset reflects the desired overrides.
+    link_name : str, optional
+        Name of the Walloon nuclear link to adjust (default
+        ``'BEWAL nuclear-2025'``).
     """
 
-    if 'nuclear' in walloon_nuclear_config.get(planning_horizon, []):
-        n.links.loc["BEWAL nuclear-2025", "p_nom_extendable"] = True
-    non_nuclear_values = [v for v in walloon_nuclear_config.get(planning_horizon, []) if v != "nuclear"]
+    horizon_config = walloon_nuclear_config.get(planning_horizon, [])
+    link_missing = link_name not in n.links.index
+
+    if costs is not None:
+        _apply_nuclear_costs_to_links(n, costs)
+    elif link_missing:
+        logger.warning(
+            "Requested nuclear link '%s' not found; unable to update costs.", link_name
+        )
+
+    if "nuclear" in horizon_config:
+        if link_missing:
+            logger.warning(
+                "Requested nuclear link '%s' not found; extendable flag not updated.",
+                link_name,
+            )
+        else:
+            n.links.loc[link_name, "p_nom_extendable"] = True
+
+    non_nuclear_values = [v for v in horizon_config if v != "nuclear"]
     if non_nuclear_values:
         logger.warning(
             "The following conventional technologies are currently not supported as extendable: "
