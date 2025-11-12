@@ -816,6 +816,9 @@ if __name__ == "__main__":
         ].get("Walloon", {}),
         planning_horizon=int(snakemake.wildcards.planning_horizons),
         costs=costs,
+        extendable_nodes=snakemake.config["electricity"].get(
+            "extendable_nuclear_links", {}
+        ),
     )
 
     n.export_to_netcdf(snakemake.output[0])

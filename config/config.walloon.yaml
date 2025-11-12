@@ -42,6 +42,9 @@ electricity:
     Walloon:
       2040: [nuclear]
       2050: [nuclear]
+  extendable_nuclear_links:
+    2040: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
+    2050: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
   powerplants_filter: (DateOut >= 2024 and DateOut != DateOut) and not (Country in ['BE'] and Fueltype == 'Nuclear')
 
