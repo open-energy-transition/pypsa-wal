@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 import logging
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 
@@ -12,22 +13,26 @@ def _set_links_extendable_for_nodes(n, nodes: list[str], planning_horizon: int) 
     if not nodes:
         return
 
-    suffix = n.links.index.str.extract(r"^(?P<prefix>.+ nuclear)-(?P<year>\d{4})$")
-    suffix = suffix.dropna()
+    suffix = (
+        n.links.index.str.extract(r"^(?P<prefix>.+ nuclear)-(?P<year>\d{4})$")
+        .dropna()
+        .assign(year=lambda df: df["year"].astype(int))
+    )
     if suffix.empty:
         logger.debug("No nuclear link names with year suffix found.")
         return
 
-    suffix["year"] = suffix["year"].astype(int)
+    grouped_years = suffix.groupby("prefix")["year"].apply(list).to_dict()
+
     for node in nodes:
         prefix = f"{node} nuclear"
-        matches = suffix[suffix["prefix"] == prefix]
-        if matches.empty:
+        years = grouped_years.get(prefix)
+        if not years:
             logger.warning("No nuclear link found for node '%s'.", node)
             continue
 
-        valid = matches[matches["year"] <= planning_horizon]
-        if valid.empty:
+        valid = [year for year in years if year <= planning_horizon]
+        if not valid:
             logger.warning(
                 "Nuclear link for node '%s' only exists after planning horizon %s.",
                 node,
@@ -35,7 +40,7 @@ def _set_links_extendable_for_nodes(n, nodes: list[str], planning_horizon: int) 
             )
             continue
 
-        target_year = valid["year"].max()
+        target_year = max(valid)
         link_name = f"{prefix}-{target_year}"
         n.links.loc[link_name, "p_nom_extendable"] = True
 
