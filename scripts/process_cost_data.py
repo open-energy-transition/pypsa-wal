@@ -116,12 +116,10 @@ def prepare_costs(
         ).query("planning_horizon in [@planning_horizon, 'all']")
 
         # align custom cost units to MW and EUR like base table
-        has_unit = "unit" in custom_costs.columns
-        if has_unit:
-            custom_costs.loc[custom_costs.unit.str.contains("/kW"), "value"] *= 1e3
-            custom_costs.loc[custom_costs.unit.str.contains("/GW"), "value"] /= 1e3
-            custom_costs.unit = custom_costs.unit.str.replace("/kW", "/MW")
-            custom_costs.unit = custom_costs.unit.str.replace("/GW", "/MW")
+        custom_costs.loc[custom_costs.unit.str.contains("/kW"), "value"] *= 1e3
+        custom_costs.loc[custom_costs.unit.str.contains("/GW"), "value"] /= 1e3
+        custom_costs.unit = custom_costs.unit.str.replace("/kW", "/MW")
+        custom_costs.unit = custom_costs.unit.str.replace("/GW", "/MW")
 
         custom_costs = custom_costs.drop("planning_horizon", axis=1).value.unstack(
             level=1
