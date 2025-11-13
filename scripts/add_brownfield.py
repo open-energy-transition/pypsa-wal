@@ -15,14 +15,12 @@ import xarray as xr
 from scripts._helpers import (
     configure_logging,
     get_snapshots,
-    load_costs,
     sanitize_custom_columns,
     set_scenario_config,
     update_config_from_wildcards,
 )
 from scripts.add_electricity import flatten, sanitize_carriers
 from scripts.add_existing_baseyear import add_build_year_to_new_assets
-
 from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
 
 logger = logging.getLogger(__name__)
@@ -353,8 +351,6 @@ if __name__ == "__main__":
 
     n = pypsa.Network(snakemake.input.network)
 
-    costs = load_costs(snakemake.input.costs)
-
     adjust_renewable_profiles(n, snakemake.input, snakemake.params, year)
 
     add_build_year_to_new_assets(n, year)
@@ -384,8 +380,13 @@ if __name__ == "__main__":
 
     add_BEWAL_nuclear(
         n=n,
-        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
+        walloon_nuclear_config=snakemake.config["electricity"][
+            "extendable_carriers"
+        ].get("Walloon", {}),
         planning_horizon=int(snakemake.wildcards.planning_horizons),
+        extendable_nodes=snakemake.config["electricity"].get(
+            "extendable_nuclear_links", {}
+        ),
     )
 
     n.export_to_netcdf(snakemake.output[0])
