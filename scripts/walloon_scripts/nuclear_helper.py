@@ -30,10 +30,6 @@ def add_BEWAL_nuclear(
             {2030: ['nuclear'], 2040: ['OCGT', 'nuclear']}
     planning_horizon : int
         The year to check and update.
-    costs : pandas.DataFrame, optional
-        Prepared cost table for the active planning horizon. When provided,
-        capital and marginal costs for **all** nuclear links are refreshed using
-        the table values so every nuclear asset reflects the desired overrides.
     link_name : str, optional
         Name of the Walloon nuclear link to adjust (default
         ``'BEWAL nuclear-2025'``).
