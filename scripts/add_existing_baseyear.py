@@ -17,6 +17,8 @@ import powerplantmatching as pm
 import pypsa
 import xarray as xr
 
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
+
 from scripts._helpers import (
     configure_logging,
     load_costs,
