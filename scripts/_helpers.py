@@ -9,10 +9,10 @@ import logging
 import os
 import re
 import time
+from collections.abc import Callable
 from functools import partial, wraps
 from pathlib import Path
 from tempfile import NamedTemporaryFile
-from typing import Callable, Union
 
 import atlite
 import fiona
@@ -23,14 +23,8 @@ import requests
 import xarray as xr
 import yaml
 from snakemake.utils import update_config
-from tenacity import (
-    retry as tenacity_retry,
-)
-from tenacity import (
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import retry as tenacity_retry
+from tenacity import retry_if_exception_type, stop_after_attempt, wait_exponential
 from tqdm import tqdm
 
 logger = logging.getLogger(__name__)
@@ -437,7 +431,7 @@ def progress_retrieve(url, file, disable=False):
             response.raise_for_status()
         with open(file, "wb") as f:
             for data in response.iter_content(chunk_size=chunk_size):
-                    f.write(data)
+                f.write(data)
     else:
         response = requests.get(url, headers=headers, stream=True)
         if response.status_code in (429, 500, 502, 503, 504):
@@ -1085,7 +1079,7 @@ def rename_techs(label: str) -> str:
 
 
 def load_cutout(
-    cutout_files: Union[str, list[str]], time: Union[None, pd.DatetimeIndex] = None
+    cutout_files: str | list[str], time: None | pd.DatetimeIndex = None
 ) -> atlite.Cutout:
     """
     Load and optionally combine multiple cutout files.
@@ -1131,4 +1125,4 @@ def load_costs(cost_file: str) -> pd.DataFrame:
         DataFrame containing the prepared cost data
     """
 
-    return pd.read_csv(cost_file, index_col=0).sort_index()
+    return pd.read_csv(cost_file, index_col=0)

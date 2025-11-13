@@ -17,6 +17,8 @@ import powerplantmatching as pm
 import pypsa
 import xarray as xr
 
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
+
 from scripts._helpers import (
     configure_logging,
     load_costs,
@@ -28,6 +30,7 @@ from scripts.add_electricity import sanitize_carriers
 from scripts.build_energy_totals import cartesian
 from scripts.definitions.heat_system import HeatSystem
 from scripts.prepare_sector_network import cluster_heat_buses, define_spatial
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
 
 logger = logging.getLogger(__name__)
 cc = coco.CountryConverter()
@@ -220,11 +223,12 @@ def add_power_capacities_installed_before_baseyear(
     # Intermediate fix for DateIn & DateOut
     # Fill missing DateIn
     biomass_i = df_agg.loc[df_agg.Fueltype == "urban central solid biomass CHP"].index
-    mean = df_agg.loc[biomass_i, "DateIn"].mean()
-    df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(int(mean))
-    # Fill missing DateOut
-    dateout = df_agg.loc[biomass_i, "DateIn"] + lifetime_values["lifetime"]
-    df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(dateout)
+    if len(biomass_i) > 0:
+        mean = df_agg.loc[biomass_i, "DateIn"].mean()
+        df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(int(mean))
+        # Fill missing DateOut
+        dateout = df_agg.loc[biomass_i, "DateIn"] + lifetime_values["lifetime"]
+        df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(dateout)
 
     # include renewables in df_agg
     add_existing_renewables(
@@ -379,6 +383,7 @@ def add_power_capacities_installed_before_baseyear(
                         * costs.at[
                             generator, "capital_cost"
                         ],  # NB: fixed cost is per MWel
+                        p_nom_min=new_capacity / costs.at[generator, "efficiency"],
                         p_nom=new_capacity / costs.at[generator, "efficiency"],
                         efficiency=costs.at[generator, "efficiency"],
                         efficiency2=costs.at[carrier[generator], "CO2 intensity"],
@@ -610,17 +615,17 @@ def add_heating_capacities_installed_before_baseyear(
                     "Link",
                     nodes,
                     suffix=f" {heat_system} {heat_source} heat pump-{grouping_year}",
-                    bus0=nodes_elec,
-                    bus1=nodes + " " + heat_system.value + " heat",
+                    bus0=nodes + " " + heat_system.value + " heat",
+                    bus1=nodes_elec,
                     carrier=f"{heat_system} {heat_source} heat pump",
-                    efficiency=efficiency,
-                    capital_cost=costs.at[costs_name, "efficiency"]
-                    * costs.at[costs_name, "capital_cost"],
+                    efficiency=1 / efficiency.clip(lower=0.001),
+                    capital_cost=costs.at[costs_name, "capital_cost"],
                     p_nom=existing_capacities.loc[
                         nodes, (heat_system.value, f"{heat_source} heat pump")
                     ]
-                    * ratio
-                    / costs.at[costs_name, "efficiency"],
+                    * ratio,
+                    p_max_pu=0,
+                    p_min_pu=-1 * efficiency / efficiency.clip(lower=0.001),
                     build_year=int(grouping_year),
                     lifetime=costs.at[costs_name, "lifetime"],
                 )
@@ -812,4 +817,11 @@ if __name__ == "__main__":
 
     sanitize_custom_columns(n)
     sanitize_carriers(n, snakemake.config)
+
+    add_BEWAL_nuclear(
+        n=n,
+        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
+        planning_horizon=int(snakemake.wildcards.planning_horizons),
+    )
+
     n.export_to_netcdf(snakemake.output[0])
