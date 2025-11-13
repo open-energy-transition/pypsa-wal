@@ -4,7 +4,7 @@
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
-  name: "agg-pnom"
+  name: "walloon-model"
   scenarios:
     file: config/scenarios.yaml
 
@@ -20,6 +20,8 @@ scenario:
   - ''
   planning_horizons:
   - 2025
+  - 2030
+  - 2040
   - 2050
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#countries
