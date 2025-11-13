@@ -46,7 +46,23 @@ electricity:
     2040: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
     2050: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
+  agg_p_nom_limits:
+    file: data/walloon/agg_p_nom_minmax.csv
+    include_existing: true
+    agg_carriers:
+      nuclear: nuclear-all
+      "nuclear (SMR)": nuclear-all
+    agg_buses:
+      nuclear-all: bus1
+
   powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and not (Country in ['BE'] and Fueltype == 'Nuclear')
+
+solving:
+  agg_p_nom_limits:
+    file: data/walloon/agg_p_nom_minmax.csv
+    include_existing: true
+    agg_offwind: true   # if want offwind-ac/dc aggregated
+    agg_solar: true     # if want solar families aggregated
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
