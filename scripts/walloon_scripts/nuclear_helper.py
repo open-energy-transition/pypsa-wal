@@ -4,15 +4,11 @@
 # SPDX-License-Identifier: MIT
 
 import logging
-from typing import Optional
-
-import pandas as pd
 
 logger = logging.getLogger(__name__)
 
-def _set_links_extendable_for_nodes(
-    n, nodes: list[str], planning_horizon: int
-) -> None:
+
+def _set_links_extendable_for_nodes(n, nodes: list[str], planning_horizon: int) -> None:
     if not nodes:
         return
 
@@ -43,12 +39,13 @@ def _set_links_extendable_for_nodes(
         link_name = f"{prefix}-{target_year}"
         n.links.loc[link_name, "p_nom_extendable"] = True
 
+
 def add_BEWAL_nuclear(
     n,
     walloon_nuclear_config,
     planning_horizon,
     link_name: str = "BEWAL nuclear-2025",
-    extendable_nodes: Optional[dict[int, list[str]]] = None,
+    extendable_nodes: dict[int, list[str]] | None = None,
 ):
     """
     Update the BEWAL nuclear link in the network to be extendable if 'nuclear' is
@@ -65,12 +62,12 @@ def add_BEWAL_nuclear(
             {2030: ['nuclear'], 2040: ['OCGT', 'nuclear']}
     planning_horizon : int
         The year to check and update.
-    link_name : str, optional
+    link_name : str
         Name of the Walloon nuclear link to adjust (default
         ``'BEWAL nuclear-2025'``).
-    extendable_nodes : dict[int, list[str]], optional
-    Mapping from planning horizon to nodes whose nuclear links should become
-    extendable in that horizon (e.g., {"2040": ["FR", "DE"]}).
+    extendable_nodes : dict[int, list[str]] | None, optional
+        Mapping from planning horizon to nodes whose nuclear links should become
+        extendable in that horizon (e.g., {"2040": ["FR", "DE"]}).
     """
 
     horizon_config = walloon_nuclear_config.get(planning_horizon, [])
@@ -92,7 +89,7 @@ def add_BEWAL_nuclear(
             )
         else:
             n.links.loc[link_name, "p_nom_extendable"] = True
-            
+
     _set_links_extendable_for_nodes(n, nodes_to_extend, planning_horizon)
 
     non_nuclear_values = [v for v in horizon_config if v != "nuclear"]
