@@ -9,34 +9,10 @@ import pandas as pd
 
 logger = logging.getLogger(__name__)
 
-
-def _apply_nuclear_costs_to_links(n, costs: pd.DataFrame) -> None:
-    if "nuclear" not in costs.index:
-        logger.warning(
-            "Cost table does not contain a 'nuclear' entry; nuclear link costs left unchanged."
-        )
-        return
-
-    mask = n.links.carrier.str.contains("nuclear", case=False)
-    if not mask.any():
-        logger.debug("No nuclear links found in the network.")
-        return
-
-    efficiency = n.links.loc[mask, "efficiency"]
-    if "capital_cost" in costs.columns:
-        n.links.loc[mask, "capital_cost"] = (
-            efficiency * costs.at["nuclear", "capital_cost"]
-        )
-    if "VOM" in costs.columns:
-        n.links.loc[mask, "marginal_cost"] = efficiency * costs.at["nuclear", "VOM"]
-    logger.info("Updated %s nuclear link cost entries.", mask.sum())
-
-
 def add_BEWAL_nuclear(
     n,
     walloon_nuclear_config,
     planning_horizon,
-    costs: pd.DataFrame | None = None,
     link_name: str = "BEWAL nuclear-2025",
 ):
     """
@@ -66,9 +42,7 @@ def add_BEWAL_nuclear(
     horizon_config = walloon_nuclear_config.get(planning_horizon, [])
     link_missing = link_name not in n.links.index
 
-    if costs is not None:
-        _apply_nuclear_costs_to_links(n, costs)
-    elif link_missing:
+    if link_missing:
         logger.warning(
             "Requested nuclear link '%s' not found; unable to update costs.", link_name
         )
