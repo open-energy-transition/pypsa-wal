@@ -19,7 +19,7 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
         for carrier in potentials.index:
             unit = str(potentials.loc[carrier].unit)
             value = potentials.loc[carrier].value
-            if "GW" or "GWh" in unit:
+            if "GW" in unit or "GWh" in unit:
                 potential = value * 1000  # convert to MW or MWh
             else:
                 potential = value
