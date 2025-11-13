@@ -424,6 +424,17 @@ def add_power_capacities_installed_before_baseyear(
                 existing_large, "p_nom_min"
             ]
 
+        # check if existing link capacities are larger than technical potential
+        link_existing_large = n.links[n.links["p_nom_min"] > n.links["p_nom_max"]].index
+        if len(link_existing_large):
+            logger.warning(
+                "Existing link capacities larger than technical potential for "
+                f"{link_existing_large}, adjust technical potential to existing capacities",
+            )
+            n.links.loc[link_existing_large, "p_nom_max"] = n.links.loc[
+                link_existing_large, "p_nom_min"
+            ]
+
 
 def get_efficiency(
     heat_system: HeatSystem,
