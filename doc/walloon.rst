@@ -3,6 +3,10 @@ Walloon Specific Changes
 
 The Walloon workflow includes several changes to the default PyPSA-Eur:
 
+* **Nuclear capacity expansion**: The `electricity.extendable_nuclear_links` is added to the 
+  Walloon configuration in ``config/config.walloon.yaml`` to allow new nuclear capacity 
+  to be built as extendable links, for the nodes and horizons specified. Additionally, 
+  planned nuclear power plants can be added to ``data/custom_powerplants.csv``. 
 * **Custom cost data.** The Walloon configuration uses updated cost assumptions 
   for specified fuels and technologies. These custom values are provided in 
   ``data/walloon/custom_costs_rc.csv`` and activated via the `costs.custom_cost_fn` 
