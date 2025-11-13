@@ -9,48 +9,10 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 
-def _set_links_extendable_for_nodes(n, nodes: list[str], planning_horizon: int) -> None:
-    if not nodes:
-        return
-
-    suffix = (
-        n.links.index.str.extract(r"^(?P<prefix>.+ nuclear)-(?P<year>\d{4})$")
-        .dropna()
-        .assign(year=lambda df: df["year"].astype(int))
-    )
-    if suffix.empty:
-        logger.debug("No nuclear link names with year suffix found.")
-        return
-
-    grouped_years = suffix.groupby("prefix")["year"].apply(list).to_dict()
-
-    for node in nodes:
-        prefix = f"{node} nuclear"
-        years = grouped_years.get(prefix)
-        if not years:
-            logger.warning("No nuclear link found for node '%s'.", node)
-            continue
-
-        valid = [year for year in years if year <= planning_horizon]
-        if not valid:
-            logger.warning(
-                "Nuclear link for node '%s' only exists after planning horizon %s.",
-                node,
-                planning_horizon,
-            )
-            continue
-
-        target_year = max(valid)
-        link_name = f"{prefix}-{target_year}"
-        n.links.loc[link_name, "p_nom_extendable"] = True
-
-
 def add_BEWAL_nuclear(
     n,
-    walloon_nuclear_config,
     planning_horizon,
-    link_name: str = "BEWAL nuclear-2025",
-    extendable_nodes: dict[int, list[str]] | None = None,
+    extendable_nuclear_nodes: dict = {2040: ["BEWAL"], 2050: ["BEWAL"]},
 ):
     """
     Update the BEWAL nuclear link in the network to be extendable if 'nuclear' is
@@ -61,45 +23,23 @@ def add_BEWAL_nuclear(
     ----------
     n : pypsa.Network
         The PyPSA network object whose links are being modified.
-    walloon_nuclear_config : dict
-        Dictionary mapping planning horizon years (int) to lists of electricity
-        carrier strings. Example:
-            {2030: ['nuclear'], 2040: ['OCGT', 'nuclear']}
     planning_horizon : int
         The year to check and update.
-    link_name : str
-        Name of the Walloon nuclear link to adjust (default
-        ``'BEWAL nuclear-2025'``).
-    extendable_nodes : dict[int, list[str]] | None, optional
-        Mapping from planning horizon to nodes whose nuclear links should become
-        extendable in that horizon (e.g., {"2040": ["FR", "DE"]}).
+    extendable_nuclear_nodes : Dict
+        Dict, with planning horizons as keys, passing a list of name of the buses where the nuclear link shall be set to extendable
+        (default ``{2040: ["BEWAL"], 2050: ["BEWAL"]}``).
     """
 
-    horizon_config = walloon_nuclear_config.get(planning_horizon, [])
-    link_missing = link_name not in n.links.index
-    nodes_to_extend = []
-    if extendable_nodes:
-        nodes_to_extend = extendable_nodes.get(planning_horizon, [])
+    print(extendable_nuclear_nodes)
+    if planning_horizon in extendable_nuclear_nodes.keys():
+        extendable_nuclear_links = [f"{bus} nuclear-2025" for bus in extendable_nuclear_nodes[planning_horizon]]
+        link_missing = [link for link in extendable_nuclear_links if link not in n.links.index]
+        extendable_nuclear_links = list(set(extendable_nuclear_links) - set(link_missing))
 
-    if link_missing:
-        logger.warning(
-            "Requested nuclear link '%s' not found; unable to update costs.", link_name
-        )
-
-    if "nuclear" in horizon_config:
-        if link_missing:
+        if link_missing != []:
             logger.warning(
-                "Requested nuclear link '%s' not found; extendable flag not updated.",
-                link_name,
+                "Requested nuclear link '%s' not found; unable to update costs.", link_missing
             )
-        else:
-            n.links.loc[link_name, "p_nom_extendable"] = True
 
-    _set_links_extendable_for_nodes(n, nodes_to_extend, planning_horizon)
-
-    non_nuclear_values = [v for v in horizon_config if v != "nuclear"]
-    if non_nuclear_values:
-        logger.warning(
-            "The following conventional technologies are currently not supported as extendable: "
-            f"{non_nuclear_values}. They will remain non-extendable.",
-        )
+        if extendable_nuclear_links != []:
+            n.links.loc[extendable_nuclear_links, "p_nom_extendable"] = True
