@@ -15,7 +15,6 @@ import xarray as xr
 from scripts._helpers import (
     configure_logging,
     get_snapshots,
-    load_costs,
     sanitize_custom_columns,
     set_scenario_config,
     update_config_from_wildcards,
@@ -352,8 +351,6 @@ if __name__ == "__main__":
     year = int(snakemake.wildcards.planning_horizons)
 
     n = pypsa.Network(snakemake.input.network)
-
-    costs = load_costs(snakemake.input.costs)
 
     adjust_renewable_profiles(n, snakemake.input, snakemake.params, year)
 
