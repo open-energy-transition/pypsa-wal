@@ -30,7 +30,6 @@ def add_BEWAL_nuclear(
         (default ``{2040: ["BEWAL"], 2050: ["BEWAL"]}``).
     """
 
-    print(extendable_nuclear_nodes)
     if planning_horizon in extendable_nuclear_nodes.keys():
         extendable_nuclear_links = [f"{bus} nuclear-2025" for bus in extendable_nuclear_nodes[planning_horizon]]
         link_missing = [link for link in extendable_nuclear_links if link not in n.links.index]
