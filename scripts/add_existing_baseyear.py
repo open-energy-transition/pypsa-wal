@@ -228,9 +228,7 @@ def add_power_capacities_installed_before_baseyear(
         df_agg.loc[biomass_i, "DateIn"] = df_agg.loc[biomass_i, "DateIn"].fillna(int(mean))
         # Fill missing DateOut
         dateout = df_agg.loc[biomass_i, "DateIn"] + lifetime_values["lifetime"]
-        df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(
-            dateout
-        )
+        df_agg.loc[biomass_i, "DateOut"] = df_agg.loc[biomass_i, "DateOut"].fillna(dateout)
 
     # include renewables in df_agg
     add_existing_renewables(
