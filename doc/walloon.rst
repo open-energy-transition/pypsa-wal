@@ -3,6 +3,13 @@ Walloon Specific Changes
 
 The Walloon workflow includes several changes to the default PyPSA-Eur:
 
+* **Custom potentials for BEWAL.** The Walloon configuration uses custom potentials 
+  for various energy resources, defined in  ``data/walloon/custom_potentials.csv``. 
+  These potentials set maximum limits for solid biomass (imported, transported, and local production)
+  in terms of annual energy (GWh/an). There are also maximum potentials for onshore wind, solar PV, 
+  and rooftop solar PV in the BEWAL region, defined in MW. These custom potentials are activated
+  via the `electricity.walloon_potentials` parameter in the Walloon configuration 
+  ``config/config.walloon.yaml``.
 * **Custom cost data.** The Walloon configuration uses updated cost assumptions 
   for specified fuels and technologies. These custom values are provided in 
   ``data/walloon/custom_costs_rc.csv`` and activated via the `costs.custom_cost_fn` 
