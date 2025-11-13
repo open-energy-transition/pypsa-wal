@@ -47,7 +47,7 @@ electricity:
     2050: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
   agg_p_nom_limits:
-    file: data/walloon/agg_p_nom_minmax.csv
+    file: data/agg_p_nom_minmax.csv
     include_existing: true
     agg_carriers:
       nuclear: nuclear-all
@@ -59,10 +59,10 @@ electricity:
 
 solving:
   agg_p_nom_limits:
-    file: data/walloon/agg_p_nom_minmax.csv
+    file: data/agg_p_nom_minmax.csv
     include_existing: true
-    agg_offwind: true   # if want offwind-ac/dc aggregated
-    agg_solar: true     # if want solar families aggregated
+    agg_offwind: true
+    agg_solar: true
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
