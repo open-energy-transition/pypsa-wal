@@ -809,9 +809,7 @@ if __name__ == "__main__":
 
     add_BEWAL_nuclear(
         n=n,
-        walloon_nuclear_config=snakemake.config["electricity"][
-            "extendable_carriers"
-        ].get("Walloon", {}),
+        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
         planning_horizon=int(snakemake.wildcards.planning_horizons),
     )
 
