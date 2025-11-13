@@ -4,7 +4,7 @@
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
-  name: "walloon-model"
+  name: "agg-pnom"
   scenarios:
     file: config/scenarios.yaml
 
@@ -20,8 +20,6 @@ scenario:
   - ''
   planning_horizons:
   - 2025
-  - 2030
-  - 2040
   - 2050
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#countries
@@ -46,23 +44,7 @@ electricity:
     2040: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
     2050: [BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
-  agg_p_nom_limits:
-    file: data/agg_p_nom_minmax.csv
-    include_existing: true
-    agg_carriers:
-      nuclear: nuclear-all
-      "nuclear (SMR)": nuclear-all
-    agg_buses:
-      nuclear-all: bus1
-
   powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and not (Country in ['BE'] and Fueltype == 'Nuclear')
-
-solving:
-  agg_p_nom_limits:
-    file: data/agg_p_nom_minmax.csv
-    include_existing: true
-    agg_offwind: true
-    agg_solar: true
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
