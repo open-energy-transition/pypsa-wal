@@ -818,6 +818,11 @@ if __name__ == "__main__":
     sanitize_custom_columns(n)
     sanitize_carriers(n, snakemake.config)
 
+    agg_limits_file = (
+        snakemake.config.get("solving", {})
+        .get("agg_p_nom_limits", {})
+        .get("file")
+    )
     add_BEWAL_nuclear(
         n=n,
         planning_horizon=int(snakemake.wildcards.planning_horizons),
@@ -825,6 +830,7 @@ if __name__ == "__main__":
             snakemake.config["electricity"]["extendable_carriers"]
             .get("extendable_nuclear_links", {})
         ),
+        agg_limit_file=agg_limits_file,
     )
 
     n.export_to_netcdf(snakemake.output[0])
