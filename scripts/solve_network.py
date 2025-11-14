@@ -563,7 +563,10 @@ def add_CCL_constraints(
 
     agg_p_nom_minmax = pd.read_csv(
         config["solving"]["agg_p_nom_limits"]["file"], index_col=[0, 1], header=[0, 1]
-    )[planning_horizons]
+    )
+    if planning_horizons in agg_p_nom_minmax.columns:
+        agg_p_nom_minmax = agg_p_nom_minmax[planning_horizons]
+    print(agg_p_nom_minmax)
     logger.info("Adding generation capacity constraints per carrier and country")
     p_nom = n.model["Generator-p_nom"]
 
@@ -619,7 +622,16 @@ def add_CCL_constraints(
     else:
         minimum = xr.DataArray(agg_p_nom_minmax["min"].dropna()).rename(dim_0="group")
 
+    print("========== MINIMUM SIDE ==========")
     index = minimum.indexes["group"].intersection(lhs.indexes["group"])
+    print("INDEX")
+    print(index)
+    print("MINIMUM")
+    series = minimum.loc[index].to_series()
+    for (country, carrier), value in series.items():
+        print("country:", country, "carrier:", carrier, "value:", value)
+    print("LHS")
+    print(lhs.sel(group=index))
     if not index.empty:
         n.model.add_constraints(
             lhs.sel(group=index) >= minimum.loc[index], name="agg_p_nom_min"
@@ -635,10 +647,156 @@ def add_CCL_constraints(
     else:
         maximum = xr.DataArray(agg_p_nom_minmax["max"].dropna()).rename(dim_0="group")
 
+    print("========== MAXIMUM SIDE ==========")
+    print(maximum.indexes["group"])
+    print(lhs.indexes["group"])
     index = maximum.indexes["group"].intersection(lhs.indexes["group"])
+    print("INTERSECTION")
+    print("INDEX")
+    print(index)
+    print("MAXIMUM")
+    series = maximum.loc[index].to_series()
+    for (country, carrier), value in series.items():
+        print("country:", country, "carrier:", carrier, "value:", value)
+    print("LHS")
+    print(lhs.sel(group=index))
     if not index.empty:
         n.model.add_constraints(
             lhs.sel(group=index) <= maximum.loc[index], name="agg_p_nom_max"
+        )
+
+
+def add_CCL_constraints_for_links(
+    n: pypsa.Network, config: dict, planning_horizons: str | None
+) -> None:
+    """
+    Add CCL (country & carrier limit) constraint to the network.
+
+    Add minimum and maximum levels of generator nominal capacity per carrier
+    for individual countries. Opts and path for agg_p_nom_minmax.csv must be defined
+    in config.yaml. Default file is available at data/agg_p_nom_minmax.csv.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network instance
+    config : dict
+        Configuration dictionary
+    planning_horizons : str, optional
+        The current planning horizon year or None in perfect foresight
+
+    Example
+    -------
+    scenario:
+        opts: [Co2L-CCL-24h]
+    electricity:
+        agg_p_nom_limits: data/agg_p_nom_minmax.csv
+    """
+
+    assert planning_horizons is not None, (
+        "add_CCL_constraints are not implemented for perfect foresight, yet"
+    )
+
+    agg_p_nom_minmax = pd.read_csv(
+        config["solving"]["agg_p_nom_limits"]["file"], index_col=[0, 1], header=[0, 1]
+    )
+    if planning_horizons in agg_p_nom_minmax.columns:
+        agg_p_nom_minmax = agg_p_nom_minmax[planning_horizons]
+    print(agg_p_nom_minmax)
+    logger.info("Adding generation capacity constraints per carrier and country")
+    p_nom = n.model["Link-p_nom"]
+
+    links = n.links.query("p_nom_extendable")
+
+    if not PYPSA_V1:
+        links = links.rename_axis(index="Link-ext")
+
+    if config["solving"]["agg_p_nom_limits"]["agg_nuclear"]:
+        rename_nuclear = {
+            "nuclear": "nuclear-all",
+            "nuclear (SMR)": "nuclear-all",
+        }
+        print(links.query("carrier == 'nuclear'")[["bus0", "p_nom_extendable", "bus1"]])
+        links = links.replace(rename_nuclear)
+        print(links.query("carrier == 'nuclear'")[["bus0", "p_nom_extendable", "bus1"]])
+    grouper = pd.concat([links.bus1.map(n.buses.country), links.carrier], axis=1)
+    print(links.bus1.map(n.buses.country))
+    print(grouper[grouper["carrier"] == "nuclear-all"])
+    lhs = p_nom.groupby(grouper).sum().rename(bus1="country")
+    print(lhs)
+
+    if config["solving"]["agg_p_nom_limits"]["include_existing"]:
+        links_cst = n.links.query("~p_nom_extendable").rename_axis(
+            index="Link-cst"
+        )
+        links_cst = links_cst[
+            (links_cst["build_year"] + links_cst["lifetime"]) >= int(planning_horizons)
+        ]
+        if config["solving"]["agg_p_nom_limits"]["agg_nuclear"]:
+            links_cst = links_cst.replace(rename_nuclear)
+        rhs_cst = (
+            pd.concat(
+                [links_cst.bus1.map(n.buses.country), links_cst[["carrier", "p_nom"]]],
+                axis=1,
+            )
+            .groupby(["bus1", "carrier"])
+            .sum()
+        )
+        rhs_cst.index = rhs_cst.index.rename({"bus1": "country"})
+        rhs_min = agg_p_nom_minmax["min"].dropna()
+        idx_min = rhs_min.index.join(rhs_cst.index, how="left")
+        rhs_min = rhs_min.reindex(idx_min).fillna(0)
+        rhs = (rhs_min - rhs_cst.reindex(idx_min).fillna(0).p_nom).dropna()
+        rhs[rhs < 0] = 0
+        print(rhs)
+        minimum = xr.DataArray(rhs).rename(dim_0="group")
+    else:
+        minimum = xr.DataArray(agg_p_nom_minmax["min"].dropna()).rename(dim_0="group")
+
+    print("========== MINIMUM SIDE ==========")
+    print(minimum.indexes["group"])
+    print(lhs.indexes["group"])
+    index = minimum.indexes["group"].intersection(lhs.indexes["group"])
+    print("INTERSECTION")
+    print("INDEX")
+    print(index)
+    print("MINIMUM")
+    series = minimum.loc[index].to_series()
+    for (country, carrier), value in series.items():
+        print("country:", country, "carrier:", carrier, "value:", value)
+    print("LHS")
+    print(lhs.sel(group=index))
+    if not index.empty:
+        n.model.add_constraints(
+            lhs.sel(group=index) >= minimum.loc[index], name="agg_p_nom_min_nuclear"
+        )
+
+    if config["solving"]["agg_p_nom_limits"]["include_existing"]:
+        rhs_max = agg_p_nom_minmax["max"].dropna()
+        idx_max = rhs_max.index.join(rhs_cst.index, how="left")
+        rhs_max = rhs_max.reindex(idx_max).fillna(0)
+        rhs = (rhs_max - rhs_cst.reindex(idx_max).fillna(0).p_nom).dropna()
+        rhs[rhs < 0] = 0
+        maximum = xr.DataArray(rhs).rename(dim_0="group")
+    else:
+        maximum = xr.DataArray(agg_p_nom_minmax["max"].dropna()).rename(dim_0="group")
+
+    print("========== MAXIMUM SIDE ==========")
+    print(maximum.indexes["group"])
+    print(lhs.indexes["group"])
+    index = maximum.indexes["group"].intersection(lhs.indexes["group"])
+    print("INTERSECTION")
+    print("INDEX")
+    print(index)
+    print("MAXIMUM")
+    series = maximum.loc[index].to_series()
+    for (country, carrier), value in series.items():
+        print("country:", country, "carrier:", carrier, "value:", value)
+    print("LHS")
+    print(lhs.sel(group=index))
+    if not index.empty:
+        n.model.add_constraints(
+            lhs.sel(group=index) <= maximum.loc[index], name="agg_p_nom_max_nuclear"
         )
 
 
@@ -1195,6 +1353,7 @@ def extra_functionality(
         add_SAFE_constraints(n, config)
     if constraints["CCL"] and n.generators.p_nom_extendable.any():
         add_CCL_constraints(n, config, planning_horizons)
+        add_CCL_constraints_for_links(n, config, planning_horizons)
 
     reserve = config["electricity"].get("operational_reserve", {})
     if reserve.get("activate"):
@@ -1433,6 +1592,12 @@ if __name__ == "__main__":
     logging_frequency = snakemake.config.get("solving", {}).get(
         "mem_logging_frequency", 30
     )
+
+    logger.warning("Implementing a hard-fix for BEVLA offshore wind potentials, as they are way too low.")
+    n.generators.loc[f"BEVLG 0 offwind-dc-{planning_horizons}", "p_nom_max"] = np.inf
+    n.generators.loc[f"BEVLG 0 offwind-ac-{planning_horizons}", "p_nom_max"] = np.inf
+    n.generators.loc[f"BEVLG 0 offwind-float-{planning_horizons}", "p_nom_max"] = np.inf
+
     with memory_logger(
         filename=getattr(snakemake.log, "memory", None), interval=logging_frequency
     ) as mem:
@@ -1448,6 +1613,19 @@ if __name__ == "__main__":
 
     logger.info(f"Maximum memory usage: {mem.mem_usage}")
 
+    solar = ["solar", "solar-hsat", "solar rooftop"]
+    offwind = ["offwind-ac", "offwind-dc", "offwind-float", "offwind-all"]
+    print(
+        n.generators.query("carrier in @offwind")
+        .groupby([n.generators.bus.map(n.buses.country), n.generators.carrier])
+        .sum()[["p_nom", "p_nom_opt"]]
+    )
+    nuclear = ["nuclear", "nuclear (SMR)"]
+    print(
+        n.links.query("carrier in @nuclear")
+        .groupby([n.links.bus1.map(n.buses.country), n.links.carrier])
+        .sum()[["p_nom", "p_nom_opt"]]
+    )
     n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
     n.export_to_netcdf(snakemake.output.network)
 
