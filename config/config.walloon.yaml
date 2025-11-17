@@ -90,4 +90,4 @@ solving:
     file: data/agg_p_nom_minmax.csv
 
   constraints:
-    CCL: false
+    CCL: true
