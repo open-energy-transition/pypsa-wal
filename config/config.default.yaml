@@ -1019,26 +1019,13 @@ solving:
       solver_dir: ""
 
   agg_p_nom_limits:
-    agg_offwind: true
-    agg_solar: true
-    agg_nuclear: true
-    include_existing: true
+    agg_offwind: false
+    agg_solar: false
+    include_existing: false
     file: data/agg_p_nom_minmax.csv
 
-  #  agg_carriers: # carriers on which to aggregate
-  #    offwind-ac: offwind-all
-  #    offwind-dc: offwind-all
-  #    offwind: offwind-all
-  #    nuclear: nuclear-all
-  #    nuclear (SMR): nuclear-all
-  #    solar: solar-all
-  #    "solar rooftop": solar-all
-  #  agg_buses: # if Link, bus to consider for aggregated carrier
-  #    nuclear-all: bus1
-  #  include_existing: true
-
   constraints:
-    CCL: true
+    CCL: false
     EQ: false
     BAU: false
     SAFE: false

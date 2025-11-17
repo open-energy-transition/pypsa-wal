@@ -80,3 +80,14 @@ sector:
 
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv
+
+solving:
+  agg_p_nom_limits:
+    agg_offwind: true
+    agg_solar: true
+    agg_nuclear: true
+    include_existing: true
+    file: data/agg_p_nom_minmax.csv
+
+  constraints:
+    CCL: false
