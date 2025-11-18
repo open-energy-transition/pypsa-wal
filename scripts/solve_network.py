@@ -569,7 +569,6 @@ def add_CCL_constraints(
     else:
         return
 
-    print(agg_p_nom_minmax)
     logger.info("Adding generation capacity constraints per carrier and country")
     p_nom = n.model["Generator-p_nom"]
     p_nom_link = n.model["Link-p_nom"]
@@ -675,24 +674,10 @@ def add_CCL_constraints(
             dim_0="group"
         )
 
-    print("========== MINIMUM SIDE ==========")
     index = minimum.indexes["group"].intersection(lhs.indexes["group"])
     index_links = minimum_links.indexes["group"].intersection(
         lhs_links.indexes["group"]
     )
-    print("INDEX")
-    print(index)
-    print(index_links)
-    print("MINIMUM")
-    series = minimum.loc[index].to_series()
-    for (country, carrier), value in series.items():
-        print("country:", country, "carrier:", carrier, "value:", value)
-    series = minimum_links.loc[index_links].to_series()
-    for (country, carrier), value in series.items():
-        print("country:", country, "carrier:", carrier, "value:", value)
-    print("LHS")
-    print(lhs.sel(group=index))
-    print(lhs_links.sel(group=index_links))
     if not index.empty:
         n.model.add_constraints(
             lhs.sel(group=index) >= minimum.loc[index], name="agg_p_nom_min"
@@ -723,24 +708,10 @@ def add_CCL_constraints(
             dim_0="group"
         )
 
-    print("========== MAXIMUM SIDE ==========")
     index = maximum.indexes["group"].intersection(lhs.indexes["group"])
     index_links = maximum_links.indexes["group"].intersection(
         lhs_links.indexes["group"]
     )
-    print("INDEX")
-    print(index)
-    print(index_links)
-    print("MAXIMUM")
-    series = maximum.loc[index].to_series()
-    for (country, carrier), value in series.items():
-        print("country:", country, "carrier:", carrier, "value:", value)
-    series = maximum_links.loc[index_links].to_series()
-    for (country, carrier), value in series.items():
-        print("country:", country, "carrier:", carrier, "value:", value)
-    print("LHS")
-    print(lhs.sel(group=index))
-    print(lhs_links.sel(group=index_links))
     if not index.empty:
         n.model.add_constraints(
             lhs.sel(group=index) <= maximum.loc[index], name="agg_p_nom_max"
@@ -1544,13 +1515,6 @@ if __name__ == "__main__":
         "mem_logging_frequency", 30
     )
 
-    # logger.warning(
-    #     "Implementing a hard-fix for BEVLA offshore wind potentials, as they are way too low."
-    # )
-    # n.generators.loc[f"BEVLG 0 offwind-dc-{planning_horizons}", "p_nom_max"] = np.inf
-    # n.generators.loc[f"BEVLG 0 offwind-ac-{planning_horizons}", "p_nom_max"] = np.inf
-    # n.generators.loc[f"BEVLG 0 offwind-float-{planning_horizons}", "p_nom_max"] = np.inf
-
     with memory_logger(
         filename=getattr(snakemake.log, "memory", None), interval=logging_frequency
     ) as mem:
@@ -1568,17 +1532,7 @@ if __name__ == "__main__":
 
     solar = ["solar", "solar-hsat", "solar rooftop"]
     offwind = ["offwind-ac", "offwind-dc", "offwind-float", "offwind-all"]
-    print(
-        n.generators.query("carrier in @offwind")
-        .groupby([n.generators.bus.map(n.buses.country), n.generators.carrier])
-        .sum()[["p_nom", "p_nom_opt"]]
-    )
     nuclear = ["nuclear", "nuclear (SMR)"]
-    print(
-        n.links.query("carrier in @nuclear")
-        .groupby([n.links.bus1.map(n.buses.country), n.links.carrier])
-        .sum()[["p_nom", "p_nom_opt"]]
-    )
     n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
     n.export_to_netcdf(snakemake.output.network)
 
