@@ -6,5 +6,8 @@
 3003,New,Nuclear,Steam Turbine,PP,BEWAL,0.01,,2025,2025,2065,50.5334,5.2714,,0,0,0,,,4,BEWAL
 6100,BEBRU New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,,2065,50.9,4.35,,,,,{},{},,BEBRU
 6101,BEVLG New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,,2065,51.3,3.15,,,,,{},{},,BEVLG
+6102,FR New,Nuclear,Steam Turbine,PP,FR,0.01,,2025,,2065,46.5,0.8,,,,,{},{},,FR
 6103,DE New,Nuclear,Steam Turbine,PP,DE,0.01,,2025,,2065,51.65,6.45,,,,,{},{},,DE
+6104,GB New,Nuclear,Steam Turbine,PP,GB,0.01,,2025,,2065,52.8,-0.2,,,,,{},{},,GB
+6105,NL New,Nuclear,Steam Turbine,PP,NL,0.01,,2025,,2065,51.65,4.65,,,,,{},{},,NL
 6106,LU New,Nuclear,Steam Turbine,PP,LU,0.01,,2025,,2065,49.9,6.15,,,,,{},{},,LU
