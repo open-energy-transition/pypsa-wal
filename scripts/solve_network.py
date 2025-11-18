@@ -605,7 +605,17 @@ def add_CCL_constraints(
     grouper = pd.concat([gens.bus.map(n.buses.country), gens.carrier], axis=1)
     grouper_links = pd.concat([links.bus1.map(n.buses.country), links.carrier], axis=1)
     lhs = p_nom.groupby(grouper).sum().rename(bus="country")
-    lhs_links = p_nom_link.groupby(grouper_links).sum().rename(bus1="country")
+
+    if not links.empty:
+        eff_links = xr.DataArray(
+            links.efficiency,
+            coords={p_nom_link.dims[0]: links.index},
+            dims=[p_nom_link.dims[0]],
+        )
+        p_nom_e = p_nom_link.loc[links.index] * eff_links
+        lhs_links = p_nom_e.groupby(grouper_links).sum().rename(bus1="country")
+    else:
+        lhs_links = xr.DataArray([])
 
     if config["solving"]["agg_p_nom_limits"]["include_existing"]:
         gens_cst = n.generators.query("~p_nom_extendable").rename_axis(
@@ -614,9 +624,7 @@ def add_CCL_constraints(
         gens_cst = gens_cst[
             (gens_cst["build_year"] + gens_cst["lifetime"]) >= int(planning_horizons)
         ]
-        links_cst = n.links.query("~p_nom_extendable").rename_axis(
-            index="Link-cst"
-        )
+        links_cst = n.links.query("~p_nom_extendable").rename_axis(index="Link-cst")
         links_cst = links_cst[
             (links_cst["build_year"] + links_cst["lifetime"]) >= int(planning_horizons)
         ]
@@ -634,9 +642,13 @@ def add_CCL_constraints(
             .groupby(["bus", "carrier"])
             .sum()
         )
+        links_cst = links_cst.assign(p_nom_e=links_cst.p_nom * links_cst.efficiency)
         rhs_cst_links = (
             pd.concat(
-                [links_cst.bus1.map(n.buses.country), links_cst[["carrier", "p_nom"]]],
+                [
+                    links_cst.bus1.map(n.buses.country),
+                    links_cst[["carrier", "p_nom_e"]],
+                ],
                 axis=1,
             )
             .groupby(["bus1", "carrier"])
@@ -650,19 +662,24 @@ def add_CCL_constraints(
         rhs_min = rhs_min.reindex(idx_min).fillna(0)
         rhs_min_links = rhs_min.reindex(idx_min_links).fillna(0)
         rhs = (rhs_min - rhs_cst.reindex(idx_min).fillna(0).p_nom).dropna()
-        rhs_links = (rhs_min_links - rhs_cst_links.reindex(idx_min_links).fillna(0).p_nom).dropna()
+        rhs_links = (
+            rhs_min_links - rhs_cst_links.reindex(idx_min_links).fillna(0).p_nom_e
+        ).dropna()
         rhs[rhs < 0] = 0
         rhs_links[rhs_links < 0] = 0
         minimum = xr.DataArray(rhs).rename(dim_0="group")
         minimum_links = xr.DataArray(rhs_links).rename(dim_0="group")
     else:
         minimum = xr.DataArray(agg_p_nom_minmax["min"].dropna()).rename(dim_0="group")
-        minimum_links = xr.DataArray(agg_p_nom_minmax["min"].dropna()).rename(dim_0="group")
-
+        minimum_links = xr.DataArray(agg_p_nom_minmax["min"].dropna()).rename(
+            dim_0="group"
+        )
 
     print("========== MINIMUM SIDE ==========")
     index = minimum.indexes["group"].intersection(lhs.indexes["group"])
-    index_links = minimum_links.indexes["group"].intersection(lhs_links.indexes["group"])
+    index_links = minimum_links.indexes["group"].intersection(
+        lhs_links.indexes["group"]
+    )
     print("INDEX")
     print(index)
     print(index_links)
@@ -682,7 +699,8 @@ def add_CCL_constraints(
         )
     if not index_links.empty:
         n.model.add_constraints(
-            lhs_links.sel(group=index_links) >= minimum_links.loc[index_links], name="agg_p_nom_min_links"
+            lhs_links.sel(group=index_links) >= minimum_links.loc[index_links],
+            name="agg_p_nom_min_links",
         )
 
     if config["solving"]["agg_p_nom_limits"]["include_existing"]:
@@ -692,18 +710,24 @@ def add_CCL_constraints(
         rhs_max = rhs_max.reindex(idx_max).fillna(0)
         rhs_max_links = rhs_max.reindex(idx_max_links).fillna(0)
         rhs = (rhs_max - rhs_cst.reindex(idx_max).fillna(0).p_nom).dropna()
-        rhs_link = (rhs_max_links - rhs_cst_links.reindex(idx_max_links).fillna(0).p_nom).dropna()
+        rhs_links = (
+            rhs_max_links - rhs_cst_links.reindex(idx_max_links).fillna(0).p_nom_e
+        ).dropna()
         rhs[rhs < 0] = 0
         rhs_links[rhs_links < 0] = 0
         maximum = xr.DataArray(rhs).rename(dim_0="group")
         maximum_links = xr.DataArray(rhs_links).rename(dim_0="group")
     else:
         maximum = xr.DataArray(agg_p_nom_minmax["max"].dropna()).rename(dim_0="group")
-        maximum_links = xr.DataArray(agg_p_nom_minmax["max"].dropna()).rename(dim_0="group")
+        maximum_links = xr.DataArray(agg_p_nom_minmax["max"].dropna()).rename(
+            dim_0="group"
+        )
 
     print("========== MAXIMUM SIDE ==========")
     index = maximum.indexes["group"].intersection(lhs.indexes["group"])
-    index_links = maximum_links.indexes["group"].intersection(lhs_links.indexes["group"])
+    index_links = maximum_links.indexes["group"].intersection(
+        lhs_links.indexes["group"]
+    )
     print("INDEX")
     print(index)
     print(index_links)
@@ -723,7 +747,8 @@ def add_CCL_constraints(
         )
     if not index_links.empty:
         n.model.add_constraints(
-            lhs_links.sel(group=index_links) <= maximum_links.loc[index_links], name="agg_p_nom_max_links"
+            lhs_links.sel(group=index_links) <= maximum_links.loc[index_links],
+            name="agg_p_nom_max_links",
         )
 
 
@@ -1519,7 +1544,9 @@ if __name__ == "__main__":
         "mem_logging_frequency", 30
     )
 
-    logger.warning("Implementing a hard-fix for BEVLA offshore wind potentials, as they are way too low.")
+    logger.warning(
+        "Implementing a hard-fix for BEVLA offshore wind potentials, as they are way too low."
+    )
     n.generators.loc[f"BEVLG 0 offwind-dc-{planning_horizons}", "p_nom_max"] = np.inf
     n.generators.loc[f"BEVLG 0 offwind-ac-{planning_horizons}", "p_nom_max"] = np.inf
     n.generators.loc[f"BEVLG 0 offwind-float-{planning_horizons}", "p_nom_max"] = np.inf
