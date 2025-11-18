@@ -5,6 +5,7 @@
 
 import logging
 
+import numpy as np
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -13,38 +14,72 @@ logger = logging.getLogger(__name__)
 def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
     if walloon_potentials is not None:
         potentials = pd.read_csv(
-            walloon_potentials, index_col=0, dtype={"year": int, "value": float}
+            walloon_potentials, dtype={"year": int, "value": str}
         ).query("year == @planning_horizons")
 
-        for carrier in potentials.index:
-            unit = str(potentials.loc[carrier].unit)
-            value = potentials.loc[carrier].value
-            if "GW" in unit or "GWh" in unit:
-                potential = value * 1000  # convert to MW or MWh
+        if "technology" not in potentials.columns:
+            potentials = potentials.rename(
+                columns={potentials.columns[0]: "technology"}
+            )
+
+        for _, row in potentials.iterrows():
+            carrier = row["technology"]
+            unit = str(row.get("unit", ""))
+            raw_value = row.get("value")
+            bus_value = row.get("bus")
+            bus = (
+                "BEWAL" if pd.isna(bus_value) else str(bus_value)
+            )  # default bus is "BEWAL" if not specified
+
+            if isinstance(raw_value, str):
+                if raw_value.strip().lower() == "inf":
+                    potential = np.inf
+                else:
+                    potential = float(raw_value)
             else:
-                potential = value
+                potential = float(raw_value)
+
+            if np.isfinite(potential) and ("GW" in unit or "GWh" in unit):
+                potential = potential * 1000  # convert to MW or MWh
 
             logger_msg_success = (
-                f"Overwriting exogenously given potentials for {carrier} in BEWAL."
+                f"Overwriting exogenously given potentials for {carrier} on bus {bus}."
             )
             logger_msg_failure = (
                 f"{carrier} is currently not a supported or valid technology."
             )
-            if carrier in n.generators.carrier.unique() and carrier not in [
+            if carrier == "offwind":
+                carriers_to_update = ["offwind-ac", "offwind-dc", "offwind-float"]
+            elif carrier in n.generators.carrier.unique() and carrier not in [
                 "solid biomass",
                 "biogas",
             ]:
-                logger.info(logger_msg_success)
+                carriers_to_update = [carrier]
+            else:
+                carriers_to_update = []
 
-                BEWAL_carrier_idx = (
-                    # bus can also be BEWAL low voltage or alike
-                    n.generators[n.generators.bus.str.contains("BEWAL")]
-                    .query("carrier == @carrier")
-                    .index
-                )
-                n.generators.loc[BEWAL_carrier_idx, "p_nom_max"] = potential
+            if carriers_to_update:
+                region_carrier_idx = []
+                for tech in carriers_to_update:
+                    bus_mask = n.generators.bus == bus
+                    carrier_mask = n.generators.carrier == tech
+                    idx = n.generators[bus_mask & carrier_mask].index
 
-            elif carrier in ["solid biomass", "biogas"]:
+                    gen_name = f"{bus} 0 {tech}-{planning_horizons}"
+                    if gen_name in n.generators.index:
+                        idx = pd.Index([gen_name])
+
+                    if not idx.empty:
+                        region_carrier_idx.extend(idx.tolist())
+
+                if len(region_carrier_idx) == 0:
+                    continue
+                if region_carrier_idx:
+                    logger.info(logger_msg_success)
+                    n.generators.loc[region_carrier_idx, "p_nom_max"] = potential
+                continue
+
+            if carrier in ["solid biomass", "biogas"]:
                 logger.info(logger_msg_success)
                 if carrier == "biogas":
                     unsustainable_idx = f"BEWAL {carrier} unsustainable"
