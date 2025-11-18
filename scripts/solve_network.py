@@ -1544,12 +1544,12 @@ if __name__ == "__main__":
         "mem_logging_frequency", 30
     )
 
-    logger.warning(
-        "Implementing a hard-fix for BEVLA offshore wind potentials, as they are way too low."
-    )
-    n.generators.loc[f"BEVLG 0 offwind-dc-{planning_horizons}", "p_nom_max"] = np.inf
-    n.generators.loc[f"BEVLG 0 offwind-ac-{planning_horizons}", "p_nom_max"] = np.inf
-    n.generators.loc[f"BEVLG 0 offwind-float-{planning_horizons}", "p_nom_max"] = np.inf
+    # logger.warning(
+    #     "Implementing a hard-fix for BEVLA offshore wind potentials, as they are way too low."
+    # )
+    # n.generators.loc[f"BEVLG 0 offwind-dc-{planning_horizons}", "p_nom_max"] = np.inf
+    # n.generators.loc[f"BEVLG 0 offwind-ac-{planning_horizons}", "p_nom_max"] = np.inf
+    # n.generators.loc[f"BEVLG 0 offwind-float-{planning_horizons}", "p_nom_max"] = np.inf
 
     with memory_logger(
         filename=getattr(snakemake.log, "memory", None), interval=logging_frequency
