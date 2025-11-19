@@ -71,7 +71,7 @@ clustering:
   mode: custom_busmap_BE
   temporal:
     resolution_elec: False
-    resolution_sector: 3h
+    resolution_sector: 3000h
   exclude_carriers:
     - nuclear
 
