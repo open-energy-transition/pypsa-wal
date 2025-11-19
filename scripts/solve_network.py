@@ -1448,7 +1448,7 @@ if __name__ == "__main__":
 
     retrofit_n = [c for c in n.links.index if "retrofit" in c]
     if retrofit_n != []:
-        print(n.links.loc[retrofit_n[0]])
+        print(n.links.loc[retrofit_n, ["p_nom_min", "p_nom_opt"]])
 
     logger.info(f"Maximum memory usage: {mem.mem_usage}")
 
