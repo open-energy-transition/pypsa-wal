@@ -48,6 +48,7 @@ def retrofit_retired_nuclear(
         n,
         decomissioned_nuclear,
         planning_horizon,
+        costs,
         extendable_nuclear_nodes = ["BEWAL"],
         MILP = False):
     """
@@ -87,15 +88,15 @@ def retrofit_retired_nuclear(
 
     # insert retrofit lifetime + capital cost here (take from costs_processed.csv, ideally represented as a separate technology "nuclear retrofit"?
     # in that case, add a new input argument costs. Otherwise, hardcode below
-    lifetime_nuclear_retro = 0.5*retrofit_nuclear["lifetime"]
-    capital_cost_nuclear_retro = 0.01
+    lifetime_nuclear_retro = costs.loc["nuclear retrofit"].loc["lifetime"]
+    capital_cost_nuclear_retro = costs.loc["nuclear retrofit"].loc["capital_cost"]
     retrofit_nuclear["lifetime"] = lifetime_nuclear_retro
     retrofit_nuclear["capital_cost"] = capital_cost_nuclear_retro
 
     logger.info(
-        f"Adding the option to retrofit the following nuclear plants: {retrofit_nuclear.index} "
-        f"to increase the lifetime of {decomissioned_nuclear.index} by {lifetime_nuclear_retro} years."
-        f"assuming a cost of capital of {capital_cost_nuclear_retro}."
+        f"Adding the option to retrofit the following nuclear plants: {decomissioned_nuclear.index} "
+        f"to increase their lifetime by {lifetime_nuclear_retro} years. "
+        f"Assuming an annualized cost of capital of {capital_cost_nuclear_retro}."
     )
 
     for name, row in retrofit_nuclear.iterrows():

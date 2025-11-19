@@ -15,6 +15,7 @@ import xarray as xr
 from scripts._helpers import (
     configure_logging,
     get_snapshots,
+    load_costs,
     sanitize_custom_columns,
     set_scenario_config,
     update_config_from_wildcards,
@@ -400,6 +401,7 @@ if __name__ == "__main__":
         n,
         decomissioned_nuclear,
         int(snakemake.wildcards.planning_horizons),
+        costs = load_costs(snakemake.input.costs),
         MILP = True,
     )
 
