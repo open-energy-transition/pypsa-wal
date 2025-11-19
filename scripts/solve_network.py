@@ -1530,9 +1530,6 @@ if __name__ == "__main__":
 
     logger.info(f"Maximum memory usage: {mem.mem_usage}")
 
-    solar = ["solar", "solar-hsat", "solar rooftop"]
-    offwind = ["offwind-ac", "offwind-dc", "offwind-float", "offwind-all"]
-    nuclear = ["nuclear", "nuclear (SMR)"]
     n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
     n.export_to_netcdf(snakemake.output.network)
 
