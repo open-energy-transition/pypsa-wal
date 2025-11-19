@@ -49,7 +49,7 @@ def retrofit_retired_nuclear(
         decomissioned_nuclear,
         planning_horizon,
         costs,
-        extendable_nuclear_nodes = ["BEWAL"],
+        extendable_nuclear_nodes = ["BEWAL", "BEVLG"],
         MILP = False):
     """
     Provide the option to a given set of nuclear links that are being decomissioned to be retrofitted
