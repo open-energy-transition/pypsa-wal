@@ -47,8 +47,6 @@ from scripts.build_transport_demand import transport_degree_factor
 from scripts.definitions.heat_sector import HeatSector
 from scripts.definitions.heat_system import HeatSystem
 from scripts.prepare_network import maybe_adjust_costs_and_potentials
-from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
-
 spatial = SimpleNamespace()
 logger = logging.getLogger(__name__)
 
