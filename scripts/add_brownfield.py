@@ -21,7 +21,7 @@ from scripts._helpers import (
 )
 from scripts.add_electricity import flatten, sanitize_carriers
 from scripts.add_existing_baseyear import add_build_year_to_new_assets
-from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
+from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear, retrofit_retired_nuclear
 
 logger = logging.getLogger(__name__)
 idx = pd.IndexSlice
@@ -60,6 +60,7 @@ def add_brownfield(
     dc_i = n.links[n.links.carrier == "DC"].index
     n.links.loc[dc_i, "p_nom_min"] = n_p.links.loc[dc_i, "p_nom_opt"]
 
+    decomissioned_assets = {"Link": None, "Generator": None, "Store": None}
     for c in n_p.iterate_components(["Link", "Generator", "Store"]):
         attr = "e" if c.name == "Store" else "p"
 
@@ -68,7 +69,9 @@ def add_brownfield(
         n_p.remove(c.name, c.df.index[c.df.lifetime == np.inf])
 
         # remove assets whose build_year + lifetime <= year
-        n_p.remove(c.name, c.df.index[c.df.build_year + c.df.lifetime <= year])
+        decomissioned_assets_index = c.df.index[c.df.build_year + c.df.lifetime <= year]
+        decomissioned_assets[c.name] = c.df.loc[decomissioned_assets_index]
+        n_p.remove(c.name, decomissioned_assets_index)
 
         # remove assets if their optimized nominal capacity is lower than a threshold
         # since CHP heat Link is proportional to CHP electric Link, make sure threshold is compatible
@@ -155,6 +158,8 @@ def add_brownfield(
             )
             n.links.loc[gas_pipes_i, "p_nom"] = remaining_capacity
             n.links.loc[gas_pipes_i, "p_nom_max"] = remaining_capacity
+
+    return decomissioned_assets
 
 
 def disable_grid_expansion_if_limit_hit(n):
@@ -362,7 +367,7 @@ if __name__ == "__main__":
     if snakemake.params.tes and snakemake.params.dynamic_ptes_capacity:
         update_dynamic_ptes_capacity(n, n_p, year)
 
-    add_brownfield(
+    decomissioned_assets = add_brownfield(
         n,
         n_p,
         year,
@@ -385,6 +390,17 @@ if __name__ == "__main__":
             snakemake.config["electricity"]["extendable_carriers"]
             .get("extendable_nuclear_links", {})
         ),
+    )
+
+    decomissioned_nuclear = (
+        decomissioned_assets["Link"].query("carrier == 'nuclear'")
+    )
+
+    retrofit_retired_nuclear(
+        n,
+        decomissioned_nuclear,
+        int(snakemake.wildcards.planning_horizons),
+        MILP = True,
     )
 
     n.export_to_netcdf(snakemake.output[0])

@@ -1446,6 +1446,10 @@ if __name__ == "__main__":
             log_fn=snakemake.log.solver,
         )
 
+    retrofit_n = [c for c in n.links.index if "retrofit" in c]
+    if retrofit_n != []:
+        print(n.links.loc[retrofit_n[0]])
+
     logger.info(f"Maximum memory usage: {mem.mem_usage}")
 
     n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
