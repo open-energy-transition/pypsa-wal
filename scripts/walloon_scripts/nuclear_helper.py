@@ -70,7 +70,6 @@ def retrofit_retired_nuclear(
         True will only allow retrofitting the entire block or nothing at all
         Turning the problem essentially into a MILP.
     """
-    # filter for BEWAL
     decomissioned_nuclear = decomissioned_nuclear.query("bus1 in @extendable_nuclear_nodes")
     retrofit_nuclear = decomissioned_nuclear.copy()
     retrofit_nuclear.index = retrofit_nuclear.index.astype(str) + " retrofit"
