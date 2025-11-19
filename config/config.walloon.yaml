@@ -37,9 +37,12 @@ countries:
 electricity:
   custom_powerplants: True
   walloon_reassignment: True
+  walloon_potentials: data/walloon/custom_potentials.csv
 
   extendable_carriers:
     extendable_nuclear_links:
+      2025: [FR, DE, GB, NL, LU]
+      2030: [FR, DE, GB, NL, LU]
       2040: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
       2050: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
@@ -77,6 +80,8 @@ clustering:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
 sector:
   oil_boilers: true
+  solid_biomass_import:
+    enable: true
 
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv

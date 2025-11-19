@@ -45,6 +45,7 @@ from scripts.build_transport_demand import transport_degree_factor
 from scripts.definitions.heat_sector import HeatSector
 from scripts.definitions.heat_system import HeatSystem
 from scripts.prepare_network import maybe_adjust_costs_and_potentials
+from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
 
 spatial = SimpleNamespace()
 logger = logging.getLogger(__name__)
@@ -604,7 +605,7 @@ def add_carrier_buses(
         capital_cost=capital_cost,
     )
 
-    fossils = ["coal", "gas", "oil", "lignite"]
+    fossils = ["coal", "gas", "oil", "lignite", "uranium"]
     if options["fossil_fuels"] and carrier in fossils:
         suffix = ""
 
@@ -6556,5 +6557,13 @@ if __name__ == "__main__":
 
     sanitize_carriers(n, snakemake.config)
     sanitize_locations(n)
+
+    update_BEWAL_potentials(
+        n=n,
+        planning_horizons=int(snakemake.wildcards.planning_horizons),
+        walloon_potentials=snakemake.config["electricity"].get(
+            "walloon_potentials", None
+        ),
+    )
 
     n.export_to_netcdf(snakemake.output[0])
