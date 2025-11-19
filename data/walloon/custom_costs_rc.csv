@@ -23,12 +23,12 @@ planning_horizon,technology,parameter,value,unit,source,further_description
 2030,solar-utility,investment,500,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
 2040,solar-utility,investment,500,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
 2050,solar-utility,investment,500,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
-2030,solar-utility single-axis tracking,investment,570.7391,EUR/kW_e,IEA PVPS + PyPSA-Eur delta,Maintains solar-utility vs solar-hsat cost delta from base PyPSA-Eur costs
-2040,solar-utility single-axis tracking,investment,563.4866,EUR/kW_e,IEA PVPS + PyPSA-Eur delta,Maintains solar-utility vs solar-hsat cost delta from base PyPSA-Eur costs
-2050,solar-utility single-axis tracking,investment,559.9358,EUR/kW_e,IEA PVPS + PyPSA-Eur delta,Maintains solar-utility vs solar-hsat cost delta from base PyPSA-Eur costs
 2030,onwind,investment,1450,EUR/kW_e,Edora,
 2040,onwind,investment,1450,EUR/kW_e,Edora,
 2050,onwind,investment,1450,EUR/kW_e,Edora,
 2030,biogas,investment,1231,EUR/kW_biogas,Valbiom,
 2040,biogas,investment,1231,EUR/kW_biogas,Valbiom,
 2050,biogas,investment,1231,EUR/kW_biogas,Valbiom,
+all,nuclear retrofit,lifetime,10,years,,
+all,nuclear retrofit,investment,1800,EUR/kW_e,,
+all,nuclear retrofit,FOM,1.27,%/year,"Lazard's levelized cost of energy analysis - version 16.0 (2023): https://www.lazard.com/media/typdgxmm/lazards-lcoeplus-april-2023.pdf , pg. 49 (Levelized Cost of Energy - Key Assumptions), accessed: 2023-12-14.",

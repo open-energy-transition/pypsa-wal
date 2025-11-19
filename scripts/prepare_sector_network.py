@@ -22,6 +22,8 @@ from networkx.algorithms.connectivity.edge_augmentation import k_edge_augmentati
 from pypsa.geo import haversine_pts
 from scipy.stats import beta
 
+from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
+
 from scripts._helpers import (
     configure_logging,
     get,
@@ -6561,9 +6563,7 @@ if __name__ == "__main__":
     update_BEWAL_potentials(
         n=n,
         planning_horizons=int(snakemake.wildcards.planning_horizons),
-        walloon_potentials=snakemake.config["electricity"].get(
-            "walloon_potentials", None
-        ),
-    )
+        walloon_potentials=snakemake.config["electricity"].get("walloon_potentials", None),
+        )
 
     n.export_to_netcdf(snakemake.output[0])

@@ -12,6 +12,8 @@ PyPSA-WAL Upcoming Release
 
 * Add uranium as a generator, to see nuclear generation in the model
   (https://github.com/open-energy-transition/pypsa-wal/pull/36).
+* Allow BEWAL nuclear plants that are about to be retired to be retrofitted instead 
+  (https://github.com/open-energy-transition/pypsa-wal/pull/37).
 * Update Walloon-specific potentials for biomass (including imported, transported, and local production), 
   onshore wind, and solar using custom potentials provided in ``data/walloon/custom_potentials.csv`` 
   (https://github.com/open-energy-transition/pypsa-wal/pull/29).
