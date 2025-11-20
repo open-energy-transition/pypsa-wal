@@ -569,6 +569,14 @@ def add_CCL_constraints(
     else:
         return
 
+    # temporarily set bus countries to region names for CCL constraint application
+    regions = set(agg_p_nom_minmax.index.get_level_values(0))
+    region_buses = list(regions.intersection(n.buses.index))
+    original_country = None
+    if region_buses:
+        original_country = n.buses.loc[region_buses, "country"].copy()
+        n.buses.loc[region_buses, "country"] = region_buses
+
     logger.info("Adding generation capacity constraints per carrier and country")
     p_nom = n.model["Generator-p_nom"]
     p_nom_link = n.model["Link-p_nom"]
@@ -602,6 +610,8 @@ def add_CCL_constraints(
             "nuclear (SMR)": "nuclear-all",
         }
         links = links.replace(rename_nuclear)
+    if config["solving"]["agg_p_nom_limits"]["agg_ccgt"]:
+        links = links.replace({"CCGT": "CCGT-all"})
     grouper = pd.concat([gens.bus.map(n.buses.country), gens.carrier], axis=1)
     grouper_links = pd.concat([links.bus1.map(n.buses.country), links.carrier], axis=1)
     lhs = p_nom.groupby(grouper).sum().rename(bus="country")
@@ -634,6 +644,8 @@ def add_CCL_constraints(
             gens_cst = gens_cst.replace(rename_solar)
         if config["solving"]["agg_p_nom_limits"]["agg_nuclear"]:
             links_cst = links_cst.replace(rename_nuclear)
+        if config["solving"]["agg_p_nom_limits"]["agg_ccgt"]:
+            links_cst = links_cst.replace({"CCGT": "CCGT-all"})
         rhs_cst = (
             pd.concat(
                 [gens_cst.bus.map(n.buses.country), gens_cst[["carrier", "p_nom"]]],
@@ -722,6 +734,10 @@ def add_CCL_constraints(
             lhs_links.sel(group=index_links) <= maximum_links.loc[index_links],
             name="agg_p_nom_max_links",
         )
+
+    # reset original country assignments
+    if region_buses:
+        n.buses.loc[region_buses, "country"] = original_country
 
 
 def add_EQ_constraints(n, o, scaling=1e-1):
