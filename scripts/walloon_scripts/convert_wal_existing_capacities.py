@@ -72,7 +72,9 @@ def main(input_path: Path, output_path: Path) -> None:
     df["DateOut"] = df["DateIn"] + df["Lifetime"]
     df["bus"] = df["NUTS3_code"].apply(infer_bus)
 
-    mask_custom = ~df["Fueltype"].isin(["Onshore Wind", "Solar"])
+    mask_custom = (
+        ~df["Fueltype"].isin(["Onshore Wind", "Solar"]) & (df["DateIn"] < 2025)
+    )
     custom = pd.DataFrame(
         {
             "Name": df.loc[mask_custom, "Name"],
