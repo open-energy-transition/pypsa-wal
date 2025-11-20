@@ -4,7 +4,7 @@
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
-  name: "pnom-links"
+  name: "walloon-model"
   scenarios:
     file: config/scenarios.yaml
 
@@ -91,6 +91,7 @@ solving:
     agg_offwind: true
     agg_solar: true
     agg_nuclear: true
+    agg_ccgt: true
     include_existing: true
     file: data/agg_p_nom_minmax.csv
 
