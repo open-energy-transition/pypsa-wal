@@ -72,8 +72,8 @@ def main(input_path: Path, output_path: Path) -> None:
     df["DateOut"] = df["DateIn"] + df["Lifetime"]
     df["bus"] = df["NUTS3_code"].apply(infer_bus)
 
-    mask_custom = (
-        ~df["Fueltype"].isin(["Onshore Wind", "Solar"]) & (df["DateIn"] < 2025)
+    mask_custom = ~df["Fueltype"].isin(["Onshore Wind", "Solar"]) & (
+        df["DateIn"] < 2025
     )
     custom = pd.DataFrame(
         {
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/walloon/custom_powerplants_walloon.csv"),
+        default=Path("data/walloon/custom_powerplants_belgium.csv"),
     )
     args = parser.parse_args()
     main(args.input, args.output)
