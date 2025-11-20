@@ -591,6 +591,7 @@ def add_CCL_constraints(
     if config["solving"]["agg_p_nom_limits"]["agg_solar"]:
         rename_solar = {
             "solar": "solar-all",
+            "solar-utility": "solar-all",
             "solar-hsat": "solar-all",
             "solar rooftop": "solar-all",
         }
