@@ -4,7 +4,7 @@
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
-  name: "walloon-model"
+  name: "pnom-links"
   scenarios:
     file: config/scenarios.yaml
 
@@ -46,7 +46,7 @@ electricity:
       2040: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
       2050: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
-  powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and not (Country in ['BE'] and Fueltype == 'Nuclear')
+  powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and Country != 'BE'
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
