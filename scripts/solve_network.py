@@ -569,33 +569,35 @@ def add_CCL_constraints(
     else:
         return
 
-    # temporarily set bus countries to region names for CCL constraint application
-    regions = set(agg_p_nom_minmax.index.get_level_values(0))
-    region_buses = list(regions.intersection(n.buses.index))
-    original_country = None
-    if region_buses:
-        original_country = n.buses.loc[region_buses, "country"].copy()
-        n.buses.loc[region_buses, "country"] = region_buses
-        # when a bus has its own constraint entry, subtract it from its parent country
-        for region in region_buses:
-            parent = original_country.loc[region]
-            if parent == region:
-                continue
-            for carrier in agg_p_nom_minmax.index.get_level_values(1).unique():
-                region_idx = (region, carrier)
-                parent_idx = (parent, carrier)
-                if region_idx not in agg_p_nom_minmax.index:
+    buses_to_county = False
+    if buses_to_county:
+        # temporarily set bus countries to region names for CCL constraint application
+        regions = set(agg_p_nom_minmax.index.get_level_values(0))
+        region_buses = list(regions.intersection(n.buses.index))
+        original_country = None
+        if region_buses:
+            original_country = n.buses.loc[region_buses, "country"].copy()
+            n.buses.loc[region_buses, "country"] = region_buses
+            # when a bus has its own constraint entry, subtract it from its parent country
+            for region in region_buses:
+                parent = original_country.loc[region]
+                if parent == region:
                     continue
-                if parent_idx not in agg_p_nom_minmax.index:
-                    continue
-                for col in agg_p_nom_minmax.columns:
-                    region_val = agg_p_nom_minmax.loc[region_idx, col]
-                    parent_val = agg_p_nom_minmax.loc[parent_idx, col]
-                    if pd.isna(region_val) or pd.isna(parent_val):
+                for carrier in agg_p_nom_minmax.index.get_level_values(1).unique():
+                    region_idx = (region, carrier)
+                    parent_idx = (parent, carrier)
+                    if region_idx not in agg_p_nom_minmax.index:
                         continue
-                    agg_p_nom_minmax.loc[parent_idx, col] = max(
-                        parent_val - region_val, 0
-                    )
+                    if parent_idx not in agg_p_nom_minmax.index:
+                        continue
+                    for col in agg_p_nom_minmax.columns:
+                        region_val = agg_p_nom_minmax.loc[region_idx, col]
+                        parent_val = agg_p_nom_minmax.loc[parent_idx, col]
+                        if pd.isna(region_val) or pd.isna(parent_val):
+                            continue
+                        agg_p_nom_minmax.loc[parent_idx, col] = max(
+                            parent_val - region_val, 0
+                        )
 
     logger.info("Adding generation capacity constraints per carrier and country")
     p_nom = n.model["Generator-p_nom"]
@@ -756,7 +758,7 @@ def add_CCL_constraints(
         )
 
     # reset original country assignments
-    if region_buses:
+    if buses_to_county and region_buses:
         n.buses.loc[region_buses, "country"] = original_country
 
 
