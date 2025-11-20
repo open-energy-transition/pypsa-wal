@@ -576,6 +576,26 @@ def add_CCL_constraints(
     if region_buses:
         original_country = n.buses.loc[region_buses, "country"].copy()
         n.buses.loc[region_buses, "country"] = region_buses
+        # when a bus has its own constraint entry, subtract it from its parent country
+        for region in region_buses:
+            parent = original_country.loc[region]
+            if parent == region:
+                continue
+            for carrier in agg_p_nom_minmax.index.get_level_values(1).unique():
+                region_idx = (region, carrier)
+                parent_idx = (parent, carrier)
+                if region_idx not in agg_p_nom_minmax.index:
+                    continue
+                if parent_idx not in agg_p_nom_minmax.index:
+                    continue
+                for col in agg_p_nom_minmax.columns:
+                    region_val = agg_p_nom_minmax.loc[region_idx, col]
+                    parent_val = agg_p_nom_minmax.loc[parent_idx, col]
+                    if pd.isna(region_val) or pd.isna(parent_val):
+                        continue
+                    agg_p_nom_minmax.loc[parent_idx, col] = max(
+                        parent_val - region_val, 0
+                    )
 
     logger.info("Adding generation capacity constraints per carrier and country")
     p_nom = n.model["Generator-p_nom"]
