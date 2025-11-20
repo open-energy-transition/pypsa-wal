@@ -23,6 +23,7 @@ from pypsa.geo import haversine_pts
 from scipy.stats import beta
 
 from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
+from scripts.walloon_scripts.set_NTCs import set_line_s_nom_to_ntc
 
 from scripts._helpers import (
     configure_logging,
@@ -6564,5 +6565,8 @@ if __name__ == "__main__":
         planning_horizons=int(snakemake.wildcards.planning_horizons),
         walloon_potentials=snakemake.config["electricity"].get("walloon_potentials", None),
         )
+
+    if snakemake.config['electricity'].get('apply_ntc_constraints', False):
+        set_line_s_nom_to_ntc(n, snakemake.input.ntc_csv)
 
     n.export_to_netcdf(snakemake.output[0])
