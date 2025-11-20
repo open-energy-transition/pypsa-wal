@@ -67,6 +67,10 @@ def input_base_network(w):
         inputs = {
             c: f"data/{base_network}/{osm_prebuilt_version}/{c}.csv" for c in components
         }
+    elif base_network == "tyndp+osm-prebuilt":
+        inputs = {
+            c: resources(f"mixed/{osm_prebuilt_version}/{c}.csv") for c in components
+        }
     elif base_network == "entsoegridkit":
         inputs = {c: f"data/{base_network}/{c}.csv" for c in components}
         inputs["parameter_corrections"] = "data/parameter_corrections.yaml"
@@ -913,7 +917,7 @@ if config["electricity"]["base_network"] == "osm-raw":
             "../scripts/build_osm_network.py"
 
 
-if config["electricity"]["base_network"] == "tyndp":
+if config["electricity"]["base_network"] in ["tyndp", "tyndp+osm-prebuilt"]:
 
     rule build_tyndp_network:
         params:
@@ -946,3 +950,28 @@ if config["electricity"]["base_network"] == "tyndp":
             "../envs/environment.yaml"
         script:
             "../scripts/build_tyndp_network.py"
+
+
+if config["electricity"]["base_network"] == "tyndp+osm-prebuilt":
+
+    OSM_VERSION = config["electricity"]["osm-prebuilt-version"]
+    components = {"buses", "lines", "links", "converters", "transformers"}
+    rule build_tyndp_osm_network:
+        params:
+            osm_countries=["BE"],
+        input:
+            input_prebuilt = [f"data/osm-prebuilt/{OSM_VERSION}/{c}.csv" for c in components],
+            input_tyndp = [resources(f"tyndp/build/{c}.csv") for c in components]
+        output:
+            [resources(f"mixed/{OSM_VERSION}/{c}.csv") for c in components]
+        log:
+            logs("build_tyndp_osm_network.log"),
+        benchmark:
+            benchmarks("build_tyndp_osm_network")
+        threads: 1
+        resources:
+            mem_mb=4000,
+        conda:
+            "../envs/environment.yaml"
+        script:
+            "../scripts/build_tyndp_osm_network.py"

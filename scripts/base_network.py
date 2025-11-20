@@ -676,7 +676,7 @@ def base_network(
 ):
     base_network = config["electricity"].get("base_network")
     osm_prebuilt_version = config["electricity"].get("osm-prebuilt-version")
-    assert base_network in {"entsoegridkit", "osm-raw", "osm-prebuilt", "tyndp"}, (
+    assert base_network in {"entsoegridkit", "osm-raw", "osm-prebuilt", "tyndp", "tyndp+osm-prebuilt"}, (
         f"base_network must be either 'entsoegridkit', 'osm-raw', 'osm-prebuilt' or 'tyndp', but got '{base_network}'"
     )
     if base_network == "entsoegridkit":
@@ -709,7 +709,7 @@ def base_network(
         # Set electrical parameters of lines and links
         lines = _set_electrical_parameters_lines_eg(lines, config)
         links = _set_electrical_parameters_links_eg(links, config, links_p_nom)
-    elif base_network in {"osm-prebuilt", "osm-raw", "tyndp"}:
+    elif base_network in {"osm-prebuilt", "osm-raw", "tyndp", "tyndp+osm-prebuilt"}:
         links = _load_links_from_raw(buses, links)
         converters = _load_converters_from_raw(buses, converters)
 

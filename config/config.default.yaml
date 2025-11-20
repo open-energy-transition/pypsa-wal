@@ -95,6 +95,7 @@ enable:
   build_cutout: false
   retrieve_cutout: true
   drop_leap_day: true
+  retrieve_tyndp_bundle: true
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#co2-budget
 co2_budget:
@@ -109,7 +110,7 @@ co2_budget:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#electricity
 electricity:
   voltages: [220., 300., 330., 380., 400., 500., 750.]
-  base_network: osm-prebuilt
+  base_network: tyndp+osm-prebuilt
   osm-prebuilt-version: 0.6
   gaslimit_enable: false
   gaslimit: false
@@ -154,7 +155,7 @@ electricity:
     enable: false
     by_country: false
 
-  transmission_limit: vopt
+  transmission_limit: v1.0
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#atlite
 atlite:
@@ -213,7 +214,7 @@ renewable:
     luisa: false # [0, 5230]
     natura: true
     ship_threshold: 400
-    max_depth: 60
+    max_depth: false
     max_shore_distance: 30000
     excluder_resolution: 200
     clip_p_max_pu: 1.e-2
@@ -232,7 +233,7 @@ renewable:
     luisa: false # [0, 5230]
     natura: true
     ship_threshold: 400
-    max_depth: 60
+    max_depth: false
     min_shore_distance: 30000
     excluder_resolution: 200
     clip_p_max_pu: 1.e-2
@@ -256,7 +257,7 @@ renewable:
     ship_threshold: 400
     excluder_resolution: 200
     min_depth: 60
-    max_depth: 1000
+    max_depth: false
     clip_p_max_pu: 1.e-2
     landfall_length: 40
   solar:
@@ -326,7 +327,7 @@ lines:
     400.: Al/St 240/40 4-bundle 380.0
     500.: Al/St 240/40 4-bundle 380.0
     750.: Al/St 560/50 4-bundle 750.0
-  s_max_pu: 0.7
+  s_max_pu: 1
   s_nom_max: .inf
   max_extension: 20000 #MW
   length_factor: 1.25
@@ -342,7 +343,7 @@ lines:
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#links
 links:
   p_max_pu: 1.0
-  p_min_pu: -1.0
+  p_min_pu: 0
   p_nom_max: .inf
   max_extension: 30000 #MW
   length_factor: 1.25
@@ -352,9 +353,9 @@ links:
 transmission_projects:
   enable: true
   include:
-    tyndp2020: true
-    nep: true
-    manual: true
+    tyndp2020: false
+    nep: false
+    manual: false
   skip:
   - upgraded_lines
   - upgraded_links
@@ -986,7 +987,7 @@ adjustments:
 solving:
   options:
     clip_p_max_pu: 1.e-2
-    load_shedding: false
+    load_shedding: true
     curtailment_mode: false
     noisy_costs: true
     skip_iterations: true

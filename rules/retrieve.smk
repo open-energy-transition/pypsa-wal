@@ -591,7 +591,7 @@ if config["enable"]["retrieve"]:
 
 
 if config["enable"]["retrieve"] and (
-    config["electricity"]["base_network"] == "osm-prebuilt"
+    config["electricity"]["base_network"] in ["osm-prebuilt", "tyndp+osm-prebuilt"]
 ):
     OSM_VERSION = config["electricity"]["osm-prebuilt-version"]
     OSM_FILES = [
