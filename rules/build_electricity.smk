@@ -39,7 +39,7 @@ rule build_powerplants:
         countries=config_provider("countries"),
     input:
         network=resources("networks/base_s_{clusters}.nc"),
-        custom_powerplants="data/walloon/custom_powerplants_belgium.csv",
+        custom_powerplants=resources("custom_powerplants.csv"),
     output:
         resources("powerplants_s_{clusters}.csv"),
     log:
@@ -53,6 +53,26 @@ rule build_powerplants:
         "../envs/environment.yaml"
     script:
         "../scripts/build_powerplants.py"
+
+
+rule build_BE_powerplants:
+    input:
+        wal_capacities="data/walloon/wal_2021_existing_capacities_2.csv",
+        custom_powerplants="data/custom_powerplants.csv"
+    output:
+        custom_powerplants=resources("custom_powerplants.csv"),
+        agg_p_nom_minmax=resources("agg_p_nom_minmax.csv")
+    log:
+        logs("build_BE_powerplants.log"),
+    benchmark:
+        benchmarks("build_BE_powerplants")
+    threads: 1
+    resources:
+        mem_mb=7000,
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/walloon_scripts/create_custom_powerplants.py"
 
 
 def input_base_network(w):

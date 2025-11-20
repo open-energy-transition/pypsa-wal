@@ -1,9 +1,7 @@
 """Convert Walloon existing capacities into PyPSA-compatible custom powerplant data."""
 
-from __future__ import annotations
 
-import argparse
-from pathlib import Path
+from scripts._helpers import configure_logging, set_scenario_config
 
 import pandas as pd
 
@@ -57,8 +55,8 @@ def make_name(row: pd.Series, idx: int) -> str:
     return f"{technology}_{code}_{idx}"
 
 
-def main(input_path: Path, output_path: Path) -> None:
-    df = pd.read_csv(input_path, encoding="utf-8-sig")
+def build_BE_powerplants(wal_existing, custom_powerplants) -> None:
+    df = pd.read_csv(wal_existing, encoding="utf-8-sig")
 
     df["Name"] = [make_name(r, i) for i, r in df.iterrows()]
     df["Fueltype"] = df["Fueltype"].astype(str).str.strip().replace(FUEL_MAP)
@@ -98,13 +96,9 @@ def main(input_path: Path, output_path: Path) -> None:
             "bus": df.loc[mask_custom, "bus"],
         }
     )
-    custom_add = pd.read_csv("data/walloon/custom_powerplants_add.csv")
+    custom_add = pd.read_csv(custom_powerplants)
     custom = pd.concat([custom, custom_add], ignore_index=True)
     custom = custom[~custom["Fueltype"].isin(["Onshore Wind", "Solar"])]
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    custom.to_csv(output_path, index=False)
-    print(f"Wrote {len(custom)} custom powerplants to {output_path}")
 
     potential = df.loc[~mask_custom, ["bus", "Fueltype", "Capacity"]]
     pivot = (
@@ -115,23 +109,22 @@ def main(input_path: Path, output_path: Path) -> None:
     )
     pivot.columns = pivot.columns.str.lower()
     pivot.rename(columns={"onshore wind": "onwind", "solar": "solar-all"}, inplace=True)
-    pivot.to_csv("data/walloon/agg_p_nom_minmax_walloon.csv")
-    print(
-        "Wrote BEWAL wind/solar potentials to data/walloon/agg_p_nom_minmax_walloon.csv"
-    )
+
+    return custom, pivot
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--input",
-        type=Path,
-        default=Path("data/walloon/wal_2021_existing_capacities_2.csv"),
+    if "snakemake" not in globals():
+        from scripts._helpers import mock_snakemake
+
+        snakemake = mock_snakemake("build_powerplants")
+    configure_logging(snakemake)
+    set_scenario_config(snakemake)
+
+    custom_powerplants, agg_p_nom_minmax = build_BE_powerplants(
+        snakemake.input.wal_capacities,
+        snakemake.input.custom_powerplants
     )
-    parser.add_argument(
-        "--output",
-        type=Path,
-        default=Path("data/walloon/custom_powerplants_belgium.csv"),
-    )
-    args = parser.parse_args()
-    main(args.input, args.output)
+
+    custom_powerplants.to_csv(snakemake.output.custom_powerplants, index=False)
+    agg_p_nom_minmax.to_csv(snakemake.output.agg_p_nom_minmax)
