@@ -61,13 +61,8 @@ def main(input_path: Path, output_path: Path) -> None:
     df = pd.read_csv(input_path, encoding="utf-8-sig")
 
     df["Name"] = [make_name(r, i) for i, r in df.iterrows()]
-    df["Fueltype"] = (
-        df["Fueltype"].astype(str).str.strip().replace(FUEL_MAP)
-    )
-    df["Technology"] = (
-        df["Technology"].astype(str).str.strip().replace(TECH_MAP)
-    )
-    df = df[~df["Fueltype"].isin(["Onshore Wind", "Solar"])]
+    df["Fueltype"] = df["Fueltype"].astype(str).str.strip().replace(FUEL_MAP)
+    df["Technology"] = df["Technology"].astype(str).str.strip().replace(TECH_MAP)
     df["Set"] = "PP"
     df["Country"] = df["NUTS3_code"].fillna("BE").str[:2].str.upper()
     df["Capacity"] = df["Capacity"].astype(float)
@@ -77,18 +72,19 @@ def main(input_path: Path, output_path: Path) -> None:
     df["DateOut"] = df["DateIn"] + df["Lifetime"]
     df["bus"] = df["NUTS3_code"].apply(infer_bus)
 
-    converted = pd.DataFrame(
+    mask_custom = ~df["Fueltype"].isin(["Onshore Wind", "Solar"])
+    custom = pd.DataFrame(
         {
-            "Name": df["Name"],
-            "Fueltype": df["Fueltype"],
-            "Technology": df["Technology"],
-            "Set": df["Set"],
-            "Country": df["Country"],
-            "Capacity": df["Capacity"],
-            "Efficiency": df["Efficiency"],
-            "DateIn": df["DateIn"],
+            "Name": df.loc[mask_custom, "Name"],
+            "Fueltype": df.loc[mask_custom, "Fueltype"],
+            "Technology": df.loc[mask_custom, "Technology"],
+            "Set": df.loc[mask_custom, "Set"],
+            "Country": df.loc[mask_custom, "Country"],
+            "Capacity": df.loc[mask_custom, "Capacity"],
+            "Efficiency": df.loc[mask_custom, "Efficiency"],
+            "DateIn": df.loc[mask_custom, "DateIn"],
             "DateRetrofit": pd.NA,
-            "DateOut": df["DateOut"],
+            "DateOut": df.loc[mask_custom, "DateOut"],
             "lat": 50.5334,
             "lon": 5.2714,
             "Duration": pd.NA,
@@ -97,13 +93,30 @@ def main(input_path: Path, output_path: Path) -> None:
             "StorageCapacity_MWh": pd.NA,
             "EIC": pd.NA,
             "projectID": pd.NA,
-            "bus": df["bus"],
+            "bus": df.loc[mask_custom, "bus"],
         }
     )
+    custom_add = pd.read_csv("data/walloon/custom_powerplants_add.csv")
+    custom = pd.concat([custom, custom_add], ignore_index=True)
+    custom = custom[~custom["Fueltype"].isin(["Onshore Wind", "Solar"])]
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    converted.to_csv(output_path, index=False)
-    print(f"Wrote {len(converted)} rows to {output_path}")
+    custom.to_csv(output_path, index=False)
+    print(f"Wrote {len(custom)} custom powerplants to {output_path}")
+
+    potential = df.loc[~mask_custom, ["bus", "Fueltype", "Capacity"]]
+    pivot = (
+        potential.groupby(["Fueltype", "bus"])["Capacity"]
+        .sum()
+        .unstack(level=0)
+        .fillna(0.0)
+    )
+    pivot.columns = pivot.columns.str.lower()
+    pivot.rename(columns={"onshore wind": "onwind", "solar": "solar-all"}, inplace=True)
+    pivot.to_csv("data/walloon/agg_p_nom_minmax_walloon.csv")
+    print(
+        "Wrote BEWAL wind/solar potentials to data/walloon/agg_p_nom_minmax_walloon.csv"
+    )
 
 
 if __name__ == "__main__":
@@ -116,7 +129,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/walloon/wal_existing_capacities_converted.csv"),
+        default=Path("data/walloon/custom_powerplants_walloon.csv"),
     )
     args = parser.parse_args()
     main(args.input, args.output)
