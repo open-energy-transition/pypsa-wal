@@ -10,6 +10,10 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* Custom NTCs are applied to all country borders. The constraint acts on existing links, if available,
+  and falls back to lines. Capacities of cross-border connections are set to the total NTC value.
+  If multiple connections exist, an average is built.
+  (https://github.com/open-energy-transition/pypsa-wal/pull/40)
 * Update Walloon-specific potentials for biomass (including imported, transported, and local production), 
   onshore wind, and solar using custom potentials provided in ``data/walloon/custom_potentials.csv`` 
   (https://github.com/open-energy-transition/pypsa-wal/pull/29).
