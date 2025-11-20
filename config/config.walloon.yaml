@@ -41,6 +41,8 @@ electricity:
 
   extendable_carriers:
     extendable_nuclear_links:
+      2025: [FR, DE, GB, NL, LU]
+      2030: [FR, DE, GB, NL, LU]
       2040: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
       2050: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
@@ -83,3 +85,14 @@ sector:
 
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv
+
+solving:
+  agg_p_nom_limits:
+    agg_offwind: true
+    agg_solar: true
+    agg_nuclear: true
+    include_existing: true
+    file: data/agg_p_nom_minmax.csv
+
+  constraints:
+    CCL: true

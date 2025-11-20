@@ -10,6 +10,10 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* Add uranium as a generator, to see nuclear generation in the model
+  (https://github.com/open-energy-transition/pypsa-wal/pull/36).
+* Nuclear (which are modeled as links) can now have CCL (country and carrier limit) 
+  constraints added to them (https://github.com/open-energy-transition/pypsa-wal/pull/35).
 * Allow BEWAL nuclear plants that are about to be retired to be retrofitted instead 
   (https://github.com/open-energy-transition/pypsa-wal/pull/37).
 * Update Walloon-specific potentials for biomass (including imported, transported, and local production), 
