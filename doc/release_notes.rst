@@ -10,6 +10,9 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* The myopic optimisation workflow is now able to incremantally optimise the transmission limit in
+  every planning horizon. The added expansion limit can be configured in the configuration file.
+  (https://github.com/open-energy-transition/pypsa-wal/pull/41)
 * Custom NTCs are applied to all country borders. The constraint acts on existing links, if available,
   and falls back to lines. Capacities of cross-border connections are set to the total NTC value.
   If multiple connections exist, an average is built.
