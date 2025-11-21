@@ -3,6 +3,7 @@
 #
 # SPDX-License-Identifier: MIT
 
+import country_converter as coco
 import pandas as pd
 import logging
 
@@ -46,21 +47,11 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
     """
 
     df = pd.read_csv(ntc_fn)
-    
-    iso3_to_iso2 = {
-        'ALB': 'AL', 'ARM': 'AM', 'AUT': 'AT', 'AZE': 'AZ', 'BEL': 'BE', 'BGR': 'BG',
-        'BIH': 'BA', 'BLR': 'BY', 'CHE': 'CH', 'CZE': 'CZ', 'DEU': 'DE', 'DNK': 'DK',
-        'ESP': 'ES', 'EST': 'EE', 'FIN': 'FI', 'FRA': 'FR', 'GBR': 'GB', 'GEO': 'GE',
-        'GRC': 'GR', 'HRV': 'HR', 'HUN': 'HU', 'IRL': 'IE', 'ITA': 'IT', 'LTU': 'LT',
-        'LUX': 'LU', 'LVA': 'LV', 'MDA': 'MD', 'MKD': 'MK', 'MLT': 'MT', 'MNE': 'ME',
-        'NLD': 'NL', 'NOR': 'NO', 'POL': 'PL', 'PRT': 'PT', 'ROU': 'RO', 'RUS': 'RU',
-        'SRB': 'RS', 'SVK': 'SK', 'SVN': 'SI', 'SWE': 'SE', 'TUR': 'TR', 'UKR': 'UA',
-        'XKX': 'XK', 'CYP': 'CY', 'ISR': 'IL', 'DZA': 'DZ', 'MAR': 'MA', 'EGY': 'EG',
-        'SAU': 'SA', 'PSE': 'PS', 'LBY': 'LY', 'TUN': 'TN'
-    }
 
-    df['source_iso2'] = df['source_country_code'].map(iso3_to_iso2)
-    df['target_iso2'] = df['target_country_code'].map(iso3_to_iso2)
+    cc = coco.CountryConverter()
+    
+    df['source_iso2'] = cc.convert(names=df['source_country_code'], src="ISO3", to="ISO2")
+    df['target_iso2'] = cc.convert(names=df['target_country_code'], src="ISO3", to="ISO2")
     df = df.dropna(subset=['source_iso2', 'target_iso2'])
     pairs = []
     for _, row in df.iterrows():
@@ -68,7 +59,7 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
         pairs.append(pair)
     df['pair'] = pairs
     pair_to_ntc = df.groupby('pair')['NTC_2030_MW'].mean()
-    focus_countries = list(set(iso3_to_iso2.values()).intersection(set(n.buses.country.unique()))) #['CZ', 'DE', 'GR', 'IT', 'NL', 'PL']
+    focus_countries = list(set(df['source_iso2']).union(df['target_iso2']).intersection(set(n.buses.country.unique())))
     for pair, ntc in pair_to_ntc.items():
         if ntc == 0:
             continue
