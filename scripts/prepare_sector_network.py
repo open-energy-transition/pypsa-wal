@@ -22,9 +22,6 @@ from networkx.algorithms.connectivity.edge_augmentation import k_edge_augmentati
 from pypsa.geo import haversine_pts
 from scipy.stats import beta
 
-from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
-from scripts.walloon_scripts.set_NTCs import set_line_s_nom_to_ntc
-
 from scripts._helpers import (
     configure_logging,
     get,
@@ -48,6 +45,7 @@ from scripts.build_transport_demand import transport_degree_factor
 from scripts.definitions.heat_sector import HeatSector
 from scripts.definitions.heat_system import HeatSystem
 from scripts.prepare_network import maybe_adjust_costs_and_potentials
+from scripts.walloon_scripts.set_NTCs import set_line_s_nom_to_ntc
 
 spatial = SimpleNamespace()
 logger = logging.getLogger(__name__)
@@ -607,7 +605,7 @@ def add_carrier_buses(
         capital_cost=capital_cost,
     )
 
-    fossils = ["coal", "gas", "oil", "lignite"]
+    fossils = ["coal", "gas", "oil", "lignite", "uranium"]
     if options["fossil_fuels"] and carrier in fossils:
         suffix = ""
 
@@ -6560,13 +6558,7 @@ if __name__ == "__main__":
     sanitize_carriers(n, snakemake.config)
     sanitize_locations(n)
 
-    update_BEWAL_potentials(
-        n=n,
-        planning_horizons=int(snakemake.wildcards.planning_horizons),
-        walloon_potentials=snakemake.config["electricity"].get("walloon_potentials", None),
-        )
-
-    if snakemake.config['electricity'].get('apply_ntc_constraints', False):
+    if snakemake.config["electricity"].get("apply_ntc_constraints", False):
         set_line_s_nom_to_ntc(n, snakemake.input.ntc_csv)
 
     n.export_to_netcdf(snakemake.output[0])

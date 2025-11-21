@@ -17,6 +17,16 @@ PyPSA-WAL Upcoming Release
   and falls back to lines. Capacities of cross-border connections are set to the total NTC value.
   If multiple connections exist, an average is built.
   (https://github.com/open-energy-transition/pypsa-wal/pull/40)
+* CCL additions can be now customized using data/walloon/custom_potentials.csv. 
+  Expanded CCL constraints to be able to handle buses and not just country level 
+  constraints. Updated Doel retirement schedule and prevent nuclear retrofits until 2040 
+  (https://github.com/open-energy-transition/pypsa-wal/pull/38).
+* Add uranium as a generator, to see nuclear generation in the model
+  (https://github.com/open-energy-transition/pypsa-wal/pull/36).
+* Nuclear (which are modeled as links) can now have CCL (country and carrier limit) 
+  constraints added to them (https://github.com/open-energy-transition/pypsa-wal/pull/35).
+* Allow BEWAL nuclear plants that are about to be retired to be retrofitted instead 
+  (https://github.com/open-energy-transition/pypsa-wal/pull/37).
 * Update Walloon-specific potentials for biomass (including imported, transported, and local production), 
   onshore wind, and solar using custom potentials provided in ``data/walloon/custom_potentials.csv`` 
   (https://github.com/open-energy-transition/pypsa-wal/pull/29).

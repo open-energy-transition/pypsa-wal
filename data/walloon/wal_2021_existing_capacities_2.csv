@@ -1,0 +1,180 @@
+﻿NomInstallation,TypeInstFR,DateIn,Capacity,NUTS3_code,TIMES_proc,Technology,Fueltype,Efficiency,Lifetime
+THIANGE 3,Centrale nuclÃ©aire,1985,1030.0,BE331,ENUC_Thiange,Steam Turbine,Nuclear,0.34,50
+THIANGE 1,Centrale nuclÃ©aire,1975,962.0,BE331,ENUC_Thiange,Steam Turbine,Nuclear,0.34,50
+THIANGE 2,Centrale nuclÃ©aire,1982,1008.0,BE331,ENUC_Thiange,Steam Turbine,Nuclear,0.34,41
+SAINT-GHISLAIN TGV1,TGV,1998,350.0,BE323,ETSTP_TGV_GAS_E02,CCGT,Natural Gas,0.509,40
+AMERCOEUR 3,TGV,2009,420.0,BE322,ETSTP_TGV_GAS_E03,CCGT,Natural Gas,0.5473,40
+TGV MARCINELLE,TGV,2011,420.0,BE322,ETSTP_TGV_GAS_E04,CCGT,Natural Gas,0.5433,40
+TGV DE SERAING,TGV,1994,462.0,BE332,ETSTP_TGV_GAS_E01,CCGT,Natural Gas,0.4943,40
+TURBOJET CIERREUX,Turbojet,1971,17.0,BE342,ETSTP_TBJ_KER_E05,Steam Turbine,Oil,0.2444,40
+CENTRALE TAG3 D'ANGLEUR,TAG,2013,178.0,BE332,ETSTP_TAG_GAS_E06,OCGT,Natural Gas,0.3662,40
+,Moteur Ã  biomasse,2007,2.1100000000000003,BE345,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2017,13.6,BE310,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2012,7.5,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,0.019600000000000003,BE353,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2016,0.01,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine vapeur Ã  condensation,2009,34.0,BE332,ETSTP_TVC_WST_E11,Steam Turbine,Waste,0.1997,50
+,Moteur Ã  biomasse,2014,1.0,BE352,ETSTP_MOT_BGS_E09,Engine,Biogas,0.2784,20
+,Eolienne,2006,2.0,BE353,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,0.005,BE341,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,0.009800000000000001,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,25.0397,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2016,11.4,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2011,11.5,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2017,21.099999999999998,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2011,0.0024,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2021,0.05,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,17.914,BE324,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2003,8.0,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,1998,0.6,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine vapeur Ã  condensation,2009,9.0,BE310,ETSTP_TVC_WST_E11,Steam Turbine,Waste,0.1997,50
+,Turbine hydraulique,2018,49.89285,BE332,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2011,0.24,,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,2.69,BE325,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2020,16.35,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,4.026,BE310,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Turbine hydraulique,2018,16.214994,BE352,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2009,16.9,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,0.00658,BE341,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2016,6.0,BE341,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,22.0,BE353,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2011,0.0024,BE344,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,0.009800000000000001,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,14.22,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2014,0.01,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2005,0.328,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2016,7.5,BE334,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,0.0099,BE345,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,10.2927,BE331,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2014,0.01,BE341,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,0,2.35,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,10.0,BE323,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,0.6,BE326,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2014,41.41,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,0.017,BE326,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2020,16.255,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,0.024800000000000003,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,20.71,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2017,0.05,BE322,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2021,10.5,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,16.1026,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,2.35,BE310,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  gaz,2014,3.0,BE326,ECHPP_MOT_GAS_E04,Engine,Natural Gas,0.4371,20
+,Eolienne,2019,21.6,BE334,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,18.553100999999998,BE335,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2017,0.060000000000000005,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,19.21,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2007,14.200000000000001,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,16.0,BE334,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,0.10500000000000001,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,0.0445,BE343,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2007,12.0,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2012,0.0035,BE334,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,0.1,BE329,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2018,16.0,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2008,12.0,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,0.0037,BE332,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2015,14.35,BE322,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,0.01,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,17.25,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,17.5,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,2.506,BE332,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2011,22.0,BE310,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2007,2.0,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,0.711557,BE344,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Turbine hydraulique,2018,8.236049999999999,BE351,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2017,0.01,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2018,0.060000000000000005,BE323,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,2.41,BE322,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2018,38.22,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2018,0.02,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,2.0,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,6.1499999999999995,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine vapeur Ã  condensation,2009,6.6,BE322,ETSTP_TVC_WST_E11,Steam Turbine,Waste,0.1997,50
+,Eolienne,2012,80.97,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,0.11,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,10.0,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,1.2,BE335,ECHPP_MOT_BIO_E02,Engine,Pellets,0.2116,20
+,Eolienne,2016,11.547,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2015,9.2,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2014,0.01,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2006,4.5,BE310,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  gaz,2014,1.0,BE332,ECHPP_MOT_GAS_E04,Engine,Natural Gas,0.4371,20
+,Eolienne,2021,13.8,BE332,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2013,0.006,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine vapeur Ã  condensation,2007,10.0,BE335,ECHPP_MOT_BIO_E02,Steam Turbine,Pellets,0.2116,20
+,Eolienne,2017,4.0,BE334,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2015,14.0,BE334,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2007,9.0,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,1.272059,BE342,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Moteur Ã  biomasse,2007,0.22,BE335,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,1900,0.01,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2011,36.599999999999994,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,24.81,BE325,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,0.0094,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,24.6,BE323,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2015,12.0,BE341,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,2.245,BE323,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2005,9.0,BE353,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2008,10.0,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2003,1.94,BE331,ETSTP_MOT_BGS_E09,Engine,Biogas,0.2784,20
+,Eolienne,2019,6.8999999999999995,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2017,36.6,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2008,16.0,BE322,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2018,12.05,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,4.550000000000001,BE322,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,2.36,BE322,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2017,7.5,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2008,0.003,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2014,0.01,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2006,0.8,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2014,2.0,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,0.208,BE353,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2012,15.0,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,15.0,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,1981,0.018,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,0.0024,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,2.1935000000000002,BE345,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Turbine hydraulique,2018,0.06841099999999999,BE310,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2013,10.0,BE310,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2016,14.0,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine vapeur Ã  condensation,2009,37.6,BE321,ETSTP_TVC_WST_E11,Steam Turbine,Waste,0.1997,50
+,Eolienne,2021,2.2,BE323,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2012,2.3,BE322,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2011,21.505,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,10.35,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,44.85,BE331,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2020,12.05,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2005,7.5,BE310,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2010,14.0,BE351,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,0.01,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2003,7.5,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,0.308,BE352,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2021,9.9,BE352,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2015,4.71,BE327,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,0.01,BE344,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,1.8,BE334,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Eolienne,2018,0.01,BE321,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2014,23.405,BE326,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,0.0345,BE334,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2021,22.92,BE342,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,1.0694,BE353,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Turbine hydraulique,2018,2.153652,BE322,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+,Eolienne,2016,4.7,BE323,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Moteur Ã  biomasse,2007,1.2,BE331,ECHPP_MOT_BGS_E01,Engine,Biogas,0.3268,20
+,Moteur Ã  biomasse,2003,10.7,BE310,ETSTP_MOT_BGS_E09,Engine,Biogas,0.2784,20
+,Eolienne,2019,0.01,BE353,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2019,0.01,BE324,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Eolienne,2009,12.0,BE335,ERNW_Eolien_XXXX_EX,Wind Turbine,Wind,1.0,25
+,Turbine hydraulique,2018,0.0025,BE321,ERNW_Hydro_XXXX_EX,Run-Of-River,Hydro,1.0,50
+SOLAIRE PHOTOVOLTAIQUE AGRICULTURE,PhotovoltaÃ¯que,2021,6.62505,,PhotovoltaÃ¯que,Photovoltaic,Sun,1.0,20
+SOLAIRE PHOTOVOLTAIQUE INDUSTRIE,PhotovoltaÃ¯que,2021,139.2321,,PhotovoltaÃ¯que,Photovoltaic,Sun,1.0,20
+SOLAIRE PHOTOVOLTAIQUE RESIDENTIEL,PhotovoltaÃ¯que,2021,1021.886,,PhotovoltaÃ¯que,Photovoltaic,Sun,1.0,20
+SOLAIRE PHOTOVOLTAIQUE TERTIAIRE,PhotovoltaÃ¯que,2021,305.509,,PhotovoltaÃ¯que,Photovoltaic,Sun,1.0,20
+HYDRO DE BÃ‰VERCÃ‰,Turbine hydraulique,2018,11.6,BE335,ERNW_Hydro_XXXX_EX,Reservoir,Hydro,1.0,50
+HYDRO DE BÃœTGENBACH,Turbine hydraulique,2018,2.106,BE335,ERNW_Hydro_XXXX_EX,Reservoir,Hydro,1.0,50
+HYDRO DE LA VIERRE (CHINY),Turbine hydraulique,2018,2.0,BE345,ERNW_Hydro_XXXX_EX,Reservoir,Hydro,1.0,50
+CENTRALE DE POMPAGE DE LA PLATE TAILLE,Pompage,1980,146.0,BE353,ERNW_Hydro_Pompage_E8,Pumped Storage,Hydro,0.75,80
+POMPAGE COO I-II,Pompage,1972,1164.0,BE335,ERNW_Hydro_Pompage_E8,Pumped Storage,Hydro,0.75,80
+TGV DE SERAING NEW,TGV,2026,870.0,BE332,ETSTP_TGV_GAS_New_E13,CCGT,Natural Gas,0.63,40
+TGV DE FLEMALLE,TGV,2025,870.0,BE332,ETSTP_TGV_GAS_New_E12,CCGT,Natural Gas,0.63,40
