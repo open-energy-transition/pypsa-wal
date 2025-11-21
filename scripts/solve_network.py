@@ -569,8 +569,8 @@ def add_CCL_constraints(
     else:
         return
 
-    buses_to_county = True
-    if buses_to_county:
+    buses_to_country = True
+    if buses_to_country:
         # temporarily set bus countries to region names for CCL constraint application
         regions = set(agg_p_nom_minmax.index.get_level_values(0))
         region_buses = list(regions.intersection(n.buses.index))
@@ -758,7 +758,7 @@ def add_CCL_constraints(
         )
 
     # reset original country assignments
-    if buses_to_county and region_buses:
+    if buses_to_country and region_buses:
         n.buses.loc[region_buses, "country"] = original_country
 
 
