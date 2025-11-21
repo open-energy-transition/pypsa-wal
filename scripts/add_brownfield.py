@@ -389,7 +389,6 @@ if __name__ == "__main__":
 
     add_BEWAL_nuclear(
         n=n,
-        walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
         planning_horizon=planning_horizon,
         extendable_nuclear_nodes=(
             snakemake.config["electricity"]["extendable_carriers"]
@@ -407,6 +406,12 @@ if __name__ == "__main__":
         int(snakemake.wildcards.planning_horizons),
         costs = load_costs(snakemake.input.costs),
         MILP = True,
+    )
+
+    update_BEWAL_potentials(
+        n=n,
+        planning_horizons=int(snakemake.wildcards.planning_horizons),
+        walloon_potentials=snakemake.config["electricity"].get("walloon_potentials", None),
     )
 
     kind = snakemake.params.transmission_limit[planning_horizon][0]
