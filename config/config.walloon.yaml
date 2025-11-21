@@ -47,6 +47,10 @@ electricity:
   powerplants_filter: (DateOut >= 2024 and DateOut != DateOut) and not (Country in ['BE'] and Fueltype == 'Nuclear')
 
   transmission_limit: v1.0
+  transmission_limit_myopic:
+    2030: v1.0
+    2040: v1.1
+    2050: v1.1
   apply_ntc_constraints: True
 
 # docs

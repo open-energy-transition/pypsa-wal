@@ -15,11 +15,13 @@ import xarray as xr
 from scripts._helpers import (
     configure_logging,
     get_snapshots,
+    load_costs,
     sanitize_custom_columns,
     set_scenario_config,
     update_config_from_wildcards,
 )
 from scripts.add_electricity import flatten, sanitize_carriers
+from scripts.prepare_network import set_transmission_limit
 from scripts.add_existing_baseyear import add_build_year_to_new_assets
 
 from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
@@ -372,17 +374,24 @@ if __name__ == "__main__":
         capacity_threshold=snakemake.params.threshold_capacity,
     )
 
-    disable_grid_expansion_if_limit_hit(n)
-
     n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
 
     sanitize_custom_columns(n)
     sanitize_carriers(n, snakemake.config)
 
+    planning_horizon = int(snakemake.wildcards.planning_horizons)
+
     add_BEWAL_nuclear(
         n=n,
         walloon_nuclear_config=snakemake.config["electricity"]["extendable_carriers"].get("Walloon", {}),
-        planning_horizon=int(snakemake.wildcards.planning_horizons),
+        planning_horizon=planning_horizon,
     )
+
+    kind = snakemake.params.transmission_limit[planning_horizon][0]
+    factor = snakemake.params.transmission_limit[planning_horizon][1:]
+    set_transmission_limit(n, kind, factor, load_costs(snakemake.input.costs))
+
+    if float(factor) == 1.0:
+        disable_grid_expansion_if_limit_hit(n)
 
     n.export_to_netcdf(snakemake.output[0])
