@@ -18,6 +18,7 @@ import pypsa
 import xarray as xr
 
 from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear
+from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
 
 from scripts._helpers import (
     configure_logging,
@@ -219,6 +220,8 @@ def add_power_capacities_installed_before_baseyear(
     df_agg.drop(df_agg.index[df_agg.Fueltype.isin(fueltype_to_drop)], inplace=True)
     df_agg.drop(df_agg.index[df_agg.Technology.isin(technology_to_drop)], inplace=True)
     df_agg.Fueltype = df_agg.Fueltype.map(rename_fuel)
+    # drop not yet installed
+    df_agg = df_agg.query("DateIn <= @baseyear")
 
     # Intermediate fix for DateIn & DateOut
     # Fill missing DateIn
@@ -825,6 +828,13 @@ if __name__ == "__main__":
             snakemake.config["electricity"]["extendable_carriers"]
             .get("extendable_nuclear_links", {})
         ),
+    )
+
+
+    update_BEWAL_potentials(
+        n=n,
+        planning_horizons=int(snakemake.wildcards.planning_horizons),
+        walloon_potentials=snakemake.config["electricity"].get("walloon_potentials", None),
     )
 
     n.export_to_netcdf(snakemake.output[0])

@@ -22,7 +22,9 @@ from scripts._helpers import (
 )
 from scripts.add_electricity import flatten, sanitize_carriers
 from scripts.add_existing_baseyear import add_build_year_to_new_assets
+
 from scripts.walloon_scripts.nuclear_helper import add_BEWAL_nuclear, retrofit_retired_nuclear
+from scripts.walloon_scripts.BEWAL_potentials import update_BEWAL_potentials
 
 logger = logging.getLogger(__name__)
 idx = pd.IndexSlice
@@ -403,6 +405,12 @@ if __name__ == "__main__":
         int(snakemake.wildcards.planning_horizons),
         costs = load_costs(snakemake.input.costs),
         MILP = True,
+    )
+
+    update_BEWAL_potentials(
+        n=n,
+        planning_horizons=int(snakemake.wildcards.planning_horizons),
+        walloon_potentials=snakemake.config["electricity"].get("walloon_potentials", None),
     )
 
     n.export_to_netcdf(snakemake.output[0])

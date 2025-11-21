@@ -46,7 +46,7 @@ electricity:
       2040: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
       2050: [BEWAL, BEBRU, BEVLG, FR, DE, GB, NL, LU]
 
-  powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and not (Country in ['BE'] and Fueltype == 'Nuclear')
+  powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and Country != 'BE'
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
@@ -91,6 +91,7 @@ solving:
     agg_offwind: true
     agg_solar: true
     agg_nuclear: true
+    agg_ccgt: true
     include_existing: true
     file: data/agg_p_nom_minmax.csv
 

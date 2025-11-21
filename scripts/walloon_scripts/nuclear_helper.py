@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 import logging
+
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -71,6 +72,13 @@ def retrofit_retired_nuclear(
         True will only allow retrofitting the entire block or nothing at all
         Turning the problem essentially into a MILP.
     """
+    if planning_horizon < 2040:
+        logger.info(
+            "Skipping nuclear retrofit: planning horizon %s is before the retrofit window.",
+            planning_horizon,
+        )
+        return
+
     decomissioned_nuclear = decomissioned_nuclear.query("bus1 in @extendable_nuclear_nodes")
     retrofit_nuclear = decomissioned_nuclear.copy()
     retrofit_nuclear.index = retrofit_nuclear.index.astype(str) + " retrofit"
