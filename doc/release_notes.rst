@@ -10,8 +10,10 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
-* Expanded CCL constraints to be able to handle buses and not just country level 
-  constraints (https://github.com/open-energy-transition/pypsa-wal/pull/38).
+* CCL additions can be now customized using data/walloon/custom_potentials.csv. 
+  Expanded CCL constraints to be able to handle buses and not just country level 
+  constraints. Updated Doel retirement schedule and prevent nuclear retrofits until 2040 
+  (https://github.com/open-energy-transition/pypsa-wal/pull/38).
 * Add uranium as a generator, to see nuclear generation in the model
   (https://github.com/open-energy-transition/pypsa-wal/pull/36).
 * Nuclear (which are modeled as links) can now have CCL (country and carrier limit) 
