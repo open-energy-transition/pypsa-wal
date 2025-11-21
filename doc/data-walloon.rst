@@ -8,3 +8,4 @@ Walloon-specific Data
   - solid biomass transported: maximum amount of biomass that can be transported from other nodes in the model to BEWAL (GWh/an)
   - solid biomass: maximum amount of local production of solid biomass in BEWAL region (GWh/an)
   - onwind, solar, solar rooftop: maximum potentials for onshore wind, solar PV and rooftop solar PV in BEWAL region (MW)
+* ``data/walloon/ntc_2030.csv`` – net transfer capacities (NTCs) between European countries in 2030 (MW).
