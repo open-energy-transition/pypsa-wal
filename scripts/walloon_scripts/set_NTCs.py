@@ -66,7 +66,6 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
         country1, country2 = pair
         if country1 not in focus_countries and country2 not in focus_countries:
             continue
-        print(country1, country2)
         if country1 not in focus_countries or country2 not in focus_countries:
             continue
 
@@ -81,10 +80,6 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
         if not links_between.empty:
             current_total_p_nom_1 = links_between.query("reversed == False")['p_nom'].sum()
             current_total_p_nom_2 = links_between.query("reversed == True")['p_nom'].sum()
-            if country1 == "BE" or country2 == "BE":
-                print("target (Links)", ntc)
-                print("current way 1", current_total_p_nom_1)
-                print("current reversed", current_total_p_nom_2)
             if current_total_p_nom_1 > 0:
                 scale_factor = ntc / current_total_p_nom_1
                 direction = links_between.query("reversed == False").index
@@ -99,10 +94,6 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
             else:
                 direction = links_between.query("reversed == True").index
                 n.links.loc[direction, 'p_nom'] = ntc / len(direction)
-            if country1 == "BE" or country2 == "BE":
-                print("updated", n.links.loc[links_between.index].query("reversed == False")['p_nom'].sum())
-                print("updated", n.links.loc[links_between.index].query("reversed == True")['p_nom'].sum())
-                print(n.links.loc[links_between.index][["bus0", "bus1", "p_min_pu", "p_max_pu", "reversed", "p_nom"]])
             updated = True
             line_or_link = "Link"
         if (updated) and (not lines_between.empty):
@@ -113,16 +104,11 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
             lines_between = n.lines.query('(bus0 in @buses1 and bus1 in @buses2) or (bus0 in @buses2 and bus1 in @buses1)')
         if (not updated) and (not lines_between.empty):
             current_total_s_nom = lines_between['s_nom'].sum()
-            if country1 == "BE" or country2 == "BE":
-                print("target (Lines)", ntc)
-                print("current", current_total_s_nom)
             if current_total_s_nom > 0:
                 scale_factor = ntc / current_total_s_nom
                 n.lines.loc[lines_between.index, 's_nom'] *= scale_factor
             else:
                 n.lines.loc[lines_between.index, 's_nom'] = ntc / len(lines_between)
-            if country1 == "BE" or country2 == "BE":
-                print("updated", n.lines.loc[lines_between.index, 's_nom'].sum())
             updated = True
             line_or_link = "Line"
         if updated:
