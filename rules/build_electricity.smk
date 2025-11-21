@@ -61,7 +61,6 @@ rule build_BE_powerplants:
         custom_powerplants="data/custom_powerplants.csv"
     output:
         custom_powerplants=resources("custom_powerplants.csv"),
-        agg_p_nom_minmax=resources("agg_p_nom_minmax.csv")
     log:
         logs("build_BE_powerplants.log"),
     benchmark:

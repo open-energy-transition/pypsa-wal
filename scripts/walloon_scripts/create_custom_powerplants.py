@@ -127,4 +127,3 @@ if __name__ == "__main__":
     )
 
     custom_powerplants.to_csv(snakemake.output.custom_powerplants, index=False)
-    agg_p_nom_minmax.to_csv(snakemake.output.agg_p_nom_minmax)
