@@ -569,7 +569,7 @@ def add_CCL_constraints(
     else:
         return
 
-    buses_to_county = False
+    buses_to_county = True
     if buses_to_county:
         # temporarily set bus countries to region names for CCL constraint application
         regions = set(agg_p_nom_minmax.index.get_level_values(0))
