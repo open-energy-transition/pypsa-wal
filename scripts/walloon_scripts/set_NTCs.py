@@ -83,17 +83,17 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
             if current_total_p_nom_1 > 0:
                 scale_factor = ntc / current_total_p_nom_1
                 direction = links_between.query("reversed == False").index
-                n.links.loc[direction, 'p_nom'] *= scale_factor
+                n.links.loc[direction, ['p_nom', 'p_nom_min']] *= scale_factor
             else:
                 direction = links_between.query("reversed == False").index
-                n.links.loc[direction, 'p_nom'] = ntc / len(direction)
+                n.links.loc[direction, ['p_nom', 'p_nom_min']] = ntc / len(direction)
             if current_total_p_nom_2 > 0:
                 scale_factor = ntc / current_total_p_nom_2
                 direction = links_between.query("reversed == True").index
-                n.links.loc[direction, 'p_nom'] *= scale_factor
+                n.links.loc[direction, ['p_nom', 'p_nom_min']] *= scale_factor
             else:
                 direction = links_between.query("reversed == True").index
-                n.links.loc[direction, 'p_nom'] = ntc / len(direction)
+                n.links.loc[direction, ['p_nom', 'p_nom_min']] = ntc / len(direction)
             updated = True
             line_or_link = "Link"
         if (updated) and (not lines_between.empty):
@@ -106,9 +106,9 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
             current_total_s_nom = lines_between['s_nom'].sum()
             if current_total_s_nom > 0:
                 scale_factor = ntc / current_total_s_nom
-                n.lines.loc[lines_between.index, 's_nom'] *= scale_factor
+                n.lines.loc[lines_between.index, ['s_nom', 's_nom_min']] *= scale_factor
             else:
-                n.lines.loc[lines_between.index, 's_nom'] = ntc / len(lines_between)
+                n.lines.loc[lines_between.index, ['s_nom', 's_nom_min']] = ntc / len(lines_between)
             updated = True
             line_or_link = "Line"
         if updated:
