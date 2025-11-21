@@ -48,6 +48,9 @@ electricity:
 
   powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and Country != 'BE'
 
+  transmission_limit: v1.0
+  apply_ntc_constraints: True
+
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
 # regulate what components with which carriers are kept from PyPSA-Eur;

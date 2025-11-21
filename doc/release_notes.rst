@@ -10,6 +10,10 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* Custom NTCs are applied to all country borders. The constraint acts on existing links, if available,
+  and falls back to lines. Capacities of cross-border connections are set to the total NTC value.
+  If multiple connections exist, an average is built.
+  (https://github.com/open-energy-transition/pypsa-wal/pull/40)
 * CCL additions can be now customized using data/walloon/custom_potentials.csv. 
   Expanded CCL constraints to be able to handle buses and not just country level 
   constraints. Updated Doel retirement schedule and prevent nuclear retrofits until 2040 

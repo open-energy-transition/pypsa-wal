@@ -45,6 +45,7 @@ from scripts.build_transport_demand import transport_degree_factor
 from scripts.definitions.heat_sector import HeatSector
 from scripts.definitions.heat_system import HeatSystem
 from scripts.prepare_network import maybe_adjust_costs_and_potentials
+from scripts.walloon_scripts.set_NTCs import set_line_s_nom_to_ntc
 
 spatial = SimpleNamespace()
 logger = logging.getLogger(__name__)
@@ -6556,5 +6557,8 @@ if __name__ == "__main__":
 
     sanitize_carriers(n, snakemake.config)
     sanitize_locations(n)
+
+    if snakemake.config["electricity"].get("apply_ntc_constraints", False):
+        set_line_s_nom_to_ntc(n, snakemake.input.ntc_csv)
 
     n.export_to_netcdf(snakemake.output[0])
