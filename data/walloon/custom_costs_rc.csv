@@ -38,4 +38,5 @@ planning_horizon,technology,parameter,value,unit,source,further_description
 all,nuclear retrofit,lifetime,10,years,,
 all,nuclear retrofit,investment,1800,EUR/kW_e,,
 all,nuclear retrofit,FOM,1.27,%/year,"Lazard's levelized cost of energy analysis - version 16.0 (2023): https://www.lazard.com/media/typdgxmm/lazards-lcoeplus-april-2023.pdf , pg. 49 (Levelized Cost of Energy - Key Assumptions), accessed: 2023-12-14.",
+all,nuclear retrofit,efficiency,0.326,per unit,,
 all,CCGT,lifetime,40,years,,
