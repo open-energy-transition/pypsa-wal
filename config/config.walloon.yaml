@@ -89,6 +89,7 @@ sector:
   oil_boilers: true
   solid_biomass_import:
     enable: true
+  regional_coal_demand: true
 
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv
