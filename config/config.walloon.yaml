@@ -51,8 +51,8 @@ electricity:
   transmission_limit: v1.0
   transmission_limit_myopic:
     2030: v1.0
-    2040: v1.1
-    2050: v1.1
+    2040: v1.0
+    2050: v1.0
   apply_ntc_constraints: True
 
 # docs
