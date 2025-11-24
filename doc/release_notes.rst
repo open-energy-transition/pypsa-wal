@@ -10,6 +10,11 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* The capital costs of nuclear retrofitting has been corrected to account for 
+  the efficiency of the link. Additionally, the nuclear retrofitting has been changed 
+  to an LP problem instead of MILP to improve solve times. Regional coal demand has been activated,
+  and the CCL constraint values for solar in BE and BEWAL have been updated.
+  (https://github.com/open-energy-transition/pypsa-wal/pull/46)
 * The myopic optimisation workflow is now able to incremantally optimise the transmission limit in
   every planning horizon. The added expansion limit can be configured in the configuration file.
   (https://github.com/open-energy-transition/pypsa-wal/pull/41)
