@@ -405,7 +405,7 @@ if __name__ == "__main__":
         decomissioned_nuclear,
         int(snakemake.wildcards.planning_horizons),
         costs = load_costs(snakemake.input.costs),
-        MILP = True,
+        MILP = False,
     )
 
     update_BEWAL_potentials(
