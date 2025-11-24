@@ -99,7 +99,7 @@ def retrofit_retired_nuclear(
     lifetime_nuclear_retro = costs.loc["nuclear retrofit"].loc["lifetime"]
     capital_cost_nuclear_retro = costs.loc["nuclear retrofit"].loc["capital_cost"]
     retrofit_nuclear["lifetime"] = lifetime_nuclear_retro
-    retrofit_nuclear["capital_cost"] = capital_cost_nuclear_retro
+    retrofit_nuclear["capital_cost"] = (capital_cost_nuclear_retro * retrofit_nuclear["efficiency"])
 
     logger.info(
         f"Adding the option to retrofit the following nuclear plants: {decomissioned_nuclear.index} "
