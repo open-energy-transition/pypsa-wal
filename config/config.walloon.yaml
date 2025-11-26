@@ -90,6 +90,14 @@ sector:
   solid_biomass_import:
     enable: true
   regional_coal_demand: true
+  co2_sequestration_potential:
+    2020: 0
+    2025: 0
+    2030: 7   # 40 * (6/34)
+    2035: 18  # 100 * (6/34)
+    2040: 32  # 180 * (6/34)
+    2045: 44  # 250 * (6/34)
+    2050: 44  # 250 * (6/34)
 
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv
