@@ -82,7 +82,7 @@ clustering:
   mode: custom_busmap_BE
   temporal:
     resolution_elec: False
-    resolution_sector: 3000h
+    resolution_sector: 3h
   exclude_carriers:
     - nuclear
 
@@ -95,11 +95,11 @@ sector:
   co2_sequestration_potential:
     2020: 0
     2025: 0
-    2030: 7   # 40 * (6/34)
-    2035: 18  # 100 * (6/34)
-    2040: 32  # 180 * (6/34)
-    2045: 44  # 250 * (6/34)
-    2050: 44  # 250 * (6/34)
+    2030: 20   # 40 * 0.5
+    2035: 50  # 100 * 0.5
+    2040: 90  # 180 * 0.5
+    2045: 125  # 250 * 0.5
+    2050: 125  # 250 * 0.5
 
 co2_budget_national: true
 co2_budget_national:
@@ -154,3 +154,11 @@ solving:
 
   constraints:
     CCL: true
+
+enable:
+  retrieve: auto
+  retrieve_databundle: false
+  retrieve_cost_data: false
+  build_cutout: false
+  retrieve_cutout: false
+  drop_leap_day: true
