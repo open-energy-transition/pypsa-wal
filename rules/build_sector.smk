@@ -30,7 +30,7 @@ rule build_wallon_demands:
         study=config_provider("run", "name"),  
     input:
         pop_layout_rural=resources("pop_layout_rural.nc"),
-        vd_file="data/walloon/scen_alternatif_biolow_251125_2511.vd",
+        vd_file="data/walloon/scen_alternatif_251125_2511.vd",
         process_mapping_file="data/walloon/mapping_processes.csv",
         mapping_file="data/walloon/mapping_commodities.csv",
         extraction_rules_file = "data/walloon/extraction_rules.csv",
