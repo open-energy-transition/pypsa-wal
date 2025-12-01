@@ -416,6 +416,7 @@ if __name__ == "__main__":
         decomissioned_nuclear,
         int(snakemake.wildcards.planning_horizons),
         costs = load_costs(snakemake.input.costs),
+        retrofit_nuclear_once=snakemake.config["electricity"].get("retrofit_nuclear_once", False),
         MILP = False,
     )
 

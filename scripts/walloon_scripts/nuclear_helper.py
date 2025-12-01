@@ -51,6 +51,7 @@ def retrofit_retired_nuclear(
         planning_horizon,
         costs,
         extendable_nuclear_nodes = ["BEWAL", "BEVLG"],
+        retrofit_nuclear_once: bool = False,
         MILP = False):
     """
     Provide the option to a given set of nuclear links that are being decomissioned to be retrofitted
@@ -80,6 +81,10 @@ def retrofit_retired_nuclear(
         return
 
     decomissioned_nuclear = decomissioned_nuclear.query("bus1 in @extendable_nuclear_nodes")
+    if retrofit_nuclear_once:
+        decomissioned_nuclear = decomissioned_nuclear[
+            ~decomissioned_nuclear.index.str.contains("retrofit")
+        ]
     retrofit_nuclear = decomissioned_nuclear.copy()
     retrofit_nuclear.index = retrofit_nuclear.index.astype(str) + " retrofit"
     retrofit_nuclear["p_nom_max"] = (

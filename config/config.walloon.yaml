@@ -38,6 +38,7 @@ electricity:
   custom_powerplants: True
   walloon_reassignment: True
   walloon_potentials: data/walloon/custom_potentials.csv
+  retrofit_nuclear_once: true
 
   extendable_carriers:
     extendable_nuclear_links:
@@ -129,3 +130,12 @@ solving:
 
   constraints:
     CCL: true
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#enable
+enable:
+  retrieve: auto
+  retrieve_databundle: false
+  retrieve_cost_data: true
+  build_cutout: false
+  retrieve_cutout: false
+  drop_leap_day: true
