@@ -134,12 +134,3 @@ solving:
 
   constraints:
     CCL: true
-
-# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#enable
-enable:
-  retrieve: auto
-  retrieve_databundle: false
-  retrieve_cost_data: true
-  build_cutout: false
-  retrieve_cutout: false
-  drop_leap_day: true
