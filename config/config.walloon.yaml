@@ -117,6 +117,8 @@ sector:
     2040: 0.52
     2045: 0.36
     2050: 0.20
+  district_heating:
+    potential: 0.3
 
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv
