@@ -39,7 +39,7 @@ countries:
 electricity:
   custom_powerplants: True
   walloon_reassignment: True
-  walloon_potentials: data/walloon/custom_potentials.csv
+  walloon_potentials: data/walloon/custom_potentials_corrige.csv
   retrofit_nuclear_once: true
 
   extendable_carriers:
@@ -83,7 +83,7 @@ clustering:
   mode: custom_busmap_BE
   temporal:
     resolution_elec: False
-    resolution_sector: 3000h
+    resolution_sector: 3h
   exclude_carriers:
     - nuclear
 
@@ -168,7 +168,10 @@ co2_budget_national:
     NL: 0.05
     LU: 0.05
     
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#costs
 costs:
+  fill_values:
+    "discount rate": 0.075
   custom_cost_fn: data/walloon/custom_costs_rc.csv
 
 solving:
@@ -182,3 +185,12 @@ solving:
 
   constraints:
     CCL: true
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#enable
+enable:
+  retrieve: false
+  retrieve_databundle: false
+  retrieve_cost_data: true
+  build_cutout: false
+  retrieve_cutout: false
+  drop_leap_day: true
