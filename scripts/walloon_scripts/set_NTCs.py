@@ -58,7 +58,7 @@ def set_line_s_nom_to_ntc(n, ntc_fn):
         pair = tuple(sorted([row['source_iso2'], row['target_iso2']]))
         pairs.append(pair)
     df['pair'] = pairs
-    pair_to_ntc = df.groupby('pair')['NTC_2030_MW'].mean()
+    pair_to_ntc = df.groupby('pair')['NTC_MW'].mean()
     focus_countries = list(set(df['source_iso2']).union(df['target_iso2']).intersection(set(n.buses.country.unique())))
     for pair, ntc in pair_to_ntc.items():
         if ntc == 0:

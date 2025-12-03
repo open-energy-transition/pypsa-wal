@@ -646,6 +646,9 @@ def add_carrier_buses(
             marginal_cost=costs.at[carrier, "fuel"],
         )
 
+        # re-apply CO2 intensity carriers
+        if carrier in costs.index:
+            n.carriers.loc[carrier, "co2_emissions"] = costs.at[carrier, "CO2 intensity"]
 
 # TODO: PyPSA-Eur merge issue
 def remove_elec_base_techs(n: pypsa.Network, carriers_to_keep: dict) -> None:
