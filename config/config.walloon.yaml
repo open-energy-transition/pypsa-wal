@@ -170,8 +170,6 @@ co2_budget_national:
     
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#costs
 costs:
-  fill_values:
-    "discount rate": 0.075
   custom_cost_fn: data/walloon/custom_costs_rc.csv
 
 solving:
