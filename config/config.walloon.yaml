@@ -179,7 +179,7 @@ solving:
     agg_nuclear: true
     agg_ccgt: true
     include_existing: true
-    file: data/agg_p_nom_minmax.csv
+    file: data/walloon/agg_p_nom_minmax_base.csv
 
   constraints:
     CCL: true
