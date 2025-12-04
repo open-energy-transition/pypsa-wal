@@ -20,9 +20,7 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
     ).query("year == @planning_horizons")
 
     if "technology" not in potentials.columns:
-        potentials = potentials.rename(
-            columns={potentials.columns[0]: "technology"}
-        )
+        potentials = potentials.rename(columns={potentials.columns[0]: "technology"})
 
     for _, row in potentials.iterrows():
         attr = row["parameter"]
@@ -83,7 +81,9 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
                 continue
             if region_carrier_idx:
                 allowed = {"p_nom", "p_nom_max", "p_nom_min"}
-                assert attr in allowed, f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
+                assert attr in allowed, (
+                    f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
+                )
                 logger.info(logger_msg_success)
                 n.generators.loc[region_carrier_idx, attr] = potential
             continue
@@ -163,9 +163,21 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
             n.generators.loc[sustainable_idx, attr] = potential
             if unsustainable_idx in n.generators.index:
                 n.generators.loc[unsustainable_idx, ["p_nom", attr]] = 0
-        if carrier == 'CCGT':
+        if carrier == "CCGT":
             allowed = {"p_nom", "p_nom_extendable", "p_nom_min", "p_nom_max"}
-            assert attr in allowed, f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
+            assert attr in allowed, (
+                f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
+            )
+
+            link_name = f"{bus} {carrier}-{planning_horizons}"
+            if "el" in unit:
+                potential = potential / n.links.loc[link_name, "efficiency"]
+            n.links.loc[link_name, attr] = potential
+        if carrier == "nuclear":
+            allowed = {"p_nom", "p_nom_extendable", "p_nom_min", "p_nom_max"}
+            assert attr in allowed, (
+                f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
+            )
 
             link_name = f"{bus} {carrier}-{planning_horizons}"
             if "el" in unit:
