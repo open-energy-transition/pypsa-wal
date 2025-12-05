@@ -119,6 +119,17 @@ def add_brownfield(
             # TODO: Needs to be rewritten to
             n._import_series_from_df(c.pnl[tattr], c.name, tattr)
 
+    # Preserve built nuclear capacity (non-retrofit) from the previous horizon, using previous p_nom_opt
+    if "p_nom_min" in n.links.columns:
+        prev_nuclear = n_p.links[
+            (n_p.links.carrier == "nuclear")
+            & n_p.links.index.str.contains(" nuclear-2025")
+            & ~n_p.links.index.str.contains("retrofit")
+        ]
+        keep = n.links.index.intersection(prev_nuclear.index)
+        if len(keep):
+            n.links.loc[keep, "p_nom_min"] = prev_nuclear.loc[keep, "p_nom_opt"]
+
     # deal with gas network
     if h2_retrofit:
         # subtract the already retrofitted from the maximum capacity
@@ -405,6 +416,7 @@ if __name__ == "__main__":
         decomissioned_nuclear,
         int(snakemake.wildcards.planning_horizons),
         costs = load_costs(snakemake.input.costs),
+        retrofit_nuclear_once=snakemake.config["electricity"].get("retrofit_nuclear_once", False),
         MILP = False,
     )
 
