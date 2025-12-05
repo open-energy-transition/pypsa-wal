@@ -17,48 +17,6 @@ run:
   scenarios:
     enable: true
     file: config/scenarios.walloon.yaml
-  # shared_resources:
-  #   name: base   # shared cache folder
-  # exclude:
-  #   - district_heat_share_base_s_adm_
-  #   - industrial_energy_demand_base_s_adm_
-  #   - industrial_energy_demand_today_base_s_adm.csv
-  #   - industry_sector_ratios_adm_
-  #   - pop_weighted_heat_totals_s_adm_
-  #   - industrial_energy_demand_per_country_today_adm.csv
-  #   - dsm_profile_s_adm_
-  #   - avail_profile_s_adm_
-  #   - transport_data_s_adm_
-  #   - transport_demand_s_adm_
-  #   - pop_weighted_energy_totals_s_adm_
-  #   - shipping_demand_s_adm_
-  #   - heat_totals_adm.csv
-  #   - heat_totals.csv
-  #   - wallon_demands_
-  #   - heating_capacities_
-  #   - bau_sankey_
-  #   - sankey_commodity_groups_
-  #   - annual_flows_
-  #   - annual_values_clustered.csv
-  #   - co2_totals_adm.csv
-  #   - co2_totals.csv
-  #   - energy_totals_adm.csv
-  #   - energy_totals.csv
-  #   - heating_efficiencies_adm.csv
-  #   - heating_efficiencies.csv
-  #   - district_heat_share_adm.csv
-  #   - district_heat_share.csv
-  #   - transport_data_adm.csv
-  #   - transport_data.csv
-  #   - transformation_output_coke_adm.csv
-  #   - transformation_output_coke.csv
-  #   - snapshot_weightings_base_s_adm_elec__.csv
-  #   - networks/
-  #   - custom_powerplants.csv
-  #   - costs_
-  #   - powerplants_s_adm.csv
-  #   - industry_sector_ratios_
-  #   - industrial_energy_demand_per_country_today.csv
   shared_cutouts: true
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#foresight
