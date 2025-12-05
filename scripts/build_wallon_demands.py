@@ -915,9 +915,10 @@ def main():
     selected_year = planning_horizon
     # commodities_file removed in favor of mapping-based metadata
     # processes_file removed in favor of mapping-based metadata
-    output_csv_file = f"resources/{study}/annual_values{'_clustered' if cluster else ''}.csv"
-    output_filtered_csv = f"resources/{study}/annual_flows_{selected_year}_energy{'_clustered' if cluster else ''}.csv"
-    output_html_file = f"resources/{study}/bau_sankey_{selected_year}_pj{'_clustered' if cluster else ''}.html"
+    base_dir = Path(snakemake.output.wallon_demands).parent
+    output_csv_file = base_dir / f"annual_values{'_clustered' if cluster else ''}.csv"
+    output_filtered_csv = base_dir / f"annual_flows_{selected_year}_energy{'_clustered' if cluster else ''}.csv"
+    output_html_file = base_dir / f"bau_sankey_{selected_year}_pj{'_clustered' if cluster else ''}.html"
 
     # --- Load metadata ---
     logger.info("Loading metadata...")
@@ -1063,8 +1064,8 @@ def main():
             )
         if groups_info:
             import json
-            groups_json_file = f"resources/{study}/sankey_commodity_groups_{selected_year}.json"
-            groups_csv_file = f"resources/{study}/sankey_commodity_groups_{selected_year}.csv"
+            groups_json_file = base_dir / f"sankey_commodity_groups_{selected_year}.json"
+            groups_csv_file = base_dir / f"sankey_commodity_groups_{selected_year}.csv"
             with open(groups_json_file, 'w') as f:
                 json.dump(groups_info, f, indent=2)
             pd.DataFrame([
@@ -1112,5 +1113,5 @@ if __name__ == "__main__":
                                   planning_horizons="2030",)
     planning_horizon = int(snakemake.wildcards.planning_horizons[-4:])
     configure_logging(snakemake)
-    study = snakemake.params.study
+    study = snakemake.wildcards.run
     main()
