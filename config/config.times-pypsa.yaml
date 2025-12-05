@@ -1,0 +1,238 @@
+# SPDX-FileCopyrightText: Open Energy Transition gGmbH and contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
+run:
+  prefix: "times-pypsa"
+  name:
+  - scen_base
+  - scen_corrige
+  - scen_nuc13500
+  - scen_nuc11500
+  - scen_imppel
+  - scen_data
+  wallon_node: BEWAL
+  flemish_node: BEVLG
+  scenarios:
+    enable: true
+    file: config/scenarios.walloon.yaml
+  # shared_resources:
+  #   name: base   # shared cache folder
+  # exclude:
+  #   - district_heat_share_base_s_adm_
+  #   - industrial_energy_demand_base_s_adm_
+  #   - industrial_energy_demand_today_base_s_adm.csv
+  #   - industry_sector_ratios_adm_
+  #   - pop_weighted_heat_totals_s_adm_
+  #   - industrial_energy_demand_per_country_today_adm.csv
+  #   - dsm_profile_s_adm_
+  #   - avail_profile_s_adm_
+  #   - transport_data_s_adm_
+  #   - transport_demand_s_adm_
+  #   - pop_weighted_energy_totals_s_adm_
+  #   - shipping_demand_s_adm_
+  #   - heat_totals_adm.csv
+  #   - heat_totals.csv
+  #   - wallon_demands_
+  #   - heating_capacities_
+  #   - bau_sankey_
+  #   - sankey_commodity_groups_
+  #   - annual_flows_
+  #   - annual_values_clustered.csv
+  #   - co2_totals_adm.csv
+  #   - co2_totals.csv
+  #   - energy_totals_adm.csv
+  #   - energy_totals.csv
+  #   - heating_efficiencies_adm.csv
+  #   - heating_efficiencies.csv
+  #   - district_heat_share_adm.csv
+  #   - district_heat_share.csv
+  #   - transport_data_adm.csv
+  #   - transport_data.csv
+  #   - transformation_output_coke_adm.csv
+  #   - transformation_output_coke.csv
+  #   - snapshot_weightings_base_s_adm_elec__.csv
+  #   - networks/
+  #   - custom_powerplants.csv
+  #   - costs_
+  #   - powerplants_s_adm.csv
+  #   - industry_sector_ratios_
+  #   - industrial_energy_demand_per_country_today.csv
+  shared_cutouts: true
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#foresight
+foresight: myopic
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#scenario
+# Wildcard docs in https://pypsa-eur.readthedocs.io/en/latest/wildcards.html
+scenario:
+  clusters:
+  - adm
+  sector_opts:
+  - ''
+  planning_horizons:
+  - 2025
+  - 2030
+  - 2040
+  - 2050
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#countries
+# Walloon model: Belgium and electrical neighbors
+countries:
+- BE
+- FR
+- GB
+- NL
+- DE
+- LU
+
+electricity:
+  custom_powerplants: True
+  walloon_reassignment: True
+  walloon_potentials: data/walloon/custom_potentials.csv
+  retrofit_nuclear_once: true
+
+  extendable_carriers:
+    extendable_nuclear_links:
+      2025: [FR, GB, NL, LU]
+      2030: [FR, GB, NL, LU]
+      2040: [BEWAL, BEBRU, BEVLG, FR, GB, NL, LU]
+      2050: [BEWAL, BEBRU, BEVLG, FR, GB, NL, LU]
+
+  powerplants_filter: ((DateOut >= 2024) or (DateOut != DateOut)) and Country != 'BE'
+
+  transmission_limit: v1.0
+  transmission_limit_myopic:
+    2030: v1.0
+    2040: v1.0
+    2050: v1.0
+  apply_ntc_constraints: True
+
+# docs
+# TODO: PyPSA-Eur merge issue in prepare_sector_network.py
+# regulate what components with which carriers are kept from PyPSA-Eur;
+# some technologies are removed because they are implemented differently
+# (e.g. battery or H2 storage) or have different year-dependent costs
+# in PyPSA-Eur-Sec
+pypsa_eur:
+  Generator:
+  - onwind
+  - offwind-ac
+  - offwind-dc
+  - offwind-float
+  - solar-hsat
+  - solar
+  - ror
+
+existing_capacities:
+  grouping_years_power: [1920, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2050]
+  threshold_capacity: 0
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
+clustering:
+  mode: custom_busmap_BE
+  temporal:
+    resolution_elec: False
+    resolution_sector: 3000h
+  exclude_carriers:
+    - nuclear
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
+sector:
+  times_demand: true
+  times_file: data/walloon/scen_base_coherence_3110.vd
+  oil_boilers: true
+  solid_biomass_import:
+    enable: true
+  regional_coal_demand: true
+  methanol:
+    regional_methanol_demand: true
+  co2_sequestration_potential:
+    2020: 0
+    2025: 0
+    2030: 20   # 40 * 0.5
+    2035: 50  # 100 * 0.5
+    2040: 90  # 180 * 0.5
+    2045: 125  # 250 * 0.5
+    2050: 125  # 250 * 0.5
+  agriculture_machinery_electric_share: 0.5
+  agriculture_machinery_oil_share: 0.5
+  shipping_methanol_share:
+    2020: 0
+    2025: 0
+    2030: 0.16
+    2035: 0.32
+    2040: 0.48
+    2045: 0.64
+    2050: 0.80
+  shipping_oil_share:
+    2020: 1
+    2025: 1
+    2030: 0.84
+    2035: 0.68
+    2040: 0.52
+    2045: 0.36
+    2050: 0.20
+  district_heating:
+    potential: 0.3
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#co2-budget
+co2_budget:
+  2025: 0.648
+  2030: 0.450 
+  2040: 0.250
+  2050: 0.050
+co2_budget_national: true
+co2_budget_national:
+  2025:
+    BEBRU: 0.64
+    BEVLG: 0.64
+    BEWAL: 0.64
+    DE: 0.64
+    FR: 0.64
+    GB: 0.64
+    NL: 0.64
+    LU: 0.64
+  2030:
+    BEBRU: 0.45
+    BEVLG: 0.45
+    BEWAL: 0.45
+    DE: 0.45
+    FR: 0.45
+    GB: 0.45
+    NL: 0.45
+    LU: 0.45
+  2040:
+    BEBRU: 0.25
+    BEVLG: 0.25
+    BEWAL: 0.25
+    DE: 0.25
+    FR: 0.25
+    GB: 0.25
+    NL: 0.25
+    LU: 0.25
+  2050:
+    BEBRU: 0.05
+    BEVLG: 0.05
+    BEWAL: 0.05
+    DE: 0.05
+    FR: 0.05
+    GB: 0.05
+    NL: 0.05
+    LU: 0.05
+    
+costs:
+  custom_cost_fn: data/walloon/custom_costs_rc.csv
+
+solving:
+  agg_p_nom_limits:
+    agg_offwind: true
+    agg_solar: true
+    agg_nuclear: true
+    agg_ccgt: true
+    include_existing: true
+    file: data/agg_p_nom_minmax.csv
+
+  constraints:
+    CCL: true
