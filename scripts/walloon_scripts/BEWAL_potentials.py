@@ -163,7 +163,7 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
             n.generators.loc[sustainable_idx, attr] = potential
             if unsustainable_idx in n.generators.index:
                 n.generators.loc[unsustainable_idx, ["p_nom", attr]] = 0
-        if carrier == 'CCGT':
+        if carrier in ['CCGT', 'nuclear']:
             allowed = {"p_nom", "p_nom_extendable", "p_nom_min", "p_nom_max"}
             assert attr in allowed, f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
 
