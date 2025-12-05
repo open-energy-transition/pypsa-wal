@@ -30,6 +30,7 @@ if __name__ == "__main__":
 
     config = snakemake.config
     study = config["run"]["name"]
+    times_demand = config.get("sector", {}).get("times_demand", False)
 
     if snakemake.wildcards.kind == "heat":
         snapshots = get_snapshots(
@@ -47,7 +48,7 @@ if __name__ == "__main__":
     nodal_totals = totals.loc[pop_layout.ct].fillna(0.0)
     nodal_totals.index = pop_layout.index
     nodal_totals = nodal_totals.multiply(pop_layout.fraction, axis=0)
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         flemish_node = config["run"]["flemish_node"]
         #Adding wallon region international navigation demand to Flanders

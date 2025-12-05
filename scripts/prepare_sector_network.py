@@ -2337,7 +2337,7 @@ def add_EVs(
     p_shifted = (p_set + cycling_shift(p_set, 1) + cycling_shift(p_set, 2)) / 3
     cyclic_eff = p_set.div(p_shifted)
     efficiency *= cyclic_eff
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         #all other nodes respect the config file shares while wallon region shares are automaticall
         #computed from times assuming same efficiencies to keep the original demands
@@ -2480,7 +2480,7 @@ def add_fuel_cell_cars(
     # Calculate hydrogen demand profile
     #all other nodes respect the config file shares while wallon region shares are automatically
     #computed from times assuming same efficiencies to keep the original demands
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         profile = p_set
         other_nodes = profile.columns.drop(wallon_node, errors='ignore')
@@ -2583,7 +2583,7 @@ def add_ice_cars(
     # Calculate oil demand profile
     #all other nodes respect the config file shares while wallon region shares are automatically
     #computed from times assuming same efficiencies to keep the original demands
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         profile = p_set
         other_nodes = profile.columns.drop(wallon_node, errors='ignore')
@@ -2704,7 +2704,7 @@ def add_land_transport(
             logger.info(f"{engine} share: {shares[engine] * 100}%")
 
     check_land_transport_shares(shares)
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         demands = pd.read_csv(snakemake.input.wallon_demands, index_col=0)[["TWh"]]
         total_share = demands.loc["total road"].iloc[0]
@@ -2734,7 +2734,7 @@ def add_land_transport(
     # temperature for correction factor for heating/cooling
     temperature = xr.open_dataarray(temp_air_total_file).to_pandas()
 
-    if study == "walloon-model" and electric_share.sum() > 0:
+    if times_demand and electric_share.sum() > 0:
         add_EVs(
             n,
             avail_profile,
@@ -2758,7 +2758,7 @@ def add_land_transport(
             spatial,
             options,
         )
-    if study == "walloon-model" and fuel_cell_share.sum() > 0:
+    if times_demand and fuel_cell_share.sum() > 0:
         add_fuel_cell_cars(
             n=n,
             p_set=p_set,
@@ -2776,7 +2776,7 @@ def add_land_transport(
             options=options,
             spatial=spatial,
         )
-    if study == "walloon-model" and ice_share.sum() > 0:
+    if times_demand and ice_share.sum() > 0:
         add_ice_cars(
             n,
             costs,
@@ -2857,7 +2857,7 @@ def build_heat_demand(
     heat_demand = pd.concat(heat_demand, axis=1)
     electric_heat_supply = pd.concat(electric_heat_supply, axis=1)
     # subtract from electricity load since heat demand already in heat_demand
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         electric_nodes = n.loads.index[n.loads.carrier == "electricity"].drop(wallon_node)
     else:
@@ -5067,7 +5067,7 @@ def add_industry(
     )
 
     # remove today's industrial electricity demand by scaling down total electricity demand
-    if study == "walloon-model":
+    if times_demand:
       wallon_node = config["run"]["wallon_node"]
       for ct in n.buses[n.buses["carrier"] == "AC"].index:
         loads_i = n.loads.index[
@@ -5393,7 +5393,7 @@ def add_shipping(
         )
         #Changes to consider the TIMES values for shipping for wallon region as all domestic shipping
         #is oil based
-        if study == "walloon-model":
+        if times_demand:
             wallon_node = config["run"]["wallon_node"]
             other_nodes = p_set.index.drop(wallon_node, errors='ignore')
             p_set_hydrogen = pd.Series()
@@ -5415,7 +5415,7 @@ def add_shipping(
         efficiency = (
             options["shipping_oil_efficiency"] / options["shipping_methanol_efficiency"]
         )
-        if study == "walloon-model":
+        if times_demand:
             wallon_node = config["run"]["wallon_node"]
             p_set_tot = p_set.rename(lambda x: x + " shipping methanol")
             other_nodes = p_set_tot.index.drop(f"{wallon_node} shipping methanol", errors='ignore')
@@ -5467,7 +5467,7 @@ def add_shipping(
         )
 
     if options["shipping"]:
-        if study == "walloon-model":
+        if times_demand:
             wallon_node = config["run"]["wallon_node"]
             p_set_total = p_set.rename(lambda x: x + " shipping oil")
             other_nodes = p_set_total.index.drop(f"{wallon_node} shipping oil", errors='ignore')
@@ -6411,6 +6411,7 @@ if __name__ == "__main__":
     update_config_from_wildcards(snakemake.config, snakemake.wildcards)
     config = snakemake.config
     study = config["run"]["name"]
+    times_demand = config.get("sector", {}).get("times_demand", False)
     options = snakemake.params.sector
     cf_industry = snakemake.params.industry
 
@@ -6631,7 +6632,7 @@ if __name__ == "__main__":
             options,
             spatial,
         )
-    if study == "walloon-model":
+    if times_demand:
         write_wallon_heat_demands(n=n)
     if options["dac"]:
         add_dac(n, costs)

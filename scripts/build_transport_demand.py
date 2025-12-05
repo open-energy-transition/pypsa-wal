@@ -72,7 +72,7 @@ def build_transport_demand(traffic_fn, airtemp_fn, nodes, nodal_transport_data):
 
     # divide out the heating/cooling demand from ICE totals
     ice_correction = (transport_shape * (1 + dd_ICE)).sum() / transport_shape.sum()
-    if study == "walloon-model":
+    if times_demand:
         wallon_node = config["run"]["wallon_node"]
         # unit TWh
         energy_totals_transport = (
@@ -186,6 +186,7 @@ if __name__ == "__main__":
     set_scenario_config(snakemake)
     config = snakemake.config
     study = config["run"]["name"]
+    times_demand = config.get("sector", {}).get("times_demand", False)
     pop_layout = pd.read_csv(snakemake.input.clustered_pop_layout, index_col=0)
 
     nodes = pop_layout.index

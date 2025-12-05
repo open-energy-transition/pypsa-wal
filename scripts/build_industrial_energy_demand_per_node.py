@@ -44,6 +44,7 @@ if __name__ == "__main__":
     set_scenario_config(snakemake)
     config = snakemake.config
     study = config["run"]["name"]
+    times_demand = config.get("sector", {}).get("times_demand", False)
     # import ratios
     fn = snakemake.input.industry_sector_ratios
     sector_ratios = pd.read_csv(fn, header=[0, 1], index_col=0)
@@ -79,12 +80,12 @@ if __name__ == "__main__":
     nodal_df["current electricity"] = nodal_today["electricity"]
 
     nodal_df.index.name = "TWh/a (MtCO2/a)"
-    if study == "walloon-model":
-       wallon_node = config["run"]["wallon_node"]
-       wallon_demands = pd.read_csv(snakemake.input.wallon_demands, index_col=0)[["TWh"]]
-       common_cols = nodal_df.columns.intersection(wallon_demands.index)
-       extract_demands = wallon_demands.loc[common_cols].squeeze()
-       nodal_df.loc[wallon_node, common_cols] = extract_demands
+    if times_demand:
+        wallon_node = config["run"]["wallon_node"]
+        wallon_demands = pd.read_csv(snakemake.input.wallon_demands, index_col=0)[["TWh"]]
+        common_cols = nodal_df.columns.intersection(wallon_demands.index)
+        extract_demands = wallon_demands.loc[common_cols].squeeze()
+        nodal_df.loc[wallon_node, common_cols] = extract_demands
     else:
         logger.info("Skipping Walloon adjustments — study mode not active.")
     fn = snakemake.output.industrial_energy_demand_per_node

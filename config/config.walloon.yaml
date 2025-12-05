@@ -89,6 +89,7 @@ clustering:
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
 sector:
+  times_demand: true
   times_file: data/walloon/scen_base_coherence_3110.vd
   oil_boilers: true
   solid_biomass_import:

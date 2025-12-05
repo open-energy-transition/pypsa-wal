@@ -911,7 +911,7 @@ def main():
         netting = False
 
     # --- Configuration ---
-    vd_file = snakemake.input.vd_file
+    times_file = snakemake.input.times_file
     selected_year = planning_horizon
     # commodities_file removed in favor of mapping-based metadata
     # processes_file removed in favor of mapping-based metadata
@@ -965,7 +965,7 @@ def main():
     })
 
     # --- Load raw records (no filtering by variable or commodity) ---
-    raw_flows_df = load_raw_records(vd_file)
+    raw_flows_df = load_raw_records(times_file)
     if raw_flows_df.empty:
         logger.info("No valid energy flow data was processed. Exiting.")
         return
