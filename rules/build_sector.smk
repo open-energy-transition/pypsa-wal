@@ -27,7 +27,7 @@ rule build_population_layouts:
 
 rule build_wallon_demands:
     params:
-        study=lambda w: w.run,
+        study=lambda w: getattr(w, "run", config.get("run", {}).get("name", "")),
     input:
         pop_layout_rural=resources("pop_layout_rural.nc"),
         times_file=config_provider("sector", "times_file"),

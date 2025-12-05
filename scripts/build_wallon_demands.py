@@ -885,6 +885,9 @@ def build_sankey(df, output_html_file, year, flow_threshold=0.0, selected_year='
 
 def main():
     """Main function to generate the Sankey diagram."""
+    # Ensure the output directory exists
+    base_dir = Path(snakemake.output.wallon_demands).parent
+    base_dir.mkdir(parents=True, exist_ok=True)
 
     # --- Simplification options ---
     cluster = True
@@ -915,7 +918,7 @@ def main():
     selected_year = planning_horizon
     # commodities_file removed in favor of mapping-based metadata
     # processes_file removed in favor of mapping-based metadata
-    base_dir = Path(snakemake.output.wallon_demands).parent
+    study = getattr(snakemake.wildcards, "run", snakemake.params.study)
     output_csv_file = base_dir / f"annual_values{'_clustered' if cluster else ''}.csv"
     output_filtered_csv = base_dir / f"annual_flows_{selected_year}_energy{'_clustered' if cluster else ''}.csv"
     output_html_file = base_dir / f"bau_sankey_{selected_year}_pj{'_clustered' if cluster else ''}.html"
@@ -1113,5 +1116,5 @@ if __name__ == "__main__":
                                   planning_horizons="2030",)
     planning_horizon = int(snakemake.wildcards.planning_horizons[-4:])
     configure_logging(snakemake)
-    study = snakemake.wildcards.run
+    study = getattr(snakemake.wildcards, "run", snakemake.params.study)
     main()
