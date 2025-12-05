@@ -105,8 +105,8 @@ sector:
     2040: 90  # 180 * 0.5
     2045: 125  # 250 * 0.5
     2050: 125  # 250 * 0.5
-  agriculture_machinery_electric_share: 0
-  agriculture_machinery_oil_share: 1
+  agriculture_machinery_electric_share: 0.5
+  agriculture_machinery_oil_share: 0.5
   shipping_methanol_share:
     2020: 0
     2025: 0
