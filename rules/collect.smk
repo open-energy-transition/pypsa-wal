@@ -138,3 +138,25 @@ rule calculate_all_electricity_prices_bills:
             **config["scenario"],
             run=config["run"]["name"],
         ),
+
+
+rule calculate_all_costs:
+    input:
+        expand(
+            RESULTS
+            + "csvs/individual/capex_by_bus_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/opex_by_bus_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/lcoe_by_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),

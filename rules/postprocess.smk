@@ -322,6 +322,32 @@ rule calculate_electricity_prices_bills:
         "../scripts/walloon_scripts/calculate_prices.py"
 
 
+rule calculate_costs:
+    input:
+        network=RESULTS
+        + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",
+    output:
+        capex=RESULTS
+        + "csvs/individual/capex_by_bus_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        opex=RESULTS
+        + "csvs/individual/opex_by_bus_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        lcoe=RESULTS
+        + "csvs/individual/lcoe_by_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+    threads: 1
+    resources:
+        mem_mb=4000,
+    log:
+        RESULTS
+        + "logs/calculate_costs_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
+    benchmark:
+        RESULTS
+        + "benchmarks/calculate_costs_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}",
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/walloon_scripts/calculate_costs.py"
+
+
 rule make_global_summary:
     params:
         scenario=config_provider("scenario"),

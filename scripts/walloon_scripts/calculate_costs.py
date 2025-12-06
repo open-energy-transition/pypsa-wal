@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: Open Energy Transition gGmbH
 #
 # SPDX-License-Identifier: MIT
+
 """
 Compute CAPEX/OPEX breakdowns and levelised costs (LCOE) from a solved PyPSA
 network.
@@ -11,12 +12,7 @@ Outputs
 - capex_by_bus_carrier.csv : annualised CAPEX grouped by component, bus, carrier
 - opex_by_bus_carrier.csv  : OPEX grouped by component, bus, carrier
 - lcoe_by_carrier.csv      : CAPEX + OPEX + supply and LCOE per carrier
-- lcoe_main_categories.csv : Same as above but aggregated to key categories
-                             (RES, nuclear, CCGT, CCGT+CCS, H2) using carrier
-                             name heuristics.
 """
-
-from __future__ import annotations
 
 import argparse
 import logging
