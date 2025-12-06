@@ -293,6 +293,35 @@ rule generate_cross_border_flows:
         "../scripts/walloon_scripts/make_cross_border_flows.py"
 
 
+rule calculate_electricity_prices_bills:
+    input:
+        network=RESULTS
+        + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",
+        households="data/walloon/households.csv",
+    output:
+        weighted_prices=RESULTS
+        + "csvs/individual/weighted_electricity_prices_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        household_bills_ts=RESULTS
+        + "csvs/individual/household_bills_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        household_bills_agg=RESULTS
+        + "csvs/individual/household_bills_agg_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+    threads: 1
+    resources:
+        mem_mb=4000,
+    log:
+        RESULTS
+        + "logs/calculate_electricity_prices_bills_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
+    benchmark:
+        (
+            RESULTS
+            + "benchmarks/calculate_electricity_prices_bills_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
+        )
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/walloon_scripts/calculate_prices.py"
+
+
 rule make_global_summary:
     params:
         scenario=config_provider("scenario"),

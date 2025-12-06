@@ -61,12 +61,15 @@ def _compute_electric_loads_and_prices(n):
 
     # Home battery demand
     hb_tech = [c for c in n.links.carrier.unique() if "battery charger" in c]
-    hb_loads = n.links.query("carrier in @hb_tech").index
+    hb_idx = n.links.query("carrier in @hb_tech").index
     hb_loads = (
-        n.links_t.p0[hb_loads]
+        n.links_t.p0[hb_idx]
         .multiply(n.snapshot_weightings.generators, axis=0)
-        .rename(columns=n.links.bus0.to_dict())
+        .rename(columns=n.links.loc[hb_idx, "bus0"].to_dict())
     )
+    # collapse duplicate columns (same bus) to avoid reindex errors
+    if not hb_loads.empty and hb_loads.columns.duplicated().any():
+        hb_loads = hb_loads.T.groupby(level=0).sum().T
     hb_loads.columns.name = "Load"
 
     # Agriculture electric loads (if present)
@@ -137,36 +140,65 @@ def get_electriciy_price_weighted(n):
 
 
 def get_household_bills(n, households_path="data/walloon/households.csv"):
-    """Compute electricity cost per household over time and average."""
+    """
+    Compute electricity cost per household per snapshot and aggregated over the horizon.
+
+    Returns
+    -------
+    bills_ts : DataFrame
+        Snapshot-resolved bills per country; includes a 'weighted_average' column.
+    bills_agg : Series
+        Horizon-aggregated bill per country (total cost / households).
+    """
 
     prices, total_loads = _compute_electric_loads_and_prices(n)
     if total_loads.empty:
-        return 0.0, pd.Series(dtype=float)
+        return pd.DataFrame(), pd.Series(dtype=float)
 
     bus_country = n.buses.country.reindex(total_loads.columns).dropna()
     if bus_country.empty:
-        return 0.0, pd.Series(dtype=float)
+        return pd.DataFrame(), pd.Series(dtype=float)
 
     prices = prices[bus_country.index]
     total_loads = total_loads[bus_country.index]
 
     costs_country_ts = (prices * total_loads).groupby(bus_country, axis=1).sum()
-    costs_country = costs_country_ts.sum()
 
     households = (
         pd.read_csv(households_path)
         .set_index("Country")["Households (thousands)"]
         .mul(1e3)
     )
-    households = households.reindex(costs_country.index).dropna()
+    households = households.reindex(costs_country_ts.columns).dropna()
     if households.empty:
-        return 0.0, pd.Series(dtype=float)
+        return pd.DataFrame(), pd.Series(dtype=float)
 
-    costs_country = costs_country.loc[households.index]
-    bills = costs_country / households
-    average_bill = costs_country.sum() / households.sum()
+    costs_country_ts = costs_country_ts[households.index]
+    bills_ts = costs_country_ts.divide(households, axis=1)
 
-    # add weighted average bill to the series
-    bills["Weighted Average"] = average_bill
+    # Aggregate over the horizon: total cost per country / households
+    costs_country_agg = costs_country_ts.sum()
+    bills_agg = costs_country_agg / households
 
-    return bills
+    return bills_ts, bills_agg
+
+
+if __name__ == "__main__":
+    if "snakemake" in globals():
+        import pypsa
+
+        network = pypsa.Network(snakemake.input.network)
+        households_path = (
+            snakemake.input.households
+            if "households" in snakemake.input.keys()
+            else "data/walloon/households.csv"
+        )
+
+        mean_price, price_ts = get_electriciy_price_weighted(network)
+        bills_ts, bills_agg = get_household_bills(network, households_path)
+
+        price_ts.to_csv(snakemake.output.weighted_prices)
+        bills_ts.to_csv(snakemake.output.household_bills_ts)
+        bills_agg.to_csv(snakemake.output.household_bills_agg)
+    else:
+        raise SystemExit("This script is intended to be run via Snakemake.")
