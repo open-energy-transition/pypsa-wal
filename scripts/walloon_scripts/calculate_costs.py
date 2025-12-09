@@ -74,6 +74,7 @@ def lcoe_by_carrier(n: pypsa.Network) -> pd.DataFrame:
     opex = n.statistics.opex(groupby="carrier").groupby(level="carrier").sum()
     supply = (
         n.statistics.energy_balance(
+            bus_carrier='AC',
             groupby="carrier",
             groupby_time="sum",
             aggregate_across_components=True,
