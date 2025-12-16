@@ -170,9 +170,3 @@ rule calculate_all_market_values:
             **config["scenario"],
             run=config["run"]["name"],
         ),
-        expand(
-            RESULTS
-            + "csvs/individual/demand_reduction_value_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
-            **config["scenario"],
-            run=config["run"]["name"],
-        ),

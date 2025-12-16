@@ -355,8 +355,6 @@ rule calculate_market_value:
     output:
         market_value_by_generator=RESULTS
         + "csvs/individual/market_value_by_generator_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
-        demand_reduction_value_ts=RESULTS
-        + "csvs/individual/demand_reduction_value_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
     threads: 1
     resources:
         mem_mb=4000,
