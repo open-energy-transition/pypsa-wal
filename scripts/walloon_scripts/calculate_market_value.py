@@ -28,17 +28,20 @@ def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
             table = n.generators
             bus_col = table.bus
             price_lookup = price_ts
+            assets = table.index
         elif comp == "Link":
-            table = n.links
-            # prefer AC or low-voltage bus1; fall back to bus0 (often fuel)
+            # keep only links where either bus0 or bus1 is AC/low-voltage
             ac_lv = set(n.buses.query("carrier in ['AC', 'low voltage']").index)
+            table = n.links[n.links.bus0.isin(ac_lv) | n.links.bus1.isin(ac_lv)]
+            assets = table.index
+            if table.empty:
+                return None
             use_bus1 = table.bus1.isin(ac_lv)
             bus_col = pd.Series(table.bus0).where(~use_bus1, table.bus1)
             price_lookup = price_ts
         else:
             raise ValueError(f"Unexpected component: {comp}")
 
-        assets = table.index
         mv_comp = mv_by.get(comp, pd.Series(index=assets, dtype=float)).reindex(assets)
         prices = price_lookup.reindex(columns=bus_col).set_axis(assets, axis=1)
         avg_price = (
@@ -63,7 +66,11 @@ def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
         df.loc[df["average_price_EUR_per_MWh"] == 0, "market_value_factor"] = pd.NA
         return df
 
-    frames = [df_comp(c) for c in comps]
+    frames = []
+    for c in comps:
+        df = df_comp(c)
+        frames.append(df)
+
     return pd.concat(frames, ignore_index=True)
 
 
