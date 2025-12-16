@@ -1,19 +1,3 @@
-# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
-# SPDX-FileCopyrightText: Open Energy Transition gGmbH
-#
-# SPDX-License-Identifier: MIT
-
-"""
-Compute CAPEX/OPEX breakdowns and levelised costs (LCOE) from a solved PyPSA
-network.
-
-Outputs
--------
-- capex_by_bus_carrier.csv : annualised CAPEX grouped by component, bus, carrier
-- opex_by_bus_carrier.csv  : OPEX grouped by component, bus, carrier
-- lcoe_by_carrier.csv      : CAPEX + OPEX + supply and LCOE per carrier
-"""
-
 import logging
 from collections.abc import Iterable
 from pathlib import Path

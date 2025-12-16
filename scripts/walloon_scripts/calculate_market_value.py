@@ -1,17 +1,3 @@
-# SPDX-FileCopyrightText: Contributors to PyPSA-Eur <https://github.com/pypsa/pypsa-eur>
-# SPDX-FileCopyrightText: Open Energy Transition gGmbH
-#
-# SPDX-License-Identifier: MIT
-
-"""
-Compute market value metrics for generators.
-
-Outputs
--------
-- market_value_by_generator.csv : Market value, revenue, and energy by generator
-Generator-level market value factors are included in the generator CSV.
-"""
-
 import logging
 from collections.abc import Iterable
 from pathlib import Path
