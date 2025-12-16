@@ -6,52 +6,65 @@ import pandas as pd
 import pypsa
 
 from scripts._helpers import configure_logging, set_scenario_config
-from scripts.walloon_scripts.calculate_prices import get_electriciy_price_weighted
 
 logger = logging.getLogger(__name__)
 
 
-def market_value_by_generator(n: pypsa.Network, system_price: float) -> pd.DataFrame:
+def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
     """
-    Compute market value per generator (positive dispatch only).
-    Returns DataFrame with generator, bus, carrier, energy, revenue, market value, and MVF.
+    Calculate market value and market value factor.
     """
     weights = n.snapshot_weightings.generators
-    gen_index = n.generators.index
-    gen_bus = n.generators.bus
+    price_ts = n.buses_t.marginal_price
+    weighted_load = n.loads_t.p_set.sum(axis=1) * weights
+    total_load = weighted_load.sum()
 
-    # dispatch of generators
-    dispatch = n.generators_t.p.reindex(columns=gen_index).multiply(weights, axis=0)
-    # prices at buses
-    bus_prices = n.buses_t.marginal_price
-    # align bus prices to generator buses and relabel columns by generator id
-    price_at_gen = bus_prices.reindex(columns=gen_bus).set_axis(gen_index, axis=1)
-    # calculate revenue and sum across snapshots
-    revenue = (price_at_gen * dispatch).sum()
-    # calculate energy by summing dispatch across snapshots
-    energy = dispatch.sum()
+    mv = n.statistics.market_value(components=["Generator", "Link"], groupby=False)
+    comps = mv.index.get_level_values(0).unique()
+    mv_by = {c: mv.xs(c, level=0) for c in comps}
 
-    # create market value DataFrame
-    df = (
-        pd.DataFrame(
+    def df_comp(comp: str) -> pd.DataFrame:
+        if comp == "Generator":
+            table = n.generators
+            bus_col = table.bus
+            price_lookup = price_ts
+        elif comp == "Link":
+            table = n.links
+            # prefer AC or low-voltage bus1; fall back to bus0 (often fuel)
+            ac_lv = set(n.buses.query("carrier in ['AC', 'low voltage']").index)
+            use_bus1 = table.bus1.isin(ac_lv)
+            bus_col = pd.Series(table.bus0).where(~use_bus1, table.bus1)
+            price_lookup = price_ts
+        else:
+            raise ValueError(f"Unexpected component: {comp}")
+
+        assets = table.index
+        mv_comp = mv_by.get(comp, pd.Series(index=assets, dtype=float)).reindex(assets)
+        prices = price_lookup.reindex(columns=bus_col).set_axis(assets, axis=1)
+        avg_price = (
+            (prices.multiply(weighted_load, axis=0).sum() / total_load)
+            if total_load
+            else pd.Series(0.0, index=assets)
+        )
+
+        df = pd.DataFrame(
             {
-                "generator": energy.index,
-                "bus": n.generators.bus.values,
-                "carrier": n.generators.carrier.values,
-                "energy_MWh_per_year": energy.values,
-                "revenue_EUR_per_year": revenue.values,
+                "asset": assets,
+                "component": comp,
+                "bus": bus_col.values,
+                "carrier": table.carrier.values,
+                "market_value_EUR_per_MWh": mv_comp.values,
+                "average_price_EUR_per_MWh": avg_price.values,
             }
         )
-        .query("energy_MWh_per_year > 0")
-        .assign(
-            market_value_EUR_per_MWh=lambda d: d.revenue_EUR_per_year
-            / d.energy_MWh_per_year,
-            market_value_factor=lambda d: d.market_value_EUR_per_MWh / system_price
-            if system_price > 0
-            else pd.NA,
+        df["market_value_factor"] = (
+            df["market_value_EUR_per_MWh"] / df["average_price_EUR_per_MWh"]
         )
-    )
-    return df
+        df.loc[df["average_price_EUR_per_MWh"] == 0, "market_value_factor"] = pd.NA
+        return df
+
+    frames = [df_comp(c) for c in comps]
+    return pd.concat(frames, ignore_index=True)
 
 
 def main(network_path: Path, output_paths: Iterable[Path]) -> None:
@@ -59,8 +72,7 @@ def main(network_path: Path, output_paths: Iterable[Path]) -> None:
     output_paths = list(output_paths)
     if len(output_paths) != 1:
         raise ValueError("Expected one output path.")
-    system_price, _ = get_electriciy_price_weighted(n)
-    gen_mv = market_value_by_generator(n, system_price)
+    gen_mv = market_value_by_generator(n)
     gen_mv.to_csv(output_paths[0], index=False)
 
 
