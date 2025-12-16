@@ -4,13 +4,11 @@
 # SPDX-License-Identifier: MIT
 
 """
-Compute market value metrics for generators and demand-side sobriety.
+Compute market value metrics for generators.
 
 Outputs
 -------
 - market_value_by_generator.csv : Market value, revenue, and energy by generator
-- demand_reduction_value_ts.csv : Marginal price (value of 1 MWh demand reduction)
-  for the electricity demand buses over all snapshots
 Generator-level market value factors are included in the generator CSV.
 """
 
@@ -22,10 +20,7 @@ import pandas as pd
 import pypsa
 
 from scripts._helpers import configure_logging, set_scenario_config
-from scripts.walloon_scripts.calculate_prices import (
-    _compute_electric_loads_and_prices,
-    get_electriciy_price_weighted,
-)
+from scripts.walloon_scripts.calculate_prices import get_electriciy_price_weighted
 
 logger = logging.getLogger(__name__)
 
@@ -41,22 +36,12 @@ def market_value_by_generator(n: pypsa.Network, system_price: float) -> pd.DataF
 
     # dispatch of generators
     dispatch = n.generators_t.p.reindex(columns=gen_index).multiply(weights, axis=0)
-    if dispatch.isna().any().any():
-        logger.warning(
-            "Dispatch contains NaNs; market value results may be incomplete."
-        )
     # prices at buses
     bus_prices = n.buses_t.marginal_price
     # align bus prices to generator buses and relabel columns by generator id
     price_at_gen = bus_prices.reindex(columns=gen_bus).set_axis(gen_index, axis=1)
-    if price_at_gen.isna().any().any():
-        logger.warning(
-            "Price matrix contains NaNs; market value results may be incomplete."
-        )
-
     # calculate revenue and sum across snapshots
     revenue = (price_at_gen * dispatch).sum()
-
     # calculate energy by summing dispatch across snapshots
     energy = dispatch.sum()
 
@@ -83,25 +68,14 @@ def market_value_by_generator(n: pypsa.Network, system_price: float) -> pd.DataF
     return df
 
 
-def demand_reduction_value_ts(n: pypsa.Network) -> pd.DataFrame:
-    """
-    Marginal price time series for demand buses (value of 1 MWh reduction).
-    No additional weighting is applied: price already expresses EUR/MWh at (bus, snapshot).
-    """
-    prices, total_loads = _compute_electric_loads_and_prices(n)
-    return prices[total_loads.columns]
-
-
 def main(network_path: Path, output_paths: Iterable[Path]) -> None:
     n = pypsa.Network(network_path)
     output_paths = list(output_paths)
-    if len(output_paths) != 2:
-        raise ValueError("Expected two output paths.")
+    if len(output_paths) != 1:
+        raise ValueError("Expected one output path.")
     system_price, _ = get_electriciy_price_weighted(n)
     gen_mv = market_value_by_generator(n, system_price)
-    demand_value_ts = demand_reduction_value_ts(n)
     gen_mv.to_csv(output_paths[0], index=False)
-    demand_value_ts.to_csv(output_paths[1])
 
 
 if __name__ == "__main__":
@@ -118,9 +92,6 @@ if __name__ == "__main__":
         )
     configure_logging(snakemake)
     set_scenario_config(snakemake)
-    output_files = [
-        Path(snakemake.output.market_value_by_generator),
-        Path(snakemake.output.demand_reduction_value_ts),
-    ]
+    output_files = [Path(snakemake.output.market_value_by_generator)]
     Path(output_files[0]).parent.mkdir(parents=True, exist_ok=True)
     main(Path(snakemake.input.network), output_files)
