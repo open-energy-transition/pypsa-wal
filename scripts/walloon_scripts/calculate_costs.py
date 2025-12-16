@@ -14,7 +14,6 @@ Outputs
 - lcoe_by_carrier.csv      : CAPEX + OPEX + supply and LCOE per carrier
 """
 
-import argparse
 import logging
 from collections.abc import Iterable
 from pathlib import Path
@@ -74,7 +73,7 @@ def lcoe_by_carrier(n: pypsa.Network) -> pd.DataFrame:
     opex = n.statistics.opex(groupby="carrier").groupby(level="carrier").sum()
     supply = (
         n.statistics.energy_balance(
-            bus_carrier='AC',
+            bus_carrier="AC",
             groupby="carrier",
             groupby_time="sum",
             aggregate_across_components=True,
@@ -147,18 +146,6 @@ def aggregate_main_categories(df: pd.DataFrame) -> pd.DataFrame:
     )
 
 
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("network", type=Path, help="Path to solved PyPSA network (.nc)")
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=Path("results"),
-        help="Directory to write CSV outputs into.",
-    )
-    return parser.parse_args()
-
-
 def main(network_path: Path, output_paths: Iterable[Path]) -> None:
     n = pypsa.Network(network_path)
     capex_df, opex_df = capex_opex_by_bus_carrier(n)
@@ -175,22 +162,22 @@ def main(network_path: Path, output_paths: Iterable[Path]) -> None:
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
-        args = parse_args()
-        args.output_dir.mkdir(parents=True, exist_ok=True)
-        output_files = [
-            args.output_dir / "capex_by_bus_carrier.csv",
-            args.output_dir / "opex_by_bus_carrier.csv",
-            args.output_dir / "lcoe_by_carrier.csv",
-        ]
-        configure_logging()
-        main(args.network, output_files)
-    else:
-        configure_logging(snakemake)
-        set_scenario_config(snakemake)
-        output_files = [
-            Path(snakemake.output.capex),
-            Path(snakemake.output.opex),
-            Path(snakemake.output.lcoe),
-        ]
-        Path(output_files[0]).parent.mkdir(parents=True, exist_ok=True)
-        main(Path(snakemake.input.network), output_files)
+        from scripts._helpers import mock_snakemake
+
+        snakemake = mock_snakemake(
+            "calculate_costs",
+            clusters="adm",
+            opts="",
+            sector_opts="",
+            planning_horizons="2025",
+            run="walloon-model",
+        )
+    configure_logging(snakemake)
+    set_scenario_config(snakemake)
+    output_files = [
+        Path(snakemake.output.capex),
+        Path(snakemake.output.opex),
+        Path(snakemake.output.lcoe),
+    ]
+    Path(output_files[0]).parent.mkdir(parents=True, exist_ok=True)
+    main(Path(snakemake.input.network), output_files)

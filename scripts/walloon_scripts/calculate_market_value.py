@@ -14,7 +14,6 @@ Outputs
 Generator-level market value factors are included in the generator CSV.
 """
 
-import argparse
 import logging
 from collections.abc import Iterable
 from pathlib import Path
@@ -105,34 +104,23 @@ def main(network_path: Path, output_paths: Iterable[Path]) -> None:
     demand_value_ts.to_csv(output_paths[1])
 
 
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("network", type=Path, help="Path to solved PyPSA network (.nc)")
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=Path("results"),
-        help="Directory to write CSV outputs into.",
-    )
-    return parser.parse_args()
-
-
 if __name__ == "__main__":
     if "snakemake" not in globals():
-        args = parse_args()
-        args.output_dir.mkdir(parents=True, exist_ok=True)
-        output_files = [
-            args.output_dir / "market_value_by_generator.csv",
-            args.output_dir / "demand_reduction_value_ts.csv",
-        ]
-        configure_logging()
-        main(args.network, output_files)
-    else:
-        configure_logging(snakemake)
-        set_scenario_config(snakemake)
-        output_files = [
-            Path(snakemake.output.market_value_by_generator),
-            Path(snakemake.output.demand_reduction_value_ts),
-        ]
-        Path(output_files[0]).parent.mkdir(parents=True, exist_ok=True)
-        main(Path(snakemake.input.network), output_files)
+        from scripts._helpers import mock_snakemake
+
+        snakemake = mock_snakemake(
+            "calculate_market_value",
+            clusters="adm",
+            opts="",
+            sector_opts="",
+            planning_horizons="2025",
+            run="walloon-model",
+        )
+    configure_logging(snakemake)
+    set_scenario_config(snakemake)
+    output_files = [
+        Path(snakemake.output.market_value_by_generator),
+        Path(snakemake.output.demand_reduction_value_ts),
+    ]
+    Path(output_files[0]).parent.mkdir(parents=True, exist_ok=True)
+    main(Path(snakemake.input.network), output_files)
