@@ -348,6 +348,32 @@ rule calculate_costs:
         "../scripts/walloon_scripts/calculate_costs.py"
 
 
+rule calculate_market_value:
+    input:
+        network=RESULTS
+        + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",
+    output:
+        market_value_by_generator=RESULTS
+        + "csvs/individual/market_value_by_generator_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+        demand_reduction_value_ts=RESULTS
+        + "csvs/individual/demand_reduction_value_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+    threads: 1
+    resources:
+        mem_mb=4000,
+    log:
+        RESULTS
+        + "logs/calculate_market_value_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.log",
+    benchmark:
+        (
+            RESULTS
+            + "benchmarks/calculate_market_value_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
+        )
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/walloon_scripts/calculate_market_value.py"
+
+
 rule make_global_summary:
     params:
         scenario=config_provider("scenario"),
