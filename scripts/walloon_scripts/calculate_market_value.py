@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
     """
-    Calculate market value and market value factor.
+    Calculate market value and market value factor of generators.
     """
     weights = n.snapshot_weightings.generators
     price_ts = n.buses_t.marginal_price
@@ -28,12 +28,12 @@ def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
             table = n.generators
             bus_col = table.bus
             price_lookup = price_ts
-            assets = table.index
+            names = table.index
         elif comp == "Link":
             # keep only links where either bus0 or bus1 is AC/low-voltage
             ac_lv = set(n.buses.query("carrier in ['AC', 'low voltage']").index)
             table = n.links[n.links.bus0.isin(ac_lv) | n.links.bus1.isin(ac_lv)]
-            assets = table.index
+            names = table.index
             if table.empty:
                 return None
             use_bus1 = table.bus1.isin(ac_lv)
@@ -42,17 +42,17 @@ def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
         else:
             raise ValueError(f"Unexpected component: {comp}")
 
-        mv_comp = mv_by.get(comp, pd.Series(index=assets, dtype=float)).reindex(assets)
-        prices = price_lookup.reindex(columns=bus_col).set_axis(assets, axis=1)
+        mv_comp = mv_by.get(comp, pd.Series(index=names, dtype=float)).reindex(names)
+        prices = price_lookup.reindex(columns=bus_col).set_axis(names, axis=1)
         avg_price = (
             (prices.multiply(weighted_load, axis=0).sum() / total_load)
             if total_load
-            else pd.Series(0.0, index=assets)
+            else pd.Series(0.0, index=names)
         )
 
         df = pd.DataFrame(
             {
-                "asset": assets,
+                "name": names,
                 "component": comp,
                 "bus": bus_col.values,
                 "carrier": table.carrier.values,
