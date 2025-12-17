@@ -13,6 +13,28 @@ logger = logging.getLogger(__name__)
 def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
     """
     Calculate market value and market value factor of generators.
+
+    Market value is calculated using n.statistics.market_value for Generators and
+    Links connected to AC or low-voltage buses. The market value factor is the ratio
+    of market value to average market price at the bus where the generator or link
+    is connected.
+
+    Parameters
+    ----------
+    n : pypsa.Network
+        The PyPSA network.
+
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with columns:
+        - name: Name of the generator or link.
+        - component: 'Generator' or 'Link'.
+        - bus: The bus the component is connected to.
+        - carrier: The carrier of the component.
+        - market_value_EUR_per_MWh: The market value in EUR/MWh.
+        - average_price_EUR_per_MWh: The average market price at the bus in EUR/MWh.
+        - market_value_factor: The ratio of market value to average price.
     """
     weights = n.snapshot_weightings.generators
     price_ts = n.buses_t.marginal_price
