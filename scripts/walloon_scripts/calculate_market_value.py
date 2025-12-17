@@ -17,7 +17,8 @@ def market_value_by_generator(n: pypsa.Network) -> pd.DataFrame:
     Market value is calculated using n.statistics.market_value for Generators and
     Links connected to AC or low-voltage buses. The market value factor is the ratio
     of market value to average market price at the bus where the generator or link
-    is connected.
+    is connected. Average price is defined as the weighted average of the
+    marginal prices at the generators' bus, weighted by the system load.
 
     Parameters
     ----------
