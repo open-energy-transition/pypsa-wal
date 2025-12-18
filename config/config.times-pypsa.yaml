@@ -134,6 +134,7 @@ sector:
     2050: 0.20
   district_heating:
     potential: 0.3
+  electrobiofuels: false
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#co2-budget
 co2_budget:
