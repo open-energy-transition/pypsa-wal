@@ -117,3 +117,56 @@ rule generate_all_cross_border_flows:
             **config["scenario"],
             run=config["run"]["name"],
         ),
+
+rule calculate_all_electricity_prices_bills:
+    input:
+        expand(
+            RESULTS
+            + "csvs/individual/weighted_electricity_prices_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/household_bills_ts_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/household_bills_agg_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+
+
+rule calculate_all_costs:
+    input:
+        expand(
+            RESULTS
+            + "csvs/individual/capex_by_bus_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/opex_by_bus_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+        expand(
+            RESULTS
+            + "csvs/individual/lcoe_by_carrier_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
+
+
+rule calculate_all_market_values:
+    input:
+        expand(
+            RESULTS
+            + "csvs/individual/market_value_by_generator_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.csv",
+            **config["scenario"],
+            run=config["run"]["name"],
+        ),
