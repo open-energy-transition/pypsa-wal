@@ -27,7 +27,7 @@ rule add_existing_baseyear:
         existing_heating_distribution=resources(
             "existing_heating_distribution_base_s_{clusters}_{planning_horizons}.csv"
         ),
-        heating_efficiencies=resources("heating_efficiencies.csv"),
+        heating_efficiencies=resources("heating_efficiencies_{clusters}.csv"),
     output:
         resources(
             "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}_brownfield.nc"
@@ -116,6 +116,7 @@ rule solve_sector_network_myopic:
     params:
         solving=config_provider("solving"),
         foresight=config_provider("foresight"),
+        sector=config_provider("sector"),
         co2_sequestration_potential=config_provider(
             "sector", "co2_sequestration_potential", default=200
         ),
@@ -125,6 +126,7 @@ rule solve_sector_network_myopic:
             "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}_brownfield.nc"
         ),
         costs=resources("costs_{planning_horizons}_processed.csv"),
+        co2_totals_name=resources("co2_totals_{clusters}.csv"),
     output:
         network=RESULTS
         + "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc",

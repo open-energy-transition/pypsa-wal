@@ -23,11 +23,14 @@ if __name__ == "__main__":
             "build_population_weighted_energy_totals",
             kind="heat",
             clusters=60,
+            planning_horizons="2030",
         )
     configure_logging(snakemake)
     set_scenario_config(snakemake)
 
-    config = snakemake.config["energy"]
+    config = snakemake.config
+    study = config["run"]["name"]
+    times_demand = config.get("sector", {}).get("times_demand", False)
 
     if snakemake.wildcards.kind == "heat":
         snapshots = get_snapshots(
@@ -35,7 +38,7 @@ if __name__ == "__main__":
         )
         data_years = snapshots.year.unique()
     else:
-        data_years = int(config["energy_totals_year"])
+        data_years = int(config["energy"]["energy_totals_year"])
 
     pop_layout = pd.read_csv(snakemake.input.clustered_pop_layout, index_col=0)
 
@@ -45,5 +48,18 @@ if __name__ == "__main__":
     nodal_totals = totals.loc[pop_layout.ct].fillna(0.0)
     nodal_totals.index = pop_layout.index
     nodal_totals = nodal_totals.multiply(pop_layout.fraction, axis=0)
+    if times_demand:
+        wallon_node = config["run"]["wallon_node"]
+        flemish_node = config["run"]["flemish_node"]
+        #Adding wallon region international navigation demand to Flanders
+        if snakemake.wildcards.kind != "heat":
+           wal_int_nav = nodal_totals.loc[wallon_node, "total international navigation"]
+           nodal_totals.loc[flemish_node, "total international navigation"] += wal_int_nav
+        wallon_demands = pd.read_csv(snakemake.input.wallon_demands, index_col=0)[["TWh"]]
+        common_cols = nodal_totals.columns.intersection(wallon_demands.index)
+        extract_demands = wallon_demands.loc[common_cols].squeeze()
+        nodal_totals.loc[wallon_node, common_cols] = extract_demands
+    else:
+        logger.info("Skipping Walloon adjustments — study mode not active.")
 
     nodal_totals.to_csv(snakemake.output[0])

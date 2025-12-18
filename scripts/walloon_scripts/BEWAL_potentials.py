@@ -98,33 +98,28 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
             allowed = "p_nom"
             assert attr == allowed, f"Unsupported attr: {attr!r}; expected {allowed!r}"
             pypsa_eur_potential = n.generators.loc[f"BEWAL {carrier}", attr]
-            if pypsa_eur_potential <= potential:
-                n.generators.loc[unsustainable_idx, [attr, "e_sum_max"]] = (
-                    potential - pypsa_eur_potential
-                )
-                if carrier == "solid biomass":
+            if pypsa_eur_potential <= potential and carrier == "solid biomass":
+                if "unsustainable biomass limit" in n.global_constraints.index:
+                    n.generators.loc[unsustainable_idx, [attr, "e_sum_max"]] = (
+                        potential - pypsa_eur_potential
+                    )
                     limit = n.global_constraints.loc[
                         "unsustainable biomass limit", "constant"
                     ]
                     n.global_constraints.loc[
                         "unsustainable biomass limit", "constant"
                     ] = limit - pypsa_eur_potential + potential
-            else:
-                if carrier == "solid biomass":
+            elif carrier == "solid biomass":
+                if "unsustainable biomass limit" in n.global_constraints.index:
                     limit = n.global_constraints.loc[
                         "unsustainable biomass limit", "constant"
                     ]
                     n.global_constraints.loc[
                         "unsustainable biomass limit", "constant"
                     ] = limit - n.generators.loc[unsustainable_idx, attr]
-                    limit = n.global_constraints.loc["biomass limit", "constant"]
-                    n.global_constraints.loc["biomass limit", "constant"] = (
-                        limit - pypsa_eur_potential + potential
-                    )
-                n.generators.loc[f"BEWAL {carrier}", [attr, "e_sum_max"]] = (
-                    potential
-                )
-                n.generators.loc[unsustainable_idx, [attr, "e_sum_max"]] = 0
+                if unsustainable_idx in n.generators.index:
+                    n.generators.loc[unsustainable_idx, [attr, "e_sum_max"]] = 0
+            n.generators.loc[f"BEWAL {carrier}", [attr, "e_sum_max"]] = potential
             # what about ["BEWAL solid biomass transported", "BEWAL unsustainable solid biomass transported"] ?
             # what about ["BEWAL solid biomass transported", "BEWAL unsustainable solid biomass transported"] ?
         elif carrier == "solid biomass import":
@@ -168,7 +163,7 @@ def update_BEWAL_potentials(n, planning_horizons, walloon_potentials=None):
             n.generators.loc[sustainable_idx, attr] = potential
             if unsustainable_idx in n.generators.index:
                 n.generators.loc[unsustainable_idx, ["p_nom", attr]] = 0
-        if carrier == 'CCGT':
+        if carrier in ['CCGT', 'nuclear']:
             allowed = {"p_nom", "p_nom_extendable", "p_nom_min", "p_nom_max"}
             assert attr in allowed, f"Unsupported attr: {attr!r}; expected one of {', '.join(sorted(allowed))}"
 

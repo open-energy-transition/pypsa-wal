@@ -12,8 +12,8 @@ planning_horizon,technology,parameter,value,unit,source,further_description
 2040,gas,fuel,36.36,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
 2050,gas,fuel,34.56,EUR/MWh_th,recommended parameters for reporting GHG projections in 2025” publie par la Direction generale de l'action pour le climat departement Strategie analyse et planification (CLIMA.A),
 all,biogas upgrading,investment,244,EUR/kW_biogas,Valbiom,
-all,nuclear,investment,9500,EUR/kW_e,Mecatech Forum du nucleaire IEA,
-all,SMR,investment,11400,EUR/kW_e,Mecatech,
+all,nuclear,investment,13500,EUR/kW_e,Mecatech Forum du nucleaire IEA,
+all,SMR,investment,16200,EUR/kW_e,Mecatech,
 all,solar-rooftop,investment,875,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 moyenne entre une installation residentielle et une installation tertiaire en toiture (avec 50% du CAPEX d'une installation residentielle 25% d'une petite installation tertiaire et 25% d'une grande installation tertiaire)
 all,solar,investment,500,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)
 all,solar-utility,investment,500,EUR/kW_e,IEA PVPS,Etude de marche en Hollande en 2023 installation centralisee (taille entre 10 et 50 MW)

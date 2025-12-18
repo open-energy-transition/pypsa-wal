@@ -1646,7 +1646,9 @@ if __name__ == "__main__":
     update_residential_from_eurostat(energy)
 
     energy.to_csv(snakemake.output.energy_name)
-
+    config = snakemake.config
+    study = snakemake.params.study
+    times_demand = config.get("sector", {}).get("times_demand", False)
     # use rescaled idees data to calculate district heat share
     district_heat_share = build_district_heat_share(
         countries, energy.loc[idees_countries]
@@ -1657,9 +1659,15 @@ if __name__ == "__main__":
     emissions_scope = snakemake.params.energy["emissions"]
     eea_co2 = build_eea_co2(snakemake.input.co2, base_year_emissions, emissions_scope)
     eurostat_co2 = build_eurostat_co2(eurostat, base_year_emissions)
-
+    pop_layout = pd.read_csv(snakemake.input.clustered_pop_layout, index_col=0)
     co2 = build_co2_totals(countries, eea_co2, eurostat_co2)
-    co2.to_csv(snakemake.output.co2_name)
+    if times_demand:
+     co2 = co2.loc[pop_layout.ct].fillna(0.0)
+     co2.index = pop_layout.index
+     co2 = co2.multiply(pop_layout.fraction, axis=0)
+     co2.to_csv(snakemake.output.co2_name)
+    else:
+     co2.to_csv(snakemake.output.co2_name) 
 
     transport = build_transport_data(countries, population, idees)
     transport.to_csv(snakemake.output.transport_name)

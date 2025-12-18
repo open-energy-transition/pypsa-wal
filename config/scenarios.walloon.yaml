@@ -1,0 +1,65 @@
+scen_base:
+  sector:
+    times_file: data/walloon/scen_base_251129_0112.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_corrige.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/walloon/agg_p_nom_minmax_base.csv
+
+scen_corrige:
+  sector:
+    times_file: data/walloon/scen_corrige_251129_0112.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_corrige.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/walloon/agg_p_nom_minmax_corrige.csv
+
+scen_nuc13500:
+  sector:
+    times_file: data/walloon/scen_corrige_nuc13500_251205_0512.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_nuc13500.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/agg_p_nom_minmax.csv
+
+scen_nuc11500:
+  sector:
+    times_file: data/walloon/scen_corrige_nuc11500_251205_0512.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_nuc11500.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/agg_p_nom_minmax.csv
+
+scen_imppel:
+  sector:
+    times_file: data/walloon/scen_corrige_imppel_251130_0412.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_imppel.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_corrige.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/walloon/agg_p_nom_minmax_corrige.csv
+
+scen_data:
+  sector:
+    times_file: data/walloon/scen_corrige_data_251130_0412.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_corrige.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/walloon/agg_p_nom_minmax_corrige.csv

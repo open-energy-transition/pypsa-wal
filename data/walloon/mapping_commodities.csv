@@ -1,0 +1,178 @@
+TIMES commodity,Description,Unit,Sector,Type,Cluster,PyPSA Energy Carrier,Upstream commodity,Upstream process,Comment
+ELCHIG,Electricity - High Voltage WITHOUT grid costs,PJ,ELC,,Electricity - High Voltage WITHOUT grid costs,Electricity ,nan,nan,Produced by the public power station or imports
+ELCHIGG,High Voltage Electricity,PJ,ELC,,High Voltage Electricity,Electricity ,nan,nan,High voltage electricity
+ELCMED,Medium Voltage Electricity,PJ,ELC,,Medium Voltage Electricity,Medium Voltage Electricity,nan,nan,Medium voltage electricity
+ELCLOW,Low Voltage Electricity,PJ,ELC,,Low Voltage Electricity,Low Voltage Electricity,nan,nan,low voltage electricity
+RSDELC,Electricity for Residential sector,PJ,RSD,,Electricity for Residential sector,Electricity ,ELCLOW,RSDELC00,nan
+INDELC,Electricity for industry,PJ,IND,,Electricity for industry,Electricity ,ELCHIGG,INDELC00,nan
+COMELC,Electricity for Commercial sector,PJ,COM,,Electricity for Commercial sector,Electricity ,ELCMED,COMELC00,nan
+TRAELC,Electricity for transport,PJ,TRA,,total energy for transport,Electricity,ELCLOW,TRAELC00,nan
+ELCNUC,Nuclear for Electricity sector,PJ,ELC,,Nuclear for Electricity sector,Nuclear for Electricity sector,nan,nan,nan
+RSDOIL,Diesel Oil for the residential sector,PJ,RSD,,Diesel Oil for the residential sector,Diesel Oil for the residential sector,nan,nan,nan
+INDLFO,Fuel Tech - Light Fuel Oil,PJ,IND,,oil for industry,oil for industry,nan,nan,light fuel oil
+INDHFO,Fuel Tech - Heavy Fuel Oil,PJ,IND,,oil for industry,oil for industry,nan,nan,heavy fuel oil
+AGROIL,Fuel Tech - Oil,PJ,AGR,,Oil for agriculture,Oil for agriculture,nan,nan,nan
+COMOIL,Oil for commercial sector,PJ,COM,,Oil for commercial sector,Oil for commercial sector,nan,nan,nan
+TRADST,Diesel for transport,PJ,TRA,,total energy for transport,total energy for transport,OILDST,TRADST00,diesel
+TRAGSL,Gasoline for transport,PJ,TRA,,total energy for transport,total energy for transport,OILGSL,TRAGSL00,gasoline
+TRAKER,Kerosene - Jet Fuels for transport,PJ,TRA,,Kerosene - Jet Fuels for transport,Kerosene - Jet Fuels for transport,nan,nan,kerozene
+RSDLPG,Liquified Petroleum Gas (RSD),PJ,RSD,,Liquified Petroleum Gas (RSD),Liquified Petroleum Gas (RSD),nan,nan,Propane butane
+COMLPG,Liquified Petroleum Gas (COM),PJ,COM,,Liquified Petroleum Gas (COM),Liquified Petroleum Gas (COM),nan,nan,Propane butane
+INDLPG,Liquified Petroleum Gas for industry,PJ,IND,,gas for industry,gas for industry,nan,nan,Propane butane
+INDCOA,Hard Coal for industry,PJ,IND,,coal for industry,coal for industry,nan,nan,nan
+RSDCOA,Coal for residential sector,PJ,RSD,,Coal for residential sector,Coal for residential sector,nan,nan,nan
+COMCOA,Coal for commertial sector,PJ,COM,,Coal for commertial sector,Coal for commertial sector,nan,nan,nan
+INDCOL,Lignite for industry,PJ,IND,,coal for industry,coal for industry,nan,nan,nan
+ELCCOL,Lignite for electricity sector,PJ,ELC,,Lignite for electricity sector,Lignite for electricity sector,nan,nan,nan
+INDCOK,Coke for industry,PJ,IND,,Coke for industry,Coke for industry,nan,nan,Coke  in cement and lime industry
+ELCGAS,Natural Gas for Electricity,PJ,ELC,,Natural Gas for Electricity,Natural Gas for Electricity,GASNAT,nan,nan
+INDGAS,Natural Gas for Industry,PJ,IND,,gas for industry,gas for industry,GASNAT,nan,nan
+INDGMX,Network gas for industry,PJ,IND,,gas for industry,gas for industry,BIOGZH,SUPGMX00,Injected biomethane (after upgrading/concentration) + imported biomethane
+RSDGMX,Network gas for Residential sector,PJ,RSD,,Network gas for Residential sector,Network gas for Residential sector,BIOGZH,SUPGMX00,Injected biomethane (after upgrading/concentration) + imported biomethane
+COMGMX,Network gas for Commercial sector,PJ,COM,,Network gas for Commercial sector,Network gas for Commercial sector,BIOGZH,SUPGMX00,Injected biomethane (after upgrading/concentration) + imported biomethane
+TRAGMX,Network gas for Transport sector,PJ,TRA,,total energy for transport,total energy for transport,BIOGZH,SUPGMX00,Injected biomethane (after upgrading/concentration)
+AGRGMX,Network gas for agriculture,PJ,AGR,,Network gas for agriculture,Network gas for agriculture,BIOGZH,SUPGMX00,Injected biomethane (after upgrading/concentration)
+ELCCPS,Wood Chips for Electricity sector,PJ,ELC,,Wood Chips for Electricity sector,Wood Chips for Electricity sector,nan,nan,nan
+INDCPS,solid biomass for industry,PJ,IND,,solid biomass for industry,solid biomass for industry,nan,nan,nan
+RSDLOG,Wood Logs for Residential sector,PJ,RSD,,Wood Logs for Residential sector,Wood Logs for Residential sector,nan,nan,logs
+INDBLQ,Black Liquor for Industry sector,PJ,IND,,Black Liquor for Industry sector,Black Liquor for Industry sector,nan,nan,black liquor (biomass)
+INDBGS,Biogas for industry,PJ,IND,,gas for industry,gas for industry,nan,nan,nan
+COMBGS,Biogas for Commercial sector,PJ,COM,,Biogas for Commercial sector,Biogas for Commercial sector,nan,nan,nan
+TRABGS,Biogas for Transport sector,PJ,TRA,,total energy for transport,total energy for transport,nan,nan,nan
+AGRBGS,Biogas for agriculture,PJ,AGR,,Biogas,Fuel Tech – Biogas,nan,nan,nan
+ELCBGS,Biogas for Electricity sector,PJ,ELC,,Biogas,Biogas for Electricity sector,nan,nan,nan
+RSDHET,Heat for Residential sector,PJ,RSD,,Heat for Residential sector,Heat for Residential sector,nan,nan,District heating network with centralized CHP (ELCHET) and/or recovered excess heat from industry (INDHWT)
+COMHET,Heat for commercial sector,PJ,COM,,Heat for commercial sector,Heat for commercial sector,nan,nan,District heating network with centralized CHP (ELCHET) and/or recovered excess heat from industry (INDHWT)
+TRAGH2,H2 for transport (gas),PJ,SUP,,H2 for transport,H2 for transport,nan,nan,nan
+TRALH2,H2 for transport (liquid),PJ,SUP,,H2 for transport,H2 for transport,nan,nan,nan
+INDHH2,hydrogen for industry,PJ,SUP,,hydrogen for industry,hydrogen for industry,nan,nan,nan
+TRAETH,Ethanol for transport,PJ,TRA,,total energy for transport,total energy for transport,nan,nan,pure bioethanol
+TRABDL,Biodiesel for transport,PJ,TRA,,total energy for transport,total energy for transport,nan,nan,pure biodiesiel
+OILKER,Kerosenes - Jet Fuels,PJ,SUP,,Kerosenes - Jet Fuels,Kerosenes - Jet Fuels,nan,nan,nan
+BIORME,Biodiesel rapeseed methyl ester (RME),PJ,SUP,,Biodiesel rapeseed methyl ester (RME),Biodiesel rapeseed methyl ester (RME),nan,nan,nan
+RW3F,hot water for 3F houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RSDGSL,Gasoline for Residential sector,PJ,RSD,,Gasoline for Residential sector,Gasoline for Residential sector,nan,nan,nan
+BIOCRP1,Starch crops,PJ,SUP,,Starch crops,Starch crops,nan,nan,nan
+RENHYD,Hydro,PJ,SUP,,Hydro,Hydro,nan,nan,nan
+BIORPOIL,Rape seed oil,PJ,SUP,,Rape seed oil,Rape seed oil,nan,nan,nan
+RH4F,space heating for 4f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+BIODST,Diesel from Biomass,PJ,SUP,,Other fuels,Diesel from Biomass,nan,nan,nan
+BIORPS,Biomass: Rapeseed,PJ,SUP,,Biomass,Biomass: Rapeseed,nan,nan,nan
+ELCWIN,Electricity: Wind,PJ,ELC,,Electricity: Wind,Electricity: Wind,nan,nan,nan
+ELCSOL,Electricity: Solar,PJ,ELC,,Electricity: Solar,Electricity: Solar,nan,nan,nan
+RWAP,hot water for apartments,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+COMGSL,Gasoline for Commercial sector,PJ,COM,,Gasoline for Commercial sector,Gasoline for Commercial sector,nan,nan,nan
+GASBFT,GAS from Blast Furnace TGR,PJ,IND,,GAS from Blast Furnace TGR,GAS from Blast Furnace TGR,nan,nan,nan
+OILGSL,Fuel: Gasoline,PJ,SUP,,Fuel: Gasoline,Fuel: Gasoline,nan,nan,nan
+OILLPG,Liquified Petroleum Gas,PJ,SUP,,Other fuels,Liquified Petroleum Gas,nan,nan,nan
+RW4F,hot water for 4f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+COMBDL,Biodiesel for Commercial sector,PJ,COM,,Biodiesel for Commercial sector,Biodiesel for Commercial sector,nan,nan,nan
+COMSOL,Commercial: Solar,PJ,COM,,Commercial: Solar,Commercial: Solar,nan,nan,nan
+BIOLOG,Wood Logs,PJ,SUP,,Biomass,Wood Logs,nan,nan,nan
+SYNH2CU,Centralized hydrogen (Underground storage),PJ,SUP,,Centralized hydrogen (Underground storage),Centralized hydrogen (Underground storage),nan,nan,nan
+RENWIN,Renewable: Wind,PJ,SUP,,Wind,Renewable: Wind,nan,nan,nan
+AGRBDL,Biodiesel for agriculture,PJ,AGR,,Biodiesel for agriculture,Biodiesel for agriculture,nan,nan,nan
+RSDSOL,Residential: Solar,PJ,RSD,,Residential: Solar,Residential: Solar,nan,nan,nan
+RH2F,space heating for 2f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+COACOK,Coke,PJ,SUP,,Coke,Coke,nan,nan,nan
+OILDST,Diesel,PJ,SUP,,Diesel,Diesel,nan,nan,nan
+RHAP,space heating for apartments,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+AGRELC,Electricity for agriculture,PJ,AGR,,Electricity for agriculture,Electricity for agriculture,nan,nan,nan
+COALIG,Lignite,PJ,SUP,,Lignite,Lignite,nan,nan,nan
+NUCRSV,Uranium (Dummy Reserves),PJ,SUP,,Uranium (Dummy Reserves),Uranium (Dummy Reserves),nan,nan,nan
+GASNAT,Natural Gas,PJ,SUP,,Natural Gas,Natural Gas,nan,nan,nan
+OILHFO,Residual Fuel Oil,PJ,SUP,,Other fuels,Residual Fuel Oil,nan,nan,nan
+ELCHET,Heat from Electricity sector,PJ,ELC,,Heat from CHP,Heat from CHP,nan,nan,nan
+AGRHET,Heat for agriculture,PJ,AGR,,Heat for agriculture,Heat for agriculture,nan,nan,nan
+COAHAR,Hard Coal,PJ,SUP,,Hard Coal,Hard Coal,nan,nan,nan
+OILOTH,Other Petroleum Products,PJ,SUP,,Other fuels,Other Petroleum Products,nan,nan,nan
+SUPGAS,Supply: Natural Gas,PJ,SUP,,Supply: Natural Gas,Supply: Natural Gas,nan,nan,nan
+RH3F,space heating for 3F houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+BIOETH,Bioethanol,PJ,SUP,,Other fuels,Bioethanol,nan,nan,nan
+SYNH2CT,Centralized hydrogen (Tank storage),PJ,SUP,,Centralized hydrogen (Tank storage),Centralized hydrogen (Tank storage),nan,nan,nan
+RW2F,hot water for 2F houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+SUPDST,Diesel,PJ,SUP,,Diesel,Diesel,nan,nan,nan
+BIOCPS,Wood Chips,PJ,SUP,,Biomass,Wood Chips,nan,nan,nan
+RENSOL,Renewable: Solar,PJ,SUP,,Renewable: Solar,Renewable: Solar,nan,nan,nan
+SUPHET,Heat for digestor,PJ,SUP,,Heat for digestor,Heat for digestor,nan,nan,nan
+ELCBIO,Biomass for Electricity sector,PJ,ELC,,Biomass,Biomass for Electricity sector,nan,nan,nan
+ELCHYD,Hydro for Electricity sector,PJ,ELC,,Hydro for Electricity sector,Hydro for Electricity sector,nan,nan,nan
+ELCOIL,Oil for Electricity sector,PJ,ELC,,Oil for Electricity sector,Oil for Electricity sector,nan,nan,nan
+SUPBGS,Biogas for Supply sector,PJ,SUP,,Biogas,Biogas for Supply sector,nan,nan,nan
+RHDJAP_2021,space heating for apartments (2021),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RHDJ4F_2021,space heating for 4f houses (2021),PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RHN4F,space heating for 4f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RWN3F,hot water for 3F houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RHNAP,space heating for apartments,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RHDJ2F_2021,space heating for 2f houses (2021),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RHN2F,space heating for 2f houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RWNAP,hot water for apartments (new),PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RWN4F,hot water for 4F houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RHDJ3F_2021,space heating for 3F houses (2021),PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RHN3F,space heating for 3f houses,PJ,RSD,,BEWAL residential rural heat,Heat,nan,nan,nan
+RWN2F,hot water for 2F houses,PJ,RSD,,BEWAL residential urban decentral heat,Heat,nan,nan,nan
+RCDR,Rsd.Cloth Drying.Existing,PJ,RSD,,electricity for residential,Electricity ,nan,nan,nan
+RCOK,Rsd.Cooking.Existing,PJ,RSD,,electricity for residential,Electricity ,nan,nan,nan
+RCWA,Rsd.Cloth Washing.Existing,PJ,RSD,,electricity for residential,Electricity ,nan,nan,nan
+RDWA,Rsd.Dish Washing.Existing,PJ,RSD,,electricity for residential,Electricity ,nan,nan,nan
+RLIG,Rsd.Lighting.Existing.,PJ,RSD,,electricity for residential,Electricity ,nan,nan,nan
+RREF,Rsd.Refrigeration.Existing.,PJ,RSD,,electricity for residential,electricity for residential,nan,nan,nan
+ROEN,Rsd.Other Energy.Existing.,PJ,RSD,,electricity for residential,electricity for residential,nan,nan,nan
+ROEL,Rsd.Other Electric.Existing.,PJ,RSD,,electricity for residential,electricity for residential,nan,nan,nan
+TRALPG,Fuel Tech - Liquified Petroleum Gas (TRA),PJ,TRA,,total energy for transport,total energy for transport,nan,nan,nan
+TNDF,Navigation Domestic Freight Tech Existing,PJ,TRA,,domestic navigation,domestic navigation,nan,nan,nan
+AGRCPS,Wood for agriculture,PJ,AGR,,Wood for agriculture,Wood for agriculture,nan,nan,nan
+CHBA,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CHBP,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CHCO,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CHCS,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CHEN,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CHNCS,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CHSA,Space heating for commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWBA,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWBP,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWCO,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWCS,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWEN,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWNBA,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWNBP,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWNCO,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWNCS,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWNEN,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWNSA,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+CWSA,Hot water for Commercial sector,PJ,COM,,BEWAL services urban decentral heat,Heat,nan,nan,nan
+INDBIO,Biofuel for industry,PJ,IND,,Biofuel for industry,Biofuel for industry,nan,nan,nan
+AGRAP,Electricity for agriculture,PJ,AGR,,Electricity for agriculture,Electricity for agriculture,nan,nan,nan
+INDGASCOG,Gas and Cog for industry,PJ,COM,,gas for industry,gas for industry,nan,nan,nan
+INDIIS,IIS GMX - Corex GMX or BFG TGR with CCS or BOF,PJ,COM,,gas for industry,gas for industry,nan,nan,nan
+CCEN,Commercial space cooling Enseignment Existing,PJ,COM,NRG,Electricity for existing commercial appliances,Commercial space cooling Enseignment Existing,,,auto-added from AllCommodities.csv
+DJ2F,Energy correction based on degree days,PJ,RSD,DEM,Energy correction based on degree days,DJ2F,,,auto-added from AllCommodities.csv
+TAIP,Aviation International Passengers,PJ,TRA,DEM,Fuel for aviation,international aviation,,,auto-added from AllCommodities.csv
+DJ3F,Energy correction based on degree days,PJ,RSD,DEM,Energy correction based on degree days,DJ3F,,,auto-added from AllCommodities.csv
+RSDGEO,Geothermal (RSD),PJ,RSD,NRG,Geothermal (RSD),Geothermal (RSD),,,auto-added from AllCommodities.csv
+TADF,Aviation Domestic Freight,PJ,TRA,DEM,Fuel for aviation,domestic aviation,,,auto-added from AllCommodities.csv
+INDGEO,Geothermal (IND),PJ,IND,NRG,Geothermal (IND),Geothermal (IND),,,auto-added from AllCommodities.csv
+CCDATA,Commercial space cooling Data Center Existing,PJ,COM,NRG,Electricity for existing commercial appliances,Commercial space cooling Data Center Existing,,,auto-added from AllCommodities.csv
+CCBP,"Commercial space cooling Bureaux: transport et communication, banques etc Existing",PJ,COM,NRG,Electricity for existing commercial appliances,"Commercial space cooling Bureaux: transport et communication, banques etc Existing",,,auto-added from AllCommodities.csv
+DJ4F,Energy correction based on degree days,PJ,RSD,DEM,Energy correction based on degree days,DJ4F,,,auto-added from AllCommodities.csv
+CCBA,Commercial space cooling Bureaux: Administration Existing,PJ,COM,NRG,Electricity for existing commercial appliances,Commercial space cooling Bureaux: Administration Existing,,,auto-added from AllCommodities.csv
+CCCO,Commercial space cooling Commerce Existing,PJ,COM,NRG,Electricity for existing commercial appliances,Commercial space cooling Commerce Existing,,,auto-added from AllCommodities.csv
+CREF,Commercial Refrigeration Existing,PJ,COM,DEM,Electricity for existing commercial appliances,Commercial Refrigeration Existing,,,auto-added from AllCommodities.csv
+TADP,Aviation Domestic Passengers,PJ,TRA,DEM,Fuel for aviation,domestic aviation,,,auto-added from AllCommodities.csv
+CCSA,Commercial space cooling Santé Existing,PJ,COM,NRG,Electricity for existing commercial appliances,Commercial space cooling Santé Existing,,,auto-added from AllCommodities.csv
+INDHWT,Chaleur fatale (IND),PJ,IND,NRG,Chaleur fatale (IND),Chaleur fatale (IND),,,auto-added from AllCommodities.csv
+COSE,Commercial Serveur DATA CENTER Existing,PJ,COM,DEM,Electricity for existing commercial appliances,Commercial Serveur DATA CENTER Existing,,,auto-added from AllCommodities.csv
+CPLI,Commercial Public Lighting Existing,PJ,COM,DEM,Electricity for existing commercial appliances,Commercial Public Lighting Existing,,,auto-added from AllCommodities.csv
+DJAP,Energy correction based on degree days,PJ,RSD,DEM,Energy correction based on degree days,DJAP,,,auto-added from AllCommodities.csv
+RENGEO,Geothermal,PJ,SUP,NRG,Geothermal,Geothermal,,,auto-added from AllCommodities.csv
+TAIF,Aviation International Freight,PJ,TRA,DEM,Fuel for aviation,international aviation,,,auto-added from AllCommodities.csv
+NEO,Non Energy Consumption - Others,PJ,IND,DEM,Non-energy,naphtha,,,auto-added from AllCommodities.csv
+COMGEO,Geothermal (COM),PJ,COM,NRG,Geothermal (COM),Geothermal (COM),,,auto-added from AllCommodities.csv
+COMCPS,Chips wood (COM),PJ,COM,NRG,Chips wood (COM),Chips wood (COM),,,auto-added from AllCommodities.csv
+INDSOL,Solar (IND),PJ,IND,NRG,Solar (IND),Solar (IND),,,auto-added from AllCommodities.csv
+NEC,Non Energy Consumption - Chemicals,PJ,IND,DEM,Non-energy,naphtha,,,auto-added from AllCommodities.csv
+OILNAP,Naphtha,PJ,IND,NRG,Non-energy,naphtha,,,Added for industry sector
+TRAGAS,Fuel Tech - Natural Gas (TRA),PJ,TRA,DEM,total energy for transport,total energy for transport,,,
+TRAGZH,BioGas (TAR),PJ,TRA,DEM,total energy for transport,total energy for transport,,,
+INDGZH,Fuel Tech New - biogaz epure (IND),PJ,IND,DEM,gas for industry,gas for industry,,,
+BATELCOUT,TSTGEVCMIDN01,PJ,TRA,DEM,total energy for transport,Electricity ,,,

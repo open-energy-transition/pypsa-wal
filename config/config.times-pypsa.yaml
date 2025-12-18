@@ -4,11 +4,20 @@
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
-  name: "walloon-model"
+  prefix: "times-pypsa"
+  name:
+  - scen_base
+  - scen_corrige
+  - scen_nuc13500
+  - scen_nuc11500
+  - scen_imppel
+  - scen_data
   wallon_node: BEWAL
   flemish_node: BEVLG
   scenarios:
-    file: config/scenarios.yaml
+    enable: true
+    file: config/scenarios.walloon.yaml
+  shared_cutouts: true
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#foresight
 foresight: myopic
@@ -83,7 +92,7 @@ clustering:
   mode: custom_busmap_BE
   temporal:
     resolution_elec: False
-    resolution_sector: 3000h
+    resolution_sector: 3h
   exclude_carriers:
     - nuclear
 
@@ -125,6 +134,7 @@ sector:
     2050: 0.20
   district_heating:
     potential: 0.3
+  electrobiofuels: false
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#co2-budget
 co2_budget:

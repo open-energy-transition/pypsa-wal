@@ -1,0 +1,49 @@
+bus,technology,parameter,value,unit,year,source,further_description,year_currency,Column1
+BEWAL,solid biomass import,e_nom,0,GWh/an,2025,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
+BEWAL,solid biomass import,e_nom,0,GWh/an,2030,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
+BEWAL,solid biomass import,e_nom,0,GWh/an,2040,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
+BEWAL,solid biomass import,e_nom,0,GWh/an,2050,"Bioenergy europe 2025 stat report, extrait par Valbiom",Projections avec centrale COGEN aux pellets,,
+BEWAL,solid biomass transported,e_sum_max,0,GWh/an,2025,Valbiom,Potentiel annuel de pellets importés destinés à la Wallonie,,
+BEWAL,solid biomass transported,e_sum_max,0,GWh/an,2030,Valbiom,Potentiel annuel de pellets importés destinés à la Wallonie,,
+BEWAL,solid biomass transported,e_sum_max,0,GWh/an,2040,Valbiom,Potentiel annuel de pellets importés destinés à la Wallonie,,
+BEWAL,solid biomass transported,e_sum_max,0,GWh/an,2050,Valbiom,Potentiel annuel de pellets importés destinés à la Wallonie,,
+BEWAL,onwind,p_nom_max,6500,MW,2025,PNEC Wallon et EDORA,"• Potentiel technique, calculé comme la somme de ce qui est plausible d'atteindre en 2030 comme capacité et des projets à l'étude
+• Les statistiques d'installation (fin 2024) indique que la Wallonie est sur la bonne trajectoire pour atteindre son objectif de production de 6200 GWh étoliens onshore annuels (PNEC wallon - scénario WAM)
+• Ces 6200 GWh sont traduits en 2700 MW de puissance installée.
+• Potentiel éolien additionnel estimé à 3,8 GW à l’horizon 2050, sur base des projets en étude d’incidences (source : EDORA). Valeur intégrant les contraintes actuelles, les effets de repowering et l’évolution vers des turbines plus puissantes.",,
+BEWAL,onwind,p_nom_max,6500,MW,2030,PNEC Wallon et EDORA,"• Potentiel technique, calculé comme la somme de ce qui est plausible d'atteindre en 2030 comme capacité et des projets à l'étude
+• Les statistiques d'installation (fin 2024) indique que la Wallonie est sur la bonne trajectoire pour atteindre son objectif de production de 6200 GWh étoliens onshore annuels (PNEC wallon - scénario WAM)
+• Ces 6200 GWh sont traduits en 2700 MW de puissance installée.
+• Potentiel éolien additionnel estimé à 3,8 GW à l’horizon 2050, sur base des projets en étude d’incidences (source : EDORA). Valeur intégrant les contraintes actuelles, les effets de repowering et l’évolution vers des turbines plus puissantes.",,
+BEWAL,onwind,p_nom_max,6500,MW,2040,PNEC Wallon et EDORA,"• Potentiel technique, calculé comme la somme de ce qui est plausible d'atteindre en 2030 comme capacité et des projets à l'étude
+• Les statistiques d'installation (fin 2024) indique que la Wallonie est sur la bonne trajectoire pour atteindre son objectif de production de 6200 GWh étoliens onshore annuels (PNEC wallon - scénario WAM)
+• Ces 6200 GWh sont traduits en 2700 MW de puissance installée.
+• Potentiel éolien additionnel estimé à 3,8 GW à l’horizon 2050, sur base des projets en étude d’incidences (source : EDORA). Valeur intégrant les contraintes actuelles, les effets de repowering et l’évolution vers des turbines plus puissantes.",,
+BEWAL,onwind,p_nom_max,6500,MW,2050,PNEC Wallon et EDORA,"• Potentiel technique, calculé comme la somme de ce qui est plausible d'atteindre en 2030 comme capacité et des projets à l'étude
+• Les statistiques d'installation (fin 2024) indique que la Wallonie est sur la bonne trajectoire pour atteindre son objectif de production de 6200 GWh étoliens onshore annuels (PNEC wallon - scénario WAM)
+• Ces 6200 GWh sont traduits en 2700 MW de puissance installée.
+• Potentiel éolien additionnel estimé à 3,8 GW à l’horizon 2050, sur base des projets en étude d’incidences (source : EDORA). Valeur intégrant les contraintes actuelles, les effets de repowering et l’évolution vers des turbines plus puissantes.",,
+BEWAL,solar,p_nom_max,13000,MW,2025,"Cluster TWEED, Livre blanc de l'agrivoltaïsme (2025), Energie Commune, Renouvelle (2025)",Somme du potentiel des friches industrielles et de l'agrivoltaïsme,,
+BEWAL,solar,p_nom_max,13000,MW,2030,"Cluster TWEED, Livre blanc de l'agrivoltaïsme (2025), Energie Commune, Renouvelle (2025)",Somme du potentiel des friches industrielles et de l'agrivoltaïsme,,
+BEWAL,solar,p_nom_max,13000,MW,2040,"Cluster TWEED, Livre blanc de l'agrivoltaïsme (2025), Energie Commune, Renouvelle (2025)",Somme du potentiel des friches industrielles et de l'agrivoltaïsme,,
+BEWAL,solar,p_nom_max,13000,MW,2050,"Cluster TWEED, Livre blanc de l'agrivoltaïsme (2025), Energie Commune, Renouvelle (2025)",Somme du potentiel des friches industrielles et de l'agrivoltaïsme,,
+BEWAL,solar rooftop,p_nom_max,46000,MW,2025,"Energie Commune, Cartographie solaire de la Région Wallonne (2024)",Somme du potentiel des installations en toiture de bâtiments et d'ombrières de parking,,
+BEWAL,solar rooftop,p_nom_max,46000,MW,2030,"Energie Commune, Cartographie solaire de la Région Wallonne (2024)",Somme du potentiel des installations en toiture de bâtiments et d'ombrières de parking,,
+BEWAL,solar rooftop,p_nom_max,46000,MW,2040,"Energie Commune, Cartographie solaire de la Région Wallonne (2024)",Somme du potentiel des installations en toiture de bâtiments et d'ombrières de parking,,
+BEWAL,solar rooftop,p_nom_max,46000,MW,2050,"Energie Commune, Cartographie solaire de la Région Wallonne (2024)",Somme du potentiel des installations en toiture de bâtiments et d'ombrières de parking,,
+BEWAL,solid biomass,p_nom,9313,GWh/an,2025,Valbiom,,,
+BEWAL,solid biomass,p_nom,11956,GWh/an,2030,Valbiom,,,
+BEWAL,solid biomass,p_nom,11956,GWh/an,2040,Valbiom,,,
+BEWAL,solid biomass,p_nom,11956,GWh/an,2050,Valbiom,,,
+BEWAL,biogas,p_nom,7800,GWh/an,2025,ICEDD,,,
+BEWAL,biogas,p_nom,7800,GWh/an,2030,ICEDD,,,
+BEWAL,biogas,p_nom,7800,GWh/an,2040,ICEDD,,,
+BEWAL,biogas,p_nom,7800,GWh/an,2050,ICEDD,,,
+BEWAL,deep geothermal energy potential,potential_wal,228,GWh/an,2030,Resolia,,,
+BEWAL,waste heat,potential_wal,4523,GWh/an,2030,(1) ICEDD - Evaluation du potentiel de chaleur fatale en Wallonie et (2) PNEC 2023,,,
+BEVLG,offwind,p_nom_max,inf,MW,2025,,,,
+BEVLG,offwind,p_nom_max,inf,MW,2030,,,,
+BEVLG,offwind,p_nom_max,inf,MW,2040,,,,
+BEVLG,offwind,p_nom_max,inf,MW,2050,,,,
+BEWAL,CCGT,p_nom_min,1740,MW_el,2030,,,,
+BEBRU,nuclear,p_nom_max,0.011,MW_el,2025,,,,
