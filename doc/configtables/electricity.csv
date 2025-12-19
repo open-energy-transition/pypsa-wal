@@ -21,9 +21,10 @@ extendable_carriers,,,
 -- StorageUnit,--,"Any subset of {'battery','H2'}",Adds extendable storage units (battery and/or hydrogen) at every node/bus after clustering without capacity limits and with zero initial capacity.
 -- Store,--,"Any subset of {'battery','H2'}",Adds extendable storage units (battery and/or hydrogen) at every node/bus after clustering without capacity limits and with zero initial capacity.
 -- Link,--,"Any subset of {'H2 pipeline'}",Adds extendable links (H2 pipelines only) at every connection where there are lines or HVDC links without capacity limits and with zero initial capacity. Hydrogen pipelines require hydrogen storage to be modelled as ``Store``.
+-- extendable_nuclear_links,--,Dictionary with planning horizons as keys,Nodes/buses where new nuclear link capacity can be built per planning horizon.
 powerplants_filter,--,"use `pandas.query <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html>`_ strings here, e.g. ``Country not in ['Germany']``",Filter query for the default powerplant database.
 ,,, 
-walloon_reassignment,--,"{True, False}",maps powerplants to specific subregions rather than to the country > improves accuracy where ppls are assigned to.
+walloon_reassignment,--,"{True, False}",Map power plants to specific (BEWAL/BEBRU/BEVLG) subregions rather than to the country. This improves accuracy of powerplant assignments.
 ,,,
 custom_powerplants,--,"use `pandas.query <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html>`_ strings here, e.g. ``Country in ['Germany']``",Filter query for the custom powerplant database.
 ,,, 
