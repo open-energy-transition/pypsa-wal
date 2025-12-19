@@ -23,6 +23,8 @@ The Walloon workflow includes several changes to the default PyPSA-Eur:
   (Tihange 1/2/3) to allow the plant to retire its capacity incrementally. 
   The workflow filters out those rows by the current planning horizon so a unit 
   automatically disappears once its retirement year is passed. 
+* **Nuclear retrofit limit.** The ``electricity.retrofit_nuclear_once`` config option limits nuclear retrofits 
+  to a single occurrence across horizons to avoid repeated retrofits.
 * **Single nuclear representation.** Removed duplication of nuclear representation in 
   model -- before they were represented as both generators and links, now only as links.
 * **No new BEWAL nuclear before 2040 and configurable new builds.** ``config/config.walloon.yaml`` 
