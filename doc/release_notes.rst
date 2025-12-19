@@ -10,6 +10,11 @@ Release Notes
 PyPSA-WAL Upcoming Release
 ==========================
 
+* Add updated NTC inputs for 2025/2030/2040/2050; keep myopic transmission limit at 
+  v1.0 in 2040 and 2050. Limit nuclear retrofits to a single occurrence 
+  via ``electricity.retrofit_nuclear_once``. Change config options for CO2 sequestration limits, 
+  shipping methanol/oil shares, regional methanol demand, and district heating potentials. 
+  Update lifetimes of nuclear. (https://github.com/open-energy-transition/pypsa-wal/pull/53)
 * The capital costs of nuclear retrofitting has been corrected to account for 
   the efficiency of the link. Additionally, the nuclear retrofitting has been changed 
   to an LP problem instead of MILP to improve solve times. Regional coal demand has been activated,

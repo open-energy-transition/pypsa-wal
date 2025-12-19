@@ -570,6 +570,8 @@ def add_CCL_constraints(
         return
 
     buses_to_country = True
+    alias_buses = {}
+    alias_original = None
     if buses_to_country:
         # temporarily set bus countries to region names for CCL constraint application
         regions = set(agg_p_nom_minmax.index.get_level_values(0))
@@ -599,6 +601,15 @@ def add_CCL_constraints(
                             parent_val - region_val, 0
                         )
 
+        # Map " low voltage" buses to their base region if present
+        alias_buses = {
+            bus: bus.replace(" low voltage", "").strip()
+            for bus in n.buses.index
+            if " low voltage" in bus and bus.replace(" low voltage", "").strip() in regions
+        }
+        if alias_buses:
+            alias_original = n.buses.loc[list(alias_buses.keys()), "country"].copy()
+            n.buses.loc[list(alias_buses.keys()), "country"] = list(alias_buses.values())
     logger.info("Adding generation capacity constraints per carrier and country")
     p_nom = n.model["Generator-p_nom"]
     p_nom_link = n.model["Link-p_nom"]
@@ -758,6 +769,8 @@ def add_CCL_constraints(
         )
 
     # reset original country assignments
+    if alias_buses and alias_original is not None:
+        n.buses.loc[list(alias_buses.keys()), "country"] = alias_original
     if buses_to_country and region_buses:
         n.buses.loc[region_buses, "country"] = original_country
 

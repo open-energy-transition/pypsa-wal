@@ -30,11 +30,11 @@ Lillo Degussa 19,Natural Gas,CCGT,CHP,BE,85,,1999,1999,2039,51.30953,4.30402,,0,
 Izegem 20,Natural Gas,CCGT,CHP,BE,20,,1995,1995,2035,50.923778,3.212979,,0,0,0,{},"{'GEM': {'L100000406372'}, 'OPSD': {'OEU-71'}}",BEVLG
 Geel 21,Natural Gas,CCGT,CHP,BE,43,,1999,1999,2039,51.1124,5.0087,,0,0,0,{},{'GEM': {'L100001000034'}},BEVLG
 Stora Langerbrugge,Bioenergy,Steam Turbine,PP,BE,45,,2010,2010,2030,51.109,3.734,,0,0,0,{},{'GEM': {'G201355'}},BEVLG
-New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,2025,2065,50.5334,5.2714,,0,0,0,,,BEWAL
-BEBRU New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,,2065,50.9,4.35,,,,,{},{},BEBRU
-BEVLG New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,,2065,51.3,3.15,,,,,{},{},BEVLG
-FR New,Nuclear,Steam Turbine,PP,FR,0.01,,2025,,2065,46.5,0.8,,,,,{},{},FR
-DE New,Nuclear,Steam Turbine,PP,DE,0.01,,2025,,2065,51.65,6.45,,,,,{},{},DE
-GB New,Nuclear,Steam Turbine,PP,GB,0.01,,2025,,2065,52.8,-0.2,,,,,{},{},GB
-NL New,Nuclear,Steam Turbine,PP,NL,0.01,,2025,,2065,51.65,4.65,,,,,{},{},NL
-LU New,Nuclear,Steam Turbine,PP,LU,0.01,,2025,,2065,49.9,6.15,,,,,{},{},LU
+New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,2025,2084,50.5334,5.2714,,0,0,0,,,BEWAL
+BEBRU New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,,2084,50.9,4.35,,,,,{},{},BEBRU
+BEVLG New,Nuclear,Steam Turbine,PP,BE,0.01,,2025,,2084,51.3,3.15,,,,,{},{},BEVLG
+FR New,Nuclear,Steam Turbine,PP,FR,0.01,,2025,,2084,46.5,0.8,,,,,{},{},FR
+DE New,Nuclear,Steam Turbine,PP,DE,0.01,,2025,,2084,51.65,6.45,,,,,{},{},DE
+GB New,Nuclear,Steam Turbine,PP,GB,0.01,,2025,,2084,52.8,-0.2,,,,,{},{},GB
+NL New,Nuclear,Steam Turbine,PP,NL,0.01,,2025,,2084,51.65,4.65,,,,,{},{},NL
+LU New,Nuclear,Steam Turbine,PP,LU,0.01,,2025,,2084,49.9,6.15,,,,,{},{},LU

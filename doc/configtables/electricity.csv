@@ -21,12 +21,15 @@ extendable_carriers,,,
 -- StorageUnit,--,"Any subset of {'battery','H2'}",Adds extendable storage units (battery and/or hydrogen) at every node/bus after clustering without capacity limits and with zero initial capacity.
 -- Store,--,"Any subset of {'battery','H2'}",Adds extendable storage units (battery and/or hydrogen) at every node/bus after clustering without capacity limits and with zero initial capacity.
 -- Link,--,"Any subset of {'H2 pipeline'}",Adds extendable links (H2 pipelines only) at every connection where there are lines or HVDC links without capacity limits and with zero initial capacity. Hydrogen pipelines require hydrogen storage to be modelled as ``Store``.
+-- extendable_nuclear_links,--,Dictionary with planning horizons as keys,Nodes/buses where new nuclear link capacity can be built per planning horizon.
 powerplants_filter,--,"use `pandas.query <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html>`_ strings here, e.g. ``Country not in ['Germany']``",Filter query for the default powerplant database.
 ,,, 
-walloon_reassignment,--,"{True, False}",maps powerplants to specific subregions rather than to the country > improves accuracy where ppls are assigned to.
+walloon_reassignment,--,"{True, False}",Map power plants to specific (BEWAL/BEBRU/BEVLG) subregions rather than to the country. This improves accuracy of powerplant assignments.
 ,,,
 custom_powerplants,--,"use `pandas.query <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html>`_ strings here, e.g. ``Country in ['Germany']``",Filter query for the custom powerplant database.
 ,,, 
+walloon_potentials,--,str or None,Path to the custom Walloon potentials file.
+retrofit_nuclear_once,--,"{true, false}",Allow nuclear retrofit to occur only once; prevents multiple retrofits of the same plant across planning horizons.
 everywhere_powerplants,--,"Any subset of {nuclear, oil, OCGT, CCGT, coal, lignite, geothermal, biomass}","List of conventional power plants to add to every node in the model with zero initial capacity. To be used in combination with ``extendable_carriers`` to allow for building conventional powerplants irrespective of existing locations."
 ,,, 
 conventional_carriers,--,"Any subset of {nuclear, oil, OCGT, CCGT, coal, lignite, geothermal, biomass}","List of conventional power plants to include in the model from ``resources/powerplants_s_{clusters}.csv``. If an included carrier is also listed in ``extendable_carriers``, the capacity is taken as a lower bound."
