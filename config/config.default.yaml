@@ -132,9 +132,17 @@ electricity:
     StorageUnit: [] # battery, H2
     Store: [battery, H2]
     Link: [] # H2 pipeline
+    extendable_nuclear_links:
+      2025: [FR, GB, NL, LU]
+      2030: [FR, GB, NL, LU]
+      2040: [FR, GB, NL, LU]
+      2050: [FR, GB, NL, LU]
 
   powerplants_filter: (DateOut >= 2024 or DateOut != DateOut) and not (Country == 'Germany' and Fueltype == 'Nuclear')
   custom_powerplants: false
+  walloon_reassignment: false
+  walloon_potentials: data/walloon/custom_potentials.csv
+  retrofit_nuclear_once: false
   everywhere_powerplants: []
 
   conventional_carriers: [nuclear, oil, OCGT, CCGT, coal, lignite, geothermal, biomass]
@@ -162,6 +170,7 @@ electricity:
     2040: v1.05
     2045: v1.05
     2050: v1.05
+  apply_ntc_constraints: false
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#atlite
 atlite:
@@ -1028,6 +1037,8 @@ solving:
   agg_p_nom_limits:
     agg_offwind: false
     agg_solar: false
+    agg_nuclear: false
+    agg_ccgt: false
     include_existing: false
     file: data/agg_p_nom_minmax.csv
 
