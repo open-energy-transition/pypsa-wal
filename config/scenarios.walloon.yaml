@@ -63,3 +63,25 @@ scen_data:
   solving:
     agg_p_nom_limits:
       file: data/walloon/agg_p_nom_minmax_corrige.csv
+
+scen_base_incnuc:
+  sector:
+    times_file: data/walloon/scen_base_251129_0112.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_corrige.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/walloon/agg_p_nom_minmax_incnuc.csv
+
+scen_corrige_incnuc:
+  sector:
+    times_file: data/walloon/scen_corrige_251129_0112.vd
+  electricity:
+    walloon_potentials: data/walloon/custom_potentials_corrige.csv
+  costs:
+    custom_cost_fn: data/walloon/custom_costs_corrige.csv
+  solving:
+    agg_p_nom_limits:
+      file: data/walloon/agg_p_nom_minmax_incnuc.csv

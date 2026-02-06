@@ -6,12 +6,8 @@
 run:
   prefix: "times-pypsa"
   name:
-  - scen_base
-  - scen_corrige
-  - scen_nuc13500
-  - scen_nuc11500
-  - scen_imppel
-  - scen_data
+  - scen_base_incnuc
+  - scen_corrige_incnuc
   wallon_node: BEWAL
   flemish_node: BEVLG
   scenarios:
@@ -195,3 +191,12 @@ solving:
 
   constraints:
     CCL: true
+
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#enable
+enable:
+  retrieve: false
+  retrieve_databundle: false
+  retrieve_cost_data: false
+  build_cutout: false
+  retrieve_cutout: false
+  drop_leap_day: true
