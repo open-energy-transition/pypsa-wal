@@ -653,12 +653,13 @@ if __name__ == "__main__":
             )
 
             busmap = custom_busmap
-        elif mode == "custom_busmap" or "custom_busmap_BE":
+        elif mode in {"custom_busmap", "custom_busmap_BE"}:
+            input_key = "custom_busmap" if mode == "custom_busmap" else "custom_busmap_BE"
             custom_busmap = pd.read_csv(
-                snakemake.input[mode], index_col=0
+                snakemake.input[input_key], index_col=0
             ).squeeze()
             custom_busmap.index = custom_busmap.index.astype(str)
-            logger.info(f"Imported custom busmap from {snakemake.input.custom_busmap}")
+            logger.info(f"Imported custom busmap from {snakemake.input[input_key]}")
             busmap = custom_busmap
         else:
             n_clusters = int(snakemake.wildcards.clusters)
