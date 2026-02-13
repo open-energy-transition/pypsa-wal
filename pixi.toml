@@ -36,6 +36,11 @@ update-dags = """
 
 generate-config = "python -c 'from scripts.lib.validation.config import generate_config_defaults, generate_config_schema; generate_config_defaults(); generate_config_schema()'"
 
+walloon-model = """bash -c '
+	snakemake -call --configfile config/config.walloon.yaml "$@"
+	' --
+"""
+
 [dependencies]
 atlite = ">=0.3"
 bokeh = ">=3.8.0"
