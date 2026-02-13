@@ -4,6 +4,8 @@
 
 
 rule solve_sector_network:
+    message:
+        "Solving sector-coupled network with overnight investment optimization for {wildcards.clusters} clusters, {wildcards.planning_horizons} planning horizons, {wildcards.opts} electric options and {wildcards.sector_opts} sector options"
     params:
         solving=config_provider("solving"),
         foresight=config_provider("foresight"),
@@ -38,7 +40,5 @@ rule solve_sector_network:
             RESULTS
             + "benchmarks/solve_sector_network/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
         )
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/solve_network.py"
+        scripts("solve_network.py")

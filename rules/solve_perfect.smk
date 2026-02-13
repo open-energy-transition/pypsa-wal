@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 rule add_existing_baseyear:
+    message:
+        "Adding existing infrastructure for base year for {wildcards.clusters} clusters, {wildcards.planning_horizons} planning horizons, {wildcards.opts} electric options and {wildcards.sector_opts} sector options"
     params:
         baseyear=config_provider("scenario", "planning_horizons", 0),
         sector=config_provider("sector"),
@@ -19,7 +21,7 @@ rule add_existing_baseyear:
         busmap=resources("busmap_base_s_{clusters}.csv"),
         clustered_pop_layout=resources("pop_layout_base_s_{clusters}.csv"),
         costs=lambda w: resources(
-            f"costs_{config_provider("scenario", "planning_horizons",0)(w)}_processed.csv"
+            f"costs_{config_provider('scenario', 'planning_horizons',0)(w)}_processed.csv"
         ),
         cop_profiles=resources("cop_profiles_base_s_{clusters}_{planning_horizons}.nc"),
         existing_heating_distribution=resources(
@@ -45,10 +47,8 @@ rule add_existing_baseyear:
         benchmarks(
             "add_existing_baseyear/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}"
         )
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/add_existing_baseyear.py"
+        scripts("add_existing_baseyear.py")
 
 
 def input_network_year(w):
@@ -60,6 +60,8 @@ def input_network_year(w):
 
 
 rule prepare_perfect_foresight:
+    message:
+        "Preparing data for perfect foresight optimization for {wildcards.clusters} clusters, {wildcards.opts} electric options and {wildcards.sector_opts} sector options"
     params:
         costs=config_provider("costs"),
         time_resolution=config_provider("clustering", "temporal", "sector"),
@@ -82,13 +84,13 @@ rule prepare_perfect_foresight:
         logs("prepare_perfect_foresight_{clusters}_{opts}_{sector_opts}.log"),
     benchmark:
         benchmarks("prepare_perfect_foresight_{clusters}_{opts}_{sector_opts}")
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/prepare_perfect_foresight.py"
+        scripts("prepare_perfect_foresight.py")
 
 
 rule solve_sector_network_perfect:
+    message:
+        "Solving sector-coupled network with perfect foresight for {wildcards.clusters} clusters, {wildcards.opts} electric options and {wildcards.sector_opts} sector options"
     params:
         solving=config_provider("solving"),
         foresight=config_provider("foresight"),
@@ -125,10 +127,8 @@ rule solve_sector_network_perfect:
             RESULTS
             + "benchmarks/solve_sector_network/base_s_{clusters}_{opts}_{sector_opts}_brownfield_all_years}"
         )
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/solve_network.py"
+        scripts("solve_network.py")
 
 
 def input_networks_make_summary_perfect(w):
@@ -142,6 +142,8 @@ def input_networks_make_summary_perfect(w):
 
 
 rule make_summary_perfect:
+    message:
+        "Creating summary for perfect foresight optimization results"
     input:
         unpack(input_networks_make_summary_perfect),
         costs=resources("costs_2020_processed.csv"),
@@ -166,7 +168,5 @@ rule make_summary_perfect:
         logs("make_summary_perfect.log"),
     benchmark:
         benchmarks("make_summary_perfect")
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/make_summary_perfect.py"
+        scripts("make_summary_perfect.py")
