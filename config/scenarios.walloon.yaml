@@ -77,7 +77,7 @@ scen_base_incnuc:
 
 scen_corrige_incnuc:
   sector:
-    times_file: data/walloon/scen_corrige_251129_0112.vd
+    times_file: data/walloon/scen_corrige_nucfx_260204_0402.vd
   electricity:
     walloon_potentials: data/walloon/custom_potentials_corrige.csv
   costs:

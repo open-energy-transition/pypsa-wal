@@ -6,7 +6,6 @@
 run:
   prefix: "times-pypsa"
   name:
-  - scen_base_incnuc
   - scen_corrige_incnuc
   wallon_node: BEWAL
   flemish_node: BEVLG
