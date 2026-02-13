@@ -105,3 +105,6 @@ CLAUDE.local.md
 # track all files in /data/walloon/ except .vd files
 !data/walloon/
 data/walloon/*.vd
+
+# DS_Store
+.DS_Store
