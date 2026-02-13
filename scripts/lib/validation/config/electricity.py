@@ -261,14 +261,14 @@ class ElectricityConfig(BaseModel):
         "vopt",
         description="Limit on transmission expansion. The first part can be `v` (for setting a limit on line volume) or `c` (for setting a limit on line cost). The second part can be `opt` or a float bigger than one (e.g. 1.25). If `opt` is chosen line expansion is optimised according to its capital cost (where the choice `v` only considers overhead costs for HVDC transmission lines, while `c` uses more accurate costs distinguishing between overhead and underwater sections and including inverter pairs). The setting `v1.25` will limit the total volume of line expansion to 25% of currently installed capacities weighted by individual line lengths. The setting `c1.25` will allow to build a transmission network that costs no more than 25 % more than the current system.",
     )
-    transmission_limit_myopic: dict[str, str] = Field(
+    transmission_limit_myopic: dict[int, str] = Field(
         default_factory=lambda: {
-            "2025": "v1.05",
-            "2030": "v1.05",
-            "2035": "v1.05",
-            "2040": "v1.05",
-            "2045": "v1.05",
-            "2050": "v1.05",
+            2025: "v1.05",
+            2030: "v1.05",
+            2035: "v1.05",
+            2040: "v1.05",
+            2045: "v1.05",
+            2050: "v1.05",
         },
         description="Limit on transmission expansion. The first part can be ``v`` (for setting a limit on line volume) or ``c`` (for setting a limit on line cost). The second part can be ``opt`` or a float bigger than one (e.g. 1.25). If ``opt`` is chosen line expansion is optimised according to its capital cost (where the choice ``v`` only considers overhead costs for HVDC transmission lines, while ``c`` uses more accurate costs distinguishing between overhead and underwater sections and including inverter pairs). The setting ``v1.25`` will limit the total volume of line expansion to 25% of currently installed capacities weighted by individual line lengths. The setting ``c1.25`` will allow to build a transmission network that costs no more than 25 % more than the current system.",
     )
