@@ -176,6 +176,14 @@ def map_to_country_bus(
     unmatched = []
 
     for country, plants in ppl.groupby("Country"):
+        if "bus" in plants.columns:
+            explicit = plants[plants["bus"].notna()]
+            if not explicit.empty:
+                assigned.append(explicit)
+            plants = plants[plants["bus"].isna()].drop(columns="bus")
+            if plants.empty:
+                continue
+
         country_regions = regions[regions.index.str[:2] == country]
         joined = (
             plants.sjoin(country_regions)
