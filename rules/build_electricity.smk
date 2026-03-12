@@ -40,6 +40,9 @@ rule build_powerplants:
         walloon_reassignment=config_provider(
             "electricity", "walloon_reassignment", default=False
         ),
+        walloon_regions_file=config_provider(
+            "walloon", "be_regions_file", default="data/walloon/be.json"
+        ),
         custom_powerplants=config_provider("electricity", "custom_powerplants"),
         everywhere_powerplants=config_provider("electricity", "everywhere_powerplants"),
         countries=config_provider("countries"),
@@ -48,7 +51,7 @@ rule build_powerplants:
         regions_onshore=resources("regions_onshore_base_s_{clusters}.geojson"),
         regions_offshore=resources("regions_offshore_base_s_{clusters}.geojson"),
         powerplants=rules.retrieve_powerplants.output["powerplants"],
-        custom_powerplants="data/custom_powerplants.csv",
+        custom_powerplants=resources("custom_powerplants.csv"),
     output:
         resources("powerplants_s_{clusters}.csv"),
     log:
@@ -64,7 +67,11 @@ rule build_powerplants:
 
 rule build_BE_powerplants:
     input:
-        wal_capacities="data/walloon/wal_2021_existing_capacities_2.csv",
+        wal_capacities=config_provider(
+            "walloon",
+            "existing_capacities_file",
+            default="data/walloon/wal_2021_existing_capacities_2.csv",
+        ),
         custom_powerplants="data/custom_powerplants.csv",
     output:
         custom_powerplants=resources("custom_powerplants.csv"),
@@ -656,7 +663,10 @@ rule process_cost_data:
     input:
         network=resources("networks/base_s.nc"),
         costs=rules.retrieve_cost_data.output["costs"],
-        custom_costs=config_provider("costs", "custom_cost_fn"),
+        custom_costs=lambda w: config_provider(
+            "walloon", "custom_costs_file", default=None
+        )(w)
+        or config_provider("costs", "custom_cost_fn")(w),
     output:
         resources("costs_{planning_horizons}_processed.csv"),
     log:
