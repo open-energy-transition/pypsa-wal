@@ -39,6 +39,7 @@ from scripts.lib.validation.config.transformers import TransformersConfig
 from scripts.lib.validation.config.transmission_projects import (
     TransmissionProjectsConfig,
 )
+from scripts.lib.validation.config.walloon import WalloonConfig
 
 
 class LoggingConfig(ConfigModel):
@@ -195,6 +196,10 @@ class ConfigSchema(BaseModel):
     costs: CostsConfig = Field(
         default_factory=CostsConfig,
         description="Cost assumptions configuration.",
+    )
+    walloon: WalloonConfig = Field(
+        default_factory=WalloonConfig,
+        description="Walloon-specific data configuration.",
     )
     clustering: ClusteringConfig = Field(
         default_factory=ClusteringConfig,
