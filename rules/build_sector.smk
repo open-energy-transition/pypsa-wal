@@ -1725,7 +1725,7 @@ rule prepare_sector_network:
             if config_provider("sector", "district_heating", "ates", "enable")(w)
             else []
         ),
-        ntc_csv = "data/walloon/ntc_2030.csv"
+        ntc_csv="data/walloon/ntc_2030.csv",
     output:
         resources(
             "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc"

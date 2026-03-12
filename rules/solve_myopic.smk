@@ -76,7 +76,7 @@ rule add_brownfield:
         dynamic_ptes_capacity=config_provider(
             "sector", "district_heating", "ptes", "dynamic_capacity"
         ),
-        transmission_limit=config_provider("electricity", "transmission_limit_myopic")
+        transmission_limit=config_provider("electricity", "transmission_limit_myopic"),
     input:
         unpack(input_profile_tech_brownfield),
         network=resources(

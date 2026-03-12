@@ -35,8 +35,8 @@ countries:
 - LU
 
 electricity:
-  custom_powerplants: True
-  walloon_reassignment: True
+  custom_powerplants: true
+  walloon_reassignment: true
   walloon_potentials: data/walloon/custom_potentials.csv
 
   extendable_carriers:
@@ -53,7 +53,7 @@ electricity:
     2030: v1.0
     2040: v1.1
     2050: v1.1
-  apply_ntc_constraints: True
+  apply_ntc_constraints: true
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
@@ -79,10 +79,10 @@ existing_capacities:
 clustering:
   mode: custom_busmap_BE
   temporal:
-    resolution_elec: False
+    resolution_elec: false
     resolution_sector: 3000h
   exclude_carriers:
-    - nuclear
+  - nuclear
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
 sector:

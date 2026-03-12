@@ -37,7 +37,9 @@ rule build_powerplants:
         "Building powerplant list for {wildcards.clusters} clusters"
     params:
         powerplants_filter=config_provider("electricity", "powerplants_filter"),
-        walloon_reassignment=config_provider("electricity", "walloon_reassignment", default=False),
+        walloon_reassignment=config_provider(
+            "electricity", "walloon_reassignment", default=False
+        ),
         custom_powerplants=config_provider("electricity", "custom_powerplants"),
         everywhere_powerplants=config_provider("electricity", "everywhere_powerplants"),
         countries=config_provider("countries"),
@@ -63,7 +65,7 @@ rule build_powerplants:
 rule build_BE_powerplants:
     input:
         wal_capacities="data/walloon/wal_2021_existing_capacities_2.csv",
-        custom_powerplants="data/custom_powerplants.csv"
+        custom_powerplants="data/custom_powerplants.csv",
     output:
         custom_powerplants=resources("custom_powerplants.csv"),
     log:
