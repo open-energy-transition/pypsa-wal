@@ -5634,6 +5634,26 @@
         }
       }
     },
+    "WalloonConfig": {
+      "description": "Configuration for Walloon-specific inputs.",
+      "properties": {
+        "be_regions_file": {
+          "default": "data/walloon/be.json",
+          "description": "GeoJSON/JSON file defining the Belgium 3-region split used for Walloon clustering and plant reassignment.",
+          "type": "string"
+        },
+        "existing_capacities_file": {
+          "default": "data/walloon/wal_2021_existing_capacities_2.csv",
+          "description": "Custom Belgium/Walloon existing generator list used to build the custom powerplant table.",
+          "type": "string"
+        },
+        "ntc_file": {
+          "default": "data/walloon/ntc_2030.csv",
+          "description": "NTC input data used when `electricity.apply_ntc_constraints` is enabled.",
+          "type": "string"
+        }
+      }
+    },
     "_AdjustmentConfig": {
       "description": "Configuration for adjustment settings (factor/absolute)",
       "properties": {
@@ -11759,6 +11779,26 @@
               "type": "integer"
             }
           }
+        }
+      }
+    },
+    "walloon": {
+      "description": "Configuration for Walloon-specific inputs.",
+      "properties": {
+        "be_regions_file": {
+          "default": "data/walloon/be.json",
+          "description": "GeoJSON/JSON file defining the Belgium 3-region split used for Walloon clustering and plant reassignment.",
+          "type": "string"
+        },
+        "existing_capacities_file": {
+          "default": "data/walloon/wal_2021_existing_capacities_2.csv",
+          "description": "Custom Belgium/Walloon existing generator list used to build the custom powerplant table.",
+          "type": "string"
+        },
+        "ntc_file": {
+          "default": "data/walloon/ntc_2030.csv",
+          "description": "NTC input data used when `electricity.apply_ntc_constraints` is enabled.",
+          "type": "string"
         }
       }
     },
