@@ -34,6 +34,13 @@ countries:
 - DE
 - LU
 
+walloon:
+  be_regions_file: data/walloon/be.json
+  existing_capacities_file: data/walloon/wal_2021_existing_capacities_2.csv
+  ntc_file: data/walloon/ntc_2030.csv
+  custom_potentials_file: data/walloon/custom_potentials.csv
+  custom_costs_file: data/walloon/custom_costs_rc.csv
+
 electricity:
   custom_powerplants: true
   walloon_reassignment: true
