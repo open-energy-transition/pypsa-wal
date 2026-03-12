@@ -268,7 +268,9 @@ if __name__ == "__main__":
     ppl = gpd.GeoDataFrame(ppl, geometry=gpd.points_from_xy(ppl.lon, ppl.lat), crs=4326)
 
     if snakemake.params.walloon_reassignment:
-        n, ppl = ppl_by_subregion(n, ppl)
+        n, ppl = ppl_by_subregion(
+            n, ppl, gdf_path=snakemake.params.walloon_regions_file
+        )
 
     ppl = map_to_country_bus(ppl, regions)
 
