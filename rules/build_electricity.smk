@@ -663,10 +663,7 @@ rule process_cost_data:
     input:
         network=resources("networks/base_s.nc"),
         costs=rules.retrieve_cost_data.output["costs"],
-        custom_costs=lambda w: config_provider(
-            "walloon", "custom_costs_file", default=None
-        )(w)
-        or config_provider("costs", "custom_cost_fn")(w),
+        custom_costs=config_provider("costs", "custom_cost_fn"),
     output:
         resources("costs_{planning_horizons}_processed.csv"),
     log:
