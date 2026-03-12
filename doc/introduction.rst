@@ -10,10 +10,10 @@
 
 .. raw:: html
 
-    <iframe width="832" height="468" src="https://www.youtube.com/embed/ty47YU1_eeQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="832" height="468" src="https://www.youtube.com/embed/nnAmOqJlGmk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 .. note::
-    Find the introductory slides `here <https://docs.google.com/presentation/d/e/2PACX-1vQGQZD7KIVdocRZzRVu8Uk-JC_ltEow5zjtIarhyws46IMJpaqGuux695yincmJA_i5bVEibEs7z2eo/pub?start=false&loop=true&delayms=3000>`__.
+    Find the introductory slides `here <https://docs.google.com/presentation/d/1s4xkeGfR_IqArmceRaYgZUl0UFLymGXwjz6SRWBtNnE/edit>`__.
 
 .. warning::
     The video only introduces the electricity-only part of PyPSA-Eur.
@@ -49,7 +49,7 @@ preceding rules which another rule takes as input data.
 
 .. note::
     The dependency graph was generated using
-    ``snakemake --dag results/networks/base_s_128_elec_.nc -F | sed -n "/digraph/,/}/p" | dot -Tpng -o doc/img/intro-workflow.png``
+    ``pixi run snakemake --dag results/networks/base_s_128_elec_.nc -F | sed -n "/digraph/,/}/p" | dot -Tpng -o doc/img/intro-workflow.png``
 
 For the use of ``snakemake``, it makes sense to familiarize yourself quickly
 with the `basic tutorial
@@ -82,7 +82,7 @@ Folder Structure
 
 - ``scripts``: Includes all the Python scripts executed by the ``snakemake`` rules.
 - ``rules``: Includes all the ``snakemake`` rules loaded in the ``Snakefile``.
-- ``envs``: Includes all the ``conda`` environment specifications to run the workflow.
+- ``envs``: Includes option ``conda`` environment specifications to run the workflow (using ``pixi`` instead is our recommended approach).
 - ``data``: Includes input data that is not produced by any ``snakemake`` rule.
 - ``cutouts``: Stores raw weather data cutouts from ``atlite``.
 - ``resources``: Stores intermediate results of the workflow which can be picked up again by subsequent rules.

@@ -1,9 +1,8 @@
 """Convert Walloon existing capacities into PyPSA-compatible custom powerplant data."""
 
+import pandas as pd
 
 from scripts._helpers import configure_logging, set_scenario_config
-
-import pandas as pd
 
 TECH_MAP: dict[str, str] = {
     "CCGT": "CCGT",
@@ -122,8 +121,7 @@ if __name__ == "__main__":
     set_scenario_config(snakemake)
 
     custom_powerplants, agg_p_nom_minmax = build_BE_powerplants(
-        snakemake.input.wal_capacities,
-        snakemake.input.custom_powerplants
+        snakemake.input.wal_capacities, snakemake.input.custom_powerplants
     )
 
     custom_powerplants.to_csv(snakemake.output.custom_powerplants, index=False)

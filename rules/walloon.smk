@@ -2,12 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
+
 rule build_custom_BE_busmap:
     input:
         network=resources("networks/base_s.nc"),
         be_shapefile="data/walloon/be.json",
     output:
-        resources("resources/base_s_adm.csv")
+        resources("resources/base_s_adm.csv"),
     log:
         logs("build_custom_BE_busmap.log"),
     resources:

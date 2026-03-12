@@ -4,6 +4,8 @@
 
 
 rule solve_network:
+    message:
+        "Solving electricity network optimization for {wildcards.clusters} clusters and {wildcards.opts} electric options"
     params:
         solving=config_provider("solving"),
         foresight=config_provider("foresight"),
@@ -16,6 +18,11 @@ rule solve_network:
     output:
         network=RESULTS + "networks/base_s_{clusters}_elec_{opts}.nc",
         config=RESULTS + "configs/config.base_s_{clusters}_elec_{opts}.yaml",
+        model=(
+            RESULTS + "models/base_s_{clusters}_elec_{opts}.nc"
+            if config["solving"]["options"]["store_model"]
+            else []
+        ),
     log:
         solver=normpath(
             RESULTS + "logs/solve_network/base_s_{clusters}_elec_{opts}_solver.log"
@@ -30,13 +37,13 @@ rule solve_network:
         runtime=config_provider("solving", "runtime", default="6h"),
     shadow:
         shadow_config
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/solve_network.py"
+        scripts("solve_network.py")
 
 
 rule solve_operations_network:
+    message:
+        "Solving electricity network operations optimization for {wildcards.clusters} clusters and {wildcards.opts} electric options"
     params:
         options=config_provider("solving", "options"),
         solving=config_provider("solving"),
@@ -64,7 +71,5 @@ rule solve_operations_network:
         runtime=config_provider("solving", "runtime", default="6h"),
     shadow:
         shadow_config
-    conda:
-        "../envs/environment.yaml"
     script:
-        "../scripts/solve_operations_network.py"
+        scripts("solve_operations_network.py")
