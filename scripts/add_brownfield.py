@@ -180,7 +180,8 @@ def get_decommissioned_nuclear_links(n_p: pypsa.Network, year: int) -> pd.DataFr
     behavior of ``add_brownfield``.
     """
     return n_p.links.loc[
-        (n_p.links.carrier == "nuclear") & (n_p.links.build_year + n_p.links.lifetime <= year)
+        (n_p.links.carrier == "nuclear")
+        & (n_p.links.build_year + n_p.links.lifetime <= year)
     ].copy()
 
 
