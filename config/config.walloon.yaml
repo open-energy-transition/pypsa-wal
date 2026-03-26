@@ -34,9 +34,14 @@ countries:
 - DE
 - LU
 
+walloon:
+  be_regions_file: data/walloon/be.json
+  existing_capacities_file: data/walloon/wal_2021_existing_capacities_2.csv
+  ntc_file: data/walloon/ntc_2030.csv
+
 electricity:
-  custom_powerplants: True
-  walloon_reassignment: True
+  custom_powerplants: true
+  walloon_reassignment: true
   walloon_potentials: data/walloon/custom_potentials.csv
 
   extendable_carriers:
@@ -53,7 +58,7 @@ electricity:
     2030: v1.0
     2040: v1.1
     2050: v1.1
-  apply_ntc_constraints: True
+  apply_ntc_constraints: true
 
 # docs
 # TODO: PyPSA-Eur merge issue in prepare_sector_network.py
@@ -72,17 +77,17 @@ pypsa_eur:
   - ror
 
 existing_capacities:
-  grouping_years_power: [1920, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2050]
+  grouping_years_power: [1900, 1920, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2050]
   threshold_capacity: 0
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
   mode: custom_busmap_BE
   temporal:
-    resolution_elec: False
+    resolution_elec: false
     resolution_sector: 3000h
   exclude_carriers:
-    - nuclear
+  - nuclear
 
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#sector
 sector:

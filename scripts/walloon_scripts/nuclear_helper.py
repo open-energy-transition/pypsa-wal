@@ -32,13 +32,20 @@ def add_BEWAL_nuclear(
     """
 
     if planning_horizon in extendable_nuclear_nodes.keys():
-        extendable_nuclear_links = [f"{bus} nuclear-2025" for bus in extendable_nuclear_nodes[planning_horizon]]
-        link_missing = [link for link in extendable_nuclear_links if link not in n.links.index]
-        extendable_nuclear_links = list(set(extendable_nuclear_links) - set(link_missing))
+        extendable_nuclear_links = [
+            f"{bus} nuclear-2025" for bus in extendable_nuclear_nodes[planning_horizon]
+        ]
+        link_missing = [
+            link for link in extendable_nuclear_links if link not in n.links.index
+        ]
+        extendable_nuclear_links = list(
+            set(extendable_nuclear_links) - set(link_missing)
+        )
 
         if link_missing != []:
             logger.warning(
-                "Requested nuclear link '%s' not found; unable to update costs.", link_missing
+                "Requested nuclear link '%s' not found; unable to update costs.",
+                link_missing,
             )
 
         if extendable_nuclear_links != []:
@@ -46,21 +53,22 @@ def add_BEWAL_nuclear(
 
 
 def retrofit_retired_nuclear(
-        n,
-        decomissioned_nuclear,
-        planning_horizon,
-        costs,
-        extendable_nuclear_nodes = ["BEWAL", "BEVLG"],
-        MILP = False):
+    n,
+    decommissioned_nuclear,
+    planning_horizon,
+    costs,
+    extendable_nuclear_nodes=["BEWAL", "BEVLG"],
+    MILP=False,
+):
     """
-    Provide the option to a given set of nuclear links that are being decomissioned to be retrofitted
+    Provide the option to a given set of nuclear links that are being decommissioned to be retrofitted
     and remain in the system.
 
     Parameters
     ----------
     n : pypsa.Network
         The PyPSA network object where retrofit nuclear links are being added.
-    decomissioned_nuclear : pypsa.Network
+    decommissioned_nuclear : pypsa.Network
         A PyPSA network object that contains only links of generators that are
         being decommissioned in the considered planning horizon.
     planning_horizon : int
@@ -79,8 +87,32 @@ def retrofit_retired_nuclear(
         )
         return
 
-    decomissioned_nuclear = decomissioned_nuclear.query("bus1 in @extendable_nuclear_nodes")
-    retrofit_nuclear = decomissioned_nuclear.copy()
+    decommissioned_nuclear = decommissioned_nuclear.query(
+        "bus1 in @extendable_nuclear_nodes"
+    )
+
+    # Add graceful skip
+    # Needed for tests, such as in config/test/config.myopic.yaml
+    if decommissioned_nuclear.empty:
+        logger.info(
+            "Skipping nuclear retrofit: no eligible retired nuclear links found for %s.",
+            extendable_nuclear_nodes,
+        )
+        return
+
+    cost_index = (
+        costs.index.get_level_values(0)
+        if isinstance(costs.index, pd.MultiIndex)
+        else costs.index
+    )
+    if "nuclear retrofit" not in cost_index:
+        logger.warning(
+            "Skipping nuclear retrofit: 'nuclear retrofit' costs are not available."
+        )
+        return
+
+    # Create new links for retrofitted nuclear plants
+    retrofit_nuclear = decommissioned_nuclear.copy()
     retrofit_nuclear.index = retrofit_nuclear.index.astype(str) + " retrofit"
     retrofit_nuclear["p_nom_max"] = (
         retrofit_nuclear[["p_nom", "p_nom_opt"]]
@@ -99,10 +131,12 @@ def retrofit_retired_nuclear(
     lifetime_nuclear_retro = costs.loc["nuclear retrofit"].loc["lifetime"]
     capital_cost_nuclear_retro = costs.loc["nuclear retrofit"].loc["capital_cost"]
     retrofit_nuclear["lifetime"] = lifetime_nuclear_retro
-    retrofit_nuclear["capital_cost"] = (capital_cost_nuclear_retro * retrofit_nuclear["efficiency"])
+    retrofit_nuclear["capital_cost"] = (
+        capital_cost_nuclear_retro * retrofit_nuclear["efficiency"]
+    )
 
     logger.info(
-        f"Adding the option to retrofit the following nuclear plants: {decomissioned_nuclear.index} "
+        f"Adding the option to retrofit the following nuclear plants: {decommissioned_nuclear.index} "
         f"to increase their lifetime by {lifetime_nuclear_retro} years. "
         f"Assuming an annualized cost of capital of {capital_cost_nuclear_retro}."
     )

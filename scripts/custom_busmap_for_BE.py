@@ -15,19 +15,15 @@ Outputs
 
 """
 
+import geopandas as gpd
 import pypsa
-import pandas as pd
-import geopandas as gpd
-import geopandas as gpd
-import matplotlib.pyplot as plt
-import cartopy.crs as ccrs
+
 
 def map_buses_to_be_regions(n, be_regions):
-
     bus_pts = gpd.GeoDataFrame(
         n.buses.index.to_series().rename("Bus"),
         geometry=gpd.points_from_xy(n.buses["x"], n.buses["y"]),
-        crs="EPSG:4326"  # adjust if bus coords are not lon/lat WGS84
+        crs="EPSG:4326",  # adjust if bus coords are not lon/lat WGS84
     ).set_index("Bus")
 
     # created this to avoid warning, but it doesn't seem to help:
@@ -36,16 +32,12 @@ def map_buses_to_be_regions(n, be_regions):
     be_regions = be_regions.to_crs(bus_pts.crs)
 
     bus_pts_and_regions = gpd.sjoin(
-        bus_pts,
-        be_regions[["id", "geometry"]],
-        how="left",
-        predicate="within"
+        bus_pts, be_regions[["id", "geometry"]], how="left", predicate="within"
     )
 
     # map any remaining unmapped buses in BE to nearest shape/region
-    missing_be = bus_pts_and_regions["id"].isna() & (n.buses["country"] == 'BE')
+    missing_be = bus_pts_and_regions["id"].isna() & (n.buses["country"] == "BE")
     if missing_be.any():
-
         nearest = gpd.sjoin_nearest(
             bus_pts.loc[missing_be],
             be_regions[["id", "geometry"]],
@@ -61,11 +53,11 @@ def map_buses_to_be_regions(n, be_regions):
     closest_buses = bus_pts["dist_to_bru"].sort_values(ascending=True)
     closest_buses = bus_pts.loc[bus_pts["dist_to_bru"] < 0.1].geometry
 
-    bus_pts_and_regions.loc[closest_buses.index, 'id'] = 'BEBRU'
+    bus_pts_and_regions.loc[closest_buses.index, "id"] = "BEBRU"
     bus_pts_and_regions["region_id"] = (
         bus_pts_and_regions["id"].fillna(n.buses["country"]).astype("string")
     )
-    
+
     return bus_pts_and_regions["region_id"]
 
 

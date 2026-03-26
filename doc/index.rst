@@ -29,7 +29,7 @@ PyPSA-Eur: A Sector-Coupled Open Optimisation Model of the European Energy Syste
 .. image:: https://img.shields.io/discord/911692131440148490?logo=discord
     :target: https://discord.gg/AnuJBk23FU
     :alt: Discord
-    
+
 .. image:: https://api.reuse.software/badge/github.com/pypsa/pypsa-eur
     :target: https://api.reuse.software/info/github.com/pypsa/pypsa-eur
     :alt: REUSE
@@ -56,7 +56,7 @@ transmission expansion planning studies. The continental scope and highly
 resolved spatial scale enables a proper description of the long-range smoothing
 effects for renewable power generation and their varying resource availability.
 
-.. image:: img/elec.png
+.. image:: img/base.png
     :width: 70%
     :align: center
 
@@ -141,7 +141,7 @@ Workflow
 
 .. note::
     The graph above was generated using
-    ``snakemake --rulegraph -F | sed -n "/digraph/,/}/p" | dot -Tpng -o workflow.png``
+    ``pixi run snakemake --rulegraph -F | sed -n "/digraph/,/}/p" | dot -Tpng -o doc/img/workflow.png``
 
 
 Learning Energy System Modelling
