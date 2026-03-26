@@ -38,7 +38,7 @@ jobs:
 
     - name: Run unit tests
       run: |
-        pixi run unit-tests
+        pixi run --environment test unit-tests
 
   integration-tests:
     name: Integration
@@ -128,7 +128,7 @@ jobs:
         SNAKEMAKE_STORAGE_CACHED_HTTP_CACHE: ""
         SNAKEMAKE_STORAGE_CACHED_HTTP_SKIP_REMOTE_CHECKS: "1"
       run: |
-        pixi run integration-tests
+        pixi run --environment test integration-tests
 
     - name: Upload artifacts
       if: always()
