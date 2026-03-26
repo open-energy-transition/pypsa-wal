@@ -171,7 +171,17 @@ def add_brownfield(
             n.links.loc[gas_pipes_i, "p_nom"] = remaining_capacity
             n.links.loc[gas_pipes_i, "p_nom_max"] = remaining_capacity
 
-    return decomissioned_assets
+
+def get_decommissioned_nuclear_links(n_p: pypsa.Network, year: int) -> pd.DataFrame:
+    """
+    Return nuclear links that retire in the current planning horizon.
+
+    This preserves the Walloon nuclear retrofit logic without changing the upstream
+    behavior of ``add_brownfield``.
+    """
+    return n_p.links.loc[
+        (n_p.links.carrier == "nuclear") & (n_p.links.build_year + n_p.links.lifetime <= year)
+    ].copy()
 
 
 def disable_grid_expansion_if_limit_hit(n):
@@ -379,7 +389,9 @@ if __name__ == "__main__":
     if snakemake.params.tes and snakemake.params.dynamic_ptes_capacity:
         update_dynamic_ptes_capacity(n, n_p, year)
 
-    decomissioned_assets = add_brownfield(
+    decommissioned_nuclear = get_decommissioned_nuclear_links(n_p, year)
+
+    add_brownfield(
         n,
         n_p,
         year,
@@ -405,11 +417,9 @@ if __name__ == "__main__":
         ),
     )
 
-    decomissioned_nuclear = decomissioned_assets["Link"].query("carrier == 'nuclear'")
-
     retrofit_retired_nuclear(
         n,
-        decomissioned_nuclear,
+        decommissioned_nuclear,
         int(snakemake.wildcards.planning_horizons),
         costs=load_costs(snakemake.input.costs),
         MILP=False,
