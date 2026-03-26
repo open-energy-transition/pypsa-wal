@@ -461,10 +461,11 @@
       "properties": {
         "mode": {
           "default": "busmap",
-          "description": "'busmap': Default. 'custom_busmap': Enable the use of custom busmaps in rule `cluster_network`. If activated the rule looks for provided busmaps at ``data/busmaps/base_s_{clusters}_{base_network}.csv`` which should have the same format as ``resources/busmap_base_s_{clusters}.csv``, i.e. the index should contain the buses of ``networks/base_s.nc``. {base_network} is the name of the selected base_network in electricity, e.g. ``gridkit``, ``osm-prebuilt``, or ``osm-raw``. 'administrative': Clusters and indexes the network based on the administrative regions of the countries based on ``nuts3_shapes.geojson`` (level: 1, 2, 3, bz). To activate this, additionally set the ``clusters`` wildcard in ``scenario`` to 'adm'. 'custom_busshapes': Enable the use of custom shapes in rule `cluster_network`. If activated the rule looks for provided busshapes at ``data/busshapes/base_s_{clusters}_{base_network}.geojson``.",
+          "description": "'busmap': Default. 'custom_busmap': Enable the use of custom busmaps in rule `cluster_network`. If activated the rule looks for provided busmaps at ``data/busmaps/base_s_{clusters}_{base_network}.csv`` which should have the same format as ``resources/busmap_base_s_{clusters}.csv``, i.e. the index should contain the buses of ``networks/base_s.nc``. {base_network} is the name of the selected base_network in electricity, e.g. ``gridkit``, ``osm-prebuilt``, or ``osm-raw``. 'custom_busmap_BE': Use a Wallonia-specific custom busmap derived from ``data/walloon/be.json`` and produced by the `build_custom_BE_busmap` rule. 'administrative': Clusters and indexes the network based on the administrative regions of the countries based on ``nuts3_shapes.geojson`` (level: 1, 2, 3, bz). To activate this, additionally set the ``clusters`` wildcard in ``scenario`` to 'adm'. 'custom_busshapes': Enable the use of custom shapes in rule `cluster_network`. If activated the rule looks for provided busshapes at ``data/busshapes/base_s_{clusters}_{base_network}.geojson``.",
           "enum": [
             "busmap",
             "custom_busmap",
+            "custom_busmap_BE",
             "administrative",
             "custom_busshapes"
           ],
@@ -2342,6 +2343,13 @@
           "default": "vopt",
           "description": "Limit on transmission expansion. The first part can be `v` (for setting a limit on line volume) or `c` (for setting a limit on line cost). The second part can be `opt` or a float bigger than one (e.g. 1.25). If `opt` is chosen line expansion is optimised according to its capital cost (where the choice `v` only considers overhead costs for HVDC transmission lines, while `c` uses more accurate costs distinguishing between overhead and underwater sections and including inverter pairs). The setting `v1.25` will limit the total volume of line expansion to 25% of currently installed capacities weighted by individual line lengths. The setting `c1.25` will allow to build a transmission network that costs no more than 25 % more than the current system.",
           "type": "string"
+        },
+        "transmission_limit_myopic": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Limit on transmission expansion. The first part can be ``v`` (for setting a limit on line volume) or ``c`` (for setting a limit on line cost). The second part can be ``opt`` or a float bigger than one (e.g. 1.25). If ``opt`` is chosen line expansion is optimised according to its capital cost (where the choice ``v`` only considers overhead costs for HVDC transmission lines, while ``c`` uses more accurate costs distinguishing between overhead and underwater sections and including inverter pairs). The setting ``v1.25`` will limit the total volume of line expansion to 25% of currently installed capacities weighted by individual line lengths. The setting ``c1.25`` will allow to build a transmission network that costs no more than 25 % more than the current system.",
+          "type": "object"
         }
       }
     },
@@ -5626,6 +5634,26 @@
         }
       }
     },
+    "WalloonConfig": {
+      "description": "Configuration for Walloon-specific inputs.",
+      "properties": {
+        "be_regions_file": {
+          "default": "data/walloon/be.json",
+          "description": "GeoJSON/JSON file defining the Belgium 3-region split used for Walloon clustering and plant reassignment.",
+          "type": "string"
+        },
+        "existing_capacities_file": {
+          "default": "data/walloon/wal_2021_existing_capacities_2.csv",
+          "description": "Custom Belgium/Walloon existing generator list used to build the custom powerplant table.",
+          "type": "string"
+        },
+        "ntc_file": {
+          "default": "data/walloon/ntc_2030.csv",
+          "description": "NTC input data used when `electricity.apply_ntc_constraints` is enabled.",
+          "type": "string"
+        }
+      }
+    },
     "_AdjustmentConfig": {
       "description": "Configuration for adjustment settings (factor/absolute)",
       "properties": {
@@ -8614,6 +8642,13 @@
           "default": "vopt",
           "description": "Limit on transmission expansion. The first part can be `v` (for setting a limit on line volume) or `c` (for setting a limit on line cost). The second part can be `opt` or a float bigger than one (e.g. 1.25). If `opt` is chosen line expansion is optimised according to its capital cost (where the choice `v` only considers overhead costs for HVDC transmission lines, while `c` uses more accurate costs distinguishing between overhead and underwater sections and including inverter pairs). The setting `v1.25` will limit the total volume of line expansion to 25% of currently installed capacities weighted by individual line lengths. The setting `c1.25` will allow to build a transmission network that costs no more than 25 % more than the current system.",
           "type": "string"
+        },
+        "transmission_limit_myopic": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Limit on transmission expansion. The first part can be ``v`` (for setting a limit on line volume) or ``c`` (for setting a limit on line cost). The second part can be ``opt`` or a float bigger than one (e.g. 1.25). If ``opt`` is chosen line expansion is optimised according to its capital cost (where the choice ``v`` only considers overhead costs for HVDC transmission lines, while ``c`` uses more accurate costs distinguishing between overhead and underwater sections and including inverter pairs). The setting ``v1.25`` will limit the total volume of line expansion to 25% of currently installed capacities weighted by individual line lengths. The setting ``c1.25`` will allow to build a transmission network that costs no more than 25 % more than the current system.",
+          "type": "object"
         }
       }
     },
@@ -11747,15 +11782,36 @@
         }
       }
     },
+    "walloon": {
+      "description": "Configuration for Walloon-specific inputs.",
+      "properties": {
+        "be_regions_file": {
+          "default": "data/walloon/be.json",
+          "description": "GeoJSON/JSON file defining the Belgium 3-region split used for Walloon clustering and plant reassignment.",
+          "type": "string"
+        },
+        "existing_capacities_file": {
+          "default": "data/walloon/wal_2021_existing_capacities_2.csv",
+          "description": "Custom Belgium/Walloon existing generator list used to build the custom powerplant table.",
+          "type": "string"
+        },
+        "ntc_file": {
+          "default": "data/walloon/ntc_2030.csv",
+          "description": "NTC input data used when `electricity.apply_ntc_constraints` is enabled.",
+          "type": "string"
+        }
+      }
+    },
     "clustering": {
       "description": "Configuration for `clustering` settings.",
       "properties": {
         "mode": {
           "default": "busmap",
-          "description": "'busmap': Default. 'custom_busmap': Enable the use of custom busmaps in rule `cluster_network`. If activated the rule looks for provided busmaps at ``data/busmaps/base_s_{clusters}_{base_network}.csv`` which should have the same format as ``resources/busmap_base_s_{clusters}.csv``, i.e. the index should contain the buses of ``networks/base_s.nc``. {base_network} is the name of the selected base_network in electricity, e.g. ``gridkit``, ``osm-prebuilt``, or ``osm-raw``. 'administrative': Clusters and indexes the network based on the administrative regions of the countries based on ``nuts3_shapes.geojson`` (level: 1, 2, 3, bz). To activate this, additionally set the ``clusters`` wildcard in ``scenario`` to 'adm'. 'custom_busshapes': Enable the use of custom shapes in rule `cluster_network`. If activated the rule looks for provided busshapes at ``data/busshapes/base_s_{clusters}_{base_network}.geojson``.",
+          "description": "'busmap': Default. 'custom_busmap': Enable the use of custom busmaps in rule `cluster_network`. If activated the rule looks for provided busmaps at ``data/busmaps/base_s_{clusters}_{base_network}.csv`` which should have the same format as ``resources/busmap_base_s_{clusters}.csv``, i.e. the index should contain the buses of ``networks/base_s.nc``. {base_network} is the name of the selected base_network in electricity, e.g. ``gridkit``, ``osm-prebuilt``, or ``osm-raw``. 'custom_busmap_BE': Use a Wallonia-specific custom busmap derived from ``data/walloon/be.json`` and produced by the `build_custom_BE_busmap` rule. 'administrative': Clusters and indexes the network based on the administrative regions of the countries based on ``nuts3_shapes.geojson`` (level: 1, 2, 3, bz). To activate this, additionally set the ``clusters`` wildcard in ``scenario`` to 'adm'. 'custom_busshapes': Enable the use of custom shapes in rule `cluster_network`. If activated the rule looks for provided busshapes at ``data/busshapes/base_s_{clusters}_{base_network}.geojson``.",
           "enum": [
             "busmap",
             "custom_busmap",
+            "custom_busmap_BE",
             "administrative",
             "custom_busshapes"
           ],

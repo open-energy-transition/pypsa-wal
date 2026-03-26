@@ -1515,7 +1515,7 @@ if (LAU_REGIONS_DATASET := dataset_version("lau_regions"))["source"] in [
 
     rule retrieve_seawater_temperature:
         message:
-            "Retrieving seawater temperature data for {wildcards.year}"
+            "Retrieving seawater temperature data for {wildcards.planning_horizons}"
         params:
             default_cutout=config_provider("atlite", "default_cutout"),
             test_data_url=dataset_version("seawater_temperature")["url"],

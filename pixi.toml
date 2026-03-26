@@ -42,6 +42,11 @@ sync-locks = """
     pixi workspace export conda-environment -e default envs/environment.yaml -n pypsa-eur
 """
 
+walloon-model = """bash -c '
+	snakemake -call --configfile config/config.walloon.yaml "$@"
+	' --
+"""
+
 [dependencies]
 atlite = ">=0.3"
 bokeh = ">=3.8.0"
@@ -176,3 +181,4 @@ pytest = ">=8.4.2"
 [environments]
 doc = { features = ["doc"], no-default-feature = true }
 test = ["test"]
+pypsa-wal = ["test"]

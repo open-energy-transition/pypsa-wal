@@ -79,6 +79,7 @@ rule add_brownfield:
         transmission_limit=config_provider("electricity", "transmission_limit_myopic"),
     input:
         unpack(input_profile_tech_brownfield),
+        costs=lambda w: resources(f"costs_{w.planning_horizons}_processed.csv"),
         network=resources(
             "networks/base_s_{clusters}_{opts}_{sector_opts}_{planning_horizons}.nc"
         ),

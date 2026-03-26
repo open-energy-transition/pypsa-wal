@@ -1096,6 +1096,12 @@ costs:
     dynamic: false
     rolling_window: 90
 
+# docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#walloon
+walloon:
+  be_regions_file: data/walloon/be.json
+  existing_capacities_file: data/walloon/wal_2021_existing_capacities_2.csv
+  ntc_file: data/walloon/ntc_2030.csv
+
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#clustering
 clustering:
   mode: busmap

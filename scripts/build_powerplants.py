@@ -176,6 +176,14 @@ def map_to_country_bus(
     unmatched = []
 
     for country, plants in ppl.groupby("Country"):
+        if "bus" in plants.columns:
+            explicit = plants[plants["bus"].notna()]
+            if not explicit.empty:
+                assigned.append(explicit)
+            plants = plants[plants["bus"].isna()].drop(columns="bus")
+            if plants.empty:
+                continue
+
         country_regions = regions[regions.index.str[:2] == country]
         joined = (
             plants.sjoin(country_regions)
@@ -260,7 +268,9 @@ if __name__ == "__main__":
     ppl = gpd.GeoDataFrame(ppl, geometry=gpd.points_from_xy(ppl.lon, ppl.lat), crs=4326)
 
     if snakemake.params.walloon_reassignment:
-        n, ppl = ppl_by_subregion(n, ppl)
+        n, ppl = ppl_by_subregion(
+            n, ppl, gdf_path=snakemake.params.walloon_regions_file
+        )
 
     ppl = map_to_country_bus(ppl, regions)
 

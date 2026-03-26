@@ -17,7 +17,7 @@ Relevant Settings
 .. code:: yaml
 
     # No specific configuration required
-    # Uses year wildcard from Snakemake rule
+    # Uses planning_horizons wildcard from Snakemake rule
 
 Inputs
 ------
@@ -25,7 +25,7 @@ Inputs
 
 Outputs
 -------
-- `data/seawater_temperature_{year}.nc`: NetCDF file containing seawater temperature data
+- `data/seawater_temperature_{planning_horizons}.nc`: NetCDF file containing seawater temperature data
 
 Notes
 -----

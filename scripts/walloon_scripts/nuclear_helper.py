@@ -90,6 +90,28 @@ def retrofit_retired_nuclear(
     decommissioned_nuclear = decommissioned_nuclear.query(
         "bus1 in @extendable_nuclear_nodes"
     )
+
+    # Add graceful skip
+    # Needed for tests, such as in config/test/config.myopic.yaml
+    if decommissioned_nuclear.empty:
+        logger.info(
+            "Skipping nuclear retrofit: no eligible retired nuclear links found for %s.",
+            extendable_nuclear_nodes,
+        )
+        return
+
+    cost_index = (
+        costs.index.get_level_values(0)
+        if isinstance(costs.index, pd.MultiIndex)
+        else costs.index
+    )
+    if "nuclear retrofit" not in cost_index:
+        logger.warning(
+            "Skipping nuclear retrofit: 'nuclear retrofit' costs are not available."
+        )
+        return
+
+    # Create new links for retrofitted nuclear plants
     retrofit_nuclear = decommissioned_nuclear.copy()
     retrofit_nuclear.index = retrofit_nuclear.index.astype(str) + " retrofit"
     retrofit_nuclear["p_nom_max"] = (
