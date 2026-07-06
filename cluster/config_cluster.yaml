@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: MIT
+# NIC5 cluster overrides (merged by `nic5.sh solve` via --configfile).
+# Local config/config.walloon.yaml is unchanged.
+#
+# pypsa-wal already defaults to solving.solver.options: gurobi-default (see
+# config/config.default.yaml) -- unlike pypsa-eur_negawatt this overlay does not
+# need to switch solver presets. It only:
+#   1. raises the Gurobi thread count to match the Slurm cpus-per-task
+#      allocation used by `nic5.sh solve` (keep in sync with
+#      cluster/config.sh if you change the cpu count there), and
+#   2. keeps solving.mem_mb at a value appropriate for a shared/standard
+#      partition -- pypsa-wal's default resolution needs only a few GB in
+#      practice (see instructions.md), so this is intentionally NOT bumped to
+#      the large values used in pypsa-eur_negawatt. Increase it only if you
+#      raise the model's resolution/scope.
+solving:
+  mem_mb: 32000
+  # Slurm cpus-per-task for solve jobs (= Gurobi threads via anchor below).
+  # Keep in sync with cluster/config.sh if you change the allocation.
+  cpus: &cluster_cpus 8
+  solver_options:
+    gurobi-default:
+      threads: *cluster_cpus

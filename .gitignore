@@ -98,3 +98,6 @@ CLAUDE.local.md
 # track all files in /data/walloon/ except .vd files
 !data/walloon/
 data/walloon/*.vd
+cluster/logs/*.log
+cluster/.last_jobs
+cluster/logs/orchestrate.pid

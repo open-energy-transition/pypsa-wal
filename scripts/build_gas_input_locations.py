@@ -18,9 +18,15 @@ from scripts.cluster_gas_network import load_bus_regions
 logger = logging.getLogger(__name__)
 
 
+def _parse_json_field(val):
+    if isinstance(val, dict):
+        return val
+    return json.loads(val)
+
+
 def read_scigrid_gas(fn):
     df = gpd.read_file(fn)
-    expanded_param = df.param.apply(json.loads).apply(pd.Series)
+    expanded_param = df.param.apply(_parse_json_field).apply(pd.Series)
     df = pd.concat([df, expanded_param], axis=1)
     df.drop(["param", "uncertainty", "method"], axis=1, inplace=True)
     df = df.loc[:, ~df.columns.duplicated()]  # duplicated country_code column

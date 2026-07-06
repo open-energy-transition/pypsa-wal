@@ -34,7 +34,7 @@ def calculate_cumulative_cost(costs, planning_horizons):
         for cluster in cumulative_cost.index.get_level_values(level=0).unique():
             for sector_opts in cumulative_cost.index.get_level_values(level=1).unique():
                 cumulative_cost.loc[(cluster, sector_opts, "cumulative cost"), r] = (
-                    np.trapz(
+                    np.trapezoid(
                         cumulative_cost.loc[
                             idx[cluster, sector_opts, planning_horizons], r
                         ].values,

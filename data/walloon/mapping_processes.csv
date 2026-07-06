@@ -1,0 +1,1061 @@
+Technology (Process),PyPSA technology,Sector,Set,Description,Activity unit,Capacity unit,Type,Primary commodity group,Time slice level,Vintage,Aggregation Level 1,Aggregation Level 2
+AGRAPP00,agriculture electricity,AGR,.DMD.,Base year electrical appliances,PJ,PJA,DMD,AGRAP,ANNUAL,"0,00",Agriculture,Agriculture
+AGRBDL00,Fuel Tech – Biodiesel,AGR,.PRE.,Fuel Tech - Biodiesel (AGR),PJ,PJA,PRE,AGRBDL,ANNUAL,"0,00",Fuel Tech – Biodiesel,Fuel Tech – Biodiesel
+AGRBGS00,Fuel Tech - Biogas,AGR,.PRE.,Fuel Tech - Biogas(AGR),PJ,PJA,PRE,AGRBGS,ANNUAL,"0,00",Fuel Tech - Biogas,Fuel Tech - Natural Gas biogas mixed
+AGRCPS00,Fuel - Tech - bois chips,AGR,.PRE.,Fuel - Tech - bois chips (AGR),PJ,PJA,PRE,AGRCPS,ANNUAL,"0,00",Fuel - Tech - bois chips,Biofuels
+AGRELC00,Fuel Tech - Electricity ,AGR,.PRE.,Fuel Tech - Electricity (AGR),PJ,PJA,PRE,AGRELC,DAYNITE,"0,00",Fuel Tech - Electricity ,Fuel Tech - Electricity 
+AGRGMX00,Fuel Tech - gas mix réseau,AGR,.PRE.,Fuel Tech - gas mix réseau,PJ,PJA,PRE,AGRGMX,ANNUAL,"0,00",Fuel Tech - gas mix réseau,Fuel Tech - Natural Gas biogas mixed
+AGRHET00,Fuel Tech - Low Temperature Heat,AGR,.PRE.,Fuel Tech - Low Temperature Heat (AGR),PJ,PJA,PRE,AGRHET,SEASON,"0,00",Fuel Tech - Low Temperature Heat,Fuel Tech - Low Temperature Heat
+AGRHH00,heat for agriculture,AGR,.DMD.,Base year oil  boiler  small,PJ,PJA,DMD,AGRHH,ANNUAL,"0,00",Agriculture,Agriculture
+AGROFR00,oil for agriculture,AGR,.DMD.,Base year offroad,PJ,PJA,DMD,AGROF,ANNUAL,"0,00",Agriculture,Agriculture
+AGROIL00,Fuel Tech - Oil,AGR,.PRE.,Fuel Tech - Oil (AGR),PJ,PJA,PRE,AGROIL,ANNUAL,"0,00",Fuel Tech - Oil,Oil
+BBIORPS101,SUP_PRE_PJ_GW,SUP,.PRE.,Vegetable oil extraction,PJ,GW,PRE,BIORPOIL,ANNUAL,"0,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+BBLQFTST110,SUP_PRE_PJ_GW,SUP,.PRE.,Gasification_ black liquor to FT-diesel,PJ,GW,PRE,BIODST,ANNUAL,"0,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+BBLQH2G110,SUP_PRE_PJ_GW,SUP,.PRE.,Gasification_ black liquor to hydrogen,PJ,GW,PRE,SYNH2CT,DAYNITE,"1,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+BCRPETH101,SUP_PRE_PJ_GW,SUP,.PRE.,Ethanol production from starch crops,PJ,GW,PRE,BIOETH,ANNUAL,"0,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+BRPSME101,SUP_PRE_PJ_GW,SUP,.PRE.,Transesterification of vegetable oils,PJ,GW,PRE,BIORME,ANNUAL,"0,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+BWBIOGAZ100,SUP_PRE_PJ_GW,SUP,.PRE.,Methanisation Biogas production,PJ,GW,PRE,BIOGAS,ANNUAL,"0,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+CCBAELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.BA.ELC.00.Central.,PJ,GW,PRE,CCBA,ANNUAL,"0,00",commercial other,commercial other
+CCBAELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.BA.ELC.00.Windows.,PJ,GW,PRE,CCBA,ANNUAL,"0,00",commercial other,commercial other
+CCBAELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.BA.ELC.00.Fans.,PJ,GW,PRE,CCBA,ANNUAL,"0,00",commercial other,commercial other
+CCBPELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.BP.ELC.00.Central.,PJ,GW,PRE,CCBP,ANNUAL,"0,00",commercial other,commercial other
+CCBPELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.BP.ELC.00.Windows.,PJ,GW,PRE,CCBP,ANNUAL,"0,00",commercial other,commercial other
+CCBPELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.BP.ELC.00.Fans.,PJ,GW,PRE,CCBP,ANNUAL,"0,00",commercial other,commercial other
+CCBPELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - BP - ELC301,PJ,GW,PRE,CCBP,ANNUAL,"0,00",commercial other,commercial other
+CCCOELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.CO.ELC.00.Central.,PJ,GW,PRE,CCCO,ANNUAL,"0,00",commercial other,commercial other
+CCCOELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.CO.ELC.00.Windows.,PJ,GW,PRE,CCCO,ANNUAL,"0,00",commercial other,commercial other
+CCCOELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.CO.ELC.00.Fans.,PJ,GW,PRE,CCCO,ANNUAL,"0,00",commercial other,commercial other
+CCCOELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - CO - ELC301,PJ,GW,PRE,CCCO,ANNUAL,"0,00",commercial other,commercial other
+CCCSELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.CS.ELC.00.Central.,PJ,GW,PRE,CCCS,ANNUAL,"0,00",commercial other,commercial other
+CCCSELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.CS.ELC.00.Windows.,PJ,GW,PRE,CCCS,ANNUAL,"0,00",commercial other,commercial other
+CCCSELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.CS.ELC.00.Fans.,PJ,GW,PRE,CCCS,ANNUAL,"0,00",commercial other,commercial other
+CCCSELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - CS - ELC301,PJ,GW,PRE,CCCS,ANNUAL,"0,00",commercial other,commercial other
+CCCSGMXHP101,other services,COM,.PRE.,Com Space Cool New - CS - GMX101,PJ,GW,PRE,CCCS,ANNUAL,"0,00",commercial other,commercial other
+CCDATAELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - DATA - ELC301,PJ,GW,PRE,CCDATA,ANNUAL,"0,00",commercial other,commercial other
+CCDATELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.DATA.ELC.00.Central.,PJ,GW,PRE,CCDATA,ANNUAL,"0,00",commercial other,commercial other
+CCDATELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.DATA.ELC.00.Windows.,PJ,GW,PRE,CCDATA,ANNUAL,"0,00",commercial other,commercial other
+CCDATELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.DATA.ELC.00.Fans.,PJ,GW,PRE,CCDATA,ANNUAL,"0,00",commercial other,commercial other
+CCENELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.EN.ELC.00.Central.,PJ,GW,PRE,CCEN,ANNUAL,"0,00",commercial other,commercial other
+CCENELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.EN.ELC.00.Windows.,PJ,GW,PRE,CCEN,ANNUAL,"0,00",commercial other,commercial other
+CCENELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.EN.ELC.00.Fans.,PJ,GW,PRE,CCEN,ANNUAL,"0,00",commercial other,commercial other
+CCNBAELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - NBA - ELC301,PJ,GW,PRE,CCNBA,ANNUAL,"0,00",commercial other,commercial other
+CCNBPELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - NBP - ELC301,PJ,GW,PRE,CCNBP,ANNUAL,"0,00",commercial other,commercial other
+CCNCSELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - NCS - ELC301,PJ,GW,PRE,CCNCS,ANNUAL,"0,00",commercial other,commercial other
+CCNCSGMXHP101,other services,COM,.PRE.,Com Space Cool New - NCS - GMX101,PJ,GW,PRE,CCNCS,ANNUAL,"0,00",commercial other,commercial other
+CCNDATAELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - NDATA - ELC301,PJ,GW,PRE,CCNDATA,ANNUAL,"0,00",commercial other,commercial other
+CCNENELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - NEN - ELC301,PJ,GW,PRE,CCNEN,ANNUAL,,commercial other,commercial other
+CCNSAELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - NSA - ELC301,PJ,GW,PRE,CCNSA,ANNUAL,,commercial other,commercial other
+CCOKELC100,tertiary electricity cooking,COM,.DMD.,Com.Cooking.ELC.00.Stove.,PJ,PJA,DMD,CCOK,ANNUAL,"0,00",commercial cooking,commercial other
+CCOKGMX101,total services cooking,COM,.DMD.,Com.Cooking.GMX.01.Stove.,PJ,PJA,DMD,CCOK,ANNUAL,"0,00",commercial cooking,commercial other
+CCOKLPG101,total services cooking,COM,.DMD.,Com.Cooking.LPG.01.Stove.,PJ,PJA,DMD,CCOK,ANNUAL,"0,00",commercial cooking,commercial other
+CCSAELC100,Commercial electrical processes,COM,.PRE.,Com.Space Cool.SA.ELC.00.Central.,PJ,GW,PRE,CCSA,ANNUAL,"0,00",commercial other,commercial other
+CCSAELC200,Commercial electrical processes,COM,.PRE.,Com.Space Cool.SA.ELC.00.Windows.,PJ,GW,PRE,CCSA,ANNUAL,"0,00",commercial other,commercial other
+CCSAELC300,Commercial electrical processes,COM,.PRE.,Com.Space Cool.SA.ELC.00.Fans.,PJ,GW,PRE,CCSA,ANNUAL,"0,00",commercial other,commercial other
+CCSAELC301,Commercial electrical processes,COM,.PRE.,Com Space Cool New - SA - ELC301,PJ,GW,PRE,CCSA,ANNUAL,,commercial other,commercial other
+CHBABGS100,Space heating services,COM,.PRE.,Com.Space Heat.BA.BGS.00.Furnace.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBACPS100,Space heating services,COM,.PRE.,Com.Space Heat.BA.BIOCPS.00.Stove.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBAELC100,Space heating services,COM,.PRE.,Com.Space Heat.BA.ELC.00.Resistance.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHBAELC200,Space heating services,COM,.PRE.,Com.Space Heat.BA.ELC.00.Heat Pump.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHBAELCHPR202,Space heating services,COM,.PRE.,Com Space Heat New Heat Pump With Reno - CO - ELC202,PJ,GW,PRE,CHBAELCHPR202_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHBAGEO100,Space heating services,COM,.PRE.,Com.Space Heat.BA.GEO.00.Furnace.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBAGMX100,Space heating services,COM,.PRE.,Com.Space Heat.BA.GAS.00.Furnace.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBAGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - CO - GMX501,PJ,GW,PRE,CHBAGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBAHET100,Space heating services,COM,.PRE.,Com.Space Heat.BA.LTH.00.Heat exchanger.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHBALPG100,Space heating services,COM,.PRE.,Com.Space Heat.BA.LPG.00.Furnace.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBALTH101,Space heating services,COM,.PRE.,Com Space Heat New Heat Exchanger - BA - HET101,PJ,GW,PRE,CHBALTH101_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHBAOIL100,Space heating services,COM,.PRE.,Com.Space Heat.BA.OIL.00.Furnace.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial Oil boiler
+CHBAPEL100,Space heating services,COM,.PRE.,Com.Space Heat.BA.BIOPEL.00.Stove.,PJ,GW,PRE,CHBA,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHBPBGS100,Space heating services,COM,.PRE.,Com.Space Heat.BP.BGS.00.Furnace.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBPCPS100,Space heating services,COM,.PRE.,Com.Space Heat.BP.BIOCPS.00.Stove.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHBPELC100,Space heating services,COM,.PRE.,Com.Space Heat.BP.ELC.00.Resistance.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHBPELC200,Space heating services,COM,.PRE.,Com.Space Heat.BP.ELC.00.Heat Pump.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHBPGEO100,Space heating services,COM,.PRE.,Com.Space Heat.BP.GEO.00.Furnace.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,commercial Geothermal
+CHBPGMX100,Space heating services,COM,.PRE.,Com.Space Heat.BP.GAS.00.Furnace.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBPGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - BP - GMX501,PJ,GW,PRE,CHBPGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBPHET100,Space heating services,COM,.PRE.,Com.Space Heat.BP.LTH.00.Heat exchanger.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHBPLPG100,Space heating services,COM,.PRE.,Com.Space Heat.BP.LPG.00.Furnace.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHBPLTH101,Space heating services,COM,.PRE.,Com Space Heat New Heat Exchanger - BP - HET101,PJ,GW,PRE,CHBPLTH101_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHBPOIL100,Space heating services,COM,.PRE.,Com.Space Heat.BP.OIL.00.Furnace.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial Oil boiler
+CHBPPEL100,Space heating services,COM,.PRE.,Com.Space Heat.BP.BIOPEL.00.Stove.,PJ,GW,PRE,CHBP,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHCOBGS100,Space heating services,COM,.PRE.,Com.Space Heat.CO.BGS.00.Furnace.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCOCPS100,Space heating services,COM,.PRE.,Com.Space Heat.CO.BIOCPS.00.Stove.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHCOELC100,Space heating services,COM,.PRE.,Com.Space Heat.CO.ELC.00.Resistance.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial electrical stove
+CHCOELC200,Space heating services,COM,.PRE.,Com.Space Heat.CO.ELC.00.Heat Pump.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHCOGEO100,Space heating services,COM,.PRE.,Com.Space Heat.CO.GEO.00.Furnace.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,commercial Geothermal
+CHCOGMX100,Space heating services,COM,.PRE.,Com.Space Heat.CO.GAS.00.Furnace.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCOGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - CO - GMX501,PJ,GW,PRE,CHCOGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCOHET100,Space heating services,COM,.PRE.,Com.Space Heat.CO.LTH.00.Heat exchanger.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHCOLPG100,Space heating services,COM,.PRE.,Com.Space Heat.CO.LPG.00.Furnace.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCOLTH101,Space heating services,COM,.PRE.,Com Space Heat New Heat Exchanger - CO - HET101,PJ,GW,PRE,CHCOLTH101_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHCOOIL100,Space heating services,COM,.PRE.,Com.Space Heat.CO.OIL.00.Furnace.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial Oil boiler
+CHCOPEL100,Space heating services,COM,.PRE.,Com.Space Heat.CO.BIOPEL.00.Stove.,PJ,GW,PRE,CHCO,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHCSBGS100,Space heating services,COM,.PRE.,Com.Space Heat.CS.BGS.00.Furnace.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCSCPS100,Space heating services,COM,.PRE.,Com.Space Heat.CS.BIOCPS.00.Stove.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHCSELC100,Space heating services,COM,.PRE.,Com.Space Heat.CS.ELC.00.Resistance.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial electrical stove
+CHCSELC200,Space heating services,COM,.PRE.,Com.Space Heat.CS.ELC.00.Heat Pump.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHCSGEO100,Space heating services,COM,.PRE.,Com.Space Heat.CS.GEO.00.Furnace.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,commercial Geothermal
+CHCSGMX100,Space heating services,COM,.PRE.,Com.Space Heat.CS.GAS.00.Furnace.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCSGMX401,Space heating services,COM,.PRE.,Com Space Heat New Boiler - CS - GMX401,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCSHET100,Space heating services,COM,.PRE.,Com.Space Heat.CS.LTH.00.Heat exchanger.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHCSLPG100,Space heating services,COM,.PRE.,Com.Space Heat.CS.LPG.00.Furnace.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHCSLTH101,Space heating services,COM,.PRE.,Com Space Heat New Heat Exchanger - CS - HET101,PJ,GW,PRE,CHCSLTH101_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHCSOIL100,Space heating services,COM,.PRE.,Com.Space Heat.CS.OIL.00.Furnace.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial Oil boiler
+CHCSPEL100,Space heating services,COM,.PRE.,Com.Space Heat.CS.BIOPEL.00.Stove.,PJ,GW,PRE,CHCS,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHENBGS100,Space heating services,COM,.PRE.,Com.Space Heat.EN.BGS.00.Furnace.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHENCPS100,Space heating services,COM,.PRE.,Com.Space Heat.EN.BIOCPS.00.Stove.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHENELC100,Space heating services,COM,.PRE.,Com.Space Heat.EN.ELC.00.Resistance.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial electrical stove
+CHENELC200,Space heating services,COM,.PRE.,Com.Space Heat.EN.ELC.00.Heat Pump.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHENELCHPR202,Space heating services,COM,.PRE.,Com Space Heat New Heat Pump With Reno - CO - ELC202,PJ,GW,PRE,CHENELCHPR202_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHENGEO100,Space heating services,COM,.PRE.,Com.Space Heat.EN.GEO.00.Furnace.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,commercial Geothermal
+CHENGMX100,Space heating services,COM,.PRE.,Com.Space Heat.EN.GAS.00.Furnace.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHENGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - CO - GMX501,PJ,GW,PRE,CHENGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHENHET100,Space heating services,COM,.PRE.,Com.Space Heat.EN.LTH.00.Heat exchanger.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHENLPG100,Space heating services,COM,.PRE.,Com.Space Heat.EN.LPG.00.Furnace.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHENLTH101,Space heating services,COM,.PRE.,Com Space Heat New Heat Exchanger - EN - HET101,PJ,GW,PRE,CHENLTH101_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHENOIL100,Space heating services,COM,.PRE.,Com.Space Heat.EN.OIL.00.Furnace.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial Oil boiler
+CHENPEL100,Space heating services,COM,.PRE.,Com.Space Heat.EN.WODDPELL.00.Stove.,PJ,GW,PRE,CHEN,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHNBAGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - NCO - GMX501,PJ,GW,PRE,CHNBAGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHNBPGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - NBP – GMX501,PJ,GW,PRE,CHNBPGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHNCOELCHP202,Space heating services,COM,.PRE.,Com Space Heat New Heat pump - NCO - ELC202,PJ,GW,PRE,CHNCOELCHP202_NRGO,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHNCOGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - NCO - GMX501,PJ,GW,PRE,CHNCOGMX501_NRGO,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHNCSGMX401,Space heating services,COM,.PRE.,Com Space Heat New Boiler - NCS - GMX401,PJ,GW,PRE,CHNCS,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHNENGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - NCO - GMX501,PJ,GW,PRE,CHNENGMX501_NRGO,ANNUAL,,commercial space heating,Commercial gas boiler
+CHNSAGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - NCO - GMX501,PJ,GW,PRE,CHNSAGMX501_NRGO,ANNUAL,,commercial space heating,Commercial gas boiler
+CHPINDBLQIPPN00_N,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.Pulp&Paper_BLQ-New 00_N,PJ,GW,CHP,CHPINDBLQIPPN00_N_NRGO,DAYNITE,"1,00",Industry,Industry
+CHPINDCPSIPPN00_N,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.Pulp&Paper_CPS-New 00_N,PJ,GW,CHP,CHPINDCPSIPPN00_N_NRGO,DAYNITE,"1,00",Industry,Industry
+CHPINDIBP00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.wood.00,PJ,GW,CHP,CHPINDIBP00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDICH00,industrial CHP,IND,.CHP.,CHP.Autoproducer.industrie.chimie.00,PJ,GW,CHP,CHPINDICH00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDIML00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.FOOD.Milk.00,PJ,GW,CHP,CHPINDIML00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDINM00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.others.non.metal.00,PJ,GW,CHP,CHPINDINM00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDIOF00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.FOOD.others.00,PJ,GW,CHP,CHPINDIOF00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDIOI00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.others.non.metal.00,PJ,GW,CHP,CHPINDIOI00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDIPO00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.FOODIPO.00,PJ,GW,CHP,CHPINDIPO00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDIPP00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.Pulp&Paper.00,PJ,GW,CHP,CHPINDIPP00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDISG00,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.FOOD.ISGar.00,PJ,GW,CHP,CHPINDISG00_NRGO,DAYNITE,"0,00",Industry,Industry
+CHPINDWSTIPPN00_N,industrial CHP,IND,.CHP.,CHP.Autoproducer.Industry.Pulp&Paper_WST-New 00_N,PJ,GW,CHP,CHPINDWSTIPPN00_N_NRGO,DAYNITE,"1,00",Industry,Industry
+CHSABGS100,Space heating services,COM,.PRE.,Com.Space Heat.SA.BGS.00.Furnace.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHSACPS100,Space heating services,COM,.PRE.,Com.Space Heat.SA.BIOCPS.00.Stove.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CHSADUM-DEM,other demand,COM,.DMD.,Commercial dummy tech from CHP heat to CH for CHSA,PJ,PJ,DMD,CHSA,ANNUAL,"0,00",other demand,other demand
+CHSAELC100,Space heating services,COM,.PRE.,Com.Space Heat.SA.ELC.00.Resistance.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial electrical stove
+CHSAELC200,Space heating services,COM,.PRE.,Com.Space Heat.SA.ELC.00.Heat Pump.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial Heat pump
+CHSAGEO100,Space heating services,COM,.PRE.,Com.Space Heat.SA.GEO.00.Furnace.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,commercial Geothermal
+CHSAGMX100,Space heating services,COM,.PRE.,Com.Space Heat.SA.GAS.00.Furnace.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHSAGMX501,Space heating services,COM,.PRE.,Com Space Heat New Boiler - CO - GMX501,PJ,GW,PRE,CHSAGMX501_NRGO,ANNUAL,,commercial space heating,Commercial gas boiler
+CHSAGMXCHPN01_N,tertiary CHP,COM,.CHP.,New CHP Commercial-SA_GMX,PJ,GW,CHP,CHSAGMXCHPN01_N_NRGO,DAYNITE,"0,00",tertiary CHP,tertiary CHP
+CHSAHET100,Space heating services,COM,.PRE.,Com.Space Heat.SA.LTH.00.Heat exchanger.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial Heat Exchanger
+CHSALPG100,Space heating services,COM,.PRE.,Com.Space Heat.SA.LPG.00.Furnace.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial gas boiler
+CHSAOIL100,Space heating services,COM,.PRE.,Com.Space Heat.SA.OIL.00.Furnace.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial Oil boiler
+CHSAPEL100,Space heating services,COM,.PRE.,Com.Space Heat.SA.BIOPEL.00.Stove.,PJ,GW,PRE,CHSA,ANNUAL,"0,00",commercial space heating,Commercial Biomass boiler
+CLIGBAELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGBA,ANNUAL,"0,00",commercial other,commercial other
+CLIGBAELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGBA,ANNUAL,"0,00",commercial other,commercial other
+CLIGBAELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGBA,ANNUAL,"0,00",commercial other,commercial other
+CLIGBAELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.LED.,PJ,PJA,PRE,CLIGBA,ANNUAL,"0,00",commercial other,commercial other
+CLIGBAELC501,Commercial electrical processes,COM,.PRE.,CLIGBAELC501,PJ,GW,PRE,CLIGBA,ANNUAL,"0,00",commercial other,commercial other
+CLIGBPELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGBP,ANNUAL,"0,00",commercial other,commercial other
+CLIGBPELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGBP,ANNUAL,"0,00",commercial other,commercial other
+CLIGBPELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGBP,ANNUAL,"0,00",commercial other,commercial other
+CLIGBPELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.LED.,PJ,PJA,PRE,CLIGBP,ANNUAL,"0,00",commercial other,commercial other
+CLIGBPELC501,Commercial electrical processes,COM,.PRE.,CLIGBPELC501,PJ,GW,PRE,CLIGBP,ANNUAL,"0,00",commercial other,commercial other
+CLIGCOELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGCO,ANNUAL,"0,00",commercial other,commercial other
+CLIGCOELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGCO,ANNUAL,"0,00",commercial other,commercial other
+CLIGCOELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGCO,ANNUAL,"0,00",commercial other,commercial other
+CLIGCOELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.LED.,PJ,PJA,PRE,CLIGCO,ANNUAL,"0,00",commercial other,commercial other
+CLIGCOELC501,Commercial electrical processes,COM,.PRE.,CLIGCOELC501,PJ,GW,PRE,CLIGCO,ANNUAL,"0,00",commercial other,commercial other
+CLIGCSELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGCS,ANNUAL,"0,00",commercial other,commercial other
+CLIGCSELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGCS,ANNUAL,"0,00",commercial other,commercial other
+CLIGCSELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGCS,ANNUAL,"0,00",commercial other,commercial other
+CLIGCSELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGCS,ANNUAL,"0,00",commercial other,commercial other
+CLIGCSELC501,Commercial electrical processes,COM,.PRE.,CLIGCSELC501,PJ,GW,PRE,CLIGCS,ANNUAL,"0,00",commercial other,commercial other
+CLIGDATAELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGDATA,ANNUAL,"0,00",commercial other,commercial other
+CLIGDATAELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGDATA,ANNUAL,"0,00",commercial other,commercial other
+CLIGDATAELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGDATA,ANNUAL,"0,00",commercial other,commercial other
+CLIGDATAELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.LED.,PJ,PJA,PRE,CLIGDATA,ANNUAL,"0,00",commercial other,commercial other
+CLIGDATAELC501,Commercial electrical processes,COM,.PRE.,CLIGDATAELC501,PJ,GW,PRE,CLIGDATA,ANNUAL,"0,00",commercial other,commercial other
+CLIGENELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGEN,ANNUAL,"0,00",commercial other,commercial other
+CLIGENELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGEN,ANNUAL,"0,00",commercial other,commercial other
+CLIGENELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGEN,ANNUAL,"0,00",commercial other,commercial other
+CLIGENELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.LED.,PJ,PJA,PRE,CLIGEN,ANNUAL,"0,00",commercial other,commercial other
+CLIGENELC501,Commercial electrical processes,COM,.PRE.,CLIGENELC501,PJ,GW,PRE,CLIGEN,ANNUAL,"0,00",commercial other,commercial other
+CLIGNBAELC501,Commercial electrical processes,COM,.PRE.,CLIGNBAELC501,PJ,GW,PRE,CLIGNBA,ANNUAL,"0,00",commercial other,commercial other
+CLIGNBPELC501,Commercial electrical processes,COM,.PRE.,CLIGNBPELC501,PJ,GW,PRE,CLIGNBP,ANNUAL,"0,00",commercial other,commercial other
+CLIGNCOELC501,Commercial electrical processes,COM,.PRE.,CLIGNCOELC501,PJ,GW,PRE,CLIGNCO,ANNUAL,"0,00",commercial other,commercial other
+CLIGNCSELC501,Commercial electrical processes,COM,.PRE.,CLIGNCSELC501,PJ,GW,PRE,CLIGNCS,ANNUAL,"0,00",commercial other,commercial other
+CLIGNDATAELC501,Commercial electrical processes,COM,.PRE.,CLIGNDATAELC501,PJ,GW,PRE,CLIGNDATA,ANNUAL,"0,00",commercial other,commercial other
+CLIGNENELC501,Commercial electrical processes,COM,.PRE.,CLIGNENELC501,PJ,GW,PRE,CLIGNEN,ANNUAL,,commercial other,commercial other
+CLIGNSAELC501,Commercial electrical processes,COM,.PRE.,CLIGNSAELC501,PJ,GW,PRE,CLIGNSA,ANNUAL,,commercial other,commercial other
+CLIGSAELC200,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,PRE,CLIGSA,ANNUAL,"0,00",commercial other,commercial other
+CLIGSAELC300,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Halogen.,PJ,PJA,PRE,CLIGSA,ANNUAL,"0,00",commercial other,commercial other
+CLIGSAELC400,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.Fluorescent.,PJ,PJA,PRE,CLIGSA,ANNUAL,"0,00",commercial other,commercial other
+CLIGSAELC500,Commercial electrical processes,COM,.PRE.,Com.Lighting.ELC.00.LED.,PJ,PJA,PRE,CLIGSA,ANNUAL,"0,00",commercial other,commercial other
+CLIGSAELC501,Commercial electrical processes,COM,.PRE.,CLIGSAELC501,PJ,GW,PRE,CLIGSA,ANNUAL,,commercial other,commercial other
+COELELC100,Commercial electricity demands,COM,.DMD.,Com.Other Electricity.ELC.00.Other Equipments.,PJ,PJA,DMD,COEL,ANNUAL,"0,00",commercial other,commercial other
+COELELC101,Commercial electricity demands,COM,.DMD.,Com.Other Electricity.ELC.1010.Other Equipments.,PJ,PJA,DMD,COEL,ANNUAL,"0,00",commercial other,commercial other
+COENMIX100,Other energy demand (commercial),COM,.DMD.,Com.Other Energy.00.Other.,PJ,PJA,DMD,COEN,ANNUAL,"0,00",commercial other,commercial other
+COENMIX101,Other energy demand (commercial),COM,.DMD.,Com.Other Energy.101.Other,PJ,PJA,DMD,COEN,ANNUAL,"0,00",commercial other,commercial other
+COMBDL00,FT- Biodiesel (COM),COM,.PRE.,FT- Biodiesel (COM),PJ,PJA,PRE,COMBDL,ANNUAL,"0,00",FT- Biodiesel (COM),FT- Biodiesel (COM)
+COMBGS00,Fuel Tech - biogaz enrichi,COM,.PRE.,Fuel Tech - biogaz enrichi (COM),PJ,PJA,PRE,COMBGS,ANNUAL,"0,00",Fuel Tech - biogaz enrichi,Local production
+COMCPS00,Fuel Tech - Wood Chips,COM,.PRE.,Fuel Tech - Chips (COM),PJ,PJA,PRE,COMCPS,ANNUAL,"0,00",Fuel Tech - Wood Chips,Fuel Tech - Wood Chips
+COMELC00,Fuel Tech - Electricity,COM,.PRE.,Fuel Tech - Electricity (COM),PJ,GW,PRE,COMELC,DAYNITE,"0,00",Fuel Tech - Electricity,Fuel Tech - Electricity
+COMGEO00,Fuel Tech - Geothermal,COM,.PRE.,Fuel Tech - Geothermal (COM),PJ,PJA,PRE,COMGEO,ANNUAL,"0,00",Fuel Tech - Geothermal,Fuel Tech - Geothermal
+COMGMX00,Fuel Tech  - Natural Gas,COM,.PRE.,Fuel Tech  - Natural Gas (COM),PJ,PJA,PRE,COMGMX,ANNUAL,"0,00",Fuel Tech  - Natural Gas,Fuel Tech  - Natural Gas
+COMGSL00,Fuel Tech - GSL,COM,.PRE.,Fuel Tech - GSL (COM),PJ,PJA,PRE,COMGSL,ANNUAL,"0,00",Fuel Tech - GSL,Gasoline
+COMHET00,Fuel Tech - Low Temparature Heat,COM,.PRE.,Fuel Tech - Low Temparature Heat (COM),PJ,PJA,PRE,COMHET,ANNUAL,"0,00",Fuel Tech - Low Temparature Heat,Fuel Tech - Low Temparature Heat
+COMLPG00,Fuel Tech - Liquified Petroleum Gas,COM,.PRE.,Fuel Tech - Liquified Petroleum Gas (COM),PJ,PJA,PRE,COMLPG,ANNUAL,"0,00",Fuel Tech - Liquified Petroleum Gas,Fuel Tech - Liquified Petroleum Gas
+COMOIL00,Fuel Tech - Oil,COM,.PRE.,Fuel Tech - Oil (COM),PJ,PJA,PRE,COMOIL,ANNUAL,"0,00",Fuel Tech - Oil,Oil
+COMPEL00,Fuel Tech - Pellets,COM,.PRE.,Fuel Tech - Pellets (COM),PJ,PJA,PRE,COMPEL,ANNUAL,"0,00",Fuel Tech - Pellets,Fuel Tech - Wood Pellets
+COMPVELC,PV commercial,COM,.ELE.,PV commercial,PJ,GW,ELE,COMPVELC_NRGO,DAYNITE,"0,00",PV commercial,PV commercial
+COMSOL00,Fuel Tech - Solar,COM,.PRE.,Fuel Tech - Solar (COM),PJ,PJA,PRE,COMSOL,ANNUAL,"0,00",Fuel Tech - Solar,Solar
+COM_CBAT_BA,Commercial buildings,COM,.DMD.,Building Existing BA,MM2,MM2-A,DMD,CBATBA,ANNUAL,"0,00",,
+COM_CBAT_BP,Commercial buildings,COM,.DMD.,Building Existing BP,MM2,MM2-A,DMD,CBATBP,ANNUAL,"0,00",,
+COM_CBAT_CO,Commercial buildings,COM,.DMD.,Building Existing CO,MM2,MM2-A,DMD,CBATCO,ANNUAL,"0,00",,
+COM_CBAT_CS,Commercial buildings,COM,.DMD.,Building Existing CS,MM2,MM2-A,DMD,CBATCS,ANNUAL,"0,00",,
+COM_CBAT_DATA,Commercial buildings,COM,.DMD.,Building Existing DATA,MM2,MM2-A,DMD,CBATDATA,ANNUAL,"0,00",,
+COM_CBAT_EN,Commercial buildings,COM,.DMD.,Building Existing EN,MM2,MM2-A,DMD,CBATEN,ANNUAL,"0,00",,
+COM_CBAT_SA,Commercial buildings,COM,.DMD.,Building Existing SA,MM2,MM2-A,DMD,CBATSA,ANNUAL,"0,00",,
+COM_CNBAT_BA,Commercial buildings,COM,.DMD.,Building New BA,MM2,MM2-A,DMD,CNBATBA,ANNUAL,"0,00",,
+COM_CNBAT_BP,Commercial buildings,COM,.DMD.,Building New BP,MM2,MM2-A,DMD,CNBATBP,ANNUAL,"0,00",,
+COM_CNBAT_CO,Commercial buildings,COM,.DMD.,Building New CO,MM2,MM2-A,DMD,CNBATCO,ANNUAL,"0,00",,
+COM_CNBAT_CS,Commercial buildings,COM,.DMD.,Building New CS,MM2,MM2-A,DMD,CNBATCS,ANNUAL,"0,00",,
+COM_CNBAT_DATA,Commercial buildings,COM,.DMD.,Building New TA,MM2,MM2-A,DMD,CNBATDATA,ANNUAL,"0,00",,
+COM_CNBAT_EN,Commercial buildings,COM,.DMD.,Building New EN,MM2,MM2-A,DMD,CNBATEN,ANNUAL,"0,00",,
+COM_CNBAT_SA,Commercial buildings,COM,.DMD.,Building New SA,MM2,MM2-A,DMD,CNBATSA,ANNUAL,"0,00",,
+COSEELC100,Commercial electricity demands,COM,.DMD.,Com.Serveur Electricity.DATA CENTER.ELC.00.Other Equipments.,PJ,PJA,DMD,COSE,ANNUAL,"0,00",commercial other,commercial other
+COSEELC101,Commercial electricity demands,COM,.DMD.,Com.Serveur Electricity.DATA CENTER.ELC.01.Other Equipments.,PJ,PJA,DMD,COSE,ANNUAL,"0,00",commercial other,commercial other
+CPLIELC100,Commercial electricity demands,COM,.DMD.,Com.Public Lighting.ELC.00.Generic Lamp.,PJ,PJA,DMD,CPLI,ANNUAL,"0,00",commercial other,commercial other
+CPLIELC201,Commercial electricity demands,COM,.DMD.,Com.Public Lighting.ELC.201.LED.,PJ,PJA,DMD,CPLI,ANNUAL,"0,00",commercial other,commercial other
+CREFELC100,Commercial electricity demands,COM,.DMD.,Com.Refrigeration.ELC.00.Refrigerator.,PJ,PJA,DMD,CREF,ANNUAL,"0,00",commercial other,commercial other
+CREFELC200,Commercial electricity demands,COM,.DMD.,Com.Refrigeration.ELC.00.Freezer.,PJ,PJA,DMD,CREF,ANNUAL,"0,00",commercial other,commercial other
+CREFELC300,Commercial electricity demands,COM,.DMD.,Com.Refrigeration.ELC.00.Refrigerator+Freezer.,PJ,PJA,DMD,CREF,ANNUAL,"0,00",commercial other,commercial other
+CREFELC301,Commercial electricity demands,COM,.DMD.,Com.Refrigeration.ELC.301.Refrigerator.,PJ,PJA,DMD,CREF,ANNUAL,"0,00",commercial other,commercial other
+CWBABGS100,services hot water,COM,.PRE.,Com.Water Heat.BA.BGS.00.Furnace.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBACPS100,services hot water,COM,.PRE.,Com.Water Heat.BA.BIOCPS.00.Stove.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWBAGMX100,services hot water,COM,.PRE.,Com.Water Heat.BA.GAS.00.Furnace.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBAGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - BA - GMX101,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBALPG100,services hot water,COM,.PRE.,Com.Water Heat.BA.LPG.00.Furnace.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBAOIL100,services hot water,COM,.PRE.,Com.Water Heat.BA.OIL.00.Furnace.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial Oil boiler
+CWBAPEL100,services hot water,COM,.PRE.,Com.Water Heat.BA.BIOPEL.00.Stove.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWBASOL100,services hot water,COM,.PRE.,Com.Water Heat.BA.SOL.00.Furnace.,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWBASOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - BA - SOL101,PJ,GW,PRE,CWBA,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWBPBGS100,services hot water,COM,.PRE.,Com.Water Heat.BP.BGS.00.Furnace.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBPCPS100,services hot water,COM,.PRE.,Com.Water Heat.BP.BIOCPS.00.Stove.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWBPGMX100,services hot water,COM,.PRE.,Com.Water Heat.BP.GAS.00.Furnace.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBPGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - BP - GMX101,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBPLPG100,services hot water,COM,.PRE.,Com.Water Heat.BP.LPG.00.Furnace.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWBPOIL100,services hot water,COM,.PRE.,Com.Water Heat.BP.OIL.00.Furnace.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial Oil boiler
+CWBPPEL100,services hot water,COM,.PRE.,Com.Water Heat.BP.BIOPEL.00.Stove.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWBPSOL100,services hot water,COM,.PRE.,Com.Water Heat.BP.SOL.00.Furnace.,PJ,GW,PRE,CWBP,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWBPSOL101,services hot water,COM,.DMD.,Com Water Heat New Boiler - BPN – SOL101,PJ,GW,DMD,CWBP,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWCOBGS100,services hot water,COM,.PRE.,Com.Water Heat.CO.BGS.00.Furnace.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCOCPS100,services hot water,COM,.PRE.,Com.Water Heat.CO.BIOCPS.00.Stove.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWCOELC100,services hot water,COM,.PRE.,Com.Water Heat.CO.ELC.00.Resistance.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial electrical stove
+CWCOELC200,services hot water,COM,.PRE.,Com.Water Heat.CO.ELC.00.Heat Pump.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial Heat pump
+CWCOGMX100,services hot water,COM,.PRE.,Com.Water Heat.CO.GAS.00.Furnace.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCOGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - CO - GMX101,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCOLPG100,services hot water,COM,.PRE.,Com.Water Heat.CO.LPG.00.Furnace.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCOOIL100,services hot water,COM,.PRE.,Com.Water Heat.CO.OIL.00.Furnace.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial Oil boiler
+CWCOPEL100,services hot water,COM,.PRE.,Com.Water Heat.CO.BIOPEL.00.Stove.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWCOSOL100,services hot water,COM,.PRE.,Com.Water Heat.CO.SOL.00.Furnace.,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWCOSOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - CO - SOL101,PJ,GW,PRE,CWCO,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWCSBGS100,services hot water,COM,.PRE.,Com.Water Heat.CS.BGS.00.Furnace.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCSCPS100,services hot water,COM,.PRE.,Com.Water Heat.CS.BIOCPS.00.Stove.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWCSGMX100,services hot water,COM,.PRE.,Com.Water Heat.CS.GAS.00.Furnace.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCSGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - CS - GMX101,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCSHET100,services hot water,COM,.PRE.,Com.Water Heat.CS.LTH.00.Heat Exchanger.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial Heat Exchanger
+CWCSLPG100,services hot water,COM,.PRE.,Com.Water Heat.CS.LPG.00.Furnace.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWCSOIL100,services hot water,COM,.PRE.,Com.Water Heat.CS.OIL.00.Furnace.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial Oil boiler
+CWCSPEL100,services hot water,COM,.PRE.,Com.Water Heat.CS.BIOPEL.00.Stove.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWCSSOL100,services hot water,COM,.PRE.,Com.Water Heat.CS.SOL.00.Furnace.,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWCSSOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - CS - SOL101,PJ,GW,PRE,CWCS,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWENBGS100,services hot water,COM,.PRE.,Com.Water Heat.EN.BGS.00.Furnace.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWENCPS100,services hot water,COM,.PRE.,Com.Water Heat.EN.BIOCPS.00.Stove.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWENGMX100,services hot water,COM,.PRE.,Com.Water Heat.EN.GAS.00.Furnace.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWENGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - EN - GMX101,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWENLPG100,services hot water,COM,.PRE.,Com.Water Heat.EN.LPG.00.Furnace.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWENOIL100,services hot water,COM,.PRE.,Com.Water Heat.EN.OIL.00.Furnace.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial Oil boiler
+CWENPEL100,services hot water,COM,.PRE.,Com.Water Heat.EN.BIOPEL.00.Stove.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWENSOL100,services hot water,COM,.PRE.,Com.Water Heat.EN.SOL.00.Furnace.,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWENSOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - EN - SOL101,PJ,GW,PRE,CWEN,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWNBAGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NBA - GMX101,PJ,GW,PRE,CWNBA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWNBPGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NBP - GMX101,PJ,GW,PRE,CWNBP,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWNCOGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NCO - GMX101,PJ,GW,PRE,CWNCO,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWNCSGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NCS - GMX101,PJ,GW,PRE,CWNCS,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWNCSSOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NCS - SOL101,PJ,GW,PRE,CWNCS,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWNENGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NEN - GMX101,PJ,GW,PRE,CWNEN,ANNUAL,,commercial hot water,Commercial gas boiler
+CWNENSOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NEN - SOL101,PJ,GW,PRE,CWNEN,ANNUAL,,commercial hot water,Commercial gas boiler
+CWNSAGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NSA - GMX101,PJ,GW,PRE,CWNSA,ANNUAL,,commercial hot water,Commercial gas boiler
+CWNSASOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - NSA - SOL101,PJ,GW,PRE,CWNSA,ANNUAL,,commercial hot water,Commercial solar thermal
+CWSABGS100,services hot water,COM,.PRE.,Com.Water Heat.SA.BGS.00.Furnace.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWSACPS100,services hot water,COM,.PRE.,Com.Water Heat.SA.BIOCPS.00.Stove.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWSAGMX100,services hot water,COM,.PRE.,Com.Water Heat.SA.GAS.00.Furnace.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWSAGMX101,services hot water,COM,.PRE.,Com Water Heat New Boiler - SA - GMX101,PJ,GW,PRE,CWSA,ANNUAL,,commercial hot water,Commercial gas boiler
+CWSAHET100,services hot water,COM,.PRE.,Com.Water Heat.SA.LTH.00.Heat Exchanger.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial Heat Exchanger
+CWSALPG100,services hot water,COM,.PRE.,Com.Water Heat.SA.LPG.00.Furnace.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial gas boiler
+CWSAOIL100,services hot water,COM,.PRE.,Com.Water Heat.SA.OIL.00.Furnace.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial Oil boiler
+CWSAPEL100,services hot water,COM,.PRE.,Com.Water Heat.SA.BIOPEL.00.Stove.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial Biomass boiler
+CWSASOL100,services hot water,COM,.PRE.,Com.Water Heat.SA.SOL.00.Furnace.,PJ,GW,PRE,CWSA,ANNUAL,"0,00",commercial hot water,Commercial solar thermal
+CWSASOL101,services hot water,COM,.PRE.,Com Water Heat New Boiler - SA - SOL101,PJ,GW,PRE,CWSA,ANNUAL,,commercial hot water,Commercial solar thermal
+DIGEGAS100,Heat from COM sector,SUP,.PRE.,Chaleur digesteur biogaz,PJ,GW,PRE,SUPHET,ANNUAL,"0,00",Heat from COM sector,Heat from COM sector
+DIGEOIL100,Heat from COM sector,SUP,.PRE.,Chaleur digesteur mazout,PJ,GW,PRE,SUPHET,ANNUAL,"0,00",Heat from COM sector,Heat from COM sector
+DJ_2F_process,degree-days correction for the base year,RSD,.DMD.,degree-days correction for the base year (2F),PJ,PJA,DMD,DJ2F,ANNUAL,"0,00",degree-days correction for the base year,degree-days correction for the base year
+DJ_3F_process,degree-days correction for the base year,RSD,.DMD.,degree-days correction for the base year (3F),PJ,PJA,DMD,DJ3F,ANNUAL,"0,00",degree-days correction for the base year,degree-days correction for the base year
+DJ_4F_process,degree-days correction for the base year,RSD,.DMD.,degree-days correction for the base year (4F),PJ,PJA,DMD,DJ4F,ANNUAL,"0,00",degree-days correction for the base year,degree-days correction for the base year
+DJ_AP_process,degree-days correction for the base year,RSD,.DMD.,degree-days correction for the base year (AP),PJ,PJA,DMD,DJAP,ANNUAL,"0,00",degree-days correction for the base year,degree-days correction for the base year
+Dum_Retrofit,Dum_Retrofit,RSD,.IMP.IRE.,Dum_Retrofit,MM2,MM2-A,IRE,Dum_Retrofit_NRGO,ANNUAL,"0,00",Dum_Retrofit,Dum_Retrofit
+Dum_Retrofit_Commercial,Dum_Retrofit_Commercial,COM,.IMP.IRE.,Dum_Retrofit_Commercial,MM2,MM2-A,IRE,Dum_Retrofit_Commercial_NRGO,ANNUAL,"0,00",Dum_Retrofit_Commercial,Dum_Retrofit_Commercial
+ECHPP_CCGT-CHP_GAS_N,CHP,ELC,.CHP.,New Public - CCGT advanced CHP,PJ,GW,CHP,ECHPP_CCGT-CHP_GAS_N_NRGO,DAYNITE,"1,00",CHP,CHP
+ECHPP_COM_BGS_E05,CHP,ELC,.CHP.,Existing thermal - CHP - Commercial - E05,PJ,GW,CHP,ECHPP_COM_BGS_E05_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_COM_CPS_E01,CHP,ELC,.CHP.,Existing thermal - CHP - Commercial - E01,PJ,GW,CHP,ECHPP_COM_CPS_E01_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_COM_GAS_E04,CHP,ELC,.CHP.,Existing thermal - CHP - Commercial - E04,PJ,GW,CHP,ECHPP_COM_GAS_E04_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_COM_OIL_E06,CHP,ELC,.ELE.,Existing thermal - CHP - Commercial - E07,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",CHP,CHP
+ECHPP_COM_PEL_E03,CHP,ELC,.CHP.,Existing thermal - CHP - Commercial - E03,PJ,GW,CHP,ECHPP_COM_PEL_E03_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_MOT_BGS_E01,CHP,ELC,.CHP.,Existing Thermal Public - CHP - Moteur  - E01,PJ,GW,CHP,ECHPP_MOT_BGS_E01_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_MOT_BIO_E02,CHP,ELC,.CHP.,Existing Thermal Public - CHP - Moteur  - E02,PJ,GW,CHP,ECHPP_MOT_BIO_E02_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_MOT_GAS_E04,CHP,ELC,.CHP.,Existing Thermal Public - CHP - Moteur  - E04,PJ,GW,CHP,ECHPP_MOT_GAS_E04_NRGO,DAYNITE,"0,00",CHP,CHP
+ECHPP_MOT_OIL_E03,CHP,ELC,.CHP.,Existing Thermal Public - CHP - Moteur  - E03,PJ,GW,CHP,ECHPP_MOT_OIL_E03_NRGO,DAYNITE,"0,00",CHP,CHP
+ELCBGS00,Fuel Tech - BioGas,ELC,.PRE.,Fuel Tech - BioGas (ELC),PJ,PJA,PRE,ELCBGS,ANNUAL,"0,00",Fuel Tech - BioGas,Fuel Tech - Natural Gas biogas mixed
+ELCBIO00,Fuel Tech - Biomass,ELC,.PRE.,Fuel Tech - Biomass (ELC),PJ,PJA,PRE,ELCBIO,ANNUAL,"0,00",Fuel Tech - Biomass,Local production
+ELCCPS00,Fuel Tech - Wood Chips,ELC,.PRE.,Fuel Tech - Wood Chips (ELC),PJ,PJA,PRE,ELCCPS,ANNUAL,"0,00",Fuel Tech - Wood Chips,Fuel Tech - Wood Chips
+ELCGAS00,Fuel Tech - Natural Gas,ELC,.PRE.,Fuel Tech - Natural Gas (ELC),PJ,PJA,PRE,ELCGAS,ANNUAL,"0,00",Fuel Tech - Natural Gas,Fuel Tech - Natural Gas
+ELCHYD00,Fuel Tech - Hydro,ELC,.PRE.,Fuel Tech - Hydro (ELC),PJ,PJA,PRE,ELCHYD,ANNUAL,"0,00",Fuel Tech - Hydro,Fuel Tech - Hydro
+ELCNUC00,Fuel Tech - Nuclear,ELC,.PRE.,Fuel Tech - Nuclear (ELC),PJ,PJA,PRE,ELCNUC,ANNUAL,"0,00",Fuel Tech - Nuclear,Fuel Tech - Nuclear
+ELCOIL00,Fuel Tech - Oil,ELC,.PRE.,Fuel Tech - Oil (ELC),PJ,PJA,PRE,ELCOIL,ANNUAL,"0,00",Fuel Tech - Oil,Oil
+ELCPEL00,Fuel Tech - Wood Pellets,ELC,.PRE.,Fuel Tech - Wood Pellets (ELC),PJ,PJA,PRE,ELCPEL,ANNUAL,"0,00",Fuel Tech - Wood Pellets,Fuel Tech - Wood Pellets
+ELCSLU00,Fuel Tech - Wastes Renewable,ELC,.PRE.,Fuel Tech - Wastes Renewable (ELC),PJ,PJA,PRE,ELCSLU,ANNUAL,"0,00",Fuel Tech - Wastes Renewable,Fuel Tech - Wastes Renewable
+ELCSOL00,Fuel Tech - Solar,ELC,.PRE.,Fuel Tech - Solar (ELC),PJ,PJA,PRE,ELCSOL,ANNUAL,"0,00",Fuel Tech - Solar,Solar
+ELCWIN00,Fuel Tech - Wind,ELC,.PRE.,Fuel Tech - Wind (ELC),PJ,PJA,PRE,ELCWIN,ANNUAL,"0,00",Fuel Tech - Wind,Fuel Tech - Wind
+ELCWST00,Fuel Tech - Wastes Non-Renewable,ELC,.PRE.,Fuel Tech - Wastes Non-Renewable (ELC),PJ,PJA,PRE,ELCWST,ANNUAL,"0,00",Fuel Tech - Wastes Non-Renewable,Fuel Tech - Wastes Non-Renewable
+ENUC_Thiange,ENUC_Thiange,ELC,.ELE.,Existing Nuclear Power Plant - 859,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",ENUC_Thiange,ENUC_Thiange
+ERNW_Eolien_Big_E1,Wind Turbine,ELC,.ELE.,Wind Turbine >2000kW,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Wind Turbine,Wind Turbine
+ERNW_Eolien_Medium_E3,Wind Turbine,ELC,.ELE.,Wind Turbine >100 et <=2000 kW,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Wind Turbine,Wind Turbine
+ERNW_Eolien_Small_E4,Wind Turbine,ELC,.ELE.,Wind Turbine <=100 kW,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Wind Turbine,Wind Turbine
+ERNW_HYD_HYD_N,Hydro turbine,ELC,.ELE.,New Public - Hydro new 300 kW,PJ,GW,ELE,ELCHIG,DAYNITE,"1,00",Hydro turbine,Hydro turbine
+ERNW_Hydro_Big_E5,Hydro turbine,ELC,.ELE.,Hydro run of river >10000 kW,PJ,GW,ELE,ELCHIG,ANNUAL,"0,00",Hydro turbine,Hydro turbine
+ERNW_Hydro_Medium_E6,Hydro turbine,ELC,.ELE.,Hydro run of river >1000 et <=10000 kW,PJ,GW,ELE,ELCHIG,ANNUAL,"0,00",Hydro turbine,Hydro turbine
+ERNW_Hydro_Pompage_E8,Pumped hydro,ELC,.ELE.STGTSS.,Hydro pump storage,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Pumped hydro,Pumped hydro
+ERNW_Hydro_Small_E7,Hydro turbine,ELC,.ELE.,Hydro run of river <=1000 kW,PJ,GW,ELE,ELCHIG,ANNUAL,"0,00",Hydro turbine,Hydro turbine
+ERNW_PV-Buildings_SOL_N,PV,ELC,.ELE.,New Public - Solar PV Buildings 100 kW (10-500 KW TERT RES AGRI PKGS),PJ,GW,ELE,ERNW_PV-Buildings_SOL_N_NRGO,DAYNITE,"1,00",PV,PV
+ERNW_PV-GreenField_SOL_N,PV,ELC,.ELE.,New Public - Solar PV Greenfield 10 MW ( 1-30 MW),PJ,GW,ELE,ERNW_PV-GreenField_SOL_N_NRGO,DAYNITE,"1,00",PV,PV
+ERNW_PV-Large_Roof_SOL_N,PV,ELC,.ELE.,New Public - Solar PV Large Roofs  1 MW (1-5 MW  IND CCIAL LOGIST PKGS),PJ,GW,ELE,ERNW_PV-Large_Roof_SOL_N_NRGO,DAYNITE,"1,00",PV,PV
+ERNW_WINON_WIN_N,Renewables,ELC,.ELE.,New Public - Wind Onshore Large,PJ,GW,ELE,ELCHIG,DAYNITE,"1,00",Renewables,Renewables
+ETSTP_CCGT-CCS_PostC_GAS_N,Gas power plants,ELC,.ELE.,New Thermal Public - CCGT advanced CCS post combustion,PJ,GW,ELE,ELCHIG,DAYNITE,"1,00",Gas power plants,Gas power plants
+ETSTP_CCGT_GAS_N,Gas power plants,ELC,.ELE.,New Thermal Public - Combined Cycle Gas Turbine advanced.,PJ,GW,ELE,ELCHIG,DAYNITE,"1,00",Gas power plants,Gas power plants
+ETSTP_MOT_BGS_E09,Gas power plants,ELC,.ELE.,Existing Thermal Public - Pure ELC - Moteur  - E09,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Gas power plants,Gas power plants
+ETSTP_TAG_GAS_E06,Gas power plants,ELC,.ELE.,Existing Thermal Public - Pure ELC - Turbine à natural gaz   - E06,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Gas power plants,Gas power plants
+ETSTP_TGV_GAS_E01,Gas power plants,ELC,.ELE.,Existing Thermal Public - Pure ELC - Turbine gaz à vapeur - E01,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Gas power plants,Gas power plants
+ETSTP_TGV_GAS_E02,Gas power plants,ELC,.ELE.,Existing Thermal Public - Pure ELC - Turbine gaz à vapeur - E02,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Gas power plants,Gas power plants
+ETSTP_TGV_GAS_E03,Gas power plants,ELC,.ELE.,Existing Thermal Public - Pure ELC - Turbine gaz à vapeur - E03,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Gas power plants,Gas power plants
+ETSTP_TGV_GAS_E04,Gas power plants,ELC,.ELE.,Existing Thermal Public - Pure ELC - Turbine gaz à vapeur - E04,PJ,GW,ELE,ELCHIG,DAYNITE,"0,00",Gas power plants,Gas power plants
+ETSTP_TVC_WST_E11,CHP,ELC,.CHP.,Existing Thermal Public - Pure ELC - Turbine vapeur à condensation - E11,PJ,GW,CHP,ETSTP_TVC_WST_E11_NRGO,DAYNITE,"0,00",CHP,CHP
+EVTRANS_H-H,EVTRANS_H-H,ELC,.PRE.,Grid High Voltage,PJ,GW,PRE,ELCHIGG,DAYNITE,"0,00",EVTRANS_H-H,EVTRANS_H-H
+EVTRANS_H-M,EVTRANS_H-M,ELC,.PRE.,Grid medium Voltage and Voltage Transformer: High to Medium,PJ,GW,PRE,ELCMED,DAYNITE,"0,00",EVTRANS_H-M,EVTRANS_H-M
+EVTRANS_M-L,EVTRANS_M-L,ELC,.PRE.,Grid low Voltage and Voltage Transformer: Medium to Low,PJ,GW,PRE,ELCLOW,DAYNITE,"0,00",EVTRANS_M-L,EVTRANS_M-L
+EXPBIOLOG,Export biomass,SUP,.EXP.IRE.,Export Wood Logs,PJ,-,IRE,BIOLOG,ANNUAL,"0,00",Export biomass,Export biomass
+EXPBIOPEL,Export biomass,SUP,.EXP.IRE.,Export Wood Pellets,PJ,-,IRE,BIOPEL,ANNUAL,"0,00",Export biomass,Export biomass
+EXPELCHIG,Electricity export (All),ELC,.EXP.IRE.,Electricity export (All),PJ,-,IRE,ELCHIG,DAYNITE,"0,00",Electricity export (All),Electricity export (All)
+IAMADVPRO10,IND_DMD_MT_MT,IND,.DMD.,IAM.Advanced Production.10.,MT,MT,DMD,IAM,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IAMSTDPRO00,IND_DMD_MT_MTA,IND,.DMD.,IAM.Standard Production.00.,MT,MTA,DMD,IAM,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+IAMSTDPRO01,IND_DMD_MT_MT,IND,.DMD.,IAM.Standard Production.01,MT,MT,DMD,IAMSTDPRO01_DEMO,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IBKSTDPRO00,Energy demands for industrial processes,IND,.DMD.,IBK.bricks.production.standard,PJ,PJA,DMD,IBK,ANNUAL,"0,00",Industry,Industry
+IBKSTDPRO01,IND_DMD_MT_MT,IND,.DMD.,IBK.bricks.production.standard.01,MT,MT,DMD,IBK,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IBOBIOPEL00,IBO.production.wood.pellets.00,IND,.PRE.,IBO.production.wood.pellets.00,PJ,PJA,PRE,BIOPEL,ANNUAL,"0,00",Industry,Industry
+IBOBIOPEL01,industrial processes,IND,.PRE.,IBE.production.wood.pellets.01,PJ,PJA,PRE,BIOPEL,ANNUAL,"1,00",Industry,Industry
+IBOHTHSTMCPS01,industrial processes,IND,.PRE.,IBO.wood.Process Heat.CPS.01,PJ,GW,PRE,IBOHTH,ANNUAL,"1,00",Industry,Industry
+IBOPROD00,Energy demands for industrial processes,IND,.DMD.,IBO.Production.Wood.products.00,PJ,PJA,DMD,IBO,ANNUAL,"0,00",Industry,Industry
+IBOPROD01,IND_DMD_MM3_MM3,IND,.DMD.,IBO.Production.Wood.products.01,MM3,MM3,DMD,IBO,ANNUAL,"1,00",IND_DMD_MM3_MM3,IND_DMD_MM3_MM3
+IBOSTMGAS00,industrial processes,IND,.PRE.,IBO.Generic Boiler.GAS,PJ,PJA,PRE,IBOHTH,ANNUAL,"0,00",Industry,Industry
+IBOSTMOIL00,industrial processes,IND,.PRE.,IBO.Generic Boiler.OIL,PJ,PJA,PRE,IBOHTH,ANNUAL,"0,00",Industry,Industry
+IBOSTMSOLID00,industrial processes,IND,.PRE.,IBO.Generic Boiler.Solids,PJ,PJA,PRE,IBOHTH,ANNUAL,"0,00",Industry,Industry
+ICESTDPRO00,Energy demands for industrial processes,IND,.DMD.,ICE.Ceramics.production.standard,PJ,PJA,DMD,ICE,ANNUAL,"0,00",Industry,Industry
+ICESTDPRO01,IND_DMD_MT_MT,IND,.DMD.,ICE.Ceramics.production.standard.01,MT,MT,DMD,ICE,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+ICHDEMAND00,Energy demands for industrial processes,IND,.DMD.,ICH.Other Chemicals.00.,PJ,PJA,DMD,ICH,ANNUAL,"0,00",Industry,Industry
+ICHELEELC00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Electro-Chemical Processes.ELC.00,PJ,PJA,PRE,ICHELE,ANNUAL,"0,00",Industry,Industry
+ICHELEELC01,industrial processes,IND,.PRE.,ICHELEELC01,PJ,PJA,PRE,ICHELE,ANNUAL,"1,00",Industry,Industry
+ICHMCHELC00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Machine Drive.ELC.00,PJ,PJA,PRE,ICHMCH,ANNUAL,"0,00",Industry,Industry
+ICHMCHELC01,industrial processes,IND,.PRE.,ICHMCHELC01,PJ,PJA,PRE,ICHMCH,ANNUAL,"1,00",Industry,Industry
+ICHOTH-NRG,industrial processes,IND,.PRE.,ICH: Other energy uses,PJ,PJA,PRE,ICHOTH,ANNUAL,"0,00",Industry,Industry
+ICHPACELC01,industrial processes,IND,.PRE.,Heat pump,PJ,GW,PRE,ICHHTH,ANNUAL,"1,00",Industry,Industry
+ICHPRCCOA00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Process Heat.COA.00,PJ,PJA,PRE,ICHPRC,ANNUAL,"0,00",Industry,Industry
+ICHPRCCOA01,industrial processes,IND,.PRE.,ICHPRCCOA01,PJ,GW,PRE,ICHPRC,ANNUAL,"1,00",Industry,Industry
+ICHPRCCOK01,industrial processes,IND,.PRE.,ICHPRCCOK01,PJ,GW,PRE,ICHPRC,ANNUAL,"1,00",Industry,Industry
+ICHPRCCPS00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Process Heat.CPS.00,PJ,PJA,PRE,ICHPRC,ANNUAL,"0,00",Industry,Industry
+ICHPRCCPS01,industrial processes,IND,.PRE.,ICHPRCCPS01,PJ,GW,PRE,ICHPRC,ANNUAL,"1,00",Industry,Industry
+ICHPRCGAS00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Process Heat.GAS.00,PJ,PJA,PRE,ICHPRC,ANNUAL,"0,00",Industry,Industry
+ICHPRCHFO00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Process Heat.HFO.00,PJ,PJA,PRE,ICHPRC,ANNUAL,"0,00",Industry,Industry
+ICHSTMBGS01,industrial processes,IND,.PRE.,ICHSTMBGS01,PJ,GW,PRE,ICHHTH,ANNUAL,"1,00",Industry,Industry
+ICHSTMCOA00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.COA.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMCPS00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.CPS.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMCPS01,industrial processes,IND,.PRE.,ICHSTMCPS01,PJ,GW,PRE,ICHHTH,ANNUAL,"1,00",Industry,Industry
+ICHSTMELC01,industrial processes,IND,.PRE.,ICHSTMELC01,PJ,GW,PRE,ICHHTH,ANNUAL,"1,00",Industry,Industry
+ICHSTMGAS00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.GAS.01,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMGMX00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.GAS.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMHET00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.HET.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMHET01,industrial processes,IND,.PRE.,ICHSTMHET01,PJ,GW,PRE,ICHHTH,ANNUAL,"1,00",Industry,Industry
+ICHSTMHFO00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.HFO.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMLFO00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.LFO.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICHSTMLPG00,industrial processes,IND,.PRE.,ICH.Other Chemicals.Steam.LPG.00,PJ,GW,PRE,ICHHTH,ANNUAL,"0,00",Industry,Industry
+ICMDRYPRD00,IND_PRE_MT_MTA,IND,.PRE.,ICM.Dry Process Production.00.,MT,MTA,PRE,MCMCLK,ANNUAL,"0,00",IND_PRE_MT_MTA,IND_PRE_MT_MTA
+ICMDRYPRD10,IND_PRE_MT_MT,IND,.PRE.,ICM.Dry Process Production.01,MT,MT,PRE,MCMCLK,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+ICMFINPRO00,IND_DMD_MT_MTA,IND,.DMD.,ICM.Finishing Processes.00.,MT,MTA,DMD,ICM,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+ICMFINPRO01,IND_DMD_MT_MT,IND,.DMD.,ICM.Finishing Processes.01,MT,MT,DMD,ICM,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+ICMPRC20,IND_PRE_MT_MT,IND,.PRE.,ICM.Dry Process Production oxycomb.01,MT,MT,PRE,MCMCLK,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+ICMPRC21,IND_PRE_MT_MT,IND,.PRE.,ICM.Dry Process Production oxycomb.02,MT,MT,PRE,MCMCLK,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+ICMPRCCOA00,industrial processes,IND,.PRE.,ICM.Generic fuel kiln.COA,PJ,PJA,PRE,ICMPRC,ANNUAL,"0,00",Industry,Industry
+ICMPRCCOK00,industrial processes,IND,.PRE.,ICM.Generic fuel kiln.COL,PJ,PJA,PRE,ICMPRC,ANNUAL,"0,00",Industry,Industry
+ICMPRCCOL00,industrial processes,IND,.PRE.,ICM.Generic fuel kiln.COL,PJ,PJA,PRE,ICMPRC,ANNUAL,"0,00",Industry,Industry
+ICMPRCGAS00,industrial processes,IND,.PRE.,ICM.Generic fuel kiln.GAS,PJ,PJA,PRE,ICMPRC,ANNUAL,"0,00",Industry,Industry
+ICMPRCHFO00,industrial processes,IND,.PRE.,ICM.Generic fuel kiln.HFO,PJ,PJA,PRE,ICMPRC,ANNUAL,"0,00",Industry,Industry
+ICMPRCSLU00,industrial processes,IND,.PRE.,ICM.Generic fuel kiln.SLU,PJ,PJA,PRE,ICMPRC,ANNUAL,"0,00",Industry,Industry
+ICMPRDCC_02,IND_PRE_MT_MT,IND,.PRE.,ICM. LEILAC.02,MT,MT,PRE,ICM,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+ICMWETPRD00,IND_PRE_MT_MTA,IND,.PRE.,ICM.Wet Process Production.00.,MT,MTA,PRE,MCMCLK,ANNUAL,"0,00",IND_PRE_MT_MTA,IND_PRE_MT_MTA
+IGFFLATGL00,IND_DMD_MT_MTA,IND,.DMD.,IGF.Glass Flat.00.,MT,MTA,DMD,IGF,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+IGFFLATGL01,IND_DMD_MT_MT,IND,.DMD.,IGF.glass production.01,MT,MT,DMD,IGF,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IGFFLATOXYCC01,IND_DMD_MT_MT,IND,.DMD.,IGF.glass production.03,MT,MT,DMD,IGF,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IGHHOLLOW00,IND_DMD_MT_MTA,IND,.DMD.,IGH.Glass Hollow.00.,MT,MTA,DMD,IGH,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+IGHHOLLOW01,IND_DMD_MT_MT,IND,.DMD.,IGH.glass production.01,MT,MT,DMD,IGH,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IGHHOLLOWOXYCC01,IND_DMD_MT_MT,IND,.DMD.,IGH.glass production.03,MT,MT,DMD,IGH,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IGHOTOCC01,IND_DMD_MT_MT,IND,.DMD.,IGO.fiberglassproduction.03,MT,MT,DMD,IGO,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IGHOTSTD01,IND_DMD_MT_MT,IND,.DMD.,IGO.fiberglassproduction.01,MT,MT,DMD,IGO,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IGHRECYCL00,IND_DMD_MT_MTA,IND,.DMD.,IGO.Glass Recycling.00.,MT,MTA,DMD,IGO,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+IISBLAFURTGR,IND_PRE_MT_MT,IND,.PRE.,IIS.Iron Oxygen Blast Furnace Top GMX Recirculation.10.,MT,MT,PRE,MISRIR,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISBOXSCR01,IND_PRE_MT_MT,IND,.PRE.,IIS.Blast Oxygen Furnace BOF.Scrap.01,MT,MT,PRE,MISCST,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISDRIEAF01,IND_PRE_MT_MT,IND,.PRE.,IIS.Electric Arc Furnace for DRI.01,MT,MT,PRE,MISCST,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISDRISPN01,IND_PRE_MT_MT,IND,.PRE.,IIS.Iron Sponge Iron for DRI.01,MT,MT,PRE,MISDIR,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISELAFUR00,IND_PRE_MT_MTA,IND,.PRE.,IIS.Electric Arc Furnace.00.,MT,MTA,PRE,MISCST,ANNUAL,"0,00",IND_PRE_MT_MTA,IND_PRE_MT_MTA
+IISELAFUR01,IND_PRE_MT_MT,IND,.PRE.,IIS.Electric Arc Furnace.01,MT,MT,PRE,MISCST,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISFINPRO00,IND_DMD_MT_MTA,IND,.DMD.,IIS.Finishing Processes.00.,MT,MTA,DMD,IIS,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+IISFINPRO02,IND_DMD_MT_MT,IND,.DMD.,IISFINPRO02,MT,MT,DMD,IIS,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IISPELLET01,IND_PRE_MT_MT,IND,.PRE.,IIS.Pellet Production.01,MT,MT,PRE,MISPLT,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISSINTER01,IND_PRE_MT_MT,IND,.PRE.,IIS.Sinter Production.01,MT,MT,PRE,MISSNT,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IISSTMGAS00,industrial processes,IND,.PRE.,IIS.Generic Boiler.GAS,PJ,GW,PRE,IISHTH,ANNUAL,"0,00",Industry,Industry
+IISSTMGMX01,industrial processes,IND,.PRE.,IIS. Iron and Steel.Heat.GMX.01,PJ,GW,PRE,IISHTH,ANNUAL,"1,00",Industry,Industry
+ILMPRCCOA00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.COA,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMPRCCOK00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.COK,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMPRCCOL00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.COL,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMPRCGAS00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.GAS,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMPRCLFO00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.LFO,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMPRCLPG00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.LPG,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMPRCSLU00,industrial processes,IND,.PRE.,ILM.Generic fuel kiln.SLU,PJ,PJA,PRE,ILMPRC,ANNUAL,"0,00",Industry,Industry
+ILMQLMPRCC02,IND_DMD_MT_MT,IND,.DMD.,ILM.Quick Lime Production.02.improv,MT,MT,DMD,ILM,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+ILMQLMPRO00,IND_DMD_MT_MTA,IND,.DMD.,ILM.Quick Lime Production.00.,MT,MTA,DMD,ILM,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+ILMQLMPRO01,IND_DMD_MT_MT,IND,.DMD.,ILM.Quick Lime Production.11,MT,MT,DMD,ILM,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IMLEVA00,Energy demands for industrial processes,IND,.DMD.,IML.Evaporation and Powder.00,PJ,PJA,DMD,IML,ANNUAL,"0,00",Industry,Industry
+IMLEVA03,IND_DMD_MT_MT,IND,.DMD.,IML.evaporation.milk.03,MT,MT,DMD,IML,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IMLHTHSTMCPS01,industrial processes,IND,.PRE.,IML.Preparation.of.milk.Process Heat.CPS.01,PJ,GW,PRE,IMLHTH,ANNUAL,"1,00",Industry,Industry
+IMLSTMGAS00,industrial processes,IND,.PRE.,IML.Generic Boiler.GAS,PJ,PJA,PRE,IMLHTH,ANNUAL,"0,00",Industry,Industry
+IMLSTMOIL00,industrial processes,IND,.PRE.,IML.Generic Boiler.OIL,PJ,PJA,PRE,IMLHTH,ANNUAL,"0,00",Industry,Industry
+IMPBIOCPS,Imports,SUP,.IMP.IRE.,Import Wood Chips,PJ,-,IRE,BIOCPS,ANNUAL,"0,00",Imports,Imports
+IMPBIODST,Imports,SUP,.IMP.IRE.,Import biodiesel,PJ,-,IRE,BIODST,ANNUAL,"0,00",Imports,Imports
+IMPBIOEFF,Imports,SUP,.IMP.IRE.,Import Effluents,MT,-,IRE,BIOEFF,ANNUAL,"0,00",Imports,Imports
+IMPBIOETH,Imports,SUP,.IMP.IRE.,Import ethanol,PJ,-,IRE,BIOETH,ANNUAL,"0,00",Imports,Imports
+IMPBIOLOG,Imports,SUP,.IMP.IRE.,Import Wood Logs,PJ,-,IRE,BIOLOG,ANNUAL,"0,00",Imports,Imports
+IMPBIORME,Imports,SUP,.IMP.IRE.,Import biodiesel RME,PJ,-,IRE,BIORME,ANNUAL,"0,00",Imports,Imports
+IMPCOACOK,Imports,SUP,.IMP.IRE.,Import Coke,PJ,-,IRE,COACOK,ANNUAL,"0,00",Imports,Imports
+IMPCOAHAR,Imports,SUP,.IMP.IRE.,Import Hard Coal,PJ,-,IRE,COAHAR,ANNUAL,"0,00",Imports,Imports
+IMPCOALIG,Imports,SUP,.IMP.IRE.,Import Lignite,PJ,-,IRE,COALIG,ANNUAL,"0,00",Imports,Imports
+IMPELCHIG,Imports,ELC,.IMP.IRE.,Electricity import (ALL),PJ,-,IRE,ELCHIG,DAYNITE,"0,00",Imports,Imports
+IMPGASNAT,Imports,SUP,.IMP.IRE.,Import Natural Gas,PJ,-,IRE,GASNAT,ANNUAL,"0,00",Imports,Imports
+IMPH2,Imports,IMP,.IMP.IRE.,Import H2,PJ,GW,IRE,SUPIMPH2,DAYNITE,"1,00",Imports,Imports
+IMPNUCRSV,Imports,SUP,.IMP.IRE.,Import Uranium,PJ,-,IRE,NUCRSV,ANNUAL,"0,00",Imports,Imports
+IMPOILDST,Imports,SUP,.IMP.IRE.,Import Diesel,PJ,-,IRE,OILDST,ANNUAL,"0,00",Imports,Imports
+IMPOILGSL,Imports,SUP,.IMP.IRE.,Import Motor Spirit,PJ,-,IRE,OILGSL,ANNUAL,"0,00",Imports,Imports
+IMPOILHFO,Imports,SUP,.IMP.IRE.,Import Residual Fuel Oil,PJ,-,IRE,OILHFO,ANNUAL,"0,00",Imports,Imports
+IMPOILKER,Imports,SUP,.IMP.IRE.,Import Kerosenes - Jet Fuels,PJ,-,IRE,OILKER,ANNUAL,"0,00",Imports,Imports
+IMPOILLPG,Imports,SUP,.IMP.IRE.,Import Liquified Petroleum Gas,PJ,-,IRE,OILLPG,ANNUAL,"0,00",Imports,Imports
+IMPOILOTH,Imports,SUP,.IMP.IRE.,Import Other Petroleum Products,PJ,-,IRE,OILOTH,ANNUAL,"0,00",Imports,Imports
+INDBGS00,Fuel Tech - BioGas,IND,.PRE.,Fuel Tech - Biogas (IND),PJ,PJA,PRE,INDBGS,ANNUAL,"0,00",Fuel Tech - Biogas,Fuel Tech - Biogas (IND)
+INDBIO00,Fuel Tech - Biofuel,IND,.PRE.,Fuel Tech - Biofuel (IND),PJ,PJA,PRE,INDBIO,ANNUAL,"0,00",Fuel Tech - Biofuel,Fuel Tech - Biofuel (IND)
+INDCOA00,Fuel Tech - Hard Coal,IND,.PRE.,Fuel Tech - Hard Coal (IND),PJ,PJA,PRE,INDCOA,ANNUAL,"0,00",Fuel Tech - Hard Coal,Fuel Tech - Coke (IND)
+INDCOK00,Fuel Tech - Coke,IND,.PRE.,Fuel Tech - Coke (IND),PJ,PJA,PRE,INDCOK,ANNUAL,"0,00",Fuel Tech - Coke,Fuel Tech - Hard Coal (IND)
+INDCOL00,Fuel Tech - Lignite,IND,.PRE.,Fuel Tech - Lignite (IND),PJ,PJA,PRE,INDCOL,ANNUAL,"0,00",Fuel Tech - Lignite,Fuel Tech - Lignite (IND)
+INDCPS00,Fuel Tech - Wood Chips,IND,.PRE.,Fuel Tech - Wood CHIPS (IND),PJ,PJA,PRE,INDCPS,ANNUAL,"0,00",Fuel Tech - Wood Chips,Fuel Tech - Wood CHIPS (IND)
+INDELC00,Fuel Tech - Electricity,IND,.PRE.,Fuel Tech - Electricity (IND),PJ,GW,PRE,INDELC,DAYNITE,"0,00",Fuel Tech - Electricity,Fuel Tech - Electricity (IND)
+INDGAS00,Fuel Tech - Natural Gas transport,IND,.PRE.,Fuel Tech - Natural Gas transport (IND),PJ,PJA,PRE,INDGAS,ANNUAL,"0,00",Fuel Tech - Natural Gas transport,Fuel Tech - Natural Gas transport (IND)
+INDGASCOG01,Fuel Tech New - Gas and Cog industry,IND,.PRE.,Fuel Tech New - Gas and Cog industry (IND),PJ,PJA,PRE,INDGASCOG,ANNUAL,"1,00",Fuel Tech New - Gas and Cog industry,Fuel Tech New - Gas and Cog industry (IND)
+INDGEO00,Geothermal (IND),IND,.PRE.,Geothermal (IND),PJ,PJA,PRE,INDGEO,ANNUAL,"0,00",Geothermal (IND),Geothermal (IND)
+INDGH2C01,hydrogen for industry,SUP,.PRE.,Fuel Tech - H2 Delivery from centralized production (COMP+TR+DP - Industrial),PJ,PJ-A,PRE,INDHH2,DAYNITE,,hydrogen for industry,hydrogen for industry
+INDGH2C01_i,Imports,SUP,.PRE.,INDGH2C01_i,PJ,PJ-A,PRE,INDHH2,DAYNITE,,Imports,hydrogen imports
+INDGMX00,Fuel Tech - Natural Gas and biogas mixed,IND,.PRE.,Fuel Tech - Natural Gas and biogas mixed  (IND),PJ,PJA,PRE,INDGMX,ANNUAL,"0,00",Fuel Tech - Natural Gas and biogas mixed,Fuel Tech - Natural Gas and biogas mixed  (IND)
+INDHFO00,Fuel Tech - Heavy Fuel Oil ,IND,.PRE.,Fuel Tech - Heavy Fuel Oil (IND),PJ,PJA,PRE,INDHFO,ANNUAL,"0,00",Fuel Tech - Heavy Fuel Oil ,Fuel Tech - Heavy Fuel Oil (IND)
+INDHTH00,Fuel Tech - Heat,IND,.PRE.,industry high temperature heat,PJ,PJA,PRE,INDHET,ANNUAL,"0,00",Fuel Tech - Heat,Fuel Tech - Heat
+INDIIS01,Fuel Tech New - IIS GMX - Corex GMX or BFG TGR with CCS or BOF,IND,.PRE.,Fuel Tech New - IIS GMX - Corex GMX or BFG TGR with CCS or BOF (IND),PJ,PJA,PRE,INDIIS,ANNUAL,"1,00",Fuel Tech New - IIS GMX - Corex GMX or BFG TGR with CCS or BOF,Local production
+INDLFO00,Fuel Tech - Light Fuel Oil ,IND,.PRE.,Fuel Tech - Light Fuel Oil (IND),PJ,PJA,PRE,INDLFO,ANNUAL,"0,00",Fuel Tech - Light Fuel Oil ,Fuel Tech - Light Fuel Oil (IND)
+INDLPG00,Fuel Tech - Liquified Petroleum Gas,IND,.PRE.,Fuel Tech - Liquified Petroleum Gas (IND),PJ,PJA,PRE,INDLPG,ANNUAL,"0,00",Fuel Tech - Liquified Petroleum Gas,Fuel Tech - Liquified Petroleum Gas (IND)
+INDPVELC,PV industrial,IND,.ELE.,PV industrial,PJ,GW,ELE,INDPVELC_NRGO,DAYNITE,"0,00",PV industrial,PV industrial
+INDSLU00,Fuel Tech - Waste Renewable,IND,.PRE.,Fuel Tech - Waste Renewable (IND),PJ,PJA,PRE,INDSLU,ANNUAL,"0,00",Fuel Tech - Waste Renewable,Fuel Tech - Waste Renewable (IND)
+INDSOL00,Fuel Tech - Solar,IND,.PRE.,Fuel Tech - Solar (IND),PJ,PJA,PRE,INDSOL,ANNUAL,"0,00",Fuel Tech - Solar,Fuel Tech - Solar (IND)
+INDWOO00,Fuel Tech - Wood material,IND,.PRE.,Fuel Tech - Wood material (IND),MT,MTA,PRE,MBRWOO,ANNUAL,"0,00",Fuel Tech - Wood material,Fuel Tech - Wood material (IND)
+INDWST00,Fuel Tech - Waste Non-Renewable,IND,.PRE.,Fuel Tech - Waste Non-Renewable (IND),PJ,PJA,PRE,INDWST,ANNUAL,"0,00",Fuel Tech - Waste Non-Renewable,Fuel Tech - Waste Non-Renewable
+INFDEMAND00,Energy demands for industrial processes,IND,.DMD.,INF.Other Non Ferrous Metals.00.,PJ,PJA,DMD,INF,ANNUAL,"0,00",Industry,Industry
+INFELEELC00,industrial processes,IND,.PRE.,INF.Other Non Ferrous Metals.Electro-Chemical Processes.ELC.00,PJ,PJA,PRE,INFELE,ANNUAL,"0,00",Industry,Industry
+INFELEELC01,industrial processes,IND,.PRE.,INFELEELC01,PJ,PJA,PRE,INFELE,ANNUAL,"0,00",Industry,Industry
+INFMCHELC00,industrial processes,IND,.PRE.,INF.Other Non Ferrous Metals.Machine Drive.ELC.00,PJ,PJA,PRE,INFMCH,ANNUAL,"0,00",Industry,Industry
+INFMCHELC01,industrial processes,IND,.PRE.,INFMCHELC01,PJ,PJA,PRE,INFMCH,ANNUAL,"1,00",Industry,Industry
+INFPRCCOA01,industrial processes,IND,.PRE.,INFPRCCOA01,PJ,GW,PRE,INFPRC,ANNUAL,"1,00",Industry,Industry
+INFPRCGMX00,industrial processes,IND,.PRE.,INF.Other Non Ferrous Metals.Process Heat.GAS.00,PJ,PJA,PRE,INFPRC,ANNUAL,"0,00",Industry,Industry
+INFSTMCOL01,industrial processes,IND,.PRE.,INFSTMCOL01,PJ,GW,PRE,INFHTH,ANNUAL,"1,00",Industry,Industry
+INFSTMGMX00,industrial processes,IND,.PRE.,INF.Other Non Ferrous Metals.Steam.GAS.00,PJ,GW,PRE,INFHTH,ANNUAL,"0,00",Industry,Industry
+INFSTMLFO00,industrial processes,IND,.PRE.,INF.Other Non Ferrous Metals.Steam.LFO.00,PJ,GW,PRE,INFHTH,ANNUAL,"0,00",Industry,Industry
+INFSTMLPG00,industrial processes,IND,.PRE.,INF.Other Non Ferrous Metals.Steam.LPG.00,PJ,GW,PRE,INFHTH,ANNUAL,"0,00",Industry,Industry
+INMDEMAND00,Energy demands for industrial processes,IND,.DMD.,INM.Other Non Metallic Minerals.00.,PJ,PJA,DMD,INM,ANNUAL,"0,00",Industry,Industry
+INMELEELC00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Electro-Chemical Processes.ELC.00,PJ,PJA,PRE,INMELE,ANNUAL,"0,00",Industry,Industry
+INMELEELC01,industrial processes,IND,.PRE.,INMELEELC01,PJ,PJA,PRE,INMELE,ANNUAL,"1,00",Industry,Industry
+INMMCHELC00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Machine Drive.ELC.00,PJ,PJA,PRE,INMMCH,ANNUAL,"0,00",Industry,Industry
+INMMCHELC01,industrial processes,IND,.PRE.,INMMCHELC01,PJ,PJA,PRE,INMMCH,ANNUAL,"1,00",Industry,Industry
+INMPRCCOA01,industrial processes,IND,.PRE.,INMPRCCOA01,PJ,GW,PRE,INMPRC,ANNUAL,"1,00",Industry,Industry
+INMPRCCOK01,industrial processes,IND,.PRE.,INMPRCCOK01,PJ,GW,PRE,INMPRC,ANNUAL,"1,00",Industry,Industry
+INMPRCGMX00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Process Heat.GAS.00,PJ,PJA,PRE,INMPRC,ANNUAL,"0,00",Industry,Industry
+INMPRCLFO00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Process Heat.LFO.00,PJ,PJA,PRE,INMPRC,ANNUAL,"0,00",Industry,Industry
+INMSTMBGS01,industrial processes,IND,.PRE.,INMSTMBGS01,PJ,GW,PRE,INMHTH,ANNUAL,"1,00",Industry,Industry
+INMSTMCOL00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Steam.COL.00,PJ,GW,PRE,INMHTH,ANNUAL,"0,00",Industry,Industry
+INMSTMCOL01,industrial processes,IND,.PRE.,INMSTMCOL01,PJ,GW,PRE,INMHTH,ANNUAL,"1,00",Industry,Industry
+INMSTMCPS01,industrial processes,IND,.PRE.,INMSTMCPS01,PJ,GW,PRE,INMHTH,ANNUAL,"1,00",Industry,Industry
+INMSTMGMX00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Steam.GAS.00,PJ,GW,PRE,INMHTH,ANNUAL,"0,00",Industry,Industry
+INMSTMHFO00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Steam.HFO.00,PJ,GW,PRE,INMHTH,ANNUAL,"0,00",Industry,Industry
+INMSTMLFO00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Steam.LFO.00,PJ,GW,PRE,INMHTH,ANNUAL,"0,00",Industry,Industry
+INMSTMLPG00,industrial processes,IND,.PRE.,INM.Other Non Metallic Minerals.Steam.LPG.00,PJ,GW,PRE,INMHTH,ANNUAL,"0,00",Industry,Industry
+IOFDEMAND00,Energy demands for industrial processes,IND,.DMD.,IOF.Other FOOD.00,PJ,PJA,DMD,IOF,ANNUAL,"0,00",Industry,Industry
+IOFELEELC00,industrial processes,IND,.PRE.,IOF.Other Food.Electro Processes.ELC.00,PJ,PJA,PRE,IOFELE,ANNUAL,"0,00",Industry,Industry
+IOFELEELC01,industrial processes,IND,.PRE.,IOFELEELC01,PJ,PJA,PRE,IOFELE,ANNUAL,"1,00",Industry,Industry
+IOFFROELC00,industrial processes,IND,.PRE.,IOF.cold.ELC.00,PJ,PJA,PRE,IOFFRO,ANNUAL,"0,00",Industry,Industry
+IOFFROELC01,industrial processes,IND,.PRE.,IOFFROELC01,PJ,GW,PRE,IOFFRO,ANNUAL,"1,00",Industry,Industry
+IOFMCHELC00,industrial processes,IND,.PRE.,IOF.Other Food.Machine Drive.ELC.00,PJ,PJA,PRE,IOFMCH,ANNUAL,"0,00",Industry,Industry
+IOFMCHELC01,industrial processes,IND,.PRE.,IOFMCHELC01,PJ,PJA,PRE,IOFMCH,ANNUAL,"1,00",Industry,Industry
+IOFOTH-NRG,industrial processes,IND,.PRE.,IOF: Other energy uses,PJ,PJA,PRE,IOFOTH,ANNUAL,"0,00",Industry,Industry
+IOFPACELC01,industrial processes,IND,.PRE.,IOFPACELC01,PJ,GW,PRE,IOFHTH,ANNUAL,"1,00",Industry,Industry
+IOFPRCBGS00,industrial processes,IND,.PRE.,IOF.Other Food.Process Heat.BGS.00,PJ,PJA,PRE,IOFPRC,ANNUAL,"0,00",Industry,Industry
+IOFPRCCPS00,industrial processes,IND,.PRE.,IOF.Other Food.Process Heat.CPS.00,PJ,PJA,PRE,IOFPRC,ANNUAL,"0,00",Industry,Industry
+IOFPRCELC01,industrial processes,IND,.PRE.,IOFPRCELC01,PJ,GW,PRE,IOFPRC,ANNUAL,"1,00",Industry,Industry
+IOFPRCGAS00,industrial processes,IND,.PRE.,IOF.Other Food.Process Heat.GAS.01,PJ,PJA,PRE,IOFPRC,ANNUAL,"0,00",Industry,Industry
+IOFPRCGMX00,industrial processes,IND,.PRE.,IOF.Other Food.Process Heat.GAS.00,PJ,PJA,PRE,IOFPRC,ANNUAL,"0,00",Industry,Industry
+IOFPRCGMX01,industrial processes,IND,.PRE.,IOFPRCGMX01,PJ,GW,PRE,IOFPRC,ANNUAL,"1,00",Industry,Industry
+IOFPRCHH202,industrial processes,IND,.PRE.,IOFPRCHH202,PJ,GW,PRE,IOFPRC,ANNUAL,"1,00",Industry,Industry
+IOFPRCLFO00,industrial processes,IND,.PRE.,IOF.Other Food.Process Heat.LFO.00,PJ,PJA,PRE,IOFPRC,ANNUAL,"0,00",Industry,Industry
+IOFSTMBGS00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.BGS.00,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOFSTMBGS01,industrial processes,IND,.PRE.,IOFSTMBGS01,PJ,GW,PRE,IOFHTH,ANNUAL,"1,00",Industry,Industry
+IOFSTMCPS00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.CPS.00,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOFSTMCPS01,industrial processes,IND,.PRE.,IOFSTMCPS01,PJ,GW,PRE,IOFHTH,ANNUAL,"1,00",Industry,Industry
+IOFSTMELC01,industrial processes,IND,.PRE.,IOFSTMELC01,PJ,GW,PRE,IOFHTH,ANNUAL,"1,00",Industry,Industry
+IOFSTMGAS00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.GAS.01,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOFSTMGMX00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.GAS.00,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOFSTMHET00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.HTH.00,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOFSTMHET01,industrial processes,IND,.PRE.,IOFSTMHET01,PJ,GW,PRE,IOFHTH,ANNUAL,"1,00",Industry,Industry
+IOFSTMLFO00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.LFO.00,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOFSTMLPG00,industrial processes,IND,.PRE.,IOF.Other Food.Steam.LPG.00,PJ,GW,PRE,IOFHTH,ANNUAL,"0,00",Industry,Industry
+IOIDEMAND00,Energy demands for industrial processes,IND,.DMD.,IOI.Other Industries.00.,PJ,PJA,DMD,IOI,ANNUAL,"0,00",Industry,Industry
+IOIELEELC00,industrial processes,IND,.PRE.,IOI.Other Industries.Electro-Chemical Processes.ELC.00,PJ,PJA,PRE,IOIELE,ANNUAL,"0,00",Industry,Industry
+IOIELEELC01,industrial processes,IND,.PRE.,IOIELEELC01,PJ,PJA,PRE,IOIELE,ANNUAL,"1,00",Industry,Industry
+IOIMCHELC00,industrial processes,IND,.PRE.,IOI.Other Industries.Machine Drive.ELC.00,PJ,PJA,PRE,IOIMCH,ANNUAL,"0,00",Industry,Industry
+IOIMCHELC01,industrial processes,IND,.PRE.,IOI. Other Industries.Machine Drive.ELC.01,PJ,PJA,PRE,IOIMCH,ANNUAL,"1,00",Industry,Industry
+IOIOTH-NRG,industrial processes,IND,.PRE.,IOI: Other energy uses,PJ,PJA,PRE,IOIOTH,ANNUAL,"0,00",Industry,Industry
+IOIPACELC01,industrial processes,IND,.PRE.,IOIPACELC01,PJ,GW,PRE,IOIHTH,ANNUAL,"1,00",Industry,Industry
+IOIPRCELC01,industrial processes,IND,.PRE.,IOIPRCELC01,PJ,GW,PRE,IOIPRC,ANNUAL,"1,00",Industry,Industry
+IOIPRCGAS00,industrial processes,IND,.PRE.,IOI.Other Industries.Process Heat.GAS.01,PJ,PJA,PRE,IOIPRC,ANNUAL,"0,00",Industry,Industry
+IOIPRCGMX00,industrial processes,IND,.PRE.,IOI.Other Industries.Process Heat.GAS.00,PJ,PJA,PRE,IOIPRC,ANNUAL,"0,00",Industry,Industry
+IOIPRCGMX01,industrial processes,IND,.PRE.,IOIPRCGMX01,PJ,GW,PRE,IOIPRC,ANNUAL,"1,00",Industry,Industry
+IOIPRCHH202,industrial processes,IND,.PRE.,IOIPRCHH202,PJ,GW,PRE,IOIPRC,ANNUAL,"1,00",Industry,Industry
+IOIPRCLFO00,industrial processes,IND,.PRE.,IOI.Other Industries.Process Heat.LFO.00,PJ,PJA,PRE,IOIPRC,ANNUAL,"0,00",Industry,Industry
+IOISTMBGS01,industrial processes,IND,.PRE.,IOISTMBGS01,PJ,GW,PRE,IOIHTH,ANNUAL,"1,00",Industry,Industry
+IOISTMCOK00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.COK.00,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IOISTMCPS00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.CPS.00,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IOISTMCPS01,industrial processes,IND,.PRE.,IOISTMCPS01,PJ,GW,PRE,IOIHTH,ANNUAL,"1,00",Industry,Industry
+IOISTMELC01,industrial processes,IND,.PRE.,IOISTMELC01,PJ,GW,PRE,IOIHTH,ANNUAL,"1,00",Industry,Industry
+IOISTMGAS00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.GAS.00,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IOISTMGMX00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.GAS.01,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IOISTMHET01,industrial processes,IND,.PRE.,IOISTMHET01,PJ,GW,PRE,IOIHTH,ANNUAL,"1,00",Industry,Industry
+IOISTMHFO00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.HFO.00,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IOISTMLFO00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.LFO.00,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IOISTMLPG00,industrial processes,IND,.PRE.,IOI.Other Industries.Steam.LPG.00,PJ,GW,PRE,IOIHTH,ANNUAL,"0,00",Industry,Industry
+IPOHTHSTMBGS01,industrial processes,IND,.PRE.,IPO.Preparation.of.potatoes.Process Heat.BGS.03,PJ,GW,PRE,IPOHTH,ANNUAL,"1,00",Industry,Industry
+IPOHTHSTMCPS01,industrial processes,IND,.PRE.,IPO.Preparation.of.potatoes.Process Heat.CPS.04,PJ,GW,PRE,IPOHTH,ANNUAL,"1,00",Industry,Industry
+IPOPREPA00,Energy demands for industrial processes,IND,.DMD.,IPO.Preparation.of.potatoes.00,PJ,PJA,DMD,IPO,ANNUAL,"0,00",Industry,Industry
+IPOPREPA03,IND_DMD_MT_MT,IND,.DMD.,IPO.Preparation.of.potatoes.03,MT,MT,DMD,IPO,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IPOPREPA04,IND_DMD_MT_MT,IND,.DMD.,IPO.Preparation.of.potatoes.04,MT,MT,DMD,IPO,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IPOSTMGAS00,industrial processes,IND,.PRE.,IPO.Generic Boiler.GAS,PJ,PJA,PRE,IPOHTH,ANNUAL,"0,00",Industry,Industry
+IPOSTMOIL00,industrial processes,IND,.PRE.,IPO.Generic Boiler.OIL,PJ,PJA,PRE,IPOHTH,ANNUAL,"0,00",Industry,Industry
+IPPHIGQUA00,IND_DMD_MT_MTA,IND,.DMD.,IPP.High Quality Paper Production.00.,MT,MTA,DMD,IPP,ANNUAL,"0,00",IND_DMD_MT_MTA,IND_DMD_MT_MTA
+IPPHIGQUA05,IND_DMD_MT_MT,IND,.DMD.,IPP.High Quality Paper Production Adv Drives.05.,MT,MT,DMD,IPP,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IPPHIGQUA55,IND_DMD_MT_MT,IND,.DMD.,IPP.High Quality Paper Production Adv Drives.05. - electricity,MT,MT,DMD,IPP,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+IPPPACELC01,industrial processes,IND,.PRE.,IPP. Pulp and Paper.Heat.pac.01,PJ,GW,PRE,IPPHTH,ANNUAL,"1,00",Industry,Industry
+IPPPRCBIO01,industrial processes,IND,.PRE.,IPP. Pulp and Paper.Process Heat.BIO.01,PJ,GW,PRE,IPPPRC,ANNUAL,"1,00",Industry,Industry
+IPPPRCCOA01,industrial processes,IND,.PRE.,IPP. Pulp and Paper.Process Heat.COA.01,PJ,GW,PRE,IPPPRC,ANNUAL,"1,00",Industry,Industry
+IPPPRCGAS00,industrial processes,IND,.PRE.,IPP.Generic fuel kiln.GAS,PJ,PJA,PRE,IPPPRC,ANNUAL,"0,00",Industry,Industry
+IPPPRCGMX01,industrial processes,IND,.PRE.,IPP. Pulp and Paper.Process Heat.GMX.01,PJ,GW,PRE,IPPPRC,ANNUAL,"1,00",Industry,Industry
+IPPPRCHFO00,industrial processes,IND,.PRE.,IPP.Generic fuel kiln.HFO,PJ,PJA,PRE,IPPPRC,ANNUAL,"0,00",Industry,Industry
+IPPPRCLFO00,industrial processes,IND,.PRE.,IPP.Generic fuel kiln.LFO,PJ,PJA,PRE,IPPPRC,ANNUAL,"0,00",Industry,Industry
+IPPPRCLPG00,industrial processes,IND,.PRE.,IPP.Generic fuel kiln.LPG,PJ,PJA,PRE,IPPPRC,ANNUAL,"0,00",Industry,Industry
+IPPPUPCHE00,IND_PRE_MT_MTA,IND,.PRE.,IPP.Chemical Pulp Production.00.,MT,MTA,PRE,MPPPUP,ANNUAL,"0,00",IND_PRE_MT_MTA,IND_PRE_MT_MTA
+IPPPUPCHE01,IND_PRE_MT_MT,IND,.PRE.,IPP.Chemical Pulp Production.01,MT,MT,PRE,MPPPUP,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+IPPPUPIMP00,IND_IRE_MT_MTA,IND,.IMP.IRE.,IPP.Pulp Import.00.,MT,MTA,IRE,MPPPUP,ANNUAL,"0,00",IND_IRE_MT_MTA,IND_IRE_MT_MTA
+IPPSTMGMX01,industrial processes,IND,.PRE.,IPP. Pulp and Paper.Heat.GMX.01,PJ,GW,PRE,IPPHTH,ANNUAL,"1,00",Industry,Industry
+IPPSTMHH201,industrial processes,IND,.PRE.,IPP. Pulp and Paper.Heat.BLQ.01,PJ,GW,PRE,IPPHTH,ANNUAL,"1,00",Industry,Industry
+ISGHTHSTMGMX01,industrial processes,IND,.PRE.,ISG.Preparation.of.sugar.Process Heat.GMX.01,PJ,GW,PRE,ISGHTH,ANNUAL,"1,00",Industry,Industry
+ISGPREPA00,ISG.Beet.Preparation.00,IND,.PRE.,ISG.Beet.Preparation.00,PJ,PJA,PRE,MISGJU,ANNUAL,"0,00",Industry,Industry
+ISGPREPA01,IND_PRE_MT_MT,IND,.PRE.,ISG.Beet.Preparation.sugar.01,MT,MT,PRE,MISGJU,ANNUAL,"1,00",IND_PRE_MT_MT,IND_PRE_MT_MT
+ISGPROD00,Energy demands for industrial processes,IND,.DMD.,ISG.Production.00,PJ,PJA,DMD,ISG,ANNUAL,"0,00",Industry,Industry
+ISGPROD01,IND_DMD_MT_MT,IND,.DMD.,ISG.Production sugar.01,MT,MT,DMD,ISG,ANNUAL,"1,00",IND_DMD_MT_MT,IND_DMD_MT_MT
+ISGSTMGAS00,industrial processes,IND,.PRE.,ISG.Generic Boiler.GAS,PJ,PJA,PRE,ISGHTH,ANNUAL,"0,00",Industry,Industry
+ISGSTMOIL00,industrial processes,IND,.PRE.,ISG.Generic Boiler.OIL,PJ,PJA,PRE,ISGHTH,ANNUAL,"0,00",Industry,Industry
+ISGSTMSOLID00,industrial processes,IND,.PRE.,ISG.Generic Boiler.Solids.00,PJ,PJA,PRE,ISGHTH,ANNUAL,"0,00",Industry,Industry
+MINBIOBOU,SUP_IRE_MT_-,SUP,.MIN.IRE.,Boues production,MT,-,IRE,BIOBOU,ANNUAL,"0,00",SUP_IRE_MT_-,SUP_IRE_MT_-
+MINBIOCPS,Local production,SUP,.MIN.IRE.,Wood Chips production,PJ,-,IRE,BIOCPS,ANNUAL,"0,00",Local production,Local production
+MINBIOCRP11,Local production,SUP,.MIN.IRE.,Starch crop production 1,PJ,-,IRE,BIOCRP1,ANNUAL,"0,00",Local production,Local production
+MINBIOCUL,SUP_IRE_MT_-,SUP,.MIN.IRE.,Culture pour biometh Production,MT,-,IRE,BIOCUL,ANNUAL,"0,00",SUP_IRE_MT_-,SUP_IRE_MT_-
+MINBIOEFF,SUP_IRE_MT_-,SUP,.MIN.IRE.,Effluents production,MT,-,IRE,BIOEFF,ANNUAL,"0,00",SUP_IRE_MT_-,SUP_IRE_MT_-
+MINBIOGAS,Local production,SUP,.MIN.IRE.,Ressources biogas industriel/biométh déjà en place,PJ,-,IRE,BIOGAS,ANNUAL,"0,00",Local production,Local production
+MINBIOGZH,Local production,SUP,.MIN.IRE.,Biogas injected,PJ,-,IRE,BIOGZH,ANNUAL,"0,00",Local production,Local production
+MINBIOLOG,Local production,SUP,.MIN.IRE.,Wood Logs production,PJ,-,IRE,BIOLOG,ANNUAL,"0,00",Local production,Local production
+MINBIORPS1,Local production,SUP,.MIN.IRE.,Rape seed production 1,PJ,-,IRE,BIORPS,ANNUAL,"0,00",Local production,Local production
+MINBIOSLU,Local production,SUP,.MIN.IRE.,Sludge Production,PJ,-,IRE,BIOSLU,ANNUAL,"0,00",Local production,Local production
+MINBIOSLUH,SUP_IRE_MT_-,SUP,.MIN.IRE.,Sludge Production (methanation),MT,-,IRE,BIOSLUH,ANNUAL,"0,00",SUP_IRE_MT_-,SUP_IRE_MT_-
+MINCETGAS,Local production,SUP,.MIN.IRE.,Biogas CET Production,PJ,-,IRE,BIOGAS,ANNUAL,"0,00",Local production,Local production
+MINMBOWOO1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source wood industry : foret,T,-,IRE,MBOWOO,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMCOWIM1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source lait,T,-,IRE,MCOWIM,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMCUPDT,SUP_IRE_T_-,SUP,.MIN.IRE.,Source : pdt,T,-,IRE,MCUPDT,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMGHRYC1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Glass: Recycled,T,-,IRE,MGHRYC,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMISGBE1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source betterave,T,-,IRE,MISGBE,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMISORE1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Iron&Steel: Ore,T,-,IRE,MISORE,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMISOXY1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Iron&Steel: Oxygen,T,-,IRE,MISOXY,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMISQLI1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Iron&Steel: Quick Lime,T,-,IRE,MISQLI,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMISSCR1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Iron&Steel: Scrap Iron,T,-,IRE,MISSCR,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMLMSTN1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Lime: Limestone,T,-,IRE,MLMSTN,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMPPNOH1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Paper: Sodium Hydraxide,T,-,IRE,MPPNOH,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMPPOXY1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Paper: Oxygen,T,-,IRE,MPPOXY,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINMPPWOO1,SUP_IRE_T_-,SUP,.MIN.IRE.,Source Paper: Wood,T,-,IRE,MPPWOO,ANNUAL,"0,00",SUP_IRE_T_-,SUP_IRE_T_-
+MINNREWST,Waste Non-Renewable Production,SUP,.MIN.IRE.,Waste Non-Renewable Production,PJ,-,IRE,NREWST,ANNUAL,"0,00",Waste Non-Renewable Production,Local production
+MINRENGEO,Geothermal Potential,SUP,.MIN.IRE.,Geothermal Potential,PJ,-,IRE,RENGEO,ANNUAL,"0,00",Geothermal Potential,Local production
+MINRENHYD,Hydro Potential,SUP,.MIN.IRE.,Hydro Potential,PJ,-,IRE,RENHYD,ANNUAL,"0,00",Hydro Potential,Local production
+MINRENSOL,Solar Potential,SUP,.MIN.IRE.,Solar Potential,PJ,-,IRE,RENSOL,ANNUAL,"0,00",Solar Potential,Local production
+MINRENWIN,Wind Potential,SUP,.MIN.IRE.,Wind Potential,PJ,-,IRE,RENWIN,ANNUAL,"0,00",Wind Potential,Local production
+NECDEMAND00,Non-energy,IND,.DMD.,Non-energy,PJ,PJA,DMD,NEC,ANNUAL,"0,00",Non-energy,Non-energy
+NEODEMAND00,Non-energy,IND,.DMD.,Non-energy,PJ,PJA,DMD,NEO,ANNUAL,"0,00",Non-energy,Non-energy
+RCDRELC100,residential electrical appliances,RSD,.DMD.,Rsd.Cloth Drying.ELC.00.Cloth Dryer.,PJ,PJA,DMD,RCDR,ANNUAL,"0,00",residential other,residential other
+RCDRELC201,residential electrical appliances,RSD,.DMD.,Cloth drying medium efficiency,PJ,PJA,DMD,RCDR,ANNUAL,"0,00",residential other,residential other
+RCOKCOA100,residential gas appliances,RSD,.DMD.,Rsd.Cooking.COA.00.Stove.,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential other,residential other
+RCOKELC100,residential electrical appliances,RSD,.DMD.,Rsd.Cooking.ELC.00.Stove.,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential other,residential other
+RCOKELC101,residential electrical appliances,RSD,.DMD.,cooking electric stove,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential cooking,residential cooking
+RCOKGAS101,residential gas appliances,RSD,.DMD.,cooking gas stove,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential cooking,residential cooking
+RCOKGMX100,residential gas appliances,RSD,.DMD.,Rsd.Cooking.GAS.00.Stove.,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential cooking,residential cooking
+RCOKLOG100,residential gas appliances,RSD,.DMD.,Rsd.Cooking.LOG.00.Stove.,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential cooking,residential cooking
+RCOKLPG100,residential gas appliances,RSD,.DMD.,Rsd.Cooking.LPG.00.Stove.,PJ,PJA,DMD,RCOK,ANNUAL,"0,00",residential cooking,residential cooking
+RCWAELC100,residential electrical appliances,RSD,.DMD.,Rsd.Cloth Washing.ELC.00.Cloth Washer.,PJ,PJA,DMD,RCWA,ANNUAL,"0,00",residential other,residential other
+RCWAELC101,residential electrical appliances,RSD,.DMD.,Electric Washing Machine,PJ,PJA,DMD,RCWA,ANNUAL,"0,00",residential other,residential other
+RCWAELC200,residential electrical appliances,RSD,.DMD.,Rsd.Cloth Washing.ELC.00.Cloth Washer+dryer.,PJ,PJA,DMD,RCWA,ANNUAL,"0,00",residential other,residential other
+RDWAELC100,residential electrical appliances,RSD,.DMD.,Rsd.Dish Washing.ELC.00.Dish Washer.,PJ,PJA,DMD,RDWA,ANNUAL,"0,00",residential other,residential other
+RDWAELC101,residential electrical appliances,RSD,.DMD.,Dish Washer medium efficiency (D),PJ,PJA,DMD,RDWA,ANNUAL,"0,00",residential other,residential other
+RDW_R_2Fac,Buildings: built area,RSD,.DMD.,Existing Building_2 façades,MM2,MM2-A,DMD,R_2Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_3Fac,Buildings: built area,RSD,.DMD.,Existing Building_3 façades,MM2,MM2-A,DMD,R_3Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_4Fac,Buildings: built area,RSD,.DMD.,Existing Building_4 façades,MM2,MM2-A,DMD,R_4Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_Appa,Buildings: built area,RSD,.DMD.,Existing Building_Appart,MM2,MM2-A,DMD,R_Appa,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_N2F,Buildings: built area,RSD,.DMD.,New Residential Building 2Fac,MM2,MM2-A,DMD,R_N2Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_N3F,Buildings: built area,RSD,.DMD.,New Residential Building 3Fac,MM2,MM2-A,DMD,R_N3Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_N4F,Buildings: built area,RSD,.DMD.,New Residential Building 4Fac,MM2,MM2-A,DMD,R_N4Fac,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RDW_R_NAP,Buildings: built area,RSD,.DMD.,New Residential Building App,MM2,MM2-A,DMD,R_NAppa,ANNUAL,"1,00",Buildings: built area,Buildings: built area
+RH2FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.COA.00.Furnace.,PJ,GW,PRE,RH2FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Coal heater
+RH2FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.ELC.00.Resistance.,PJ,GW,PRE,RH2FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral electric heater
+RH2FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.ELC.00.Heat Pump.,PJ,GW,PRE,RH2FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Heat pump
+RH2FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH2F-New2,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RH2FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral electric heater
+RH2FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.GEO.00.Furnace.,PJ,GW,PRE,RH2FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral geothermal heating
+RH2FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.GMX.00.Furnace.,PJ,GW,PRE,RH2FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RH2FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral gas heater
+RH2FHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RH2F-New1,PJ,GW,PRE,RH2FHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
+RH2FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.LOG.00.Stove.,PJ,GW,PRE,RH2FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RH2FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.LPG.00.Furnace.,PJ,GW,PRE,RH2FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RH2FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.OIL.00.Furnace.,PJ,GW,PRE,RH2FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral oil heater
+RH2FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing-RH2F-New1,PJ,GW,PRE,RH2F,ANNUAL,"1,00",residential space heating,Residential urban decentral oil heater
+RH2FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.2F.PEL.00.Stove.,PJ,GW,PRE,RH2FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RH3FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.COA.00.Furnace.,PJ,GW,PRE,RH3FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural Coal heater
+RH3FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.ELC.00.Resistance.,PJ,GW,PRE,RH3FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural electric heater
+RH3FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.ELC.00.Heat Pump.,PJ,GW,PRE,RH3FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential rural Heat pump
+RH3FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH3F-New2,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential rural Heat pump
+RH3FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential rural electric heater
+RH3FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.GEO.00.Furnace.,PJ,GW,PRE,RH3FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural geothermal heating
+RH3FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.GMX.00.Furnace.,PJ,GW,PRE,RH3FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural gas heater
+RH3FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential rural gas heater
+RH3FHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RH3F-New1,PJ,GW,PRE,RH3FHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
+RH3FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.LOG.00.Stove.,PJ,GW,PRE,RH3FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural biomass heater
+RH3FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.LPG.00.Furnace.,PJ,GW,PRE,RH3FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural gas heater
+RH3FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.OIL.00.Furnace.,PJ,GW,PRE,RH3FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural oil heater
+RH3FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RH3F-New1,PJ,GW,PRE,RH3F,ANNUAL,"1,00",residential space heating,Residential rural oil heater
+RH3FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.3F.PEL.00.Stove.,PJ,GW,PRE,RH3FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural biomass heater
+RH4FCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.COA.00.Furnace.,PJ,GW,PRE,RH4FCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural Coal heater
+RH4FELC100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.ELC.00.Resistance.,PJ,GW,PRE,RH4FELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural electric heater
+RH4FELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.ELC.00.Heat Pump.,PJ,GW,PRE,RH4FELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential rural Heat pump
+RH4FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RH4F-New2,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural Heat pump
+RH4FELCN1,space heating residential,RSD,.PRE.,Electric radiators-RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural electric heater
+RH4FGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.GEO.00.Furnace.,PJ,GW,PRE,RH4FGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural geothermal heating
+RH4FGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.GMX.00.Furnace.,PJ,GW,PRE,RH4FGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural gas heater
+RH4FGMXN1,space heating residential,RSD,.PRE.,Natural gas stove condensing-RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural gas heater
+RH4FHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RH4F-New1,PJ,GW,PRE,RH4FHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
+RH4FLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.LOG.00.Stove.,PJ,GW,PRE,RH4FLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural biomass heater
+RH4FLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.LPG.00.Furnace.,PJ,GW,PRE,RH4FLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural gas heater
+RH4FOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.OIL.00.Furnace.,PJ,GW,PRE,RH4FOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural oil heater
+RH4FOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RH4F-New1,PJ,GW,PRE,RH4F,ANNUAL,"1,00",residential space heating,Residential rural oil heater
+RH4FPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.4F.PEL.00.Stove.,PJ,GW,PRE,RH4FPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential rural biomass heater
+RHAPCOA100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.COA.00.Furnace.,PJ,GW,PRE,RHAPCOA100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Coal heater
+RHAPELC100,space heating residential,RSD,.PRE.,/,PJ,GW,PRE,RHAPELC100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral electric heater
+RHAPELC200,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.ELC.00.Heat Pump.,PJ,GW,PRE,RHAPELC200_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral Heat pump
+RHAPELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHAP-New2,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RHAPELCN1,space heating residential,RSD,.PRE.,Electric radiators-RHAP-New1,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential urban decentral electric heater
+RHAPGEO100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.GEO.00.Furnace.,PJ,GW,PRE,RHAPGEO100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral geothermal heating
+RHAPGMX100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.GMX.00.Furnace.,PJ,GW,PRE,RHAPGMX100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RHAPGMXN2,space heating residential,RSD,.PRE.,Natural gas boiler condensing-RHAP-New2,PJ,GW,PRE,RHAPGMXN2_NRGO,ANNUAL,"1,00",residential space heating,Residential urban decentral gas heater
+RHAPHETN1,space heating residential,RSD,.PRE.,District heat exchanger.HeatHotwater-RHAP-New1,PJ,GW,PRE,RHAPHETN1_NRGO,ANNUAL,"1,00",residential space heating,District heating
+RHAPLOG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.LOG.00.Stove.,PJ,GW,PRE,RHAPLOG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RHAPLPG100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.LPG.00.Furnace.,PJ,GW,PRE,RHAPLPG100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral gas heater
+RHAPOIL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.OIL.00.Furnace.,PJ,GW,PRE,RHAPOIL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral oil heater
+RHAPOILN1,space heating residential,RSD,.PRE.,Oil boiler condensing -RHAP-New1,PJ,GW,PRE,RHAP,ANNUAL,"1,00",residential space heating,Residential urban decentral oil heater
+RHAPPEL100,space heating residential,RSD,.PRE.,Rsd.Space Heat.Dwelling.AP.PEL.00.Stove.,PJ,GW,PRE,RHAPPEL100_NRGO,ANNUAL,"0,00",residential space heating,Residential urban decentral biomass heater
+RHN2FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN2F-New2,PJ,GW,PRE,RHN2F,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RHN3FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN3F-New2,PJ,GW,PRE,RHN3F,ANNUAL,"1,00",residential space heating,Residential rural Heat pump
+RHN4FELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHN4F-New2,PJ,GW,PRE,RHN4F,ANNUAL,"1,00",residential space heating,Residential rural Heat pump
+RHNAPELCHPN2,space heating residential,RSD,.PRE.,Air heat pump with electric boiler-RHNAP-New2,PJ,GW,PRE,RHNAP,ANNUAL,"1,00",residential space heating,Residential urban decentral Heat pump
+RLIGELC200,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.Incandescent Improved.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
+RLIGELC300,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.Halogen.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
+RLIGELC400,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.Fluorescent.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
+RLIGELC401,residential electrical appliances,RSD,.DMD.,LED lighting system,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
+RLIGELC500,residential electrical appliances,RSD,.DMD.,Rsd.Lighting.ELC.00.LED.,PJ,PJA,DMD,RLIG,ANNUAL,"0,00",residential other,residential other
+ROELELC100,residential electrical appliances,RSD,.DMD.,Rsd.Other Electricity.ELC.00.Other Appliances.,PJ,PJA,DMD,ROEL,ANNUAL,"0,00",residential other,residential other
+ROELELC101,residential electrical appliances,RSD,.DMD.,Other Electricity Other Appliances.,PJ,PJA,DMD,ROEL,ANNUAL,"0,00",residential other,residential other
+ROENGSL100,Other residential,RSD,.DMD.,Rsd.Other Energy.GSL.00.Other.,PJ,PJA,DMD,ROEN,ANNUAL,"0,00",residential other,residential other
+ROENGSL101,Other residential,RSD,.DMD.,Rsd.Other Energy.GSL.01.Other.,PJ,PJA,DMD,ROEN,ANNUAL,"0,00",residential other,residential other
+RREFELC100,residential electrical appliances,RSD,.DMD.,Rsd.Refrigeration.ELC.00.Refrigerator.,PJ,PJA,DMD,RREF,ANNUAL,"0,00",residential other,residential other
+RREFELC200,residential electrical appliances,RSD,.DMD.,Rsd.Refrigeration.ELC.00.Freezer.,PJ,PJA,DMD,RREF,ANNUAL,"0,00",residential other,residential other
+RREFELC300,residential electrical appliances,RSD,.DMD.,Rsd.Refrigeration.ELC.00.Refrigerator+Freezer.,PJ,PJA,DMD,RREF,ANNUAL,"0,00",residential other,residential other
+RREFELC501,residential electrical appliances,RSD,.DMD.,Refrigerator/Freezer baseline 510 lts (Ass.AB),PJ,PJA,DMD,RREF,ANNUAL,"0,00",residential other,residential other
+RSDCOA00,Fuel Tech - Coal,RSD,.PRE.,Fuel Tech - Coal (RSD),PJ,PJA,PRE,RSDCOA,ANNUAL,"0,00",Fuel Tech - Coal,Coal
+RSDELC00,Fuel Tech - Electricity,RSD,.PRE.,Fuel Tech - Electricity (RSD),PJ,GW,PRE,RSDELC,DAYNITE,"0,00",Fuel Tech - Electricity,Fuel Tech - Electricity
+RSDGEO00,Fuel Tech - Geothermal,RSD,.PRE.,Fuel Tech - Geothermal (RSD),PJ,PJA,PRE,RSDGEO,ANNUAL,"0,00",Fuel Tech - Geothermal,Fuel Tech - Geothermal
+RSDGMX00,Fuel Tech - Natural Gas biogas mixed,RSD,.PRE.,Fuel Tech - Natural Gas biogas mixed (RSD),PJ,PJA,PRE,RSDGMX,ANNUAL,"0,00",Fuel Tech - Natural Gas biogas mixed,Fuel Tech - Natural Gas biogas mixed
+RSDGSL00,Fuel Tech - Gasoline,RSD,.PRE.,Fuel Tech - Gasoline (RSD),PJ,PJA,PRE,RSDGSL,ANNUAL,"0,00",Fuel Tech - Gasoline,Gasoline
+RSDHET00,Fuel Tech 0 - Heat,RSD,.PRE.,Fuel Tech 0 - Heat (RSD),PJ,GW,PRE,RSDHET00_NRGO,DAYNITE,"0,00",Fuel Tech 0 - Heat,Fuel Tech 0 - Heat
+RSDHET01,Fuel Tech 1 - Heat,RSD,.PRE.,Fuel Tech 1 - Heat (RSD),PJ,GW,PRE,RSDHET01_NRGO,DAYNITE,"0,00",Fuel Tech 1 - Heat,Fuel Tech 1 - Heat
+RSDHET02,Fuel Tech 2 - Heat,RSD,.PRE.,Fuel Tech 2 - Heat (RSD),PJ,GW,PRE,RSDHET02_NRGO,DAYNITE,"0,00",Fuel Tech 2 - Heat,Fuel Tech 2 - Heat
+RSDLOG00,Fuel Tech - bûches,RSD,.PRE.,Fuel Tech - bûches (RSD),PJ,PJA,PRE,RSDLOG,ANNUAL,"0,00",Fuel Tech - bûches,Biofuels
+RSDLPG00,Fuel Tech - Liquified Petroleum Gas,RSD,.PRE.,Fuel Tech - Liquified Petroleum Gas (RSD),PJ,PJA,PRE,RSDLPG,ANNUAL,"0,00",Fuel Tech - Liquified Petroleum Gas,Fuel Tech - Liquified Petroleum Gas
+RSDOIL00,Fuel Tech - Diesel,RSD,.PRE.,Fuel Tech - Diesel (RSD),PJ,PJA,PRE,RSDOIL,ANNUAL,"0,00",Fuel Tech - Diesel,Fuel Tech - Diesel
+RSDPEL00,Fuel Tech - pellets,RSD,.PRE.,Fuel Tech - pellets (RSD),PJ,PJA,PRE,RSDPEL,ANNUAL,"0,00",Fuel Tech - pellets,Fuel Tech - Wood Pellets
+RSDPVELC,PV residential,RSD,.ELE.,PV residential,PJ,GW,ELE,RSDPVELC_NRGO,DAYNITE,"0,00",PV residential,PV residential
+RSDSOL00,Fuel Tech - Solar,RSD,.PRE.,Fuel Tech - Solar (RSD),PJ,PJA,PRE,RSDSOL,ANNUAL,"0,00",Fuel Tech - Solar,Solar
+RW2FCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.COA.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral Coal heater
+RW2FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.ELC.00.Water Heater.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral electric heater
+RW2FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.ELC.00.Heat Pump.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral Heat pump
+RW2FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.GMX.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RW2FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RW2FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.LOG.00.Stove.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RW2FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.LPG.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RW2FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.OIL.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral oil heater
+RW2FOILN1,residential hot water,RSD,.PRE.,Oil boiler-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential urban decentral oil heater
+RW2FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.PEL.00.Stove.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RW2FPELN1,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW2F-New1,PJ,GW,PRE,RW2F,ANNUAL,"1,00",residential hot water,Residential urban decentral biomass heater
+RW2FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.2F.SOL.00.Furnace.,PJ,GW,PRE,RW2F,ANNUAL,"0,00",residential hot water,Residential urban decentral solar thermal
+RW3FCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.COA.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural Coal heater
+RW3FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.ELC.00.Water Heater.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural electric heater
+RW3FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.ELC.00.Heat Pump.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural Heat pump
+RW3FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.GMX.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural gas heater
+RW3FGMXN3,residential hot water,RSD,.PRE.,Natural gas boiler-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential rural gas heater
+RW3FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.LOG.00.Stove.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural biomass heater
+RW3FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.LPG.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural gas heater
+RW3FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.OIL.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural oil heater
+RW3FOILN3,residential hot water,RSD,.PRE.,Oil boiler-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential rural oil heater
+RW3FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.PEL.00.Stove.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural biomass heater
+RW3FPELN3,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW3F-New3,PJ,GW,PRE,RW3F,ANNUAL,"1,00",residential hot water,Residential rural biomass heater
+RW3FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.3F.SOL.00.Furnace.,PJ,GW,PRE,RW3F,ANNUAL,"0,00",residential hot water,Residential rural solar thermal
+RW4FELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.ELC.00.Water Heater.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural electric heater
+RW4FELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.ELC.00.Heat Pump.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural Heat pump
+RW4FGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.GMX.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural gas heater
+RW4FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential rural gas heater
+RW4FLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.LOG.00.Stove.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural biomass heater
+RW4FLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.LPG.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural gas heater
+RW4FOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.OIL.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural oil heater
+RW4FOILN1,residential hot water,RSD,.PRE.,Oil boiler-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential rural oil heater
+RW4FPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.PEL.00.Stove.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural biomass heater
+RW4FPELN1,residential hot water,RSD,.PRE.,Wood pellets boiler water heater-RW4F-New1,PJ,GW,PRE,RW4F,ANNUAL,"1,00",residential hot water,Residential rural biomass heater
+RW4FSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.4F.SOL.00.Furnace.,PJ,GW,PRE,RW4F,ANNUAL,"0,00",residential hot water,Residential rural solar thermal
+RWAPCOA100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.COA.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral Coal heater
+RWAPELC100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.ELC.00.Water Heater.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral electric heater
+RWAPELC101,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.ELC.00.Heat Pump.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral Heat pump
+RWAPGMX100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.GMX.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RWAPGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWAP-New1,PJ,GW,PRE,RWAP,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RWAPLOG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.LOG.00.Stove.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RWAPLPG100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.LPG.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral gas heater
+RWAPOIL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.OIL.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral oil heater
+RWAPPEL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.PEL.00.Stove.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral biomass heater
+RWAPSOL100,residential hot water,RSD,.PRE.,Rsd.Water Heat.Dwelling.AP.SOL.00.Furnace.,PJ,GW,PRE,RWAP,ANNUAL,"0,00",residential hot water,Residential urban decentral solar thermal
+RWN2FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN2F-New1,PJ,GW,PRE,RWN2F,ANNUAL,"1,00",residential hot water,Residential urban decentral Heat pump
+RWN2FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWN2F-New1,PJ,GW,PRE,RWN2F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RWN3FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN3F-New1,PJ,GW,PRE,RWN3F,ANNUAL,"1,00",residential hot water,Residential urban decentral Heat pump
+RWN3FGMXN3,residential hot water,RSD,.PRE.,Natural gas boiler-RWN3F-New3,PJ,GW,PRE,RWN3F,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+RWN4FELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWN4F-New1,PJ,GW,PRE,RWN4F,ANNUAL,"1,00",residential hot water,Residential rural Heat pump
+RWN4FGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWN4F-New1,PJ,GW,PRE,RWN4F,ANNUAL,"1,00",residential hot water,Residential rural gas heater
+RWNAPELCHPN1,residential hot water,RSD,.PRE.,Electric heat pump water heater-RWNAP-New1,PJ,GW,PRE,RWNAP,ANNUAL,"1,00",residential hot water,Residential urban decentral Heat pump
+RWNAPGMXN1,residential hot water,RSD,.PRE.,Natural gas boiler-RWNAP-New1,PJ,GW,PRE,RWNAP,ANNUAL,"1,00",residential hot water,Residential urban decentral gas heater
+Retrofit-M_C_SA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-M_C_SA,PJ,MM2,PRE,Retrofit-M_C_SA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_C_BA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_BA,PJ,MM2,PRE,Retrofit-S_C_BA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_C_BP,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_BP,PJ,MM2,PRE,Retrofit-S_C_BP_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_C_CO,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_CO,PJ,MM2,PRE,Retrofit-S_C_CO_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_C_CS,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_CS,PJ,MM2,PRE,Retrofit-S_C_CS_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_C_EN,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_EN,PJ,MM2,PRE,Retrofit-S_C_EN_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_C_SA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-S_C_SA,PJ,MM2,PRE,Retrofit-S_C_SA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_2Fac1958,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_2Fac1958,PJ,MM2,PRE,Retrofit-S_R_2Fac1958_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_2Fac1976,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_2Fac1976,PJ,MM2,PRE,Retrofit-S_R_2Fac1976_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_3Fac1989,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_3Fac1989,PJ,MM2,PRE,Retrofit-S_R_3Fac1989_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_3Fac2005,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_3Fac2005,PJ,MM2,PRE,Retrofit-S_R_3Fac2005_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_4Fac1958,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_4Fac1958,PJ,MM2,PRE,Retrofit-S_R_4Fac1958_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_4Fac1989,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_4Fac1989,PJ,MM2,PRE,Retrofit-S_R_4Fac1989_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_4Fac2005,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_4Fac2005,PJ,MM2,PRE,Retrofit-S_R_4Fac2005_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_Appa1945,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_Appa1945,PJ,MM2,PRE,Retrofit-S_R_Appa1945_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_Appa1958,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_Appa1958,PJ,MM2,PRE,Retrofit-S_R_Appa1958_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_Appa1989,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_Appa1989,PJ,MM2,PRE,Retrofit-S_R_Appa1989_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-S_R_Appa2005,RSD_PRE_PJ_MM2,RSD,.PRE.,Retrofit Sols Dwellings R_Appa2005,PJ,MM2,PRE,Retrofit-S_R_Appa2005_NRGI,ANNUAL,"0,00",RSD_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-T_C_BA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-T_C_BA,PJ,MM2,PRE,Retrofit-T_C_BA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-T_C_BP,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-T_C_BP,PJ,MM2,PRE,Retrofit-T_C_BP_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-T_C_CO,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-T_C_CO,PJ,MM2,PRE,Retrofit-T_C_CO_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-T_C_EN,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-T_C_EN,PJ,MM2,PRE,Retrofit-T_C_EN_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+Retrofit-T_C_SA,COM_PRE_PJ_MM2,COM,.PRE.,Retrofit-T_C_SA,PJ,MM2,PRE,Retrofit-T_C_SA_NRGI,ANNUAL,"0,00",COM_PRE_PJ_MM2,Retrofitting improvements
+SELCH2EC01_LowAF,SUP_PRE_PJ_GW (Centralized CHP - Pseudo with LowAF),SUP,.PRE.,"H2 Production-Alkaline Electrolyser, large size, centralized - Pseudo with LowAF",PJ,GW,PRE,MEOOXY,DAYNITE,"1,00",SUP_PRE_PJ_GW (Centralized CHP - Pseudo with LowAF),SUP_PRE_PJ_GW (Centralized CHP - Pseudo with LowAF)
+SELCH2PEM01_LowAF,SUP_PRE_PJ_GW,SUP,.PRE.,PEM Electrolyzer - Proton Exchange Membrane - Pseudo with LowAF,PJ,GW,PRE,MEOOXY,DAYNITE,"1,00",SUP_PRE_PJ_GW,SUP_PRE_PJ_GW
+SGASH2RC01,SUP_PRE_PJ_GW (Centralized CHP),SUP,.PRE.,"H2 Production-Methane Steam Reforming, large size, centralized",PJ,GW,PRE,SGASH2RC01_MATO,DAYNITE,"1,00",SUP_PRE_PJ_GW (Centralized CHP),SUP_PRE_PJ_GW (Centralized CHP)
+SGASH2RC02,SUP_PRE_PJ_GW (Centralized CHP),SUP,.PRE.,"H2 Production-Methane Steam Reforming, small size, centralized",PJ,GW,PRE,SGASH2RC02_MATO,DAYNITE,"1,00",SUP_PRE_PJ_GW (Centralized CHP),SUP_PRE_PJ_GW (Centralized CHP)
+STORAGEMINELC,SUP_PRE_KT_MTA,SUP,.PRE.CCSSTG.,STORAGEMINELC,KT,MTA,PRE,CO2STOCK,ANNUAL,"1,00",SUP_PRE_KT_MTA,SUP_PRE_KT_MTA
+STORAGEMININD,SUP_PRE_KT_MTA,SUP,.PRE.CCSSTG.,STORAGEMININD,KT,MTA,PRE,CO2STOCK,ANNUAL,"1,00",SUP_PRE_KT_MTA,SUP_PRE_KT_MTA
+SUPBGS00,Fuel Tech - biogas,SUP,.PRE.,Fuel Tech - biogas,PJ,PJA,PRE,SUPBGS,ANNUAL,"0,00",Fuel Tech - biogas,Fuel Tech - Natural Gas biogas mixed
+SUPDST00,Fuel Tech - Mazout,SUP,.PRE.,Fuel Tech - Mazout (SUP),PJ,PJA,PRE,SUPDST,ANNUAL,"0,00",Fuel Tech - Mazout,Fuel Tech - Mazout
+SUPELC00,Fuel Tech - Electricity,SUP,.PRE.,Fuel Tech - Electricity (SUP),PJ,PJA,PRE,SUPELC,ANNUAL,"0,00",Fuel Tech - Electricity,Fuel Tech - Electricity
+SUPGAS00,Fuel Tech - Natural Gas,SUP,.PRE.,Fuel Tech - Natural Gas (SUP),PJ,PJA,PRE,SUPGAS,ANNUAL,"0,00",Fuel Tech - Natural Gas,Fuel Tech - Natural Gas
+SUPGMX00,Fuel Tech - Natural Gas biogas mixed,SUP,.PRE.,Fuel Tech - Natural Gas biogas mixed (SUP),PJ,PJA,PRE,SUPGMX,ANNUAL,"0,00",Fuel Tech - Natural Gas biogas mixed,Fuel Tech - Natural Gas biogas mixed
+TADFKER00,Aviation,TRA,.DMD.,Aviation Domestic Freight Kerosene Tech Existing,PJ,PJA,DMD,TADF,ANNUAL,"0,00",international aviation,domestic aviation
+TADPKER00,Aviation,TRA,.DMD.,Aviation Domestic Passengers Kerosene Tech Existing,PJ,PJA,DMD,TADP,ANNUAL,"0,00",international aviation,domestic aviation
+TAIFKER00,Aviation,TRA,.DMD.,Aviation International Freight Kerosene Tech Existing,PJ,PJA,DMD,TAIF,ANNUAL,"0,00",international aviation,international aviation
+TAIPKER00,Aviation,TRA,.DMD.,Aviation International Passengers Kerosene Tech Existing,PJ,PJA,DMD,TAIP,ANNUAL,"0,00",international aviation,international aviation
+TAVDOMBDLFN01,Aviation,TRA,.DMD.TADF.,Transport marchandise - Aviation - Domestic - Biokerosene (New),PJ,000VEH,DMD,TADF,ANNUAL,"1,00",domestic aviation,domestic aviation
+TAVDOMBDLPN01,Aviation,TRA,.DMD.TADP.,Transport personne - Aviation - Domestic - Biokerosene (New),PJ,000VEH,DMD,TADP,ANNUAL,"1,00",domestic aviation,domestic aviation
+TAVINTHH2PN01,Aviation,TRA,.DMD.TAIP.,Transport personne- Aviation - International - Hydrogen (New),PJ,000VEH,DMD,TAIP,ANNUAL,"1,00",international aviation,international aviation
+TBUSBDLU00,Road transport (public),TRA,.DMD.,Buses Biodiesel Urban Existing,BVKM,000VEH,DMD,TBU,ANNUAL,"0,00",Road transport (public),Road transport (public)
+TBUSDSTC00,Road transport (public),TRA,.DMD.,Buses Diesel Coaches Existing,BVKM,000VEH,DMD,TBC,ANNUAL,"0,00",Road transport (public),Road transport (public)
+TBUSDSTU00,Road transport (public),TRA,.DMD.,Buses Diesel Urban Existing,BVKM,000VEH,DMD,TBU,ANNUAL,"0,00",Road transport (public),Road transport (public)
+TBUSDSTUN01,Road transport (public),TRA,.DMD.TRADBU.,Buses Diesel Urban New,BVKM,000VEH,DMD,TBU,ANNUAL,"1,00",Road transport (public),Road transport (public)
+TBUSETHCN01,Road transport (public),TRA,.DMD.TRADBU.,Buses Ethanol Coach New,BVKM,000VEH,DMD,TBC,ANNUAL,"1,00",Road transport (public),Road transport (public)
+TBUSHDSTU00,Road transport (public),TRA,.DMD.,Buses Hybrid Diesel Urban Existing,BVKM,000VEH,DMD,TBU,ANNUAL,"0,00",Road transport (public),Road transport (public)
+TCARDSTEX00,Cars,TRA,.DMD.,Cars Diesel Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARDSTMU00,Cars,TRA,.DMD.,Cars Diesel Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARDSTML00,Cars,TRA,.DMD.,Cars Diesel Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARDSTMLN01,Cars,TRA,.DMD.TRADCA.,Cars Diesel Medium-Lower New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARDSTSM00,Cars,TRA,.DMD.,Cars Diesel small Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARDSTSMN01,Cars,TRA,.DMD.TRADCA.,Cars Diesel Small New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARDTSHEVEX00,Cars,TRA,.DMD.,Cars PHEV Diesel Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARELCEXN01,Cars,TRA,.DMD.TRADCA.,Cars Electric Executive New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARELCML00,Cars,TRA,.DMD.,Cars Electric Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARELCMLN01,Cars,TRA,.DMD.TRADCA.,Cars Electric Medium-Lower New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARELCMUN01,Cars,TRA,.DMD.TRADCA.,Cars Electric Medium-Upper New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARELCSMN01,Cars,TRA,.DMD.TRADCA.,Cars Electric Small New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARGMXEX00,Cars,TRA,.DMD.,Cars CNG Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGMXML00,Cars,TRA,.DMD.,Cars CNG Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGMXMU00,Cars,TRA,.DMD.,Cars CNG Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLEX00,Cars,TRA,.DMD.,Cars Gasoline Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLHEVEX00,Cars,TRA,.DMD.,Cars PHEV Gasoline  Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLHEVML00,Cars,TRA,.DMD.,Cars PHEV Gasoline  Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLHEVMU00,Cars,TRA,.DMD.,Cars PHEV Gasoline  Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLHYBMLN01,Cars,TRA,.DMD.TRADCA.,Cars Hybrid Gasoline Medium-Lower New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARGSLML00,Cars,TRA,.DMD.,Cars Gasoline Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLMU00,Cars,TRA,.DMD.,Cars Gasoline Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARGSLMUN01,Cars,TRA,.DMD.TRADCA.,Cars Gasoline Medium-Upper New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARGSLSM00,Cars,TRA,.DMD.,Cars Gasoline Small Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARHGSLEX00,Cars,TRA,.DMD.,Cars Hybrid Gasoline Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARHGSLML00,Cars,TRA,.DMD.,Cars Hybrid Gasoline Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARHGSLMU00,Cars,TRA,.DMD.,Cars Hybrid Gasoline Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARHGSLSM00,Cars,TRA,.DMD.,Cars Hybrid Gasoline small Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARLPGEX00,Cars,TRA,.DMD.,Cars LPG Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARLPGML00,Cars,TRA,.DMD.,Cars LPG Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARLPGMLN01,Cars,TRA,.DMD.TRADCA.,Cars LPG Medium-Lower New,BVKM,000VEH,DMD,TCAR,ANNUAL,"1,00",Cars,Cars
+TCARLPGMU00,Cars,TRA,.DMD.,Cars LPG Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCARLPGSM00,Cars,TRA,.DMD.,Cars LPG small Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,"0,00",Cars,Cars
+TCHARGHOMN01,EV charger,TRA,.PRE.,Home EV charger,PJ,GW,PRE,BATELCIN,DAYNITE,"0,00",EV charger,EV charger
+TCHARGHOMSMARTN01,EV charger,TRA,.PRE.,Home EV smart charger,PJ,GW,PRE,RSDELC,DAYNITE,"0,00",EV charger,EV charger
+TCHARGWRKN01,EV charger,TRA,.PRE.,EV charging at home,PJ,GW,PRE,BATELCIN,DAYNITE,"0,00",EV charger,EV charger
+THDTDSTH200,Road Freight,TRA,.DMD.,Heavy Duty Trucks Diesel Less than 14 t Existing,BVKM,000VEH,DMD,THDT,ANNUAL,"0,00",Road Freight,Road Freight
+THDTDSTH2N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks Diesel Less than 14 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTDSTH300,Road Freight,TRA,.DMD.,Heavy Duty Trucks Diesel Between 14-28 t Existing,BVKM,000VEH,DMD,THDT,ANNUAL,"0,00",Road Freight,Road Freight
+THDTDSTH3N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks Diesel  Between 14-28  New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTDSTH400,Road Freight,TRA,.DMD.,Heavy Duty Trucks Diesel Between 28-40 t Existing,BVKM,000VEH,DMD,THDT,ANNUAL,"0,00",Road Freight,Road Freight
+THDTDSTH4N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks Diesel  Between 28-40 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTDSTH500,Road Freight,TRA,.DMD.,Heavy Duty Trucks Diesel Between 40-50 t Existing,BVKM,000VEH,DMD,THDT,ANNUAL,"0,00",Road Freight,Road Freight
+THDTDSTH5N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks Diesel Between 40-50 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTDSTHYBH5N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks Hybrid Diesel Between 40-50 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTELCH00,Road Freight,TRA,.DMD.,Heavy Duty Trucks Electric  Existing,BVKM,000VEH,DMD,THDT,ANNUAL,"0,00",Road Freight,Road Freight
+THDTGH2H5N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks Hydrogen Less than 40-50 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTGMXH3N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks LNG  Between 14-28 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTGMXH4N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks LNG Between 28-40 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTGMXH5N01,Road Freight,TRA,.DMD.TRADTH.,Heavy Duty Trucks LNG Between 40-50 t New,BVKM,000VEH,DMD,THDT,ANNUAL,"1,00",Road Freight,Road Freight
+THDTGSLH100,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gasoline More than 3 t Existing,BVKM,000VEH,DMD,THDT,ANNUAL,"0,00",Road Freight,Road Freight
+TLCVBDLLCN01,Road Freight,TRA,.DMD.TRADTL.,Light Commercial Vehicles BioDiesel Light New,BVKM,000VEH,DMD,TLCV,ANNUAL,"1,00",Road Freight,Road Freight
+TLCVDSTHYBLCN01,Road Freight,TRA,.DMD.TRADTL.,Light Commercial Vehicles Hybrid Diesel Light New,BVKM,000VEH,DMD,TLCV,ANNUAL,"1,00",Road Freight,Road Freight
+TLCVDSTLC00,Road Freight,TRA,.DMD.,Light Commercial Vehicles Diesel  Light Existing,BVKM,000VEH,DMD,TLCV,ANNUAL,"0,00",Road Freight,Road Freight
+TLCVDSTLCN01,Road Freight,TRA,.DMD.TRADTL.,Light Commercial Vehicles Diesel Light New,BVKM,000VEH,DMD,TLCV,ANNUAL,"1,00",Road Freight,Road Freight
+TLCVELCLC00,Road Freight,TRA,.DMD.,Light Commercial Vehicles Electric Light Existing,BVKM,000VEH,DMD,TLCV,ANNUAL,"0,00",Road Freight,Road Freight
+TLCVGSLLC00,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gasoline  Light Existing,BVKM,000VEH,DMD,TLCV,ANNUAL,"0,00",Road Freight,Road Freight
+TMOPELC00,2 and 3 wheelers,TRA,.DMD.,Bicycle electric  Existing,BVKM,000VEH,DMD,TMOP,ANNUAL,"0,00",2 and 3 wheelers,2 and 3 wheelers
+TMOPELCN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Mopeds Electric New,BVKM,000VEH,DMD,TMOP,ANNUAL,"1,00",2 and 3 wheelers,2 and 3 wheelers
+TMOPGSL00,2 and 3 wheelers,TRA,.DMD.,Mopeds Gasoline  Existing,BVKM,000VEH,DMD,TMOP,ANNUAL,"0,00",2 and 3 wheelers,2 and 3 wheelers
+TMOPGSLN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Mopeds Gasoline New,BVKM,000VEH,DMD,TMOP,ANNUAL,"1,00",2 and 3 wheelers,2 and 3 wheelers
+TMOTELCN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Motorcycles Electric New,BVKM,000VEH,DMD,TMOT,ANNUAL,"1,00",2 and 3 wheelers,2 and 3 wheelers
+TMOTGSL00,2 and 3 wheelers,TRA,.DMD.,Motorcycles Gasoline  Existing,BVKM,000VEH,DMD,TMOT,ANNUAL,"0,00",2 and 3 wheelers,2 and 3 wheelers
+TMOTGSLN01,2 and 3 wheelers,TRA,.DMD.TRADMO.,Motorcycles Gasoline New,BVKM,000VEH,DMD,TMOT,ANNUAL,"1,00",2 and 3 wheelers,2 and 3 wheelers
+TNDFDST00,Navigation Domestic Freight Tech Existing,TRA,.DMD.,Navigation Domestic Freight Tech Existing,BTKM,BTKMA,DMD,TNDF,ANNUAL,"0,00",domestic navigation,domestic navigation
+TRABDL00,Fuel Tech - Biodiesel (TRA),TRA,.PRE.,Fuel Tech - Biodiesel (TRA),PJ,PJA,PRE,TRABDL,ANNUAL,"0,00",Fuel Tech - Biodiesel (TRA),Fuel Tech - Biodiesel (TRA)
+TRABGS00,Fuel Tech - Biogas (TRA),TRA,.PRE.,Fuel Tech - Biogas (TRA),PJ,PJA,PRE,TRABGS,ANNUAL,"0,00",Fuel Tech - Biogas (TRA),Fuel Tech - Biogas (TRA)
+TRAELC00,Fuel Tech - Electricity (TRA),TRA,.PRE.,Fuel Tech - Electricity (TRA),PJ,GW,PRE,TRAELC,ANNUAL,"0,00",electricity transport,Fuel Tech - Electricity (TRA)
+TRAGH2C04,Fuel Tech - H2,SUP,.PRE.,Fuel Tech - H2 Delivery from centralized production (COMP+USTOR+TR+GSTORB+RTS+REFGG (small)),PJ,PJ-A,PRE,TRAGH2,DAYNITE,,Fuel Tech - H2,Fuel Tech - H2
+TRAGMX00,Fuel Tech - Reseau gas mixed (TRA),TRA,.PRE.,Fuel Tech - Reseau gas mixed (TRA),PJ,PJA,PRE,TRAGMX,ANNUAL,"0,00",Fuel Tech - Reseau gas mixed,Fuel Tech - Reseau gas mixed (TRA)
+TRAKER00,Fuel Tech - Kerosene - Jet Fuels (TRA),TRA,.PRE.,Fuel Tech - Kerosene - Jet Fuels (TRA),PJ,PJA,PRE,TRAKER,ANNUAL,"0,00",Fuel Tech - Kerosene - Jet Fuels,Fuel Tech - Kerosene - Jet Fuels
+TRALH2C01,Fuel Tech - H2,SUP,.PRE.,Fuel Tech - H2 Delivery from centralized production (COMP+USTOR+TR+LIQ+LSTORB+RTS+REFLL(large)),PJ,PJ-A,PRE,TRALH2,DAYNITE,,Fuel Tech - H2,Fuel Tech - H2
+TRALH2C02_i,SUP_PRE_PJ_PJ-A,SUP,.PRE.,TRALH2C02_i,PJ,PJ-A,PRE,TRALH2,DAYNITE,,SUP_PRE_PJ_PJ-A,SUP_PRE_PJ_PJ-A
+TRALPG00,Fuel Tech - Liquified Petroleum Gas (TRA),TRA,.PRE.,Fuel Tech - Liquified Petroleum Gas (TRA),PJ,PJA,PRE,TRALPG,ANNUAL,"0,00",Fuel Tech - Liquified Petroleum Gas,Fuel Tech - Liquified Petroleum Gas (TRA)
+TSTGEVCMIDN01,TRA_STG_PJ_GW,TRA,.STG.,TSTGEVCMIDN01,PJ,GW,STG,BATELCOUT,DAYNITE,"0,00",TRA_STG_PJ_GW,TRA_STG_PJ_GW
+TTFELCDST00,rail transport,TRA,.DMD.,Train Freigh Tech Existing,BTKM,BTKMA,DMD,TTF,ANNUAL,"0,00",rail transport,rail transport
+TTPELCDST00,rail transport,TRA,.DMD.,Train Conventional Passengers Tech Existing,BPKM,BPKMA,DMD,TTP,ANNUAL,"0,00",rail transport,rail transport
+TRAGAS00,Fuel Tech - Natural Gas (TRA),TRA,.DMD.,Fuel Tech - Natural Gas (TRA),PJ,PJA,PRE,TRAGAS,ANNUAL,"0,00",Fuel Tech - Natural Gas (TRA),Fuel Tech - Natural Gas (TRA)
+TRAGZH00,BioGas (TAR),TRA,.PRE.,BioGas (TAR),PJ,PJA,PRE,TRAGZH,ANNUAL,"0,00",BioGas (TAR),BioGas (TAR)
+TBUSGASU00,Road transport (public),TRA,.DMD.,Buses CNG Urban Existing,BVKM,000VEH,DMD,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGMXCN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,BVKM,000VEH,DMD,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGMXUN01,Road transport (public),TRA,.DMD.,Buses Gas Urban New,BVKM,000VEH,DMD,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TCARGASEX01,Cars,TRA,.DMD.,Cars Gas Executive New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX02,Cars,TRA,.DMD.,Cars CNG Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX03,Cars,TRA,.DMD.,Cars Gas Medium-Lower New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX04,Cars,TRA,.DMD.,Cars CNG Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX05,Cars,TRA,.DMD.,Cars Gas Medium-Upper New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX06,Cars,TRA,.DMD.,Cars Gas Small New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX07,Cars,TRA,.DMD.,Cars CNG Executive Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX08,Cars,TRA,.DMD.,Cars Gas Executive New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX09,Cars,TRA,.DMD.,Cars CNG Medium-Lower Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX10,Cars,TRA,.DMD.,Cars Gas Medium-Lower New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX11,Cars,TRA,.DMD.,Cars CNG Medium-Upper Existing,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX12,Cars,TRA,.DMD.,Cars Gas Medium-Upper New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX13,Cars,TRA,.DMD.,Cars Gas Small New,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX14,Cars,TRA,.DMD.,TCHARGHOMSMARTN01,BVKM,000VEH,DMD,TCAR,ANNUAL,,Cars,Cars
+TCARGASEX15,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX16,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG More than 3 t,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX17,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG Less than 14 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX18,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG  Between 14-28 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX19,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 28-40 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX20,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 40-50 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX21,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX22,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG More than 3 t,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX23,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG Less than 14 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX24,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG  Between 14-28 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX25,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 28-40 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX26,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 40-50 t New,BVKM,000VEH,DMD,THDT,ANNUAL,,Road Freight,Road Freight
+TCARGASEX27,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,BVKM,000VEH,DMD,TLCV,ANNUAL,,Road Freight,Road Freight
+TCARGASEX28,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,BVKM,000VEH,DMD,TLCV,ANNUAL,,Road Freight,Road Freight
+BBLQGAS110,industrial processes,IND,.PRE.,Gasification_ black liquor to methane,PJ,PJA,PRE,BBLQGAS,ANNUAL,,Industry,Industry
+BWOOGAS110,industrial processes,IND,.PRE.,Gasification_ biomass (tree salix etc) to methane,PJ,PJA,PRE,BWOOGAS,ANNUAL,,Industry,Industry
+CO2STG01,CO2 transport and storage,SUP,.PRE.,CO2 transport and storage,PJ,PJA,PRE,CO2STOCK,ANNUAL,,CO2 transport and storage,CO2 transport and storage
+ESTBATS102,Battery charge,ELC,.ELE.,Battery (Li-ion) Bulk ELC Storage: DayNite,PJ,PJA,PRE,ESTBATS,ANNUAL,,Battery charge,Battery charge
+ESTBATS202,Battery charge,ELC,.ELE.,Battery (Li-ion) Bulk ELC Storage: DayNite/Seasonal,PJ,PJA,PRE,ESTBATS,ANNUAL,,Battery charge,Battery charge
+ETSTP_CCGT_CCS_E12_N,Thermal Public - Retrofitting CCGT CCS,ELC,.ELE.,Thermal Public - Retrofitting CCGT CCS,PJ,PJA,PRE,ELCHIG,ANNUAL,,Thermal Public - Retrofitting CCGT CCS,Thermal Public - Retrofitting CCGT CCS
+ETSTP_CCGT_CCS_E13_N,Thermal Public - Retrofitting CCGT CCS,ELC,.ELE.,Thermal Public - Retrofitting CCGT CCS,PJ,PJA,PRE,ELCHIG,ANNUAL,,Thermal Public - Retrofitting CCGT CCS,Thermal Public - Retrofitting CCGT CCS
+ETSTP_Retrofit_CCGT_CCS_E12_N,Thermal Public - Retrofitting CCGT CCS,ELC,.ELE.,Thermal Public - Retrofitting CCGT CCS,PJ,PJA,PRE,ELCHIG,ANNUAL,,Thermal Public - Retrofitting CCGT CCS,Thermal Public - Retrofitting CCGT CCS
+ETSTP_Retrofit_CCGT_CCS_E13_N,Thermal Public - Retrofitting CCGT CCS,ELC,.ELE.,Thermal Public - Retrofitting CCGT CCS,PJ,PJA,PRE,ELCHIG,ANNUAL,,Thermal Public - Retrofitting CCGT CCS,Thermal Public - Retrofitting CCGT CCS
+ETSTP_Tihange_retrofit_N,ETSTP_Tihange_retrofit_N,ELC,.ELE.,ETSTP_Tihange_retrofit_N,PJ,PJA,PRE,ELCHIG,ANNUAL,,ETSTP_Tihange_retrofit_N,ETSTP_Tihange_retrofit_N
+ICMDRYCOKCC_01,industrial processes,IND,.PRE.,ICM.Dry Process Production with CO2 capture.10.,PJ,PJA,PRE,ICMGAS,ANNUAL,,Industry,Industry
+ICMDRYHFOCC_01,industrial processes,IND,.PRE.,ICM.Dry Process Production with CO2 capture.10.,PJ,PJA,PRE,ICMGAS,ANNUAL,,Industry,Industry
+ICMDRYLFOCC_01,industrial processes,IND,.PRE.,ICM.Dry Process Production with CO2 capture.10.,PJ,PJA,PRE,ICMGAS,ANNUAL,,Industry,Industry
+ICMGMX00,industrial processes,IND,.PRE.,ICMGMX00,PJ,PJA,PRE,ICMGAS,ANNUAL,,Industry,Industry
+IGFGMX00,industrial processes,IND,.PRE.,IGFGMX00,PJ,PJA,PRE,IGFGAS,ANNUAL,,Industry,Industry
+IGHGMX00,industrial processes,IND,.PRE.,IGHGMX00,PJ,PJA,PRE,IGHGAS,ANNUAL,,Industry,Industry
+IISGMX00,industrial processes,IND,.PRE.,IISGMX00,PJ,PJA,PRE,IISGAS,ANNUAL,,Industry,Industry
+ILMGMX00,industrial processes,IND,.PRE.,ILMGMX00,PJ,PJA,PRE,ILMGAS,ANNUAL,,Industry,Industry
+IMPELCOFFWINBE,Electricity Imports,SUP,.PRE.,Electricity import (ALL) - off wind ext,PJ,PJA,PRE,IMPELCOFFWINBE,ANNUAL,,Electricity Imports,Electricity Imports
+IMPELCOFFWINEXT,Electricity Imports,SUP,.PRE.,Electricity import (ALL) - off wind be,PJ,PJA,PRE,IMPELCOFFWINBE,ANNUAL,,Electricity Imports,Electricity Imports
+INDGZH00,Fuel Tech New - biogaz epure (IND),IND,.PRE.,Fuel Tech New - biogaz epure (IND),PJ,PJA,PRE,INDGZH,ANNUAL,,Fuel Tech New - biogaz epure (IND),Fuel Tech New - biogaz epure (IND)
+TAVINTHH2FN01,Aviation,TRA,.DMD.TAIP.,Transport marchandise - Aviation - International - Hydrogen (New),PJ,PJA,PRE,TAIP,ANNUAL,,Aviation,Aviation
+Transfo_Exp,Transfo_Exp,IND,.PRE.,Transfo_Exp,PJ,PJA,PRE,Transfo_Exp,ANNUAL,,Transfo_Exp,Electricity Exports
+Transfo_Imp,Transfo_Imp,IND,.PRE.,Transfo_Imp,PJ,PJA,PRE,Transfo_Imp,ANNUAL,,Transfo_Imp,Electricity Imports
+TBUSGASCN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGASUN01,Road transport (public),TRA,.DMD.,Buses Gas Urban New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGMXU00,Road transport (public),TRA,.DMD.,Buses CNG Urban Existing,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TCARGASEX00,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGASEXN01,Cars,TRA,.DMD.,Cars Gas Executive New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGASML00,Cars,TRA,.DMD.,Cars CNG Medium-Lower Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGASMLN01,Cars,TRA,.DMD.,Cars Gas Medium-Lower New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGASMU00,Cars,TRA,.DMD.,Cars CNG Medium-Upper Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGASMUN01,Cars,TRA,.DMD.,Cars Gas Medium-Upper New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGASSMN01,Cars,TRA,.DMD.,Cars Gas Small New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXEX00,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXEXN01,Cars,TRA,.DMD.,Cars Gas Executive New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXML00,Cars,TRA,.DMD.,Cars CNG Medium-Lower Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXMLN01,Cars,TRA,.DMD.,Cars Gas Medium-Lower New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXMU00,Cars,TRA,.DMD.,Cars CNG Medium-Upper Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXMUN01,Cars,TRA,.DMD.,Cars Gas Medium-Upper New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGMXSMN01,Cars,TRA,.DMD.,Cars Gas Small New,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCHARGHOMSMARTN01,Cars,TRA,.DMD.,TCHARGHOMSMARTN01,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+THDTGASH1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGASH1N02,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGASH2N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG Less than 14 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGASH3N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG  Between 14-28 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGASH4N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 28-40 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGASH5N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 40-50 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGMXH1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGMXH1N02,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGMXH2N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks CNG Less than 14 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGMXH3N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG  Between 14-28 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGMXH4N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 28-40 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGMXH5N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks LNG Between 40-50 t New,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+TLCVGASLCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TLCVGMXLCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TRADST00,Fuel Tech - Diesel (TRA),TRA,.PRE.,Fuel Tech - Diesel (TRA),PJ,PJA,PRE,TRADST,ANNUAL,"0,00",Fuel Tech - Diesel (TRA),Fuel Tech - Diesel (TRA)
+TRAETH00,Fuel Tech - Ethanol (TRA),TRA,.PRE.,Fuel Tech - Ethanol (TRA),PJ,PJA,PRE,TRAETH,ANNUAL,"0,00",Fuel Tech - Ethanol,Fuel Tech - Ethanol (TRA)
+TRAGSL00,Fuel Tech - Gasoline (TRA),TRA,.PRE.,Fuel Tech - Gasoline (TRA),PJ,PJA,PRE,TRAGSL,ANNUAL,"0,00",Fuel Tech - Gasoline (TRA),Fuel Tech - Gasoline (TRA)
+TBUSBDLCN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSBDLUN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSDSTCN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSDSTHEVU00,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSDSTUHEVN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSELCUN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSETHUN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGH2CN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGH2UN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGSLCN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TBUSGSLUN01,Road transport (public),TRA,.DMD.,Buses Gas Coach New,PJ,PJA,PRE,TBU,ANNUAL,,Road transport (public),Road transport (public)
+TCARDSTEXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARDSTHEV4EXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARDSTHYBEXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARDSTHYBMLN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARDSTHYBMUN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARDSTHYBSMN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARDSTMUN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGH2FCEXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGH2FCMLN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGH2FCMUN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGH2FCSMN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLEXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLHEV4EXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLHYBEXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLHYBMUN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLHYBSMN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLMLN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARGSLSMN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARLPGEXN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARLPGMUN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+TCARLPGSMN01,Cars,TRA,.DMD.,Cars CNG Executive Existing,PJ,PJA,PRE,TCAR,ANNUAL,,Cars,Cars
+THDTDSTH1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTDSTHYBH2N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTDSTHYBH3N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTDSTHYBH4N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTELCH1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTELCH2N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTELCH3N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTELCH4N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTELCH5N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGH2H1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGH2H2N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGH2H3N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGH2H4N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGSLH1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+THDTGSLHYBH1N01,Road Freight,TRA,.DMD.,Heavy Duty Trucks Gas More than 3 t,PJ,PJA,PRE,THDT,ANNUAL,,Road Freight,Road Freight
+TLCVELCLCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TLCVETHHYBLCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TLCVETHLCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TLCVGH2LCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TLCVGSLLCN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight
+TNAINLBDLN01,Road Freight,TRA,.DMD.,Light Commercial Vehicles Gas Light New,PJ,PJA,PRE,TLCV,ANNUAL,,Road Freight,Road Freight

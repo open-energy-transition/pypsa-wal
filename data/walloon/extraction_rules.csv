@@ -1,0 +1,54 @@
+category,var_type,filter_type,filter_field_1,filter_values_1,filter_field_2,filter_values_2
+total electricity residential,VAR_FIN,combined,process_agg,residential other,pypsa_carrier,Electricity;electricity for residential
+total electricity services,VAR_FIN,combined,process_agg,commercial other,pypsa_carrier,Electricity
+electricity road,VAR_FIN,process_agg,process_agg,Fuel Tech - Electricity (TRA);TRA_STG_PJ_GW,pypsa_carrier,Electricity
+electricity rail,VAR_FIN,combined,process_agg,rail transport,pypsa_carrier,Electricity
+electricity,VAR_FIN,process_agg,process_agg,PV industrial;Fuel Tech - Electricity (IND);Fuel Tech - Solar (IND),pypsa_carrier,Electricity
+ammonia,VAR_FIN,combined,process_agg,Industry,pypsa_carrier,ammonia
+coal,VAR_FIN,process_agg,process_agg,Fuel Tech - Hard Coal (IND);Fuel Tech - Lignite (IND),pypsa_carrier,coal for industry
+coke,VAR_FIN,process_agg,process_agg,Fuel Tech - Coke (IND),pypsa_carrier,Coke for industry
+hydrogen,VAR_FOUT,process_agg,process_agg,hydrogen for industry;hydrogen imports,pypsa_carrier,hydrogen for industry
+low-temperature heat,VAR_FIN,process_agg,process_agg,Geothermal (IND),pypsa_carrier,Heat for industry;Geothermal (IND)
+methane,VAR_FIN,process_agg,process_agg,Fuel Tech - Biogas (IND);Fuel Tech - Natural Gas transport (IND);Fuel Tech New - Gas and Cog industry (IND);Fuel Tech - Natural Gas and biogas mixed  (IND);Fuel Tech - Liquified Petroleum Gas (IND);Fuel Tech New - biogaz epure (IND),pypsa_carrier,Natural Gas;Network gas;gas for industry;High Temperature Heat for IND
+methanol,VAR_FIN,combined,process_agg,Industry,pypsa_carrier,methanol
+naphtha,VAR_FIN,process_agg,process_agg,Non-energy;Fuel Tech - Heavy Fuel Oil (IND);Fuel Tech - Light Fuel Oil (IND),pypsa_carrier,naphtha;oil for industry
+solid biomass,VAR_FIN,process_agg,process_agg,Fuel Tech - Wood material (IND);Fuel Tech - Waste Renewable (IND);Fuel Tech - Wood CHIPS (IND);Fuel Tech - Biofuel (IND),pypsa_carrier,solid biomass for industry;Wood pellets for Industry
+total agriculture,VAR_FIN,process_agg,process_agg,Agriculture,,
+total agriculture electricity,VAR_FIN,combined,process_agg,Agriculture,pypsa_carrier,Electricity for agriculture
+total agriculture heat,VAR_FIN,combined,process_agg,Agriculture,pypsa_carrier,Heat for agriculture;Network gas for agriculture
+total agriculture machinery,VAR_FIN,combined,process_agg,Agriculture,pypsa_carrier,Oil for agriculture;Biodiesel for agriculture;Fuel Tech – Diesel
+total domestic aviation,VAR_FOUT,combined,process_agg,domestic aviation,pypsa_carrier,domestic aviation
+total international aviation,VAR_FOUT,combined,process_agg,international aviation,pypsa_carrier,international aviation
+total domestic navigation,VAR_FOUT,combined,process_agg,domestic navigation,pypsa_carrier,domestic navigation
+total international navigation,VAR_FOUT,process_agg,process_agg,international navigation,,
+total road,VAR_FIN,process_agg,process_agg,Fuel Tech - Biodiesel (TRA);Fuel Tech - Biogas (TRA);Fuel Tech - Diesel (TRA);Fuel Tech - Ethanol (TRA);Fuel Tech - H2;Fuel Tech - Reseau gas mixed (TRA);Fuel Tech - Gasoline (TRA);Fuel Tech - Liquified Petroleum Gas (TRA);BioGas (TAR);Fuel Tech - Natural Gas (TRA);Fuel Tech - Electricity (TRA);TRA_STG_PJ_GW,,
+total rail,VAR_FIN,process_agg,process_agg,rail transport,,
+hydrogen road,VAR_FIN,combined,process_agg,Cars;Road Freight;2 and 3 wheelers;Road transport (public),pypsa_carrier,H2 for transport
+BEWAL residential urban decentral heat,VAR_FOUT,combined,process_agg,Residential urban decentral Coal heater;Residential urban decentral electric heater;Residential urban decentral Heat pump;Residential urban decentral geothermal heating;Residential urban decentral gas heater;Residential urban decentral biomass heater;Residential urban decentral solar thermal;Residential urban decentral oil heater,pypsa_carrier,Heat
+BEWAL residential rural heat,VAR_FOUT,combined,process_agg,Residential rural Coal heater;Residential rural electric heater;Residential rural Heat pump;Residential rural geothermal heating;Residential rural gas heater;Residential rural biomass heater;Residential rural solar thermal;Residential rural oil heater,pypsa_carrier,Heat
+BEWAL services urban decentral heat,VAR_FOUT,combined,process_agg,Commercial gas boiler;Commercial Biomass boiler;Commercial Heat pump;Commercial Oil boiler;commercial Geothermal;Commercial electrical stove;Commercial solar thermal,pypsa_carrier,Heat
+residential urban decentral gas boiler,VAR_FOUT,combined,process_agg,Residential urban decentral gas heater,pypsa_carrier,Heat
+residential urban decentral coal boiler,VAR_FOUT,combined,process_agg,Residential urban decentral Coal heater,pypsa_carrier,Heat
+residential urban decentral electric heater,VAR_FOUT,combined,process_agg,Residential urban decentral electric heater,pypsa_carrier,Heat
+residential urban decentral heat pump,VAR_FOUT,combined,process_agg,Residential urban decentral Heat pump,pypsa_carrier,Heat
+residential urban decentral geothermal,VAR_FOUT,combined,process_agg,Residential urban decentral geothermal heating,pypsa_carrier,Heat
+residential district heating,VAR_FOUT,combined,process_agg,District heating,pypsa_carrier,Heat
+residential urban decentral biomass boiler,VAR_FOUT,combined,process_agg,Residential urban decentral biomass heater,pypsa_carrier,Heat
+residential urban decentral solar thermal,VAR_FOUT,combined,process_agg,Residential urban decentral solar thermal,pypsa_carrier,Heat
+residential urban decentral oil boiler,VAR_FOUT,combined,process_agg,Residential urban decentral oil heater,pypsa_carrier,Heat
+residential rural gas boiler,VAR_FOUT,combined,process_agg,Residential rural gas heater,pypsa_carrier,Heat
+residential rural coal boiler,VAR_FOUT,combined,process_agg,Residential rural Coal heater,pypsa_carrier,Heat
+residential rural electric heater,VAR_FOUT,combined,process_agg,Residential rural electric heater,pypsa_carrier,Heat
+residential rural heat pump,VAR_FOUT,combined,process_agg,Residential rural Heat pump,pypsa_carrier,Heat
+residential rural geothermal,VAR_FOUT,combined,process_agg,Residential rural geothermal heating,pypsa_carrier,Heat
+residential rural biomass boiler,VAR_FOUT,combined,process_agg,Residential rural biomass heater,pypsa_carrier,Heat
+residential rural solar thermal,VAR_FOUT,combined,process_agg,Residential rural solar thermal,pypsa_carrier,Heat
+residential rural oil boiler,VAR_FOUT,combined,process_agg,Residential rural oil heater,pypsa_carrier,Heat
+services gas boiler,VAR_FOUT,combined,process_agg,Commercial gas boiler,pypsa_carrier,Heat
+services biomass boiler,VAR_FOUT,combined,process_agg,Commercial Biomass boiler,pypsa_carrier,Heat
+services heat pump,VAR_FOUT,combined,process_agg,Commercial Heat pump,pypsa_carrier,Heat
+services district heating,VAR_FOUT,combined,process_agg,Commercial Heat Exchanger,pypsa_carrier,Heat
+services oil boiler,VAR_FOUT,combined,process_agg,Commercial Oil boiler,pypsa_carrier,Heat
+services geothermal,VAR_FOUT,combined,process_agg,commercial Geothermal,pypsa_carrier,Heat
+services electric heater,VAR_FOUT,combined,process_agg,Commercial electrical stove,pypsa_carrier,Heat
+services solar thermal,VAR_FOUT,combined,process_agg,Commercial solar thermal,pypsa_carrier,Heat

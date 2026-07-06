@@ -53,11 +53,17 @@ def diameter_to_capacity(pipe_diameter_mm):
         return a3 + m3 * pipe_diameter_mm
 
 
+def _parse_json_field(val):
+    if isinstance(val, dict):
+        return val
+    return json.loads(val)
+
+
 def load_dataset(fn):
     df = gpd.read_file(fn)
-    param = df.param.apply(json.loads).apply(pd.Series)
+    param = df.param.apply(_parse_json_field).apply(pd.Series)
     cols = ["diameter_mm", "max_cap_M_m3_per_d"]
-    method = df.method.apply(json.loads).apply(pd.Series)[cols]
+    method = df.method.apply(_parse_json_field).apply(pd.Series)[cols]
     method.columns = method.columns + "_method"
     df = pd.concat([df, param, method], axis=1)
     to_drop = ["param", "uncertainty", "method", "tags"]

@@ -5,6 +5,8 @@
 # docs in https://pypsa-eur.readthedocs.io/en/latest/configuration.html#run
 run:
   name: "walloon-model"
+  wallon_node: BEWAL
+  flemish_node: BEVLG
   scenarios:
     file: config/scenarios.yaml
 
@@ -91,10 +93,50 @@ sector:
     enable: true
   regional_coal_demand: true
 
+co2_budget_national: true
+co2_budget_national:
+  2025:
+    BEBRU: 0.64
+    BEVLG: 0.64
+    BEWAL: 0.64
+    DE: 0.64
+    FR: 0.64
+    GB: 0.64
+    NL: 0.64
+    LU: 0.64
+  2030:
+    BEBRU: 0.45
+    BEVLG: 0.45
+    BEWAL: 0.45
+    DE: 0.45
+    FR: 0.45
+    GB: 0.45
+    NL: 0.45
+    LU: 0.45
+  2040:
+    BEBRU: 0.1
+    BEVLG: 0.1
+    BEWAL: 0.1
+    DE: 0.1
+    FR: 0.1
+    GB: 0.1
+    NL: 0.1
+    LU: 0.1
+  2050:
+    BEBRU: 0.05
+    BEVLG: 0.05
+    BEWAL: 0.05
+    DE: 0.05
+    FR: 0.05
+    GB: 0.05
+    NL: 0.05
+    LU: 0.05
+    
 costs:
   custom_cost_fn: data/walloon/custom_costs_rc.csv
 
 solving:
+  mem_mb: 32000
   agg_p_nom_limits:
     agg_offwind: true
     agg_solar: true
